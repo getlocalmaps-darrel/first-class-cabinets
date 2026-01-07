@@ -1,8 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 
-// 1. IMPORT YOUR IMAGES - Using your original kitchen filename now
-import service1 from '../assets/hero-kitchen.jpg'; 
+// 1. IMPORT YOUR IMAGES
+import service1 from '../assets/hero-kitchen.jpg';
 import builtinImage from '../assets/builtin-1.jpg'; 
 import bathroomImage from '../assets/bathroom-remodel.jpg';
 import fireplaceImage from '../assets/fireplace.jpg';
@@ -13,7 +13,7 @@ import fireplaceImage from '../assets/fireplace.jpg';
     
     <div class="reveal text-center mb-12">
       <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4 text-zinc-900">
-        Mastery in Every Room
+        Kitchen & Bathroom Remodeling Services
       </h2>
       <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full"></div>
     </div>
@@ -24,8 +24,8 @@ import fireplaceImage from '../assets/fireplace.jpg';
         <Image src={service1} alt="Custom Kitchen Cabinets" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
         <div class="absolute bottom-0 left-0 w-full p-6">
-            <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">For The</span>
-            <h3 class="text-2xl font-serif font-bold text-white leading-none">Kitchen</h3>
+            <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
+            <h3 class="text-2xl font-serif font-bold text-white leading-none">Kitchen Cabinets</h3>
         </div>
       </a>
 
@@ -39,20 +39,20 @@ import fireplaceImage from '../assets/fireplace.jpg';
       </a>
 
       <a href="/services" class="reveal delay-300 group relative h-64 overflow-hidden rounded-md shadow-lg block">
-        <Image src={bathroomImage} alt="Bathroom Remodeling" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+        <Image src={bathroomImage} alt="Custom Bathroom Cabinets" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
         <div class="absolute bottom-0 left-0 w-full p-6">
-            <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Luxury</span>
-            <h3 class="text-2xl font-serif font-bold text-white leading-none">Bath Remodel</h3>
+            <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
+            <h3 class="text-2xl font-serif font-bold text-white leading-none">Bathroom Cabinets</h3>
         </div>
       </a>
 
       <a href="/services" class="reveal delay-400 group relative h-64 overflow-hidden rounded-md shadow-lg block">
-        <Image src={fireplaceImage} alt="Custom Fireplaces" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+        <Image src={fireplaceImage} alt="Handcrafted Fireplace Built-Ins" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
         <div class="absolute bottom-0 left-0 w-full p-6">
             <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Handcrafted</span>
-            <h3 class="text-2xl font-serif font-bold text-white leading-none">Fireplaces</h3>
+            <h3 class="text-2xl font-serif font-bold text-white leading-none">Fireplace Built-Ins</h3>
         </div>
       </a>
 
@@ -66,7 +66,6 @@ import fireplaceImage from '../assets/fireplace.jpg';
     rootMargin: '0px',
     threshold: 0.1
   };
-
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -75,7 +74,6 @@ import fireplaceImage from '../assets/fireplace.jpg';
       }
     });
   }, observerOptions);
-
   document.querySelectorAll('.reveal').forEach((el) => {
     observer.observe(el);
   });

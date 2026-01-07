@@ -1,0 +1,157 @@
+---
+// src/pages/projects/murrieta-home-remodel.astro
+import MainLayout from '../../layouts/MainLayout.astro';
+
+// 1. IMAGE IMPORTS (Preserving EXIF/GPS metadata by using .src)
+import img1 from '../../assets/murrieta-kitchen-remodeling-project-1.jpg';
+import img2 from '../../assets/murrieta-kitchen-remodeling-project-2.jpg';
+import img3 from '../../assets/murrieta-kitchen-remodeling-project-3.jpg';
+import img4 from '../../assets/murrieta-kitchen-remodeling-project-4.jpg';
+
+const images = [
+  { src: img1.src, alt: "Custom Kitchen Cabinets in Los Alamos Hills Murrieta 2025" },
+  { src: img2.src, alt: "Modern Fireplace Build-In near Murrieta Oaks" },
+  { src: img3.src, alt: "Finish carpentry details in Murrieta CA" },
+  { src: img4.src, alt: "Luxury kitchen remodeling south of The Orchard" }
+];
+
+// 2. DETAILED JSON-LD SCHEMA
+const projectSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "First Class Woodworks",
+  "description": "2025 Custom kitchen remodeling and finish carpentry project in Los Alamos Hills, Murrieta.",
+  "datePublished": "2025-01-07",
+  "location": {
+    "@type": "Place",
+    "name": "Los Alamos Hills Residence",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Murrieta",
+      "addressRegion": "CA",
+      "postalCode": "92563"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "33.58726883",
+      "longitude": "-117.17280579"
+    }
+  },
+  "areaServed": ["Los Alamos Hills", "Murrieta Oaks", "The Orchard"]
+};
+---
+
+<MainLayout 
+  title="Los Alamos Hills Kitchen Remodel | Murrieta 2025"
+  description="Explore our January 2025 custom kitchen cabinetry and fireplace remodel in the Los Alamos Hills community of Murrieta, CA."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(projectSchema)} />
+
+  <link rel="stylesheet" href="https://unpkg.com/photoswipe/dist/photoswipe.css">
+
+  <article class="pt-32 pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <header class="max-w-3xl mx-auto text-center mb-16">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Los Alamos Hills <span class="text-yellow-600 italic">Project</span>
+        </h1>
+        
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-xs font-bold uppercase tracking-[0.3em] text-zinc-400">
+            <span class="text-yellow-600">Murrieta, California</span>
+            <span class="hidden md:block text-zinc-200">•</span>
+            <span>Completed January 2025</span>
+            <span class="hidden md:block text-zinc-200">•</span>
+            <span class="text-zinc-500">33.5872° N, 117.1728° W</span>
+        </div>
+        
+        <div class="h-px w-24 bg-yellow-600/30 mx-auto mt-10"></div>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 items-start">
+        <div class="lg:col-span-7 text-lg text-zinc-600 leading-relaxed space-y-6">
+  <p>
+    Our latest 2025 transformation took us to the prestigious <strong>Los Alamos Hills</strong> community, 
+    nestled near <strong>Murrieta Oaks</strong> and just south of <strong>The Orchard</strong>. 
+    This project serves as a prime example of our "True Finish Carpenter" philosophy—prioritizing 
+    micro-details that standard rough builders often overlook.
+  </p>
+  <p>
+    The homeowners sought to elevate their space with <strong>100% in-house custom cabinetry</strong>. 
+    We designed a seamless kitchen layout that flows into a bespoke fireplace surround, 
+    featuring hand-stained floating shelves and precision-milled trim work.
+  </p>
+  <p>
+    By managing every stage of the process without subcontractors, we maintained total control over 
+    the wood selection and finish quality, ensuring a result that will last for decades.
+  </p>
+</div>
+        
+        <div class="lg:col-span-5 bg-zinc-50 p-10 rounded-sm border border-zinc-100">
+          <h3 class="font-serif font-bold text-2xl mb-6 text-zinc-900 underline decoration-yellow-600 underline-offset-8">Project Details</h3>
+          <ul class="space-y-4">
+            <li class="flex flex-col">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Services</span>
+              <span class="text-zinc-800 font-bold">Kitchen & Living Room Remodel</span>
+            </li>
+            <li class="flex flex-col">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Woodwork</span>
+              <span class="text-zinc-800 font-bold">Custom-Milled Shaker Cabinetry</span>
+            </li>
+            <li class="flex flex-col pt-4">
+                <a href="/contact" class="text-center bg-zinc-900 text-white py-3 font-bold text-sm uppercase tracking-widest hover:bg-yellow-600 transition duration-300">
+                    Get a Quote
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pswp-gallery" id="project-gallery">
+        {images.map((img) => (
+          <a 
+            href={img.src} 
+            data-pswp-width="1200" 
+            data-pswp-height="1600" 
+            target="_blank"
+            class="group relative aspect-[4/5] overflow-hidden rounded-sm shadow-sm cursor-zoom-in bg-zinc-200"
+          >
+            <img 
+              src={img.src} 
+              alt={img.alt} 
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-20 py-16 border-t border-zinc-100 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+        <a href="/gallery" class="flex items-center gap-3 text-zinc-400 hover:text-zinc-900 font-bold uppercase tracking-widest text-xs transition">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            Back to Gallery
+        </a>
+        
+        <div class="text-center md:text-right">
+            <h4 class="font-serif font-bold text-xl text-zinc-900 mb-2">Ready to transform your home?</h4>
+            <a href="/contact" class="inline-block bg-yellow-600 text-white px-8 py-3 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">
+                Start Your Project
+            </a>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <script>
+    import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#project-gallery',
+      children: 'a',
+      pswpModule: () => import('https://unpkg.com/photoswipe/dist/photoswipe.esm.js')
+    });
+    lightbox.init();
+  </script>
+</MainLayout>

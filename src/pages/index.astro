@@ -1,19 +1,24 @@
 ---
+// src/pages/index.astro
 import MainLayout from '../layouts/MainLayout.astro';
 import Hero from '../components/Hero.astro';
-import TrustBar from '../components/TrustBar.astro'; // <--- Don't forget this!
+import TrustBar from '../components/TrustBar.astro';
 import Intro from '../components/Intro.astro';
 import Services from '../components/Services.astro';
+import RecentProjects from '../components/RecentProjects.astro'; // 1. IMPORT IT HERE
 ---
 
-<MainLayout title="Custom Kitchen Cabinets Murrieta" description="First Class Woodworks specializes in custom kitchen remodeling, bathroom cabinets, and built-ins in Murrieta. No subcontractors.">
-  
+<MainLayout title="Home">
   <Hero />
-  
   <TrustBar />
-
   <Intro />
   
+  <div class="w-full flex justify-center py-12 bg-white">
+    <div class="w-64 h-[2px] bg-gradient-to-r from-transparent via-zinc-400 to-transparent opacity-60"></div>
+  </div>
+
   <Services />
+
+  <RecentProjects />
 
 </MainLayout>
