@@ -1,0 +1,68 @@
+---
+// src/components/Hero.astro
+import { Image } from 'astro:assets';
+
+// Import BOTH images
+import image1 from '../assets/hero-kitchen.jpg';
+import image2 from '../assets/kitchen-2.jpg'; 
+---
+
+<section class="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
+  
+  <div class="absolute inset-0 z-0 animate-slideshow">
+    <Image src={image1} alt="Custom Kitchen Cabinets Murrieta" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/50"></div>
+  </div>
+
+  <div class="absolute inset-0 z-0 animate-slideshow delay-animation">
+    <Image src={image2} alt="Finish Carpentry Murrieta" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/50"></div>
+  </div>
+
+  <div class="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+    
+    <div class="text-5xl md:text-7xl font-serif font-bold mb-6 drop-shadow-lg leading-tight opacity-0 animate-fade-up" style="animation-delay: 0.4s;">
+      Dream. Design. <span class="text-yellow-500">Build.</span>
+    </div>
+
+    <h1 class="text-lg md:text-2xl font-light mb-10 text-gray-100 max-w-3xl mx-auto opacity-0 animate-fade-up leading-relaxed" style="animation-delay: 0.6s;">
+      <strong>Murrieta's</strong> Premier <strong class="text-yellow-400">Custom Kitchen Cabinet</strong> Makers. 
+      Specializing in Finish Carpentry, Bathroom Remodeling, and Built-Ins.
+    </h1>
+
+    <div class="flex flex-col md:flex-row gap-4 justify-center opacity-0 animate-fade-up" style="animation-delay: 0.8s;">
+      <a href="/contact" class="bg-yellow-600 text-white px-8 py-4 font-bold uppercase tracking-wide hover:bg-yellow-700 transition duration-300 rounded-sm">
+        Get a Quote
+      </a>
+      <a href="/gallery" class="border-2 border-white text-white px-8 py-4 font-bold uppercase tracking-wide hover:bg-white hover:text-slate-900 transition duration-300 rounded-sm">
+        View Gallery
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @keyframes kenburns {
+    0% { opacity: 0; transform: scale(1); }
+    10% { opacity: 1; }
+    50% { opacity: 1; transform: scale(1.4); }
+    60% { opacity: 0; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(1); }
+  }
+  .animate-slideshow {
+    opacity: 0; 
+    animation: kenburns 16s ease-in-out infinite;
+  }
+  .delay-animation {
+    animation-delay: 8s;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+</style>

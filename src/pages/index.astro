@@ -1,11 +1,19 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro'; // <--- Don't forget this!
+import Intro from '../components/Intro.astro';
+import Services from '../components/Services.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout title="Custom Kitchen Cabinets Murrieta" description="First Class Woodworks specializes in custom kitchen remodeling, bathroom cabinets, and built-ins in Murrieta. No subcontractors.">
+  
+  <Hero />
+  
+  <TrustBar />
+
+  <Intro />
+  
+  <Services />
+
+</MainLayout>
