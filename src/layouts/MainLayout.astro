@@ -6,7 +6,7 @@ import '../styles/global.css';
 import logoImage from '../assets/logo.png';
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -16,10 +16,9 @@ import logoImage from '../assets/logo.png';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-white text-neutral-800 font-body">
+  <body class="bg-white text-neutral-800 font-body antialiased">
     
     <nav id="navbar" class="absolute top-0 w-full z-50 transition-all duration-300">
-        
         <div id="nav-container" class="relative max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center">
             
             <a href="/" id="nav-logo" class="block z-50 relative transition-opacity duration-300">
@@ -70,9 +69,20 @@ import logoImage from '../assets/logo.png';
       <slot /> 
     </main>
 
-    <footer class="bg-black text-white py-16 mt-20 text-center border-t border-zinc-800">
-        <h2 class="font-serif text-2xl mb-2">First Class Woodworks</h2>
-        <p class="text-gray-400 text-sm">© {new Date().getFullYear()} Serving Murrieta & Temecula Valley</p>
+    <footer class="bg-black text-white py-12 text-center border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="font-serif text-2xl mb-4">First Class Woodworks</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-zinc-500 text-xs">
+                <p>© 2025 Serving Murrieta & Temecula Valley</p>
+                <span class="hidden md:block text-zinc-800">|</span>
+                <p>
+                    Website Design and Chat GPT Marketing by 
+                    <a href="https://murrietawebdesigns.com" target="_blank" class="text-zinc-400 hover:text-yellow-600 transition underline underline-offset-4 decoration-zinc-800">
+                        Murrieta Web Designs
+                    </a>
+                </p>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -81,39 +91,37 @@ import logoImage from '../assets/logo.png';
         const navGradient = document.getElementById('nav-gradient');
         const navLogo = document.getElementById('nav-logo');
 
+        // STICKY NAV LOGIC
         window.addEventListener('scroll', () => {
-            // TRIGGER: 700px (Wait until completely past hero)
             if (window.scrollY > 700) {
-                
-                // --- STATE: THIN BLACK STICKY BAR ---
                 navbar.classList.remove('absolute');
-                navbar.classList.add('fixed', 'bg-black', 'shadow-xl', 'animate-fadeIn'); // Sticks to top
-                
-                // Make it thin
+                navbar.classList.add('fixed', 'bg-black', 'shadow-xl', 'animate-fadeIn');
                 navContainer.classList.remove('py-4');
                 navContainer.classList.add('py-2');
-
-                // Hide things
                 navGradient.classList.add('hidden'); 
-                navLogo.classList.add('hidden'); // Removes logo completely
-
+                navLogo.classList.add('hidden'); 
             } else {
-                
-                // --- STATE: TRANSPARENT TOP HEADER ---
-                navbar.classList.add('absolute'); // Scrolls away with page
+                navbar.classList.add('absolute');
                 navbar.classList.remove('fixed', 'bg-black', 'shadow-xl', 'animate-fadeIn');
-                
-                // Make it tall
                 navContainer.classList.add('py-4');
                 navContainer.classList.remove('py-2');
-
-                // Show things
                 navGradient.classList.remove('hidden'); 
                 navLogo.classList.remove('hidden');
             }
         });
-    </script>
 
+        // REVEAL ANIMATION LOGIC
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>
 
@@ -136,7 +144,17 @@ import logoImage from '../assets/logo.png';
     color: #EAB308; 
   }
 
-  /* Smooth fade in for the black bar */
+  /* REVEAL ANIMATIONS */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }

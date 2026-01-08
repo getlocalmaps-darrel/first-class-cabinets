@@ -1,0 +1,95 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+// Image Imports
+import img1 from '../assets/bathroom-remodel.jpg';
+import img2 from '../assets/builtin-1.jpg';
+import img3 from '../assets/builtin.jpg';
+import img4 from '../assets/fireplace.jpg';
+import img5 from '../assets/hero-kitchen.jpg';
+import img6 from '../assets/kitchen 2.jpg';
+import img7 from '../assets/kitchen 3.jpg';
+import img8 from '../assets/kitchen pic.jpg';
+import img9 from '../assets/kitchen-2.jpg';
+import img10 from '../assets/kitchen-5.jpg';
+import img11 from '../assets/kitchen4.jpg';
+import img12 from '../assets/murrieta-kitchen-remodeling-project-1.jpg';
+import img13 from '../assets/murrieta-kitchen-remodeling-project-2.jpg';
+import img14 from '../assets/murrieta-kitchen-remodeling-project-3.jpg';
+import img15 from '../assets/murrieta-kitchen-remodeling-project-4.jpg';
+
+const galleryImages = [
+  { src: img1.src, alt: "Luxury Bathroom Remodel" },
+  { src: img2.src, alt: "Custom Built-in Cabinetry" },
+  { src: img3.src, alt: "Handcrafted Home Office Built-ins" },
+  { src: img4.src, alt: "Custom Fireplace Surround and Mantle" },
+  { src: img5.src, alt: "Premium Kitchen Transformation" },
+  { src: img6.src, alt: "White Shaker Kitchen Cabinets" },
+  { src: img7.src, alt: "Modern Kitchen Island Design" },
+  { src: img8.src, alt: "Custom Woodworking Detail" },
+  { src: img9.src, alt: "Executive Kitchen Remodel" },
+  { src: img10.src, alt: "Traditional Cabinetry Craftsmanship" },
+  { src: img11.src, alt: "Contemporary Kitchen Layout" },
+  { src: img12.src, alt: "Murrieta Kitchen Project - Detail 1" },
+  { src: img13.src, alt: "Murrieta Kitchen Project - Detail 2" },
+  { src: img14.src, alt: "Murrieta Kitchen Project - Detail 3" },
+  { src: img15.src, alt: "Murrieta Kitchen Project - Detail 4" },
+];
+---
+
+<MainLayout title="Project Gallery | Custom Cabinetry Murrieta">
+  <link rel="stylesheet" href="https://unpkg.com/photoswipe/dist/photoswipe.css">
+
+  <section class="pt-32 pb-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center mb-16 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6">Our <span class="text-yellow-600 italic">Portfolio</span></h1>
+        <div class="h-1 w-24 bg-yellow-600 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 pswp-gallery" id="main-gallery">
+        {galleryImages.map((img, index) => (
+          <div class="reveal" style={`transition-delay: ${index * 50}ms`}>
+            <a 
+              href={img.src} 
+              target="_blank"
+              class="group relative aspect-square overflow-hidden rounded-sm shadow-sm bg-zinc-100 cursor-zoom-in block"
+            >
+              <img 
+                src={img.src} 
+                alt={img.alt} 
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#main-gallery',
+      children: 'a',
+      pswpModule: () => import('https://unpkg.com/photoswipe/dist/photoswipe.esm.js')
+    });
+    lightbox.init();
+
+    // Scroll Animation Logic
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+
+  <style>
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+  </style>
+</MainLayout>

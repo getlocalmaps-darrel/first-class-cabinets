@@ -1,0 +1,88 @@
+---
+// src/components/AreasServed.astro
+const primaryCity = "Murrieta";
+const serviceAreas = [
+  "Temecula", 
+  "Wildomar", 
+  "Menifee", 
+  "Perris", 
+  "Lake Elsinore", 
+  "French Valley", 
+  "Winchester", 
+  "Canyon Lake", 
+  "Fallbrook"
+];
+---
+
+<section class="py-20 bg-zinc-950 border-t border-zinc-900 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      
+      <div class="reveal">
+        <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight">
+          Serving <span class="text-yellow-600">Murrieta</span> & The Temecula Valley
+        </h2>
+        <div class="h-1 w-20 bg-yellow-600 rounded-full mb-8"></div>
+        <p class="text-zinc-400 text-lg leading-relaxed mb-8">
+          Based in <strong>Murrieta, CA</strong>, First Class Woodworks provides 
+          premium kitchen cabinet remodeling and finish carpentry to homeowners 
+          across Riverside County. We bring 2025 craftsmanship and in-house 
+          cabinet building to your doorstep, ensuring your project is handled 
+          with the precision of a true finish carpenter.
+        </p>
+        <a href="/contact" class="inline-block bg-yellow-600 text-white px-8 py-3 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition shadow-lg">
+          Check Availability In Your Area
+        </a>
+      </div>
+
+      <div class="bg-zinc-900/50 border border-zinc-800 p-8 md:p-12 rounded-sm reveal delay-200">
+        <h3 class="text-zinc-500 font-bold uppercase tracking-[0.2em] text-[10px] mb-8">Primary Service Locations</h3>
+        
+        <div class="grid grid-cols-2 gap-y-4 gap-x-8">
+          <div class="col-span-2 mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-yellow-600 rounded-full"></div>
+              <span class="text-white font-serif text-2xl font-bold">{primaryCity} (Headquarters)</span>
+            </div>
+          </div>
+
+          {serviceAreas.map((area) => (
+            <div class="flex items-center gap-3 group">
+              <div class="w-1.5 h-1.5 border border-yellow-600/50 rounded-full group-hover:bg-yellow-600 transition-colors"></div>
+              <span class="text-zinc-400 group-hover:text-white transition-colors text-sm font-medium">{area}</span>
+            </div>
+          ))}
+        </div>
+
+        <p class="mt-12 text-zinc-500 text-[11px] italic leading-relaxed border-t border-zinc-800 pt-6">
+          Not seeing your city? We frequently travel for custom whole-home 
+          cabinetry projects. Contact us to discuss your 2025 remodel.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .delay-200 { transition-delay: 0.2s; }
+</style>

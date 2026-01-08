@@ -5,20 +5,70 @@ import Hero from '../components/Hero.astro';
 import TrustBar from '../components/TrustBar.astro';
 import Intro from '../components/Intro.astro';
 import Services from '../components/Services.astro';
-import RecentProjects from '../components/RecentProjects.astro'; // 1. IMPORT IT HERE
+import RecentProjects from '../components/RecentProjects.astro';
+import AreasServed from '../components/AreasServed.astro';
 ---
 
-<MainLayout title="Home">
+<MainLayout 
+  title="First Class Woodworks | Custom Kitchen Cabinets Murrieta"
+  description="Premium 2025 kitchen remodeling and finish carpentry in Murrieta, Temecula, and surrounding areas. Handcrafted in-house cabinetry with no subcontractors."
+>
   <Hero />
+
   <TrustBar />
+
   <Intro />
   
   <div class="w-full flex justify-center py-12 bg-white">
-    <div class="w-64 h-[2px] bg-gradient-to-r from-transparent via-zinc-400 to-transparent opacity-60"></div>
+    <div class="w-64 h-[2px] bg-gradient-to-r from-transparent via-zinc-300 to-transparent opacity-50"></div>
   </div>
 
   <Services />
 
   <RecentProjects />
 
+  <AreasServed />
+
+  <section class="py-12 bg-zinc-50 border-t border-zinc-100 reveal">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-serif font-bold text-zinc-900 mb-4">
+        Custom Cabinetry Craftsmanship Across Murrieta
+      </h2>
+      <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-6"></div>
+      <p class="text-zinc-500 mb-8 italic text-sm">
+        Serving Los Alamos Hills, Murrieta Oaks, and the entire Temecula Valley.
+      </p>
+      <a href="/gallery" class="inline-block bg-zinc-900 text-white px-10 py-4 font-bold uppercase tracking-widest hover:bg-yellow-600 transition duration-300 shadow-md">
+        View Full Gallery
+      </a>
+    </div>
+  </section>
+
 </MainLayout>
+
+<script>
+  // Global Reveal Observer for the homepage
+  const observerOptions = { threshold: 0.1 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+
+<style>
+  /* Ensure reveal styles are available on index */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
