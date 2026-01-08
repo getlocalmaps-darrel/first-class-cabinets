@@ -1,7 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 
-// Image Imports
+// Image Imports (Keeping your list exactly as provided)
 import img1 from '../assets/bathroom-remodel.jpg';
 import img2 from '../assets/builtin-1.jpg';
 import img3 from '../assets/builtin.jpg';
@@ -48,19 +48,20 @@ const galleryImages = [
         <div class="h-1 w-24 bg-yellow-600 mx-auto rounded-full"></div>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 pswp-gallery" id="main-gallery">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4" id="main-gallery">
         {galleryImages.map((img, index) => (
           <div class="reveal" style={`transition-delay: ${index * 50}ms`}>
             <a 
               href={img.src} 
-              target="_blank"
-              class="group relative aspect-square overflow-hidden rounded-sm shadow-sm bg-zinc-100 cursor-zoom-in block"
+              class="pswp-link group relative aspect-square overflow-hidden rounded-sm shadow-sm bg-zinc-100 block cursor-zoom-in"
+              data-pswp-width="1600" 
+              data-pswp-height="1200"
             >
               <img 
                 src={img.src} 
                 alt={img.alt} 
-                loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
               />
             </a>
           </div>
@@ -71,12 +72,19 @@ const galleryImages = [
 
   <script>
     import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
-    const lightbox = new PhotoSwipeLightbox({
-      gallery: '#main-gallery',
-      children: 'a',
-      pswpModule: () => import('https://unpkg.com/photoswipe/dist/photoswipe.esm.js')
-    });
-    lightbox.init();
+    
+    // This function initializes the popup box (Lightbox)
+    function initLightbox() {
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: '#main-gallery',
+        children: '.pswp-link', // Target the links
+        pswpModule: () => import('https://unpkg.com/photoswipe/dist/photoswipe.esm.js')
+      });
+      lightbox.init();
+    }
+
+    // Run on page load
+    initLightbox();
 
     // Scroll Animation Logic
     const observer = new IntersectionObserver((entries) => {
@@ -89,6 +97,11 @@ const galleryImages = [
   </script>
 
   <style>
+    /* Prevent images from stretching while remaining in a square box */
+    .pswp-link img {
+      object-fit: cover;
+      display: block;
+    }
     .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
     .reveal.active { opacity: 1; transform: translateY(0); }
   </style>
