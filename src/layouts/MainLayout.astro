@@ -16,10 +16,8 @@ import logoImage from '../assets/logo.png';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-white text-neutral-800 font-body antialiased">
-    
-    <nav id="navbar" class="absolute top-0 w-full z-50 transition-all duration-300">
-        <div id="nav-container" class="relative max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center">
+  <body class="bg-white text-neutral-800 font-body antialiased pb-14 md:pb-0"> <nav id="navbar" class="absolute top-0 w-full z-50 transition-all duration-300">
+        <div id="nav-container" class="relative max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
             
             <a href="/" id="nav-logo" class="block z-50 relative transition-opacity duration-300">
                 <Image 
@@ -45,31 +43,43 @@ import logoImage from '../assets/logo.png';
                 </a>
             </div>
 
-            <div class="flex md:hidden items-center gap-3 relative z-50 ml-auto">
-                <a href="sms:9519731265" class="bg-zinc-900 text-white p-2 rounded-full border border-zinc-700 hover:bg-black">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.017-7.03.05-1.584.233-2.707 1.626-2.707 3.228V16.741z" />
-                    </svg>
-                </a>
-                <a href="tel:9519731265" class="bg-zinc-900 text-white p-2 rounded-full border border-zinc-700 hover:bg-black">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                    </svg>
-                </a>
-                <a href="sms:9519731265?&body=Hi, I would like a quote for cabinets..." class="bg-yellow-600 text-white px-3 py-2 rounded-sm font-bold text-xs uppercase tracking-wider">
-                    Quote
-                </a>
-            </div>
+            <button id="mobile-menu-btn" class="md:hidden relative z-50 text-white p-2 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
         </div>
         
         <div id="nav-gradient" class="absolute top-0 w-full h-full bg-gradient-to-b from-black/80 to-transparent -z-10 transition-opacity duration-300"></div>
     </nav>
 
+    <div id="mobile-menu" class="fixed inset-0 bg-zinc-950 z-40 hidden flex-col items-center justify-center gap-8 opacity-0 transition-opacity duration-300">
+        <a href="/" class="mobile-link text-2xl font-serif text-white">HOME</a>
+        <a href="/services" class="mobile-link text-2xl font-serif text-white">SERVICES</a>
+        <a href="/gallery" class="mobile-link text-2xl font-serif text-white">GALLERY</a>
+        <a href="/contact" class="mobile-link text-2xl font-serif text-white">CONTACT</a>
+    </div>
+
+    <div class="fixed bottom-0 left-0 w-full h-14 z-[60] flex md:hidden shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+        <a href="sms:9519731265?&body=Hi, I'm interested in custom cabinets..." class="flex-1 bg-zinc-900 text-white flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm hover:bg-zinc-800 active:bg-black transition">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.017-7.03.05-1.584.233-2.707 1.626-2.707 3.228V16.741z" />
+            </svg>
+            Text Us
+        </a>
+        <a href="tel:9519731265" class="flex-1 bg-yellow-600 text-white flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm hover:bg-yellow-700 active:bg-yellow-800 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            Call Now
+        </a>
+    </div>
+
     <main>
       <slot /> 
     </main>
 
-    <footer class="bg-black text-white py-12 text-center border-t border-zinc-900">
+    <footer class="bg-black text-white py-12 text-center border-t border-zinc-900 pb-20 md:pb-12">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="font-serif text-2xl mb-4">First Class Woodworks</h2>
             <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-zinc-500 text-xs">
@@ -90,6 +100,44 @@ import logoImage from '../assets/logo.png';
         const navContainer = document.getElementById('nav-container');
         const navGradient = document.getElementById('nav-gradient');
         const navLogo = document.getElementById('nav-logo');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // MOBILE MENU LOGIC
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                // Open Menu
+                mobileMenu.classList.remove('hidden');
+                // Small delay to allow display:flex to apply before changing opacity
+                setTimeout(() => {
+                    mobileMenu.classList.remove('opacity-0');
+                    mobileMenu.classList.add('opacity-100');
+                }, 10);
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            } else {
+                // Close Menu
+                mobileMenu.classList.remove('opacity-100');
+                mobileMenu.classList.add('opacity-0');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        });
+
+        // Close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('opacity-100');
+                mobileMenu.classList.add('opacity-0');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+                document.body.style.overflow = '';
+            });
+        });
 
         // STICKY NAV LOGIC
         window.addEventListener('scroll', () => {
@@ -119,7 +167,6 @@ import logoImage from '../assets/logo.png';
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     </script>
   </body>

@@ -1,0 +1,126 @@
+---
+// src/components/FAQ.astro
+
+// Voice Search & AI Optimization Strategy:
+// 1. Questions are phrased as direct natural language queries (How, What, Is).
+// 2. Answers provide direct, location-specific facts first (Murrieta/Riverside), then elaborate.
+// 3. Schema markup is generated automatically for Google Rich Results.
+
+const faqs = [
+  {
+    question: "How much do custom kitchen cabinets typically cost in Murrieta?",
+    answer: "While costs vary based on wood species and finish, custom cabinetry in Murrieta typically ranges significantly higher than big-box store prefabs because they are built to fit your specific space perfectly. For a standard 10x10 kitchen, investment levels reflect the use of solid hardwoods, premium hardware, and 100% in-house craftsmanship—avoiding the particle board often found in pre-made options."
+  },
+  {
+    question: "Is it cheaper to buy prefab cabinets or have them custom built?",
+    answer: "Initially, prefab cabinets may have a lower sticker price, but they often lack longevity and require compromises on fit and finish. Custom cabinets are an investment in the value of your home. When you factor in durability, exact fit (no filler strips), and the lifespan of solid wood construction, custom cabinetry often provides better long-term value for Murrieta homeowners."
+  },
+  {
+    question: "Can IKEA make true custom cabinets compared to a local woodworker?",
+    answer: "No. IKEA systems are modular, meaning they come in set sizes (e.g., 15\", 30\"). If your wall is 32\", you lose 2\" of space or use fillers. First Class Woodworks builds to the 1/16th of an inch, maximizing every usable inch of your kitchen. Additionally, we use solid construction methods that far outlast modular particle board boxes."
+  },
+  {
+    question: "What is a realistic budget for a full kitchen remodel in Riverside County?",
+    answer: "For a comprehensive remodel in the Temecula Valley (including demo, electrical, plumbing, countertops, and custom cabinetry), realistic budgets for 2025 often start in the $30k-$50k range and can go upward depending on luxury appliance choices and material grades. We recommend allocating 30-40% of your total budget to cabinetry, as it is the most used element of the room."
+  },
+  {
+    question: "How do I calculate kitchen linear footage for a custom cabinet cost estimate?",
+    answer: "To get a rough linear footage number, measure the length of the wall where base cabinets will go, then add the length of the wall where upper cabinets will go. Don't worry about being perfect—during our consultation, we take precise laser measurements to ensure an exact quote."
+  },
+  {
+    question: "What are the typical permit requirements for a kitchen remodel in Murrieta?",
+    answer: "In Murrieta and Riverside County, permits are generally required if you are moving electrical, plumbing, or altering structural walls. Simple cabinet-and-countertop swaps often do not require major permits, but we always ensure our work complies with local California building codes for safety and resale value."
+  },
+  {
+    question: "How long does a custom kitchen remodel take?",
+    answer: "Unlike rough builders who rush, we are finish carpenters who prioritize precision. A typical custom project—from design approval to final installation—can take 6-10 weeks depending on the complexity of the finish and current shop lead times. We do not use subcontractors, so we control the timeline to ensure consistent quality."
+  }
+];
+
+// JSON-LD Schema Generation for Google Rich Snippets
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<section class="py-20 bg-zinc-50 border-t border-zinc-200">
+  <div class="max-w-4xl mx-auto px-6">
+    
+    <div class="text-center mb-16 reveal">
+      <h2 class="text-3xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">
+        Frequently Asked <span class="text-yellow-600">Questions</span>
+      </h2>
+      <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-6"></div>
+      <p class="text-zinc-500 italic">
+        Common questions about custom cabinetry, costs, and timelines in the Temecula Valley.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <details class="group bg-white border border-zinc-200 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 reveal" style={`transition-delay: ${index * 100}ms`}>
+          <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
+            <h3 class="text-lg md:text-xl font-serif font-bold text-zinc-800 group-hover:text-yellow-600 transition-colors pr-8">
+              {faq.question}
+            </h3>
+            <span class="text-yellow-600 transition-transform duration-300 group-open:rotate-180">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<style>
+  /* Remove default details marker */
+  details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Reveal Animation Styles (Consistent with your site) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Simple intersection observer for the reveal animations
+  const observerOptions = { threshold: 0.1 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
