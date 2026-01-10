@@ -3,8 +3,7 @@
     {
       "source": "/((?!api/).*)",
       "destination": "/",
-      "permanent": false,
-      "check": true
+      "permanent": false
     }
   ]
 }
