@@ -1,0 +1,171 @@
+---
+// src/pages/services.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+
+// Import images (Reusing your existing assets)
+import kitchenImage from '../assets/hero-kitchen.jpg';
+import bathroomImage from '../assets/bathroom-remodel.jpg';
+import builtinImage from '../assets/builtin-1.jpg';
+import fireplaceImage from '../assets/fireplace.jpg';
+
+const pageTitle = "Custom Cabinetry Services | Kitchens, Bathrooms & Built-Ins";
+const pageDescription = "Explore our premium woodworking services in Murrieta. From custom kitchen remodels to handcrafted fireplace mantels, we build everything in-house.";
+---
+
+<MainLayout title={pageTitle} description={pageDescription}>
+  
+  <section class="bg-zinc-900 text-white py-20 md:py-32 relative overflow-hidden">
+    <div class="absolute inset-0 bg-black/50 z-0"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">Our Craftsmanship</h1>
+      <div class="h-1 w-24 bg-yellow-600 mx-auto rounded-full mb-6"></div>
+      <p class="text-xl text-zinc-300 max-w-2xl mx-auto leading-relaxed">
+        We don't just install cabinets; we engineer them. Every project is designed, milled, and finished in our Murrieta shop.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <div class="relative rounded-sm overflow-hidden shadow-2xl">
+             <Image src={kitchenImage} alt="Custom Kitchen Remodel Murrieta" class="w-full h-auto object-cover hover:scale-105 transition duration-700" />
+          </div>
+        </div>
+        <div class="reveal delay-200">
+          <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Custom Kitchen Remodeling</h2>
+          <div class="h-1 w-20 bg-yellow-600 rounded-full mb-6"></div>
+          <p class="text-zinc-600 mb-6 leading-relaxed">
+            The kitchen is the heart of your home, and standard box-store cabinets often fail to utilize the unique dimensions of Murrieta tract homes. We build <strong>true custom cabinetry</strong> that maximizes storage to the very inch.
+          </p>
+          <p class="text-zinc-600 mb-8 leading-relaxed">
+            Our process includes 3D rendering, selection of premium hardwoods (Maple, White Oak, Walnut), and durable conversion varnish finishes that stand up to daily family life. We handle everything from the center island to hidden pantry solutions.
+          </p>
+          <ul class="space-y-2 mb-8">
+            <li class="flex items-center gap-3 text-sm font-bold text-zinc-800">
+              <svg class="w-5 h-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Soft-close Blum hardware
+            </li>
+            <li class="flex items-center gap-3 text-sm font-bold text-zinc-800">
+              <svg class="w-5 h-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Custom trash pull-outs & spice racks
+            </li>
+            <li class="flex items-center gap-3 text-sm font-bold text-zinc-800">
+              <svg class="w-5 h-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Floor-to-ceiling pantry systems
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-zinc-50 border-y border-zinc-200">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div class="order-2 md:order-1 reveal">
+          <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Entertainment Centers & Built-Ins</h2>
+          <div class="h-1 w-20 bg-yellow-600 rounded-full mb-6"></div>
+          <p class="text-zinc-600 mb-6 leading-relaxed">
+            Turn that empty niche in your living room into a stunning focal point. Many homes in the Temecula Valley feature awkward drywall niches; we specialize in filling these spaces with seamless, built-in cabinetry that looks like it was part of the original architecture.
+          </p>
+          <p class="text-zinc-600 mb-8 leading-relaxed">
+            Whether you need a full wall library, a home office setup, or a floating media console, our finish carpenters scribe every piece to your walls for a flawless fit that free-standing furniture cannot achieve.
+          </p>
+        </div>
+        <div class="order-1 md:order-2 reveal delay-200">
+          <div class="relative rounded-sm overflow-hidden shadow-2xl">
+             <Image src={builtinImage} alt="Custom Entertainment Center Built-in" class="w-full h-auto object-cover hover:scale-105 transition duration-700" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <div class="relative rounded-sm overflow-hidden shadow-2xl">
+             <Image src={bathroomImage} alt="Luxury Bathroom Vanity" class="w-full h-auto object-cover hover:scale-105 transition duration-700" />
+          </div>
+        </div>
+        <div class="reveal delay-200">
+          <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Bathroom Vanities & Storage</h2>
+          <div class="h-1 w-20 bg-yellow-600 rounded-full mb-6"></div>
+          <p class="text-zinc-600 mb-6 leading-relaxed">
+            Upgrade your master bath or powder room with furniture-grade vanities. Unlike store-bought vanities that come in fixed sizes (30", 48", 60"), we build to the exact width of your walls, eliminating those annoying gaps where dust collects.
+          </p>
+          <p class="text-zinc-600 mb-8 leading-relaxed">
+            We can design floating vanities for a modern look or traditional face-frame cabinets for timeless elegance. We also specialize in linen towers and over-the-toilet storage solutions to maximize small bathroom footprints.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-zinc-50 border-t border-zinc-200">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div class="order-2 md:order-1 reveal">
+          <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Fireplace Mantels & Surrounds</h2>
+          <div class="h-1 w-20 bg-yellow-600 rounded-full mb-6"></div>
+          <p class="text-zinc-600 mb-6 leading-relaxed">
+            A custom mantel is often the centerpiece of a home. We craft solid wood mantels, shiplap surrounds, and full floor-to-ceiling fireplace build-outs. 
+          </p>
+          <p class="text-zinc-600 mb-8 leading-relaxed">
+            We work with you to match existing trim work in your house or create a completely new style, from rustic reclaimed wood looks to clean, painted shaker styles common in modern farmhouse designs.
+          </p>
+          <a href="/contact" class="inline-block bg-yellow-600 text-white px-8 py-3 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition shadow-lg">
+            Get A Design Quote
+          </a>
+        </div>
+        <div class="order-1 md:order-2 reveal delay-200">
+          <div class="relative rounded-sm overflow-hidden shadow-2xl">
+             <Image src={fireplaceImage} alt="Custom Fireplace Mantel" class="w-full h-auto object-cover hover:scale-105 transition duration-700" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-zinc-900 text-center">
+    <div class="max-w-3xl mx-auto px-6 reveal">
+      <h2 class="text-4xl font-serif font-bold text-white mb-6">Ready to Start Your Project?</h2>
+      <p class="text-zinc-400 mb-10 text-lg">
+        We are currently booking projects for 2025 in Murrieta, Temecula, and the surrounding valley.
+      </p>
+      <a href="/contact" class="inline-block border-2 border-white text-white px-10 py-4 font-bold uppercase tracking-widest hover:bg-white hover:text-black transition duration-300">
+        Contact Us Today
+      </a>
+    </div>
+  </section>
+
+</MainLayout>
+
+<script>
+  // Simple Reveal Animation
+  const observerOptions = { threshold: 0.1 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, observerOptions);
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
