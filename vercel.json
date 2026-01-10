@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/",
+      "permanent": false,
+      "check": true
+    }
+  ]
+}
