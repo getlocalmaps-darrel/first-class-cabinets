@@ -16,7 +16,9 @@ import logoImage from '../assets/logo.png';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-white text-neutral-800 font-body antialiased pb-14 md:pb-0"> <nav id="navbar" class="absolute top-0 w-full z-50 transition-all duration-300">
+  <body class="bg-white text-neutral-800 font-body antialiased pb-14 md:pb-0">
+    
+    <nav id="navbar" class="absolute top-0 w-full z-50 transition-all duration-300">
         <div id="nav-container" class="relative max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
             
             <a href="/" id="nav-logo" class="block z-50 relative transition-opacity duration-300">
@@ -53,7 +55,7 @@ import logoImage from '../assets/logo.png';
         <div id="nav-gradient" class="absolute top-0 w-full h-full bg-gradient-to-b from-black/80 to-transparent -z-10 transition-opacity duration-300"></div>
     </nav>
 
-    <div id="mobile-menu" class="fixed inset-0 bg-zinc-950 z-40 hidden flex-col items-center justify-center gap-8 opacity-0 transition-opacity duration-300">
+    <div id="mobile-menu" class="fixed inset-0 bg-zinc-950 z-40 hidden flex flex-col items-center justify-center gap-8 opacity-0 transition-opacity duration-300">
         <a href="/" class="mobile-link text-2xl font-serif text-white">HOME</a>
         <a href="/services" class="mobile-link text-2xl font-serif text-white">SERVICES</a>
         <a href="/gallery" class="mobile-link text-2xl font-serif text-white">GALLERY</a>
