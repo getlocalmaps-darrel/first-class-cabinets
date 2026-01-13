@@ -1,7 +1,41 @@
 ---
 // src/components/Footer.astro
 const currentYear = 2025;
+
+// JSON-LD Local Business Schema for Sitewide SEO/AI Signals
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "First Class Woodworks",
+  "image": "https://www.firstclasswoodworks.com/assets/hero-kitchen.jpg",
+  "telePhone": "(951) 973-1265",
+  "url": "https://www.firstclasswoodworks.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "24491 AVENIDA ARCONTE",
+    "addressLocality": "Murrieta",
+    "addressRegion": "CA",
+    "postalCode": "92562",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Murrieta" },
+    { "@type": "City", "name": "Temecula" },
+    { "@type": "City", "name": "Wildomar" },
+    { "@type": "City", "name": "Menifee" }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/people/FirstClass-WoodWorks/61551346499466/",
+    "https://www.instagram.com/first.classwoodworks/",
+    "https://www.youtube.com/@first.classwoodworks",
+    "https://www.tiktok.com/@firstclasswoodworks",
+    "https://www.bbb.org/us/ca/murrieta/profile/finish-carpentry/first-class-woodworks-inc-1126-850092730"
+  ]
+};
 ---
+
+<script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
 
 <footer class="bg-zinc-950 border-t border-zinc-900 py-12">
   <div class="max-w-7xl mx-auto px-6 text-center">

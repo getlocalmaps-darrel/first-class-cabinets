@@ -26,6 +26,10 @@ import logoImage from '../assets/logo.png';
                     src={logoImage} 
                     alt="First Class Woodworks" 
                     class="h-14 w-auto md:h-32 object-contain" 
+                    width={300}
+                    height={100}
+                    loading="eager"
+                    fetchpriority="high"
                 />
             </a>
             
@@ -45,7 +49,7 @@ import logoImage from '../assets/logo.png';
                 </a>
             </div>
 
-            <button id="mobile-menu-btn" class="md:hidden relative z-50 text-white p-2 focus:outline-none">
+            <button id="mobile-menu-btn" class="md:hidden relative z-50 text-white p-2 focus:outline-none" aria-label="Open Navigation Menu">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
@@ -106,30 +110,25 @@ import logoImage from '../assets/logo.png';
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        // MOBILE MENU LOGIC
         mobileMenuBtn.addEventListener('click', () => {
             const isHidden = mobileMenu.classList.contains('hidden');
             if (isHidden) {
-                // Open Menu
                 mobileMenu.classList.remove('hidden');
-                // Small delay to allow display:flex to apply before changing opacity
                 setTimeout(() => {
                     mobileMenu.classList.remove('opacity-0');
                     mobileMenu.classList.add('opacity-100');
                 }, 10);
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                document.body.style.overflow = 'hidden';
             } else {
-                // Close Menu
                 mobileMenu.classList.remove('opacity-100');
                 mobileMenu.classList.add('opacity-0');
                 setTimeout(() => {
                     mobileMenu.classList.add('hidden');
                 }, 300);
-                document.body.style.overflow = ''; // Restore scrolling
+                document.body.style.overflow = '';
             }
         });
 
-        // Close menu when a link is clicked
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('opacity-100');
@@ -141,7 +140,6 @@ import logoImage from '../assets/logo.png';
             });
         });
 
-        // STICKY NAV LOGIC
         window.addEventListener('scroll', () => {
             if (window.scrollY > 700) {
                 navbar.classList.remove('absolute');
@@ -160,7 +158,6 @@ import logoImage from '../assets/logo.png';
             }
         });
 
-        // REVEAL ANIMATION LOGIC
         const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -193,7 +190,6 @@ import logoImage from '../assets/logo.png';
     color: #EAB308; 
   }
 
-  /* REVEAL ANIMATIONS */
   .reveal {
     opacity: 0;
     transform: translateY(30px);

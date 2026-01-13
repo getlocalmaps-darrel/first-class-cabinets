@@ -1,7 +1,8 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
 
-// Image Imports (Keeping your list exactly as provided)
+// 1. IMPORT FOR FAST THUMBNAILS (Astro optimizes these from src/assets)
 import img1 from '../assets/bathroom-remodel.jpg';
 import img2 from '../assets/builtin-1.jpg';
 import img3 from '../assets/builtin.jpg';
@@ -19,50 +20,81 @@ import img14 from '../assets/murrieta-kitchen-remodeling-project-3.jpg';
 import img15 from '../assets/murrieta-kitchen-remodeling-project-4.jpg';
 
 const galleryImages = [
-  { src: img1.src, alt: "Luxury Bathroom Remodel" },
-  { src: img2.src, alt: "Custom Built-in Cabinetry" },
-  { src: img3.src, alt: "Handcrafted Home Office Built-ins" },
-  { src: img4.src, alt: "Custom Fireplace Surround and Mantle" },
-  { src: img5.src, alt: "Premium Kitchen Transformation" },
-  { src: img6.src, alt: "White Shaker Kitchen Cabinets" },
-  { src: img7.src, alt: "Modern Kitchen Island Design" },
-  { src: img8.src, alt: "Custom Woodworking Detail" },
-  { src: img9.src, alt: "Executive Kitchen Remodel" },
-  { src: img10.src, alt: "Traditional Cabinetry Craftsmanship" },
-  { src: img11.src, alt: "Contemporary Kitchen Layout" },
-  { src: img12.src, alt: "Murrieta Kitchen Project - Detail 1" },
-  { src: img13.src, alt: "Murrieta Kitchen Project - Detail 2" },
-  { src: img14.src, alt: "Murrieta Kitchen Project - Detail 3" },
-  { src: img15.src, alt: "Murrieta Kitchen Project - Detail 4" },
+  { thumb: img1, original: "/images/gallery/bathroom-remodel.jpg", alt: "Luxury Bathroom Remodel in Bear Creek", neighborhood: "Bear Creek" },
+  { thumb: img2, original: "/images/gallery/builtin-1.jpg", alt: "Custom Built-in Cabinetry in Greer Ranch", neighborhood: "Greer Ranch" },
+  { thumb: img3, original: "/images/gallery/builtin.jpg", alt: "Handcrafted Home Office Built-ins in La Cresta", neighborhood: "La Cresta" },
+  { thumb: img4, original: "/images/gallery/fireplace.jpg", alt: "Custom Fireplace Surround in Copper Canyon", neighborhood: "Copper Canyon" },
+  { thumb: img5, original: "/images/gallery/hero-kitchen.jpg", alt: "Premium Kitchen Transformation in Morgan Hill", neighborhood: "Morgan Hill" },
+  { thumb: img6, original: "/images/gallery/kitchen 2.jpg", alt: "White Shaker Kitchen Cabinets in Wolf Creek", neighborhood: "Wolf Creek" },
+  { thumb: img7, original: "/images/gallery/kitchen 3.jpg", alt: "Modern Kitchen Island Design in De Luz", neighborhood: "De Luz" },
+  { thumb: img8, original: "/images/gallery/kitchen pic.jpg", alt: "Custom Woodworking Detail in The Orchard", neighborhood: "The Orchard" },
+  { thumb: img9, original: "/images/gallery/kitchen-2.jpg", alt: "Executive Kitchen Remodel in Santiago Estates", neighborhood: "Santiago Estates" },
+  { thumb: img10, original: "/images/gallery/kitchen-5.jpg", alt: "Traditional Cabinetry Craftsmanship in Meadowview", neighborhood: "Meadowview" },
+  { thumb: img11, original: "/images/gallery/kitchen4.jpg", alt: "Contemporary Kitchen Layout in Arroyo Vista", neighborhood: "Arroyo Vista" },
+  { thumb: img12, original: "/images/gallery/murrieta-kitchen-remodeling-project-1.jpg", alt: "Kitchen Remodel in Los Alamos Hills", neighborhood: "Los Alamos Hills" },
+  { thumb: img13, original: "/images/gallery/murrieta-kitchen-remodeling-project-2.jpg", alt: "Kitchen Project in Spencer's Crossing", neighborhood: "Spencer's Crossing" },
+  { thumb: img14, original: "/images/gallery/murrieta-kitchen-remodeling-project-3.jpg", alt: "Custom Woodwork in French Valley", neighborhood: "French Valley" },
+  { thumb: img15, original: "/images/gallery/murrieta-kitchen-remodeling-project-4.jpg", alt: "Kitchen Remodel in Murrieta Oaks", neighborhood: "Murrieta Oaks" },
 ];
+
+// 2. PROJECT-SPECIFIC SCHEMA (JSON-LD) FOR AI & LOCAL SEARCH
+// This tells AI exactly where your work is located using neighborhood names[cite: 21, 31].
+const gallerySchema = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "First Class Woodworks Project Portfolio",
+  "description": "Custom kitchen cabinetry and finish carpentry projects in Murrieta and Temecula Valley.",
+  "mainEntity": galleryImages.map(img => ({
+    "@type": "ImageObject",
+    "contentUrl": `https://www.firstclasswoodworks.com${img.original}`,
+    "description": img.alt,
+    "contentLocation": { 
+      "@type": "Place", 
+      "name": `${img.neighborhood}, Murrieta, CA` 
+    }
+  }))
+};
 ---
 
 <MainLayout title="Project Gallery | Custom Cabinetry Murrieta">
   <link rel="stylesheet" href="https://unpkg.com/photoswipe/dist/photoswipe.css">
+  
+  <script type="application/ld+json" set:html={JSON.stringify(gallerySchema)} />
 
   <section class="pt-32 pb-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-      
       <div class="text-center mb-16 reveal">
-        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6">Our <span class="text-yellow-600 italic">Portfolio</span></h1>
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6">
+          Our <span class="text-yellow-600 italic">Portfolio</span>
+        </h1>
         <div class="h-1 w-24 bg-yellow-600 mx-auto rounded-full"></div>
+        <p class="mt-6 text-zinc-500 max-w-2xl mx-auto italic">
+          Explore our recent custom kitchen and bathroom cabinetry installations throughout the Temecula Valley.
+        </p>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4" id="main-gallery">
         {galleryImages.map((img, index) => (
           <div class="reveal" style={`transition-delay: ${index * 50}ms`}>
+            {/* The Link points to the original Geotagged file in /public/ [cite: 1, 120] */}
             <a 
-              href={img.src} 
-              class="pswp-link group relative aspect-square overflow-hidden rounded-sm shadow-sm bg-zinc-100 block cursor-zoom-in"
+              href={img.original} 
+              class="pswp-link group relative aspect-square overflow-hidden rounded-sm shadow-sm bg-zinc-100 block cursor-zoom-in" 
               data-pswp-width="1600" 
               data-pswp-height="1200"
             >
-              <img 
-                src={img.src} 
+              {/* The Image is the optimized thumbnail for speed  */}
+              <Image 
+                src={img.thumb} 
                 alt={img.alt} 
+                width={500}
+                height={500}
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />
+              <div class="absolute bottom-0 left-0 w-full p-2 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity">
+                 <p class="text-[9px] text-white font-bold uppercase tracking-widest">{img.neighborhood}</p>
+              </div>
             </a>
           </div>
         ))}
@@ -73,36 +105,34 @@ const galleryImages = [
   <script>
     import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
     
-    // This function initializes the popup box (Lightbox)
-    function initLightbox() {
-      const lightbox = new PhotoSwipeLightbox({
-        gallery: '#main-gallery',
-        children: '.pswp-link', // Target the links
-        pswpModule: () => import('https://unpkg.com/photoswipe/dist/photoswipe.esm.js')
-      });
-      lightbox.init();
-    }
+    // Initialize PhotoSwipe Lightbox
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#main-gallery',
+      children: '.pswp-link',
+      pswpModule: () => import('https://unpkg.com/photoswipe/dist/photoswipe.esm.js')
+    });
+    lightbox.init();
 
-    // Run on page load
-    initLightbox();
-
-    // Scroll Animation Logic
+    // Reveal animations on scroll [cite: 40, 72, 112]
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('active');
       });
     }, { threshold: 0.1 });
-
+    
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
   </script>
 
   <style>
-    /* Prevent images from stretching while remaining in a square box */
-    .pswp-link img {
-      object-fit: cover;
-      display: block;
+    /* Animation Styles [cite: 38, 74, 114] */
+    .reveal { 
+      opacity: 0; 
+      transform: translateY(20px); 
+      transition: all 0.8s ease-out; 
     }
-    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
+    .reveal.active { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
   </style>
 </MainLayout>

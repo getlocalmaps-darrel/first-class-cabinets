@@ -3,7 +3,23 @@
 import { Image } from 'astro:assets';
 // Import the local Nextdoor image
 import nextdoorImage from '../assets/nextdoor.png';
+
+// AI & SEO Schema for Google Rich Snippets (Star Ratings)
+const trustSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "First Class Woodworks",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "worstRating": "1",
+    "reviewCount": "25" 
+  }
+};
 ---
+
+<script type="application/ld+json" set:html={JSON.stringify(trustSchema)} />
 
 <section class="bg-white py-10 border-b border-zinc-100 shadow-xl relative z-20">
   <div class="max-w-7xl mx-auto px-6">
@@ -14,7 +30,7 @@ import nextdoorImage from '../assets/nextdoor.png';
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center opacity-100">
       
-      <a href="#" class="group flex flex-col items-center gap-3 grayscale hover:grayscale-0 transition duration-500">
+      <a href="https://share.google/SqwNXqIDyPVCR6tM5" target="_blank" class="group flex flex-col items-center gap-3 grayscale hover:grayscale-0 transition duration-500">
         <svg class="h-12 w-auto" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="5 Star Cabinet Maker Reviews on Google">
           <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
           <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
