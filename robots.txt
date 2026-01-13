@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Direct search engines to your sitemap once generated
+Sitemap: https://firstclasswoodworks.com/sitemap-index.xml
