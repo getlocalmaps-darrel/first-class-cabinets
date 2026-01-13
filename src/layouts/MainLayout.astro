@@ -15,17 +15,9 @@ import logoImage from '../assets/logo.png';
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link 
-      rel="preload" 
-      as="style" 
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-    />
-    <link 
-      rel="stylesheet" 
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" 
-      media="print" 
-      onload="this.media='all'"
-    />
+    
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" media="print" onload="this.media='all'" />
   </head>
   <body class="bg-white text-neutral-800 font-body antialiased pb-14 md:pb-0">
     
@@ -37,8 +29,8 @@ import logoImage from '../assets/logo.png';
                     src={logoImage} 
                     alt="First Class Woodworks" 
                     class="h-14 w-auto md:h-32 object-contain" 
-                    width={150} 
-                    height={50}
+                    width={120} 
+                    height={40}
                     loading="eager"
                     fetchpriority="high"
                     decoding="sync"
@@ -79,10 +71,10 @@ import logoImage from '../assets/logo.png';
     </div>
 
     <div class="fixed bottom-0 left-0 w-full h-14 z-[60] flex md:hidden shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-        <a href="sms:9519731265?&body=Hi, I'm interested in custom cabinets..." class="flex-1 bg-zinc-900 text-white flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm hover:bg-zinc-800 active:bg-black transition">
+        <a href="sms:9519731265?&body=Hi, I'm interested in custom cabinets..." class="flex-1 bg-zinc-900 text-white flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm">
             Text Us
         </a>
-        <a href="tel:9519731265" class="flex-1 bg-yellow-600 text-zinc-950 flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm hover:bg-yellow-700 active:bg-yellow-800 transition">
+        <a href="tel:9519731265" class="flex-1 bg-yellow-600 text-zinc-950 flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm">
             Call Now
         </a>
     </div>
@@ -146,6 +138,7 @@ import logoImage from '../assets/logo.png';
             });
         });
 
+        // FIXED: Passive listener and requestAnimationFrame to stop Forced Reflow
         let isScrolling = false;
         window.addEventListener('scroll', () => {
             if (!isScrolling) {

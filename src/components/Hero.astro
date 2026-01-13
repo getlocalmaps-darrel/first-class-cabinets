@@ -1,8 +1,6 @@
 ---
 // src/components/Hero.astro
 import { Image } from 'astro:assets';
-
-// Import BOTH images for Astro optimization
 import image1 from '../assets/hero-kitchen.jpg';
 import image2 from '../assets/kitchen-2.jpg';
 ---
@@ -14,6 +12,8 @@ import image2 from '../assets/kitchen-2.jpg';
       src={image1} 
       alt="Custom Kitchen Cabinets Murrieta" 
       class="w-full h-full object-cover" 
+      width={1200}
+      height={800}
       loading="eager" 
       fetchpriority="high"
       decoding="sync"
@@ -21,13 +21,15 @@ import image2 from '../assets/kitchen-2.jpg';
     <div class="absolute inset-0 bg-black/50"></div>
   </div>
 
-<div class="absolute inset-0 z-0 animate-slideshow delay-animation">
+  <div class="absolute inset-0 z-0 animate-slideshow delay-animation">
     <Image 
       src={image2} 
       alt="Finish Carpentry Murrieta" 
-      width={1200} height={800}
       class="w-full h-full object-cover" 
+      width={1200}
+      height={800}
       loading="eager"
+      decoding="async"
     />
     <div class="absolute inset-0 bg-black/50"></div>
   </div>
