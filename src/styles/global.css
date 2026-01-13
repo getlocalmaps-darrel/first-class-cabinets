@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
-/* THE CENTRALIZED REVEAL STYLES */
+/* 1. Reset all reveal animations to one place */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity; /* PERF: Tells the phone to use the GPU */
 }
+
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* 2. Standardized delays */
 .delay-100 { transition-delay: 100ms; }
 .delay-200 { transition-delay: 200ms; }
 .delay-300 { transition-delay: 300ms; }
-.delay-400 { transition-delay: 400ms; }
