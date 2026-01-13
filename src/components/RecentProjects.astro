@@ -1,5 +1,6 @@
 ---
 // src/components/RecentProjects.astro
+import { Image } from 'astro:assets';
 import img1 from '../assets/murrieta-kitchen-remodeling-project-1.jpg';
 import img2 from '../assets/murrieta-kitchen-remodeling-project-2.jpg';
 import img3 from '../assets/murrieta-kitchen-remodeling-project-3.jpg';
@@ -9,7 +10,7 @@ const projects = [
     title: "Los Alamos Hills Custom Kitchen",
     location: "Murrieta • Los Alamos Hills",
     description: "A premium 2025 kitchen remodel near Murrieta Oaks featuring custom-milled cabinetry and handcrafted fireplace built-ins.",
-    image: img1.src,
+    image: img1,
     link: "/projects/murrieta-home-remodel",
     date: "2025"
   },
@@ -17,7 +18,7 @@ const projects = [
     title: "Modern Build-In Project",
     location: "Temecula, CA",
     description: "New 2025 handcrafted cabinetry and finish carpentry details. Full project gallery coming soon.",
-    image: img2.src,
+    image: img2,
     link: "#",
     date: "2025"
   },
@@ -25,7 +26,7 @@ const projects = [
     title: "Custom Woodwork Suite",
     location: "Murrieta, CA",
     description: "Luxury bathroom cabinetry and custom trim work south of The Orchard. Full project gallery coming soon.",
-    image: img3.src,
+    image: img3,
     link: "#",
     date: "2025"
   }
@@ -52,16 +53,15 @@ const projects = [
       {projects.map((project, index) => (
         <a 
           href={project.link} 
-          /* FIX 2: Changed min-w from [85%] to [75vw]. 
-             This forces the next card to peek in by 25% of the screen width.
-          */
           class="min-w-[75vw] md:min-w-0 snap-center group block reveal" 
           style={`transition-delay: ${index * 150}ms`}
         >
           <div class="relative aspect-[16/10] overflow-hidden rounded-sm mb-6 shadow-2xl border border-zinc-800 bg-zinc-900">
-            <img 
+            <Image 
               src={project.image} 
               alt={`${project.title} - Custom Cabinetry Murrieta`} 
+              width={800}
+              height={500}
               loading="lazy"
               class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-90 group-hover:opacity-100"
             />
@@ -92,20 +92,8 @@ const projects = [
 </section>
 
 <script>
-    // FIX 4: Adjusted threshold so hidden images reveal sooner on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-      });
-    }, { 
-        threshold: 0.05, // Lower threshold means it triggers as soon as 5% is visible
-        rootMargin: '0px 100px 0px 100px' // Triggers 100px before it enters the screen
-    });
-
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
+    // PERFORMANCE FIX: Only keeping the scroll-bar script here. 
+    // The "Reveal" animations are now handled by the main layout!
     const slider = document.getElementById('project-slider');
     const progressBar = document.getElementById('scroll-progress');
     if (slider && progressBar) {
@@ -119,15 +107,5 @@ const projects = [
 <style>
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-  
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  /* Reveal styles are now global in MainLayout, removing redundant CSS here */
 </style>
