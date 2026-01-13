@@ -27,11 +27,12 @@ const serviceAreas = [
         <p class="text-zinc-400 text-lg leading-relaxed mb-8">
           Based in <strong>Murrieta, CA</strong>, First Class Woodworks provides 
           premium kitchen cabinet remodeling and finish carpentry to homeowners 
-          across Riverside County. We bring 2025 craftsmanship and in-house 
+          across Riverside County.
+          We bring 2025 craftsmanship and in-house 
           cabinet building to your doorstep, ensuring your project is handled 
           with the precision of a true finish carpenter.
         </p>
-        <a href="/contact" class="inline-block bg-yellow-600 text-white px-8 py-3 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition shadow-lg">
+        <a href="/contact" class="inline-block bg-yellow-600 text-zinc-950 px-8 py-3 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition shadow-lg">
           Check Availability In Your Area
         </a>
       </div>
@@ -56,33 +57,12 @@ const serviceAreas = [
         </div>
 
         <p class="mt-12 text-zinc-500 text-[11px] italic leading-relaxed border-t border-zinc-800 pt-6">
-          Not seeing your city? We frequently travel for custom whole-home 
-          cabinetry projects. Contact us to discuss your 2025 remodel.
+          Not seeing your city?
+          We frequently travel for custom whole-home 
+          cabinetry projects.
+          Contact us to discuss your 2025 remodel.
         </p>
       </div>
     </div>
   </div>
 </section>
-
-<script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('active');
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-</script>
-
-<style>
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .delay-200 { transition-delay: 0.2s; }
-</style>

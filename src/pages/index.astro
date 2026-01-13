@@ -7,7 +7,7 @@ import Intro from '../components/Intro.astro';
 import Services from '../components/Services.astro';
 import RecentProjects from '../components/RecentProjects.astro';
 import AreasServed from '../components/AreasServed.astro';
-import FAQ from '../components/FAQ.astro'; // <--- THIS WAS MISSING
+import FAQ from '../components/FAQ.astro';
 ---
 
 <MainLayout 
@@ -48,29 +48,3 @@ import FAQ from '../components/FAQ.astro'; // <--- THIS WAS MISSING
   </section>
 
 </MainLayout>
-
-<script>
-  // Global Reveal Observer for the homepage
-  const observerOptions = { threshold: 0.1 };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
-    });
-  }, observerOptions);
-  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-</script>
-
-<style>
-  /* Ensure reveal styles are available on index */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
