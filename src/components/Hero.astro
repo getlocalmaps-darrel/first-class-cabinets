@@ -2,7 +2,7 @@
 // src/components/Hero.astro
 import { Image } from 'astro:assets';
 
-// Import BOTH images
+// Import BOTH images for Astro optimization
 import image1 from '../assets/hero-kitchen.jpg';
 import image2 from '../assets/kitchen-2.jpg';
 ---
@@ -27,6 +27,7 @@ import image2 from '../assets/kitchen-2.jpg';
       alt="Finish Carpentry Murrieta" 
       class="w-full h-full object-cover" 
       loading="eager"
+      decoding="async"
     />
     <div class="absolute inset-0 bg-black/50"></div>
   </div>

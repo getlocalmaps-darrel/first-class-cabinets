@@ -1,9 +1,9 @@
 ---
+// src/components/Services.astro
 import { Image } from 'astro:assets';
 
-// 1. IMPORT YOUR IMAGES
 import service1 from '../assets/hero-kitchen.jpg';
-import builtinImage from '../assets/builtin-1.jpg'; 
+import builtinImage from '../assets/builtin-1.jpg';
 import bathroomImage from '../assets/bathroom-remodel.jpg';
 import fireplaceImage from '../assets/fireplace.jpg';
 ---
@@ -21,7 +21,7 @@ import fireplaceImage from '../assets/fireplace.jpg';
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       
       <a href="/services" class="reveal delay-100 group relative h-64 overflow-hidden rounded-md shadow-lg block">
-        <Image src={service1} alt="Custom Kitchen Cabinets" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+        <Image src={service1} alt="Custom Kitchen Cabinets" width={600} height={450} class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
         <div class="absolute bottom-0 left-0 w-full p-6">
             <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
@@ -30,7 +30,7 @@ import fireplaceImage from '../assets/fireplace.jpg';
       </a>
 
       <a href="/services" class="reveal delay-200 group relative h-64 overflow-hidden rounded-md shadow-lg block">
-        <Image src={builtinImage} alt="Custom Built-Ins" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+        <Image src={builtinImage} alt="Custom Built-Ins" width={600} height={450} class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
         <div class="absolute bottom-0 left-0 w-full p-6">
             <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
@@ -39,7 +39,7 @@ import fireplaceImage from '../assets/fireplace.jpg';
       </a>
 
       <a href="/services" class="reveal delay-300 group relative h-64 overflow-hidden rounded-md shadow-lg block">
-        <Image src={bathroomImage} alt="Custom Bathroom Cabinets" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+        <Image src={bathroomImage} alt="Custom Bathroom Cabinets" width={600} height={450} class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
         <div class="absolute bottom-0 left-0 w-full p-6">
             <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
@@ -48,7 +48,7 @@ import fireplaceImage from '../assets/fireplace.jpg';
       </a>
 
       <a href="/services" class="reveal delay-400 group relative h-64 overflow-hidden rounded-md shadow-lg block">
-        <Image src={fireplaceImage} alt="Handcrafted Fireplace Built-Ins" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+        <Image src={fireplaceImage} alt="Handcrafted Fireplace Built-Ins" width={600} height={450} class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
         <div class="absolute bottom-0 left-0 w-full p-6">
             <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Handcrafted</span>
@@ -61,11 +61,7 @@ import fireplaceImage from '../assets/fireplace.jpg';
 </section>
 
 <script>
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
+  const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -74,21 +70,12 @@ import fireplaceImage from '../assets/fireplace.jpg';
       }
     });
   }, observerOptions);
-  document.querySelectorAll('.reveal').forEach((el) => {
-    observer.observe(el);
-  });
+  document.querySelectorAll('.reveal').forEach((el) => { observer.observe(el); });
 </script>
 
 <style>
-  .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-  }
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+  .reveal.active { opacity: 1; transform: translateY(0); }
   .delay-100 { transition-delay: 0.1s; }
   .delay-200 { transition-delay: 0.2s; }
   .delay-300 { transition-delay: 0.3s; }
