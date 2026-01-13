@@ -7,7 +7,7 @@ import logoImage from '../assets/logo.png';
 ---
 
 <html lang="en" class="scroll-smooth">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
@@ -16,17 +16,8 @@ import logoImage from '../assets/logo.png';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <link 
-      rel="preload" 
-      as="style" 
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-    />
-    <link 
-      rel="stylesheet" 
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" 
-      media="print" 
-      onload="this.media='all'"
-    />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" media="print" onload="this.media='all'" />
   </head>
   <body class="bg-white text-neutral-800 font-body antialiased pb-14 md:pb-0">
     
@@ -154,30 +145,27 @@ import logoImage from '../assets/logo.png';
         });
 
         // FIXED: Added passive: true and requestAnimationFrame for 'Forced Reflow' fix
-        let isScrolling = false;
-        window.addEventListener('scroll', () => {
-            if (!isScrolling) {
-                window.requestAnimationFrame(() => {
-                    if (window.scrollY > 700) {
-                        navbar.classList.remove('absolute');
-                        navbar.classList.add('fixed', 'bg-black', 'shadow-xl', 'animate-fadeIn');
-                        navContainer.classList.remove('py-4');
-                        navContainer.classList.add('py-2');
-                        navGradient.classList.add('hidden'); 
-                        navLogo.classList.add('hidden'); 
-                    } else {
-                        navbar.classList.add('absolute');
-                        navbar.classList.remove('fixed', 'bg-black', 'shadow-xl', 'animate-fadeIn');
-                        navContainer.classList.add('py-4');
-                        navContainer.classList.remove('py-2');
-                        navGradient.classList.remove('hidden'); 
-                        navLogo.classList.remove('hidden');
-                    }
-                    isScrolling = false;
-                });
-                isScrolling = true;
-            }
-        }, { passive: true });
+let isScrolling = false;
+    window.addEventListener('scroll', () => {
+        if (!isScrolling) {
+            window.requestAnimationFrame(() => {
+                const scrollPos = window.scrollY; // Capture once to prevent layout thrashing
+                if (scrollPos > 700) {
+                    navbar.classList.add('fixed', 'bg-black', 'shadow-xl');
+                    navContainer.classList.add('py-2');
+                    navGradient.classList.add('hidden'); 
+                    navLogo.classList.add('hidden'); 
+                } else {
+                    navbar.classList.remove('fixed', 'bg-black', 'shadow-xl');
+                    navContainer.classList.remove('py-2');
+                    navGradient.classList.remove('hidden'); 
+                    navLogo.classList.remove('hidden');
+                }
+                isScrolling = false;
+            });
+            isScrolling = true;
+        }
+    }, { passive: true });
 
         const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
