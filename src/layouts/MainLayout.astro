@@ -7,7 +7,7 @@ import logoImage from '../assets/logo.png';
 ---
 
 <html lang="en" class="scroll-smooth">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
@@ -15,9 +15,19 @@ import logoImage from '../assets/logo.png';
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" media="print" onload="this.media='all'" />
-  </head>
+    
+    <link 
+      rel="preload" 
+      as="style" 
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    />
+    <link 
+      rel="stylesheet" 
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" 
+      media="print" 
+      onload="this.media='all'"
+    />
+</head>
   <body class="bg-white text-neutral-800 font-body antialiased pb-14 md:pb-0">
     
     <nav id="navbar" class="absolute top-0 w-full z-50 transition-all duration-300">
@@ -104,80 +114,83 @@ import logoImage from '../assets/logo.png';
         </div>
     </footer>
 
-    <script>
-        const navbar = document.getElementById('navbar');
-        const navContainer = document.getElementById('nav-container');
-        const navGradient = document.getElementById('nav-gradient');
-        const navLogo = document.getElementById('nav-logo');
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
+<script>
+    const navbar = document.getElementById('navbar');
+    const navContainer = document.getElementById('nav-container');
+    const navGradient = document.getElementById('nav-gradient');
+    const navLogo = document.getElementById('nav-logo');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            if (isHidden) {
-                mobileMenu.classList.remove('hidden');
-                setTimeout(() => {
-                    mobileMenu.classList.remove('opacity-0');
-                    mobileMenu.classList.add('opacity-100');
-                }, 10);
-                document.body.style.overflow = 'hidden';
-            } else {
-                mobileMenu.classList.remove('opacity-100');
-                mobileMenu.classList.add('opacity-0');
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                }, 300);
-                document.body.style.overflow = '';
-            }
+    // Mobile Menu Logic (UNCHANGED)
+    mobileMenuBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.remove('opacity-0');
+                mobileMenu.classList.add('opacity-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileMenu.classList.remove('opacity-100');
+            mobileMenu.classList.add('opacity-0');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+    });
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('opacity-100');
+            mobileMenu.classList.add('opacity-0');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
         });
+    });
 
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('opacity-100');
-                mobileMenu.classList.add('opacity-0');
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                }, 300);
-                document.body.style.overflow = '';
-            });
-        });
-
-        let isScrolling = false;
-        window.addEventListener('scroll', () => {
-            if (!isScrolling) {
-                window.requestAnimationFrame(() => {
-                    if (window.scrollY > 700) {
-                        navbar.classList.remove('absolute');
-                        navbar.classList.add('fixed', 'bg-black', 'shadow-xl', 'animate-fadeIn');
-                        navContainer.classList.remove('py-4');
-                        navContainer.classList.add('py-2');
-                        navGradient.classList.add('hidden'); 
-                        navLogo.classList.add('hidden'); 
-                    } else {
-                        navbar.classList.add('absolute');
-                        navbar.classList.remove('fixed', 'bg-black', 'shadow-xl', 'animate-fadeIn');
-                        navContainer.classList.add('py-4');
-                        navContainer.classList.remove('py-2');
-                        navGradient.classList.remove('hidden'); 
-                        navLogo.classList.remove('hidden');
-                    }
-                    isScrolling = false;
-                });
-                isScrolling = true;
-            }
-        });
-
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
+    // OPTIMIZED Scroll Logic (Fixed for Forced Reflow)
+    let isScrolling = false;
+    window.addEventListener('scroll', () => {
+        if (!isScrolling) {
+            window.requestAnimationFrame(() => {
+                if (window.scrollY > 700) {
+                    navbar.classList.remove('absolute');
+                    navbar.classList.add('fixed', 'bg-black', 'shadow-xl', 'animate-fadeIn');
+                    navContainer.classList.remove('py-4');
+                    navContainer.classList.add('py-2');
+                    navGradient.classList.add('hidden'); 
+                    navLogo.classList.add('hidden'); 
+                } else {
+                    navbar.classList.add('absolute');
+                    navbar.classList.remove('fixed', 'bg-black', 'shadow-xl', 'animate-fadeIn');
+                    navContainer.classList.add('py-4');
+                    navContainer.classList.remove('py-2');
+                    navGradient.classList.remove('hidden'); 
+                    navLogo.classList.remove('hidden');
                 }
+                isScrolling = false;
             });
-        }, observerOptions);
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-    </script>
+            isScrolling = true;
+        }
+    }, { passive: true }); // Performance fix for mobile scrolling
+
+    // Reveal Animation Logic (UNCHANGED)
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
   </body>
 </html>
 
