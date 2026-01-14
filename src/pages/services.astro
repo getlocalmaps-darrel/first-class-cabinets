@@ -4,18 +4,18 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
 
-// IMAGE IMPORTS
+// 1. YOUR SEO-OPTIMIZED IMAGES
 import service1 from '../assets/hero-kitchen.jpg';
 import builtinImage from '../assets/builtin-1.jpg';
 import bathroomImage from '../assets/bathroom-remodel.jpg';
 import fireplaceImage from '../assets/fireplace.jpg';
 ---
 
-<Layout title="Kitchen & Bathroom Remodeling Services | First Class Woodworks">
+<Layout title="Custom Woodworking Services | First Class Woodworks">
   <Navbar />
   
-  <main class="pt-24 bg-zinc-50">
-    <section class="py-16 text-zinc-900">
+  <main>
+    <section class="py-24 bg-zinc-50 text-zinc-900">
       <div class="max-w-7xl mx-auto px-6">
         
         <div class="text-center mb-12">
@@ -25,13 +25,14 @@ import fireplaceImage from '../assets/fireplace.jpg';
           <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full"></div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           
-          {/* Service 1 */}
-          <div class="group relative aspect-[4/5] overflow-hidden rounded-md shadow-lg bg-zinc-200">
+          <a href="/services" class="group relative h-64 overflow-hidden rounded-md shadow-lg block">
             <Image 
                 src={service1} 
                 alt="Custom Kitchen Cabinets Murrieta" 
+                width={600}
+                height={450}
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
@@ -39,13 +40,14 @@ import fireplaceImage from '../assets/fireplace.jpg';
                 <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
                 <h3 class="text-2xl font-serif font-bold text-white leading-none">Kitchen Cabinets</h3>
             </div>
-          </div>
+          </a>
 
-          {/* Service 2 */}
-          <div class="group relative aspect-[4/5] overflow-hidden rounded-md shadow-lg bg-zinc-200">
+          <a href="/services" class="group relative h-64 overflow-hidden rounded-md shadow-lg block">
             <Image 
                 src={builtinImage} 
-                alt="Custom Built-In Cabinetry" 
+                alt="Custom Built-In Cabinetry and Media Centers" 
+                width={600}
+                height={450}
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
@@ -53,13 +55,14 @@ import fireplaceImage from '../assets/fireplace.jpg';
                 <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
                 <h3 class="text-2xl font-serif font-bold text-white leading-none">Built-Ins</h3>
             </div>
-          </div>
+          </a>
 
-          {/* Service 3 */}
-          <div class="group relative aspect-[4/5] overflow-hidden rounded-md shadow-lg bg-zinc-200">
+          <a href="/services" class="group relative h-64 overflow-hidden rounded-md shadow-lg block">
             <Image 
                 src={bathroomImage} 
-                alt="Custom Bathroom Vanities" 
+                alt="Custom Bathroom Vanities and Cabinets" 
+                width={600}
+                height={450}
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
@@ -67,13 +70,14 @@ import fireplaceImage from '../assets/fireplace.jpg';
                 <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
                 <h3 class="text-2xl font-serif font-bold text-white leading-none">Bathroom Cabinets</h3>
             </div>
-          </div>
+          </a>
 
-          {/* Service 4 */}
-          <div class="group relative aspect-[4/5] overflow-hidden rounded-md shadow-lg bg-zinc-200">
+          <a href="/services" class="group relative h-64 overflow-hidden rounded-md shadow-lg block">
             <Image 
                 src={fireplaceImage} 
-                alt="Handcrafted Fireplace Built-Ins" 
+                alt="Handcrafted Fireplace Mantels and Built-Ins" 
+                width={600}
+                height={450}
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
@@ -81,7 +85,7 @@ import fireplaceImage from '../assets/fireplace.jpg';
                 <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Handcrafted</span>
                 <h3 class="text-2xl font-serif font-bold text-white leading-none">Fireplace Built-Ins</h3>
             </div>
-          </div>
+          </a>
 
         </div>
       </div>
