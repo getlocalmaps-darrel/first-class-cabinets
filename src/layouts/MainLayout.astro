@@ -8,28 +8,44 @@ import logoImage from '../assets/logo.png';
 
 <html lang="en" class="scroll-smooth">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content={description || "Murrieta's premier custom kitchen cabinet makers specializing in luxury cabinetry and bathroom remodeling."} />
+  <title>{title ? `${title} | Custom Kitchen Cabinets Murrieta` : "Custom Kitchen Cabinets Murrieta | First Class Woodworks"}</title>
+
+  <meta property="og:title" content="First Class Woodworks | Custom Cabinets Murrieta" />
+  <meta property="og:description" content="Handcrafted cabinetry and kitchen remodeling in the Temecula Valley. A+ Rated BBB Professional." />
+  <meta property="og:image" content="/assets/hero-kitchen.jpg" />
+  <meta property="og:url" content="https://www.firstclasswoodworks.com" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={description} />
-    <title>{title} | First Class Woodworks</title>
+  <link rel="canonical" href="https://www.firstclasswoodworks.com" />
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <style is:inline>
-      body { background-color: #ffffff; }
-      .reveal { opacity: 0; }
-    </style>
-  </head>
-  <body class="bg-white text-neutral-800 font-body antialiased pb-14 md:pb-0">
+  <style is:inline>
+    body { background-color: #ffffff; }
+    .reveal { opacity: 0; }
+  </style>
+</head>
+<body class="bg-white text-neutral-800 font-body antialiased pb-14 md:pb-0">
     
     <nav id="navbar" class="absolute top-0 w-full z-50 transition-all duration-300">
+        <div id="top-proof-bar" class="bg-black/40 py-2 border-b border-white/10 hidden md:block transition-opacity duration-300">
+          <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-[9px] uppercase tracking-[0.2em] font-bold text-white/70">
+            <span>A+ Rated BBB Accredited Professional</span>
+            <span>Licensed, Bonded & Insured Finish Carpentry</span>
+            <span>Serving Murrieta, Temecula & Menifee</span>
+          </div>
+        </div>
+
         <div id="nav-container" class="relative max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-            
             <a href="/" id="nav-logo-link" class="block z-50 relative transition-all duration-300">
                 <Image 
                     src={logoImage} 
@@ -54,12 +70,8 @@ import logoImage from '../assets/logo.png';
             </div>
 
             <div class="hidden md:flex items-center gap-4 relative z-50 ml-auto">
-                <a href="tel:9519731265" class="text-white font-bold hover:text-yellow-500 transition">
-                    951-973-1265
-                </a>
-                <a href="/contact" class="bg-yellow-600 text-zinc-950 px-6 py-2 rounded-sm font-bold text-sm uppercase tracking-wider hover:bg-yellow-700 transition">
-                    Get Quote
-                </a>
+                <a href="tel:9519731265" class="text-white font-bold hover:text-yellow-500 transition">951-973-1265</a>
+                <a href="/contact" class="bg-yellow-600 text-zinc-950 px-6 py-2 rounded-sm font-bold text-sm uppercase tracking-wider hover:bg-yellow-700 transition">Get Quote</a>
             </div>
 
             <button id="mobile-menu-btn" class="md:hidden relative z-50 text-white p-2 focus:outline-none ml-auto" aria-label="Open Navigation Menu">
@@ -80,8 +92,8 @@ import logoImage from '../assets/logo.png';
     </div>
 
     <div class="fixed bottom-0 left-0 w-full h-14 z-[60] flex md:hidden shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-        <a href="sms:9519731265?&body=Hi, I'm interested in custom cabinets..." class="flex-1 bg-zinc-900 text-white flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm hover:bg-zinc-800 active:bg-black transition">Text Us</a>
-        <a href="tel:9519731265" class="flex-1 bg-yellow-600 text-zinc-950 flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm hover:bg-yellow-700 active:bg-yellow-800 transition">Call Now</a>
+        <a href="sms:9519731265?&body=Hi, I'm interested in custom cabinets..." class="flex-1 bg-zinc-900 text-white flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm transition">Text Us</a>
+        <a href="tel:9519731265" class="flex-1 bg-yellow-600 text-zinc-950 flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm transition">Call Now</a>
     </div>
 
     <main><slot /></main>
@@ -101,11 +113,11 @@ import logoImage from '../assets/logo.png';
     const navbar = document.getElementById('navbar');
     const navContainer = document.getElementById('nav-container');
     const navGradient = document.getElementById('nav-gradient');
+    const proofBar = document.getElementById('top-proof-bar');
     const imageLogo = document.getElementById('nav-image-logo');
     const textLogo = document.getElementById('nav-text-logo');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
 
     mobileMenuBtn.addEventListener('click', () => {
         const isHidden = mobileMenu.classList.contains('hidden');
@@ -120,31 +132,23 @@ import logoImage from '../assets/logo.png';
         }
     });
 
-    // Modified Scroll Logic [cite: 92-95]
-    let lastKnownScrollPosition = 0;
-    let ticking = false;
-
+    // Modified Scroll Logic for Text Switch and Proof Bar [cite: 44-46]
     window.addEventListener('scroll', () => {
-      lastKnownScrollPosition = window.scrollY;
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          if (lastKnownScrollPosition > 100) {
+        if (window.scrollY > 100) {
             navbar.classList.add('fixed', 'bg-black', 'shadow-xl');
             navContainer.classList.add('py-2');
             navGradient.classList.add('hidden'); 
-            imageLogo.classList.add('hidden'); // Hide Image
-            textLogo.classList.remove('hidden'); // Show Text
-          } else {
+            if(proofBar) proofBar.classList.add('hidden');
+            imageLogo.classList.add('hidden'); 
+            textLogo.classList.remove('hidden'); 
+        } else {
             navbar.classList.remove('fixed', 'bg-black', 'shadow-xl');
             navContainer.classList.remove('py-2');
             navGradient.classList.remove('hidden'); 
-            imageLogo.classList.remove('hidden'); // Show Image
-            textLogo.classList.add('hidden'); // Hide Text
-          }
-          ticking = false;
-        });
-        ticking = true;
-      }
+            if(proofBar) proofBar.classList.remove('hidden');
+            imageLogo.classList.remove('hidden'); 
+            textLogo.classList.add('hidden'); 
+        }
     }, { passive: true });
 
     const observer = new IntersectionObserver((entries) => {
@@ -164,7 +168,7 @@ import logoImage from '../assets/logo.png';
   .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
   .reveal.active { opacity: 1; transform: translateY(0); }
 
-  /* Silver Shiny Gradient [cite: 101] */
+  /* Silver Shiny Gradient [cite: 53-54] */
   .silver-text {
     background: linear-gradient(to bottom, #cfd8dc 0%, #ffffff 50%, #90a4ae 100%);
     -webkit-background-clip: text;
