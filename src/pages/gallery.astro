@@ -19,7 +19,7 @@ import img13 from '../assets/murrieta-kitchen-remodeling-project-2.jpg';
 import img14 from '../assets/murrieta-kitchen-remodeling-project-3.jpg';
 import img15 from '../assets/murrieta-kitchen-remodeling-project-4.jpg';
 
-// Updated with unique coordinates for local SEO [cite: 54-56]
+// Updated with unique coordinates for local SEO 
 const galleryImages = [
   { thumb: img1, original: "/images/gallery/bathroom-remodel.jpg", alt: "Luxury Bathroom Remodel in Bear Creek", neighborhood: "Bear Creek", lat: "33.6062", lng: "-117.2520" },
   { thumb: img2, original: "/images/gallery/builtin-1.jpg", alt: "Custom Built-in Cabinetry in Greer Ranch", neighborhood: "Greer Ranch", lat: "33.6192", lng: "-117.1825" },
@@ -38,7 +38,7 @@ const galleryImages = [
   { thumb: img15, original: "/images/gallery/murrieta-kitchen-remodeling-project-4.jpg", alt: "Kitchen Remodel in Murrieta Oaks", neighborhood: "Murrieta Oaks", lat: "33.5708", lng: "-117.1958" },
 ];
 
-// 2. PROJECT-SPECIFIC SCHEMA (JSON-LD) - PRESERVED & GEO-ENHANCED 
+// 2. PROJECT-SPECIFIC SCHEMA (JSON-LD) [cite: 58-59]
 const gallerySchema = {
   "@context": "https://schema.org",
   "@type": "ImageGallery",
@@ -73,18 +73,19 @@ const gallerySchema = {
         </h1>
         <div class="h-1 w-24 bg-yellow-600 mx-auto rounded-full"></div>
         <p class="mt-6 text-zinc-500 max-w-2xl mx-auto italic">
-          Explore our recent custom kitchen installations throughout the Temecula Valley. [cite: 60]
+          Explore our recent custom kitchen installations throughout the Temecula Valley. [cite: 61]
         </p>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4" id="main-gallery">
         {galleryImages.map((img, index) => (
           <div class="reveal" style={`transition-delay: ${index * 50}ms`}>
+            {/* FIX: Dynamic width and height to prevent image stretching  */}
             <a 
               href={img.original} 
               class="pswp-link group relative aspect-square overflow-hidden rounded-sm shadow-sm bg-zinc-100 block cursor-zoom-in" 
-              data-pswp-width="2500" 
-              data-pswp-height="2000"
+              data-pswp-width={img.thumb.width} 
+              data-pswp-height={img.thumb.height}
             >
               <Image 
                 src={img.thumb} 
@@ -94,7 +95,7 @@ const gallerySchema = {
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />
-              <div class="absolute bottom-0 left-0 w-full p-2 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity">
+              <div class="absolute bottom-0 left-0 w-full p-2 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity [cite: 65]">
                  <p class="text-[9px] text-white font-bold uppercase tracking-widest">{img.neighborhood}</p>
               </div>
             </a>
@@ -111,16 +112,17 @@ const gallerySchema = {
       gallery: '#main-gallery',
       children: '.pswp-link',
       pswpModule: () => import('https://unpkg.com/photoswipe/dist/photoswipe.esm.js'),
+      // Keeps large images within laptop screen bounds 
       padding: { top: 30, bottom: 30, left: 20, right: 20 },
       bgOpacity: 0.9,
     });
-    lightbox.init();
+    lightbox.init(); [cite: 67]
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('active');
       });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el)); [cite: 68]
   </script>
 </MainLayout>
