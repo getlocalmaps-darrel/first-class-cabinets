@@ -2,7 +2,7 @@
 // src/pages/projects/menifee-lakes-remodel.astro
 import MainLayout from '../../layouts/MainLayout.astro';
 
-// 1. IMAGE IMPORTS - Matched to your git ls-files results
+// 1. IMAGE IMPORTS
 import img1 from '../../assets/header.JPG'; 
 import img2 from '../../assets/hero-kitchen.jpg';
 import img3 from '../../assets/kitchen-5.jpg';
@@ -15,7 +15,7 @@ const images = [
   { src: img4.src, alt: "Luxury kitchen renovation near Menifee Lakes Country Club" }
 ];
 
-// 2. SEO SCHEMA - Project Specific
+// 2. SEO SCHEMA
 const projectSchema = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
@@ -54,12 +54,6 @@ const projectSchema = {
   <article class="pt-32 pb-20 bg-white">
     <div class="max-w-6xl mx-auto px-6">
       
-      <nav class="mb-8 reveal">
-        <a href="/gallery" class="text-zinc-400 hover:text-yellow-600 text-xs font-bold uppercase tracking-widest transition flex items-center gap-2">
-          ← Back to Project Gallery
-        </a>
-      </nav>
-
       <header class="max-w-3xl mx-auto text-center mb-16 reveal">
         <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
           Menifee Lakes <span class="text-yellow-600 italic">Project</span>
