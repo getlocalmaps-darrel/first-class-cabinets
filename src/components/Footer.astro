@@ -1,57 +1,68 @@
 ---
 // src/components/Footer.astro
-const currentYear = 2025;
+const currentYear = 2025; 
 
-// JSON-LD Local Business Schema for Sitewide SEO/AI Signals
+// JSON-LD Schema including both Organization and LocalBusiness data
 const businessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "First Class Woodworks",
-  "image": "https://www.firstclasswoodworks.com/assets/hero-kitchen.jpg",
-  "telePhone": "(951) 973-1265",
-  "url": "https://www.firstclasswoodworks.com",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "24491 AVENIDA ARCONTE",
-    "addressLocality": "Murrieta",
-    "addressRegion": "CA",
-    "postalCode": "92562",
-    "addressCountry": "US"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Murrieta" },
-    { "@type": "City", "name": "Temecula" },
-    { "@type": "City", "name": "Wildomar" },
-    { "@type": "City", "name": "Menifee" }
-  ],
-  "sameAs": [
-    "https://www.facebook.com/people/FirstClass-WoodWorks/61551346499466/",
-    "https://www.instagram.com/first.classwoodworks/",
-    "https://www.youtube.com/@first.classwoodworks",
-    "https://www.tiktok.com/@firstclasswoodworks",
-    "https://www.bbb.org/us/ca/murrieta/profile/finish-carpentry/first-class-woodworks-inc-1126-850092730"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.firstclasswoodworks.com/#organization",
+      "name": "First Class Woodworks", 
+      "url": "https://www.firstclasswoodworks.com", 
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "24491 AVENIDA ARCONTE", 
+        "addressLocality": "Murrieta", 
+        "addressRegion": "CA", 
+        "postalCode": "92562", 
+        "addressCountry": "US" 
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.firstclasswoodworks.com/#localbusiness",
+      "name": "First Class Woodworks", 
+      "image": "https://www.firstclasswoodworks.com/assets/hero-kitchen.jpg", 
+      "telePhone": "(951) 973-1265", 
+      "url": "https://www.firstclasswoodworks.com", 
+      "priceRange": "$$", 
+      "areaServed": [
+        { "@type": "City", "name": "Murrieta" }, 
+        { "@type": "City", "name": "Temecula" }, 
+        { "@type": "City", "name": "Wildomar" }, [cite: 2]
+        { "@type": "City", "name": "Menifee" } [cite: 2]
+      ],
+      "sameAs": [
+        "https://www.facebook.com/people/FirstClass-WoodWorks/61551346499466/", [cite: 2]
+        "https://www.instagram.com/first.classwoodworks/", [cite: 2]
+        "https://www.youtube.com/@first.classwoodworks", [cite: 2]
+        "https://www.tiktok.com/@firstclasswoodworks", [cite: 2]
+        "https://www.bbb.org/us/ca/murrieta/profile/finish-carpentry/first-class-woodworks-inc-1126-850092730" [cite: 2]
+      ]
+    }
   ]
 };
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(businessSchema)} /> 
 
-<footer class="bg-zinc-950 border-t border-zinc-900 py-12">
-  <div class="max-w-7xl mx-auto px-6 text-center">
+<footer class="bg-zinc-950 border-t border-zinc-900 py-12"> 
+  <div class="max-w-7xl mx-auto px-6 text-center"> 
     
-    <div class="mb-8">
-      <h3 class="text-white font-serif text-xl font-bold tracking-widest uppercase">
-        First Class <span class="text-yellow-600">Woodworks</span>
+    <div class="mb-8"> 
+      <h3 class="text-white font-serif text-xl font-bold tracking-widest uppercase"> 
+        First Class <span class="text-yellow-600">Woodworks</span> 
       </h3>
-      <p class="text-zinc-500 text-[10px] uppercase tracking-[0.3em] mt-2">
-        Master Finish Carpentry • Murrieta, CA
+      <p class="text-zinc-500 text-[10px] uppercase tracking-[0.3em] mt-2"> 
+        Master Finish Carpentry • Murrieta, CA 
       </p>
     </div>
 
-    <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-zinc-500 text-xs font-medium">
-      <p>&copy; {currentYear} First Class Woodworks. All rights reserved.</p>
-      <span class="hidden md:block text-zinc-800">|</span>
+    <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-zinc-500 text-xs font-medium"> 
+      <p>&copy; {currentYear} First Class Woodworks. [cite: 4] All rights reserved.</p> [cite: 5]
+      <span class="hidden md:block text-zinc-800">|</span> [cite: 5]
       <p>
         Website Design and Chat GPT Marketing by 
         <a 
@@ -60,7 +71,7 @@ const businessSchema = {
           rel="noopener noreferrer" 
           class="text-zinc-400 hover:text-yellow-600 transition-colors duration-300 underline decoration-zinc-800 underline-offset-4"
         >
-          Murrieta Web Designs
+          Murrieta Web Designs [cite: 6]
         </a>
       </p>
     </div>
