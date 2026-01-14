@@ -2,11 +2,11 @@
 // src/pages/projects/bear-creek-remodel.astro
 import MainLayout from '../../layouts/MainLayout.astro';
 
-// 1. IMAGE IMPORTS (Using your available kitchen/fireplace assets)
-import img1 from '../../assets/kitchen-5.jpg'; 
-import img2 from '../../assets/hero-kitchen.jpg';
-import img3 from '../../assets/fireplace.jpg';
-import img4 from '../../assets/kitchen-2.jpg';
+// 1. IMAGE IMPORTS - Matched to your exact git ls-files results
+import img1 from '../../assets/kitchen pic.jpg'; // Space in name
+import img2 from '../../assets/kitchen 2.jpg'; // Space in name
+import img3 from '../../assets/kitchen 3.jpg'; // Space in name
+import img4 from '../../assets/fireplace.jpg';
 
 const images = [
   { src: img1.src, alt: "Luxury Custom Kitchen Cabinets Bear Creek Murrieta" },
@@ -15,7 +15,7 @@ const images = [
   { src: img4.src, alt: "Custom Woodwork and Finish Carpentry Murrieta CA" }
 ];
 
-// 2. PROJECT-SPECIFIC SCHEMA (Localized Geodata)
+// 2. PROJECT-SPECIFIC SCHEMA
 const projectSchema = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
@@ -26,19 +26,7 @@ const projectSchema = {
   "location": {
     "@type": "Place",
     "name": "Bear Creek Residence",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Bear Creek",
-      "addressLocality": "Murrieta",
-      "addressRegion": "CA",
-      "postalCode": "92562",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "33.6062",
-      "longitude": "-117.2520"
-    }
+    "geo": { "@type": "GeoCoordinates", "latitude": "33.6062", "longitude": "-117.2520" }
   }
 };
 ---
@@ -71,15 +59,13 @@ const projectSchema = {
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 items-start">
         <div class="lg:col-span-7 text-lg text-zinc-600 leading-relaxed space-y-6 reveal">
-          <h2 class="text-2xl font-serif font-bold text-zinc-900">High-End Finish Carpentry in Bear Creek</h2>
+          <h2 class="text-2xl font-serif font-bold text-zinc-900">Luxury Woodworking in Bear Creek</h2>
           <p>
-            Our team at <a href="/" class="text-yellow-600 font-bold hover:underline">First Class Woodworks</a> recently completed a comprehensive estate renovation within the private gates of <strong>Bear Creek</strong>. As a specialist <a href="/" class="text-yellow-600 font-bold hover:underline">kitchen remodeler in Murrieta</a>, we understand that luxury homes near the <strong>Bear Creek Golf Club</strong> require a level of precision that stock cabinetry simply cannot achieve.
+            This transformation by <a href="/" class="text-yellow-600 font-bold hover:underline">First Class Woodworks</a> took us into the private gates of <strong>Bear Creek</strong>. 
+            As a premier <strong>custom cabinet maker in Murrieta</strong>, we focus on high-ticket estate projects near the <strong>Bear Creek Golf Club</strong>.
           </p>
           <p>
-            This 2026 project focused on creating a unified design language between the chef’s kitchen and the formal living room. We utilized <strong>100% in-house custom cabinetry</strong> to build out a floor-to-ceiling fireplace surround and matching island, all handcrafted in our local Murrieta shop.
-          </p>
-          <p>
-            By integrating modern storage solutions with classic finish carpentry, we transformed this space into a functional masterpiece. Every box, drawer, and trim piece was engineered for the specific climate and architectural nuances of the 92562 area, providing a durable and timeless finish.
+            This 2026 project highlights our <strong>100% in-house custom cabinetry</strong>. We designed a unique layout that matches the upscale architecture of the Tenaja corridor, providing the 92562 area with furniture-grade finish carpentry.
           </p>
         </div>
         
@@ -88,15 +74,15 @@ const projectSchema = {
           <ul class="space-y-4">
             <li class="flex flex-col">
               <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Neighborhood</span>
-              <span class="text-zinc-800 font-bold">Bear Creek / Tenaja Corridor</span>
+              <span class="text-zinc-800 font-bold">Bear Creek Gated Community</span>
             </li>
             <li class="flex flex-col pt-2">
               <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Services</span>
-              <span class="text-zinc-800 font-bold">Estate Cabinetry & Custom Mantels</span>
+              <span class="text-zinc-800 font-bold">Kitchen & Estate Cabinetry</span>
             </li>
             <li class="flex flex-col pt-4">
                 <a href="/contact" class="text-center bg-zinc-900 text-white py-3 font-bold text-sm uppercase tracking-widest hover:bg-yellow-600 transition">
-                    Request Luxury Consultation
+                    Request Luxury Quote
                 </a>
             </li>
           </ul>
@@ -114,16 +100,16 @@ const projectSchema = {
       </div>
 
       <div class="pt-16 border-t border-zinc-100 flex flex-col md:flex-row justify-between items-center gap-8 reveal">
-        <div class="flex flex-col gap-4">
+         <div class="flex flex-col gap-4">
            <a href="/projects/murrieta-home-remodel" class="text-zinc-500 hover:text-yellow-600 text-xs font-bold uppercase tracking-widest transition flex items-center gap-2">
-             ← Previous: Los Alamos Hills Project
+             ← Previous: Los Alamos Hills
            </a>
            <a href="/projects/menifee-lakes-remodel" class="text-zinc-500 hover:text-yellow-600 text-xs font-bold uppercase tracking-widest transition flex items-center gap-2">
-             ← View: Menifee Lakes Project
+             ← View: Menifee Lakes
            </a>
         </div>
         <a href="/gallery" class="flex items-center gap-3 text-zinc-400 hover:text-zinc-900 font-bold uppercase tracking-widest text-xs transition">
-            Back to All Projects
+            View All Projects
         </a>
       </div>
     </div>
