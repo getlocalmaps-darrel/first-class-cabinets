@@ -28,54 +28,57 @@ import logoImage from '../assets/logo.png';
 <body class="bg-white text-neutral-800 font-body antialiased pb-14 md:pb-0">
     
     <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
-        <div id="nav-container" class="relative max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+        <div id="nav-container" class="relative max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between transition-all duration-300">
             
-            <a href="/" id="nav-logo-link" class="flex items-center gap-3 z-50 relative transition-all duration-300">
+            <a href="/" id="nav-logo" class="block z-50 relative transition-all duration-300">
                 <Image 
                     src={logoImage} 
                     alt="First Class Woodworks" 
-                    id="nav-logo-img"
-                    class="h-10 w-auto md:h-24 object-contain transition-all duration-300" 
+                    id="logo-img"
+                    class="h-14 w-auto md:h-28 object-contain transition-all duration-300" 
                     width={120} 
                     height={40}
                     loading="eager"
                     fetchpriority="high"
                 />
-                <span id="nav-business-name" class="text-white font-serif font-bold text-lg md:hidden hidden">First Class <span class="text-yellow-600">Woodworks</span></span>
             </a>
         
             <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 gap-8 items-center">
-                <a href="/" class="nav-link">HOME</a>
-                <a href="/services" class="nav-link">SERVICES</a>
-                <a href="/gallery" class="nav-link">GALLERY</a>
-                <a href="/contact" class="nav-link">CONTACT</a>
+                <a href="/" class="nav-link font-black text-sm tracking-widest uppercase">HOME</a>
+                <a href="/services" class="nav-link font-black text-sm tracking-widest uppercase">SERVICES</a>
+                <a href="/gallery" class="nav-link font-black text-sm tracking-widest uppercase">GALLERY</a>
+                <a href="/contact" class="nav-link font-black text-sm tracking-widest uppercase">CONTACT</a>
             </div>
 
-            <div class="hidden md:flex items-center gap-4 relative z-50">
-                <a href="tel:9519731265" class="text-white font-bold hover:text-yellow-500 transition">951-973-1265</a>
-                <a href="/contact" class="bg-yellow-600 text-zinc-950 px-6 py-2 rounded-sm font-bold text-sm uppercase tracking-wider hover:bg-yellow-700 transition">Get Quote</a>
+            <div class="hidden md:flex items-center gap-6 relative z-50 ml-auto">
+                <a href="tel:9519731265" class="text-white font-black hover:text-yellow-500 transition text-sm">
+                    951-973-1265
+                </a>
+                <a href="/contact" class="bg-yellow-600 text-zinc-950 px-6 py-2 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-yellow-700 transition">
+                    Get Quote
+                </a>
             </div>
 
-            <button id="mobile-menu-btn" class="md:hidden relative z-50 text-white p-2 focus:outline-none" aria-label="Open Navigation Menu">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+            <button id="mobile-menu-btn" class="md:hidden relative z-50 text-white p-2 focus:outline-none ml-auto" aria-label="Open Navigation Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-8 h-8">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
             </button>
         </div>
         
-        <div id="nav-gradient" class="absolute top-0 w-full h-full bg-gradient-to-b from-black/80 to-transparent -z-10 transition-opacity duration-300"></div>
+        <div id="nav-gradient" class="absolute top-0 w-full h-full bg-black/50 md:bg-black/40 -z-10 transition-opacity duration-300"></div>
     </nav>
 
     <div id="mobile-menu" class="fixed inset-0 bg-zinc-950 z-40 hidden flex flex-col items-center justify-center gap-8 opacity-0 transition-opacity duration-300">
-        <a href="/" class="mobile-link text-2xl font-serif text-white">HOME</a>
-        <a href="/services" class="mobile-link text-2xl font-serif text-white">SERVICES</a>
-        <a href="/gallery" class="mobile-link text-2xl font-serif text-white">GALLERY</a>
-        <a href="/contact" class="mobile-link text-2xl font-serif text-white">CONTACT</a>
+        <a href="/" class="mobile-link text-3xl font-serif font-bold text-white">HOME</a>
+        <a href="/services" class="mobile-link text-3xl font-serif font-bold text-white">SERVICES</a>
+        <a href="/gallery" class="mobile-link text-3xl font-serif font-bold text-white">GALLERY</a>
+        <a href="/contact" class="mobile-link text-3xl font-serif font-bold text-white">CONTACT</a>
     </div>
 
     <div class="fixed bottom-0 left-0 w-full h-14 z-[60] flex md:hidden shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-        <a href="sms:9519731265?&body=Hi, I'm interested in custom cabinets..." class="flex-1 bg-zinc-900 text-white flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm hover:bg-zinc-800 active:bg-black transition">Text Us</a>
-        <a href="tel:9519731265" class="flex-1 bg-yellow-600 text-zinc-950 flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm hover:bg-yellow-700 active:bg-yellow-800 transition">Call Now</a>
+        <a href="sms:9519731265?&body=Hi, I'm interested in custom cabinets..." class="flex-1 bg-zinc-900 text-white flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm transition">Text Us</a>
+        <a href="tel:9519731265" class="flex-1 bg-yellow-600 text-zinc-950 flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm transition">Call Now</a>
     </div>
 
     <main><slot /></main>
@@ -84,9 +87,9 @@ import logoImage from '../assets/logo.png';
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="font-serif text-2xl mb-4 text-white">First Class Woodworks</h2>
             <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-zinc-500 text-xs">
-                <p>© 2025 Serving Murrieta & Temecula Valley</p>
+                <p>© 2026 Serving Murrieta & Temecula Valley</p>
                 <span class="hidden md:block text-zinc-800">|</span>
-                <p>Website Design by <a href="https://murrietawebdesigns.com" target="_blank" class="text-zinc-400 hover:text-yellow-600 transition underline">Murrieta Web Designs</a></p>
+                <p>Website by <a href="https://murrietawebdesigns.com" target="_blank" class="text-zinc-400 hover:text-yellow-600 transition underline">Murrieta Web Designs</a></p>
             </div>
         </div>
     </footer>
@@ -94,29 +97,26 @@ import logoImage from '../assets/logo.png';
 <script>
     const navbar = document.getElementById('navbar');
     const navContainer = document.getElementById('nav-container');
-    const navGradient = document.getElementById('nav-gradient');
-    const navLogoImg = document.getElementById('nav-logo-img');
-    const navBusinessName = document.getElementById('nav-business-name');
+    const logoImg = document.getElementById('logo-img');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    // SCROLL LOGIC FIXED: Instead of hiding logo, we shrink it and add text if needed
+    // SCROLL LOGIC: Shrinks and adds solid background [cite: 92-95]
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            navbar.classList.add('bg-black', 'shadow-xl');
+        if (window.scrollY > 50) {
+            navbar.classList.add('bg-black/95', 'shadow-2xl');
             navContainer.classList.add('py-2');
-            navGradient.classList.add('opacity-0');
-            // Shrink logo on scroll instead of deleting it
-            navLogoImg.style.height = '40px';
+            logoImg.classList.add('md:h-20');
+            logoImg.classList.remove('md:h-28');
         } else {
-            navbar.classList.remove('bg-black', 'shadow-xl');
+            navbar.classList.remove('bg-black/95', 'shadow-2xl');
             navContainer.classList.remove('py-2');
-            navGradient.classList.remove('opacity-0');
-            navLogoImg.style.height = ''; 
+            logoImg.classList.remove('md:h-20');
+            logoImg.classList.add('md:h-28');
         }
     }, { passive: true });
 
-    // Mobile Menu Logic (Unchanged)
+    // Mobile Menu Logic [cite: 88-91]
     mobileMenuBtn.addEventListener('click', () => {
         const isHidden = mobileMenu.classList.contains('hidden');
         if (isHidden) {
@@ -129,9 +129,7 @@ import logoImage from '../assets/logo.png';
         } else {
             mobileMenu.classList.remove('opacity-100');
             mobileMenu.classList.add('opacity-0');
-            setTimeout(() => {
-                mobileMenu.classList.add('hidden');
-            }, 300);
+            setTimeout(() => { mobileMenu.classList.add('hidden'); }, 300);
             document.body.style.overflow = '';
         }
     });
@@ -144,7 +142,6 @@ import logoImage from '../assets/logo.png';
             }
         });
     }, { threshold: 0.1 });
-    
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 </script>
 </body>
