@@ -2,7 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import { Image } from 'astro:assets';
 
-// 1. IMPORT FOR FAST THUMBNAILS (Astro optimizes these from src/assets)
+// 1. IMPORT FOR FAST THUMBNAILS (Astro optimizes these from src/assets) [cite: 50-53]
 import img1 from '../assets/bathroom-remodel.jpg';
 import img2 from '../assets/builtin-1.jpg';
 import img3 from '../assets/builtin.jpg';
@@ -19,26 +19,26 @@ import img13 from '../assets/murrieta-kitchen-remodeling-project-2.jpg';
 import img14 from '../assets/murrieta-kitchen-remodeling-project-3.jpg';
 import img15 from '../assets/murrieta-kitchen-remodeling-project-4.jpg';
 
+// Updated with unique coordinates for local SEO [cite: 54-56]
 const galleryImages = [
-  { thumb: img1, original: "/images/gallery/bathroom-remodel.jpg", alt: "Luxury Bathroom Remodel in Bear Creek", neighborhood: "Bear Creek" },
-  { thumb: img2, original: "/images/gallery/builtin-1.jpg", alt: "Custom Built-in Cabinetry in Greer Ranch", neighborhood: "Greer Ranch" },
-  { thumb: img3, original: "/images/gallery/builtin.jpg", alt: "Handcrafted Home Office Built-ins in La Cresta", neighborhood: "La Cresta" },
-  { thumb: img4, original: "/images/gallery/fireplace.jpg", alt: "Custom Fireplace Surround in Copper Canyon", neighborhood: "Copper Canyon" },
-  { thumb: img5, original: "/images/gallery/hero-kitchen.jpg", alt: "Premium Kitchen Transformation in Morgan Hill", neighborhood: "Morgan Hill" },
-  { thumb: img6, original: "/images/gallery/kitchen 2.jpg", alt: "White Shaker Kitchen Cabinets in Wolf Creek", neighborhood: "Wolf Creek" },
-  { thumb: img7, original: "/images/gallery/kitchen 3.jpg", alt: "Modern Kitchen Island Design in De Luz", neighborhood: "De Luz" },
-  { thumb: img8, original: "/images/gallery/kitchen pic.jpg", alt: "Custom Woodworking Detail in The Orchard", neighborhood: "The Orchard" },
-  { thumb: img9, original: "/images/gallery/kitchen-2.jpg", alt: "Executive Kitchen Remodel in Santiago Estates", neighborhood: "Santiago Estates" },
-  { thumb: img10, original: "/images/gallery/kitchen-5.jpg", alt: "Traditional Cabinetry Craftsmanship in Meadowview", neighborhood: "Meadowview" },
-  { thumb: img11, original: "/images/gallery/kitchen4.jpg", alt: "Contemporary Kitchen Layout in Arroyo Vista", neighborhood: "Arroyo Vista" },
-  { thumb: img12, original: "/images/gallery/murrieta-kitchen-remodeling-project-1.jpg", alt: "Kitchen Remodel in Los Alamos Hills", neighborhood: "Los Alamos Hills" },
-  { thumb: img13, original: "/images/gallery/murrieta-kitchen-remodeling-project-2.jpg", alt: "Kitchen Project in Spencer's Crossing", neighborhood: "Spencer's Crossing" },
-  { thumb: img14, original: "/images/gallery/murrieta-kitchen-remodeling-project-3.jpg", alt: "Custom Woodwork in French Valley", neighborhood: "French Valley" },
-  { thumb: img15, original: "/images/gallery/murrieta-kitchen-remodeling-project-4.jpg", alt: "Kitchen Remodel in Murrieta Oaks", neighborhood: "Murrieta Oaks" },
+  { thumb: img1, original: "/images/gallery/bathroom-remodel.jpg", alt: "Luxury Bathroom Remodel in Bear Creek", neighborhood: "Bear Creek", lat: "33.6062", lng: "-117.2520" },
+  { thumb: img2, original: "/images/gallery/builtin-1.jpg", alt: "Custom Built-in Cabinetry in Greer Ranch", neighborhood: "Greer Ranch", lat: "33.6192", lng: "-117.1825" },
+  { thumb: img3, original: "/images/gallery/builtin.jpg", alt: "Handcrafted Home Office Built-ins in La Cresta", neighborhood: "La Cresta", lat: "33.5647", lng: "-117.3000" },
+  { thumb: img4, original: "/images/gallery/fireplace.jpg", alt: "Custom Fireplace Surround in Copper Canyon", neighborhood: "Copper Canyon", lat: "33.5858", lng: "-117.2500" },
+  { thumb: img5, original: "/images/gallery/hero-kitchen.jpg", alt: "Premium Kitchen Transformation in Morgan Hill", neighborhood: "Morgan Hill", lat: "33.4839", lng: "-117.0864" },
+  { thumb: img6, original: "/images/gallery/kitchen 2.jpg", alt: "White Shaker Kitchen Cabinets in Wolf Creek", neighborhood: "Wolf Creek", lat: "33.4725", lng: "-117.0942" },
+  { thumb: img7, original: "/images/gallery/kitchen 3.jpg", alt: "Modern Kitchen Island Design in De Luz", neighborhood: "De Luz", lat: "33.5111", lng: "-117.2583" },
+  { thumb: img8, original: "/images/gallery/kitchen pic.jpg", alt: "Custom Woodwork Detail in The Orchard", neighborhood: "The Orchard", lat: "33.5414", lng: "-117.1558" },
+  { thumb: img9, original: "/images/gallery/kitchen-2.jpg", alt: "Executive Kitchen Remodel in Santiago Estates", neighborhood: "Santiago Estates", lat: "33.4795", lng: "-117.0625" },
+  { thumb: img10, original: "/images/gallery/kitchen-5.jpg", alt: "Traditional Cabinetry Craftsmanship in Meadowview", neighborhood: "Meadowview", lat: "33.5186", lng: "-117.1281" },
+  { thumb: img11, original: "/images/gallery/kitchen4.jpg", alt: "Contemporary Kitchen Layout in Arroyo Vista", neighborhood: "Arroyo Vista", lat: "33.5939", lng: "-117.1656" },
+  { thumb: img12, original: "/images/gallery/murrieta-kitchen-remodeling-project-1.jpg", alt: "Kitchen Remodel in Los Alamos Hills", neighborhood: "Los Alamos Hills", lat: "33.5828", lng: "-117.1697" },
+  { thumb: img13, original: "/images/gallery/murrieta-kitchen-remodeling-project-2.jpg", alt: "Kitchen Project in Spencer's Crossing", neighborhood: "Spencer's Crossing", lat: "33.6164", lng: "-117.1122" },
+  { thumb: img14, original: "/images/gallery/murrieta-kitchen-remodeling-project-3.jpg", alt: "Custom Woodwork in French Valley", neighborhood: "French Valley", lat: "33.5975", lng: "-117.1086" },
+  { thumb: img15, original: "/images/gallery/murrieta-kitchen-remodeling-project-4.jpg", alt: "Kitchen Remodel in Murrieta Oaks", neighborhood: "Murrieta Oaks", lat: "33.5708", lng: "-117.1958" },
 ];
 
-// 2. PROJECT-SPECIFIC SCHEMA (JSON-LD) FOR AI & LOCAL SEARCH
-// This tells AI exactly where your work is located using neighborhood names[cite: 21, 31].
+// 2. PROJECT-SPECIFIC SCHEMA (JSON-LD) - PRESERVED & GEO-ENHANCED 
 const gallerySchema = {
   "@context": "https://schema.org",
   "@type": "ImageGallery",
@@ -50,7 +50,12 @@ const gallerySchema = {
     "description": img.alt,
     "contentLocation": { 
       "@type": "Place", 
-      "name": `${img.neighborhood}, Murrieta, CA` 
+      "name": `${img.neighborhood}, CA`,
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": img.lat,
+        "longitude": img.lng
+      }
     }
   }))
 };
@@ -58,7 +63,6 @@ const gallerySchema = {
 
 <MainLayout title="Project Gallery | Custom Cabinetry Murrieta">
   <link rel="stylesheet" href="https://unpkg.com/photoswipe/dist/photoswipe.css">
-  
   <script type="application/ld+json" set:html={JSON.stringify(gallerySchema)} />
 
   <section class="pt-32 pb-24 bg-white">
@@ -69,21 +73,19 @@ const gallerySchema = {
         </h1>
         <div class="h-1 w-24 bg-yellow-600 mx-auto rounded-full"></div>
         <p class="mt-6 text-zinc-500 max-w-2xl mx-auto italic">
-          Explore our recent custom kitchen and bathroom cabinetry installations throughout the Temecula Valley.
+          Explore our recent custom kitchen installations throughout the Temecula Valley. [cite: 60]
         </p>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4" id="main-gallery">
         {galleryImages.map((img, index) => (
           <div class="reveal" style={`transition-delay: ${index * 50}ms`}>
-            {/* The Link points to the original Geotagged file in /public/ [cite: 1, 120] */}
             <a 
               href={img.original} 
               class="pswp-link group relative aspect-square overflow-hidden rounded-sm shadow-sm bg-zinc-100 block cursor-zoom-in" 
-              data-pswp-width="1600" 
-              data-pswp-height="1200"
+              data-pswp-width="2500" 
+              data-pswp-height="2000"
             >
-              {/* The Image is the optimized thumbnail for speed  */}
               <Image 
                 src={img.thumb} 
                 alt={img.alt} 
@@ -105,34 +107,20 @@ const gallerySchema = {
   <script>
     import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
     
-    // Initialize PhotoSwipe Lightbox
     const lightbox = new PhotoSwipeLightbox({
       gallery: '#main-gallery',
       children: '.pswp-link',
-      pswpModule: () => import('https://unpkg.com/photoswipe/dist/photoswipe.esm.js')
+      pswpModule: () => import('https://unpkg.com/photoswipe/dist/photoswipe.esm.js'),
+      padding: { top: 30, bottom: 30, left: 20, right: 20 },
+      bgOpacity: 0.9,
     });
     lightbox.init();
 
-    // Reveal animations on scroll [cite: 40, 72, 112]
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('active');
       });
     }, { threshold: 0.1 });
-    
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
   </script>
-
-  <style>
-    /* Animation Styles [cite: 38, 74, 114] */
-    .reveal { 
-      opacity: 0; 
-      transform: translateY(20px); 
-      transition: all 0.8s ease-out; 
-    }
-    .reveal.active { 
-      opacity: 1; 
-      transform: translateY(0); 
-    }
-  </style>
 </MainLayout>
