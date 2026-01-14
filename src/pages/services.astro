@@ -4,77 +4,86 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
 
-// Image Imports - Ensure these exist in src/assets/
-import kitchenImg from '../assets/hero-kitchen.jpg';
-import builtinImg from '../assets/builtin-1.jpg';
-import bathImg from '../assets/bathroom-remodel.jpg';
-import fireplaceImg from '../assets/fireplace.jpg';
+// IMAGE IMPORTS
+import service1 from '../assets/hero-kitchen.jpg';
+import builtinImage from '../assets/builtin-1.jpg';
+import bathroomImage from '../assets/bathroom-remodel.jpg';
+import fireplaceImage from '../assets/fireplace.jpg';
 ---
 
-<Layout title="Expert Kitchen & Bathroom Remodeling | First Class Woodworks">
+<Layout title="Kitchen & Bathroom Remodeling Services | First Class Woodworks">
   <Navbar />
   
-  <main class="pt-24 bg-white">
-    <section class="py-16 bg-zinc-50 border-b border-zinc-100">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h1 class="text-4xl md:text-6xl font-serif font-bold text-zinc-900 mb-6">Our Services</h1>
-        <p class="text-lg text-zinc-600 leading-relaxed">
-          Master finish carpentry and high-end remodeling for homeowners in Murrieta and Temecula. We specialize in transforming your living spaces with custom-built solutions.
-        </p>
-      </div>
-    </section>
-
-    <section class="py-20">
-      <div class="max-w-7xl mx-auto px-6 space-y-24">
+  <main class="pt-24 bg-zinc-50">
+    <section class="py-16 text-zinc-900">
+      <div class="max-w-7xl mx-auto px-6">
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div class="aspect-video overflow-hidden rounded-xl shadow-xl order-1 md:order-2">
-            <Image src={kitchenImg} alt="Custom Kitchen Remodeling" class="w-full h-full object-cover" />
-          </div>
-          <div class="order-2 md:order-1">
-            <h2 class="text-3xl font-serif font-bold mb-4 text-zinc-900">Custom Kitchen Cabinets</h2>
-            <p class="text-zinc-600 mb-6 leading-relaxed">
-              Elevate your home with bespoke kitchen cabinetry designed for both beauty and functionality. From modern minimalist designs to classic traditional styles, we handle everything from design to final installation, ensuring every inch of your kitchen is utilized perfectly.
-            </p>
-          </div>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4 text-zinc-900">
+            Kitchen & Bathroom Remodeling Services
+          </h2>
+          <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full"></div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div class="aspect-video overflow-hidden rounded-xl shadow-xl">
-            <Image src={builtinImg} alt="Custom Built-In Cabinetry" class="w-full h-full object-cover" />
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          {/* Service 1 */}
+          <div class="group relative aspect-[4/5] overflow-hidden rounded-md shadow-lg bg-zinc-200">
+            <Image 
+                src={service1} 
+                alt="Custom Kitchen Cabinets Murrieta" 
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+            <div class="absolute bottom-0 left-0 w-full p-6">
+                <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
+                <h3 class="text-2xl font-serif font-bold text-white leading-none">Kitchen Cabinets</h3>
+            </div>
           </div>
-          <div>
-            <h2 class="text-3xl font-serif font-bold mb-4 text-zinc-900">Custom Built-Ins & Media Centers</h2>
-            <p class="text-zinc-600 mb-6 leading-relaxed">
-              Maximize your home's potential with custom storage solutions. Our built-in units are handcrafted to fit your space exactly, providing elegant storage for libraries, home offices, and state-of-the-art media centers that become the focal point of your living room.
-            </p>
-          </div>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div class="aspect-video overflow-hidden rounded-xl shadow-xl order-1 md:order-2">
-            <Image src={bathImg} alt="Bathroom Remodeling Services" class="w-full h-full object-cover" />
+          {/* Service 2 */}
+          <div class="group relative aspect-[4/5] overflow-hidden rounded-md shadow-lg bg-zinc-200">
+            <Image 
+                src={builtinImage} 
+                alt="Custom Built-In Cabinetry" 
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+            <div class="absolute bottom-0 left-0 w-full p-6">
+                <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
+                <h3 class="text-2xl font-serif font-bold text-white leading-none">Built-Ins</h3>
+            </div>
           </div>
-          <div class="order-2 md:order-1">
-            <h2 class="text-3xl font-serif font-bold mb-4 text-zinc-900">Bathroom Remodeling</h2>
-            <p class="text-zinc-600 mb-6 leading-relaxed">
-              Transform your bathroom into a spa-like retreat. We specialize in high-end vanity installations, custom storage cabinets, and complete wood finish details that bring warmth and luxury to your master bath or powder room.
-            </p>
-          </div>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div class="aspect-video overflow-hidden rounded-xl shadow-xl">
-            <Image src={fireplaceImg} alt="Custom Fireplace Mantels" class="w-full h-full object-cover" />
+          {/* Service 3 */}
+          <div class="group relative aspect-[4/5] overflow-hidden rounded-md shadow-lg bg-zinc-200">
+            <Image 
+                src={bathroomImage} 
+                alt="Custom Bathroom Vanities" 
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+            <div class="absolute bottom-0 left-0 w-full p-6">
+                <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
+                <h3 class="text-2xl font-serif font-bold text-white leading-none">Bathroom Cabinets</h3>
+            </div>
           </div>
-          <div>
-            <h2 class="text-3xl font-serif font-bold mb-4 text-zinc-900">Fireplace Mantels & Surrounds</h2>
-            <p class="text-zinc-600 mb-6 leading-relaxed">
-              A custom-built fireplace mantel adds immediate character and value to your home. We design and install handcrafted mantels and surrounding woodwork that perfectly complement your interior design and highlight your home's unique architecture.
-            </p>
-          </div>
-        </div>
 
+          {/* Service 4 */}
+          <div class="group relative aspect-[4/5] overflow-hidden rounded-md shadow-lg bg-zinc-200">
+            <Image 
+                src={fireplaceImage} 
+                alt="Handcrafted Fireplace Built-Ins" 
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+            <div class="absolute bottom-0 left-0 w-full p-6">
+                <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Handcrafted</span>
+                <h3 class="text-2xl font-serif font-bold text-white leading-none">Fireplace Built-Ins</h3>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   </main>
