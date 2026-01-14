@@ -2,17 +2,15 @@
 // src/pages/projects/bear-creek-remodel.astro
 import MainLayout from '../../layouts/MainLayout.astro';
 
-// 1. IMAGE IMPORTS - Matched to your exact git ls-files results
-import img1 from '../../assets/kitchen pic.jpg'; // Space in name
-import img2 from '../../assets/kitchen 2.jpg'; // Space in name
-import img3 from '../../assets/kitchen 3.jpg'; // Space in name
-import img4 from '../../assets/fireplace.jpg';
+// 1. IMAGE IMPORTS - Updated to include dimensions and removed 4th image
+import img1 from '../../assets/kitchen pic.jpg';
+import img2 from '../../assets/kitchen 2.jpg';
+import img3 from '../../assets/kitchen 3.jpg';
 
 const images = [
-  { src: img1.src, alt: "Luxury Custom Kitchen Cabinets Bear Creek Murrieta" },
-  { src: img2.src, alt: "Furniture Grade Cabinetry in Bear Creek Gated Community" },
-  { src: img3.src, alt: "Handcrafted Fireplace Mantel near Bear Creek Golf Club" },
-  { src: img4.src, alt: "Custom Woodwork and Finish Carpentry Murrieta CA" }
+  { src: img1.src, width: img1.width, height: img1.height, alt: "Luxury Custom Kitchen Cabinets Bear Creek Murrieta" },
+  { src: img2.src, width: img2.width, height: img2.height, alt: "Furniture Grade Cabinetry in Bear Creek Gated Community" },
+  { src: img3.src, width: img3.width, height: img3.height, alt: "Handcrafted Fireplace Mantel near Bear Creek Golf Club" }
 ];
 
 // 2. PROJECT-SPECIFIC SCHEMA
@@ -55,17 +53,18 @@ const projectSchema = {
             <span class="text-zinc-500">33.6062° N, 117.2520° W</span>
         </div>
         <div class="h-px w-24 bg-yellow-600/30 mx-auto mt-10"></div>
-      </header>
+    </header>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 items-start">
         <div class="lg:col-span-7 text-lg text-zinc-600 leading-relaxed space-y-6 reveal">
           <h2 class="text-2xl font-serif font-bold text-zinc-900">Luxury Woodworking in Bear Creek</h2>
           <p>
-            This transformation by <a href="/" class="text-yellow-600 font-bold hover:underline">First Class Woodworks</a> took us into the private gates of <strong>Bear Creek</strong>. 
+            This transformation by <a href="/" class="text-yellow-600 font-bold hover:underline">First Class Woodworks</a> took us into the private gates of <strong>Bear Creek</strong>.
             As a premier <strong>custom cabinet maker in Murrieta</strong>, we focus on high-ticket estate projects near the <strong>Bear Creek Golf Club</strong>.
           </p>
           <p>
-            This 2026 project highlights our <strong>100% in-house custom cabinetry</strong>. We designed a unique layout that matches the upscale architecture of the Tenaja corridor, providing the 92562 area with furniture-grade finish carpentry.
+            This 2026 project highlights our <strong>100% in-house custom cabinetry</strong>.
+            We designed a unique layout that matches the upscale architecture of the Tenaja corridor, providing the 92562 area with furniture-grade finish carpentry.
           </p>
         </div>
         
@@ -92,7 +91,12 @@ const projectSchema = {
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20" id="project-gallery">
         {images.map((img, index) => (
           <div class="reveal" style={`transition-delay: ${index * 100}ms`}>
-            <a href={img.src} class="pswp-project-link group relative aspect-[4/5] overflow-hidden rounded-sm shadow-sm cursor-zoom-in bg-zinc-200 block" data-pswp-width="1200" data-pswp-height="1600">
+            <a 
+              href={img.src} 
+              class="pswp-project-link group relative aspect-[4/5] overflow-hidden rounded-sm shadow-sm cursor-zoom-in bg-zinc-200 block" 
+              data-pswp-width={img.width} 
+              data-pswp-height={img.height}
+            >
               <img src={img.src} alt={img.alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             </a>
           </div>
@@ -103,7 +107,7 @@ const projectSchema = {
          <div class="flex flex-col gap-4">
            <a href="/projects/murrieta-home-remodel" class="text-zinc-500 hover:text-yellow-600 text-xs font-bold uppercase tracking-widest transition flex items-center gap-2">
              ← Previous: Los Alamos Hills
-           </a>
+          </a>
            <a href="/projects/menifee-lakes-remodel" class="text-zinc-500 hover:text-yellow-600 text-xs font-bold uppercase tracking-widest transition flex items-center gap-2">
              ← View: Menifee Lakes
            </a>
