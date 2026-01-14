@@ -1,0 +1,155 @@
+---
+// src/pages/projects/bear-creek-remodel.astro
+import MainLayout from '../../layouts/MainLayout.astro';
+
+// 1. IMAGE IMPORTS (Using your available kitchen/fireplace assets)
+import img1 from '../../assets/kitchen-5.jpg'; 
+import img2 from '../../assets/hero-kitchen.jpg';
+import img3 from '../../assets/fireplace.jpg';
+import img4 from '../../assets/kitchen-2.jpg';
+
+const images = [
+  { src: img1.src, alt: "Luxury Custom Kitchen Cabinets Bear Creek Murrieta" },
+  { src: img2.src, alt: "Furniture Grade Cabinetry in Bear Creek Gated Community" },
+  { src: img3.src, alt: "Handcrafted Fireplace Mantel near Bear Creek Golf Club" },
+  { src: img4.src, alt: "Custom Woodwork and Finish Carpentry Murrieta CA" }
+];
+
+// 2. PROJECT-SPECIFIC SCHEMA (Localized Geodata)
+const projectSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "First Class Woodworks - Bear Creek Project",
+  "description": "2026 Luxury custom cabinetry and fireplace surround project in the Bear Creek gated community, Murrieta.",
+  "url": "https://firstclasswoodworks.com/projects/bear-creek-remodel",
+  "datePublished": "2026-01-14",
+  "location": {
+    "@type": "Place",
+    "name": "Bear Creek Residence",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bear Creek",
+      "addressLocality": "Murrieta",
+      "addressRegion": "CA",
+      "postalCode": "92562",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "33.6062",
+      "longitude": "-117.2520"
+    }
+  }
+};
+---
+
+<MainLayout 
+  title="Bear Creek Kitchen Remodel | Luxury Custom Cabinetry 2026" 
+  description="Explore our 2026 luxury custom cabinetry project in the Bear Creek community of Murrieta, CA featuring handcrafted fireplace surrounds."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(projectSchema)} />
+
+  <link rel="stylesheet" href="https://unpkg.com/photoswipe/dist/photoswipe.css">
+
+  <article class="pt-32 pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <header class="max-w-3xl mx-auto text-center mb-16 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Bear Creek <span class="text-yellow-600 italic">Project</span>
+        </h1>
+        
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-xs font-bold uppercase tracking-[0.3em] text-zinc-400">
+            <span class="text-yellow-600">Murrieta, California</span>
+            <span class="hidden md:block text-zinc-200">•</span>
+            <span>Completed January 2026</span>
+            <span class="hidden md:block text-zinc-200">•</span>
+            <span class="text-zinc-500">33.6062° N, 117.2520° W</span>
+        </div>
+        <div class="h-px w-24 bg-yellow-600/30 mx-auto mt-10"></div>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 items-start">
+        <div class="lg:col-span-7 text-lg text-zinc-600 leading-relaxed space-y-6 reveal">
+          <h2 class="text-2xl font-serif font-bold text-zinc-900">High-End Finish Carpentry in Bear Creek</h2>
+          <p>
+            Our team at <a href="/" class="text-yellow-600 font-bold hover:underline">First Class Woodworks</a> recently completed a comprehensive estate renovation within the private gates of <strong>Bear Creek</strong>. As a specialist <a href="/" class="text-yellow-600 font-bold hover:underline">kitchen remodeler in Murrieta</a>, we understand that luxury homes near the <strong>Bear Creek Golf Club</strong> require a level of precision that stock cabinetry simply cannot achieve.
+          </p>
+          <p>
+            This 2026 project focused on creating a unified design language between the chef’s kitchen and the formal living room. We utilized <strong>100% in-house custom cabinetry</strong> to build out a floor-to-ceiling fireplace surround and matching island, all handcrafted in our local Murrieta shop.
+          </p>
+          <p>
+            By integrating modern storage solutions with classic finish carpentry, we transformed this space into a functional masterpiece. Every box, drawer, and trim piece was engineered for the specific climate and architectural nuances of the 92562 area, providing a durable and timeless finish.
+          </p>
+        </div>
+        
+        <div class="lg:col-span-5 bg-zinc-50 p-10 rounded-sm border border-zinc-100 reveal delay-200 sticky top-32">
+          <h3 class="font-serif font-bold text-2xl mb-6 text-zinc-900 underline decoration-yellow-600 underline-offset-8">Project Details</h3>
+          <ul class="space-y-4">
+            <li class="flex flex-col">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Neighborhood</span>
+              <span class="text-zinc-800 font-bold">Bear Creek / Tenaja Corridor</span>
+            </li>
+            <li class="flex flex-col pt-2">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Services</span>
+              <span class="text-zinc-800 font-bold">Estate Cabinetry & Custom Mantels</span>
+            </li>
+            <li class="flex flex-col pt-4">
+                <a href="/contact" class="text-center bg-zinc-900 text-white py-3 font-bold text-sm uppercase tracking-widest hover:bg-yellow-600 transition">
+                    Request Luxury Consultation
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20" id="project-gallery">
+        {images.map((img, index) => (
+          <div class="reveal" style={`transition-delay: ${index * 100}ms`}>
+            <a href={img.src} class="pswp-project-link group relative aspect-[4/5] overflow-hidden rounded-sm shadow-sm cursor-zoom-in bg-zinc-200 block" data-pswp-width="1200" data-pswp-height="1600">
+              <img src={img.src} alt={img.alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <div class="pt-16 border-t border-zinc-100 flex flex-col md:flex-row justify-between items-center gap-8 reveal">
+        <div class="flex flex-col gap-4">
+           <a href="/projects/murrieta-home-remodel" class="text-zinc-500 hover:text-yellow-600 text-xs font-bold uppercase tracking-widest transition flex items-center gap-2">
+             ← Previous: Los Alamos Hills Project
+           </a>
+           <a href="/projects/menifee-lakes-remodel" class="text-zinc-500 hover:text-yellow-600 text-xs font-bold uppercase tracking-widest transition flex items-center gap-2">
+             ← View: Menifee Lakes Project
+           </a>
+        </div>
+        <a href="/gallery" class="flex items-center gap-3 text-zinc-400 hover:text-zinc-900 font-bold uppercase tracking-widest text-xs transition">
+            Back to All Projects
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <script>
+    import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#project-gallery',
+      children: '.pswp-project-link',
+      pswpModule: () => import('https://unpkg.com/photoswipe/dist/photoswipe.esm.js')
+    });
+    lightbox.init();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+
+  <style>
+    .pswp-project-link img { object-fit: cover; display: block; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .delay-200 { transition-delay: 0.2s; }
+  </style>
+</MainLayout>
