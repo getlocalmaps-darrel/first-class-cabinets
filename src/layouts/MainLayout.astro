@@ -8,10 +8,10 @@ import logoImage from '../assets/logo.png';
 
 <html lang="en" class="scroll-smooth">
 <head>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
@@ -24,64 +24,67 @@ import logoImage from '../assets/logo.png';
       body { background-color: #ffffff; }
       .reveal { opacity: 0; }
     </style>
-</head>
-<body class="bg-white text-neutral-800 font-body antialiased pb-14 md:pb-0">
+  </head>
+  <body class="bg-white text-neutral-800 font-body antialiased pb-14 md:pb-0">
     
-    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
-        <div id="nav-container" class="relative max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between transition-all duration-300">
+    <nav id="navbar" class="absolute top-0 w-full z-50 transition-all duration-300">
+        <div id="nav-container" class="relative max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
             
-            <a href="/" id="nav-logo" class="block z-50 relative transition-all duration-300">
-                <Image 
-                    src={logoImage} 
-                    alt="First Class Woodworks" 
-                    id="logo-img"
-                    class="h-14 w-auto md:h-28 object-contain transition-all duration-300" 
-                    width={120} 
-                    height={40}
-                    loading="eager"
-                    fetchpriority="high"
-                />
+            <a href="/" id="nav-logo" class="block z-50 relative transition-opacity duration-300 text-white font-serif font-bold text-xl tracking-tight">
+                First Class <span class="text-yellow-600">Woodworks</span>
             </a>
         
             <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 gap-8 items-center">
-                <a href="/" class="nav-link font-black text-sm tracking-widest uppercase">HOME</a>
-                <a href="/services" class="nav-link font-black text-sm tracking-widest uppercase">SERVICES</a>
-                <a href="/gallery" class="nav-link font-black text-sm tracking-widest uppercase">GALLERY</a>
-                <a href="/contact" class="nav-link font-black text-sm tracking-widest uppercase">CONTACT</a>
+                <a href="/" class="nav-link">HOME</a>
+                <a href="/services" class="nav-link">SERVICES</a>
+                <a href="/gallery" class="nav-link">GALLERY</a>
+                <a href="/contact" class="nav-link">CONTACT</a>
             </div>
 
-            <div class="hidden md:flex items-center gap-6 relative z-50 ml-auto">
-                <a href="tel:9519731265" class="text-white font-black hover:text-yellow-500 transition text-sm">
+            <div class="hidden md:flex items-center gap-4 relative z-50 ml-auto">
+                <a href="tel:9519731265" class="text-white font-bold hover:text-yellow-500 transition">
                     951-973-1265
                 </a>
-                <a href="/contact" class="bg-yellow-600 text-zinc-950 px-6 py-2 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-yellow-700 transition">
+                <a href="/contact" class="bg-yellow-600 text-zinc-950 px-6 py-2 rounded-sm font-bold text-sm uppercase tracking-wider hover:bg-yellow-700 transition">
                     Get Quote
                 </a>
             </div>
 
             <button id="mobile-menu-btn" class="md:hidden relative z-50 text-white p-2 focus:outline-none ml-auto" aria-label="Open Navigation Menu">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-8 h-8">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
             </button>
         </div>
         
-        <div id="nav-gradient" class="absolute top-0 w-full h-full bg-black/50 md:bg-black/40 -z-10 transition-opacity duration-300"></div>
+        <div id="nav-gradient" class="absolute top-0 w-full h-full bg-gradient-to-b from-black/80 to-transparent -z-10 transition-opacity duration-300"></div>
     </nav>
 
     <div id="mobile-menu" class="fixed inset-0 bg-zinc-950 z-40 hidden flex flex-col items-center justify-center gap-8 opacity-0 transition-opacity duration-300">
-        <a href="/" class="mobile-link text-3xl font-serif font-bold text-white">HOME</a>
-        <a href="/services" class="mobile-link text-3xl font-serif font-bold text-white">SERVICES</a>
-        <a href="/gallery" class="mobile-link text-3xl font-serif font-bold text-white">GALLERY</a>
-        <a href="/contact" class="mobile-link text-3xl font-serif font-bold text-white">CONTACT</a>
+        <a href="/" class="mobile-link text-2xl font-serif text-white">HOME</a>
+        <a href="/services" class="mobile-link text-2xl font-serif text-white">SERVICES</a>
+        <a href="/gallery" class="mobile-link text-2xl font-serif text-white">GALLERY</a>
+        <a href="/contact" class="mobile-link text-2xl font-serif text-white">CONTACT</a>
     </div>
 
     <div class="fixed bottom-0 left-0 w-full h-14 z-[60] flex md:hidden shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-        <a href="sms:9519731265?&body=Hi, I'm interested in custom cabinets..." class="flex-1 bg-zinc-900 text-white flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm transition">Text Us</a>
-        <a href="tel:9519731265" class="flex-1 bg-yellow-600 text-zinc-950 flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm transition">Call Now</a>
+        <a href="sms:9519731265?&body=Hi, I'm interested in custom cabinets..." class="flex-1 bg-zinc-900 text-white flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm hover:bg-zinc-800 active:bg-black transition">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.017-7.03.05-1.584.233-2.707 1.626-2.707 3.228V16.741z" />
+            </svg>
+            Text Us
+        </a>
+        <a href="tel:9519731265" class="flex-1 bg-yellow-600 text-zinc-950 flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-sm hover:bg-yellow-700 active:bg-yellow-800 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            Call Now
+        </a>
     </div>
 
-    <main><slot /></main>
+    <main>
+      <slot /> 
+    </main>
 
     <footer class="bg-black text-white py-12 text-center border-t border-zinc-900 pb-20 md:pb-12">
         <div class="max-w-7xl mx-auto px-6">
@@ -89,7 +92,12 @@ import logoImage from '../assets/logo.png';
             <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-zinc-500 text-xs">
                 <p>© 2026 Serving Murrieta & Temecula Valley</p>
                 <span class="hidden md:block text-zinc-800">|</span>
-                <p>Website by <a href="https://murrietawebdesigns.com" target="_blank" class="text-zinc-400 hover:text-yellow-600 transition underline">Murrieta Web Designs</a></p>
+                <p>
+                    Website Design and Chat GPT Marketing by 
+                    <a href="https://murrietawebdesigns.com" target="_blank" class="text-zinc-400 hover:text-yellow-600 transition underline underline-offset-4 decoration-zinc-800">
+                        Murrieta Web Designs
+                    </a>
+                </p>
             </div>
         </div>
     </footer>
@@ -97,26 +105,13 @@ import logoImage from '../assets/logo.png';
 <script>
     const navbar = document.getElementById('navbar');
     const navContainer = document.getElementById('nav-container');
-    const logoImg = document.getElementById('logo-img');
+    const navGradient = document.getElementById('nav-gradient');
+    const navLogo = document.getElementById('nav-logo');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    // SCROLL LOGIC: Shrinks and adds solid background [cite: 92-95]
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('bg-black/95', 'shadow-2xl');
-            navContainer.classList.add('py-2');
-            logoImg.classList.add('md:h-20');
-            logoImg.classList.remove('md:h-28');
-        } else {
-            navbar.classList.remove('bg-black/95', 'shadow-2xl');
-            navContainer.classList.remove('py-2');
-            logoImg.classList.remove('md:h-20');
-            logoImg.classList.add('md:h-28');
-        }
-    }, { passive: true });
-
-    // Mobile Menu Logic [cite: 88-91]
+    // Your Original Mobile Menu Logic (Preserved)
     mobileMenuBtn.addEventListener('click', () => {
         const isHidden = mobileMenu.classList.contains('hidden');
         if (isHidden) {
@@ -129,20 +124,98 @@ import logoImage from '../assets/logo.png';
         } else {
             mobileMenu.classList.remove('opacity-100');
             mobileMenu.classList.add('opacity-0');
-            setTimeout(() => { mobileMenu.classList.add('hidden'); }, 300);
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
             document.body.style.overflow = '';
         }
     });
 
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('opacity-100');
+            mobileMenu.classList.add('opacity-0');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Your Original Optimized Scroll Logic (Preserved)
+    let lastKnownScrollPosition = 0;
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+      lastKnownScrollPosition = window.scrollY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (lastKnownScrollPosition > 700) {
+            navbar.classList.add('fixed', 'bg-black', 'shadow-xl');
+            navContainer.classList.add('py-2');
+            navGradient.classList.add('hidden'); 
+            // Logo text is kept visible to maintain layout balance
+          } else {
+            navbar.classList.remove('fixed', 'bg-black', 'shadow-xl');
+            navContainer.classList.remove('py-2');
+            navGradient.classList.remove('hidden'); 
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Your Centralized Reveal Logic (Preserved)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
               entry.target.classList.add('active');
-              observer.unobserve(entry.target);
+              observer.unobserve(entry.target); 
             }
         });
     }, { threshold: 0.1 });
+    
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 </script>
+
+<style is:global>
+  :root {
+    --font-serif: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+  }
+  h1, h2, h3, h4, h5 { font-family: var(--font-serif); }
+  body { font-family: var(--font-body); }
+
+  .nav-link {
+    color: white;
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+  }
+  .nav-link:hover {
+    color: #EAB308; 
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+</style>
 </body>
 </html>
