@@ -4,22 +4,6 @@ import { Image } from 'astro:assets';
 // Import the local Nextdoor image
 import nextdoorImage from '../assets/nextdoor.png';
 
-// AI & SEO Schema for Google Rich Snippets (Star Ratings)
-const trustSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "First Class Woodworks",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "bestRating": "5",
-    "worstRating": "1",
-    "reviewCount": "25" 
-  }
-};
----
-
-<script type="application/ld+json" set:html={JSON.stringify(trustSchema)} />
 
 <section class="bg-white py-10 border-b border-zinc-100 shadow-xl relative z-20">
   <div class="max-w-7xl mx-auto px-6">

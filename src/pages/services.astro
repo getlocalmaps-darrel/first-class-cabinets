@@ -3,7 +3,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import { Image } from 'astro:assets';
 
-// Import images (Reusing your existing assets)
+// Import images
 import kitchenImage from '../assets/hero-kitchen.jpg';
 import bathroomImage from '../assets/bathroom-remodel.jpg';
 import builtinImage from '../assets/builtin-1.jpg';
@@ -30,18 +30,20 @@ const pageDescription = "Explore our premium woodworking services in Murrieta. F
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <div class="reveal">
-          <div class="relative rounded-sm overflow-hidden shadow-2xl">
-             <Image src={kitchenImage} alt="Custom Kitchen Remodel Murrieta" class="w-full h-auto object-cover hover:scale-105 transition duration-700" />
+          <div class="relative rounded-sm overflow-hidden shadow-2xl aspect-video">
+             <Image src={kitchenImage} alt="Custom Kitchen Remodel Murrieta" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
           </div>
         </div>
+      
         <div class="reveal delay-200">
           <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Custom Kitchen Remodeling</h2>
           <div class="h-1 w-20 bg-yellow-600 rounded-full mb-6"></div>
           <p class="text-zinc-600 mb-6 leading-relaxed">
-            The kitchen is the heart of your home, and standard box-store cabinets often fail to utilize the unique dimensions of Murrieta tract homes. We build <strong>true custom cabinetry</strong> that maximizes storage to the very inch.
+            The kitchen is the heart of your home, and standard box-store cabinets often fail to utilize the unique dimensions of Murrieta tract homes.
+            We build <strong>true custom cabinetry</strong> that maximizes storage to the very inch.
           </p>
           <p class="text-zinc-600 mb-8 leading-relaxed">
-            Our process includes 3D rendering, selection of premium hardwoods (Maple, White Oak, Walnut), and durable conversion varnish finishes that stand up to daily family life. We handle everything from the center island to hidden pantry solutions.
+            Our process includes 3D rendering, selection of premium hardwoods, and durable finishes that stand up to daily family life.
           </p>
           <ul class="space-y-2 mb-8">
             <li class="flex items-center gap-3 text-sm font-bold text-zinc-800">
@@ -51,10 +53,6 @@ const pageDescription = "Explore our premium woodworking services in Murrieta. F
             <li class="flex items-center gap-3 text-sm font-bold text-zinc-800">
               <svg class="w-5 h-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
               Custom trash pull-outs & spice racks
-            </li>
-            <li class="flex items-center gap-3 text-sm font-bold text-zinc-800">
-              <svg class="w-5 h-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Floor-to-ceiling pantry systems
             </li>
           </ul>
         </div>
@@ -69,15 +67,16 @@ const pageDescription = "Explore our premium woodworking services in Murrieta. F
           <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Entertainment Centers & Built-Ins</h2>
           <div class="h-1 w-20 bg-yellow-600 rounded-full mb-6"></div>
           <p class="text-zinc-600 mb-6 leading-relaxed">
-            Turn that empty niche in your living room into a stunning focal point. Many homes in the Temecula Valley feature awkward drywall niches; we specialize in filling these spaces with seamless, built-in cabinetry that looks like it was part of the original architecture.
+            Turn that empty niche in your living room into a stunning focal point.
+            We specialize in filling awkward niches with seamless cabinetry that looks original to the architecture.
           </p>
           <p class="text-zinc-600 mb-8 leading-relaxed">
-            Whether you need a full wall library, a home office setup, or a floating media console, our finish carpenters scribe every piece to your walls for a flawless fit that free-standing furniture cannot achieve.
+            Whether a wall library or a floating media console, our carpenters scribe every piece to your walls for a flawless fit.
           </p>
         </div>
         <div class="order-1 md:order-2 reveal delay-200">
-          <div class="relative rounded-sm overflow-hidden shadow-2xl">
-             <Image src={builtinImage} alt="Custom Entertainment Center Built-in" class="w-full h-auto object-cover hover:scale-105 transition duration-700" />
+          <div class="relative rounded-sm overflow-hidden shadow-2xl aspect-video">
+             <Image src={builtinImage} alt="Custom Entertainment Center Built-in" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
           </div>
         </div>
       </div>
@@ -88,18 +87,18 @@ const pageDescription = "Explore our premium woodworking services in Murrieta. F
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <div class="reveal">
-          <div class="relative rounded-sm overflow-hidden shadow-2xl">
-             <Image src={bathroomImage} alt="Luxury Bathroom Vanity" class="w-full h-auto object-cover hover:scale-105 transition duration-700" />
+          <div class="relative rounded-sm overflow-hidden shadow-2xl aspect-video">
+             <Image src={bathroomImage} alt="Luxury Bathroom Vanity" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
           </div>
         </div>
         <div class="reveal delay-200">
           <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Bathroom Vanities & Storage</h2>
           <div class="h-1 w-20 bg-yellow-600 rounded-full mb-6"></div>
           <p class="text-zinc-600 mb-6 leading-relaxed">
-            Upgrade your master bath or powder room with furniture-grade vanities. Unlike store-bought vanities that come in fixed sizes (30", 48", 60"), we build to the exact width of your walls, eliminating those annoying gaps where dust collects.
+            Upgrade your master bath with furniture-grade vanities built to the exact width of your walls, eliminating gaps where dust collects.
           </p>
           <p class="text-zinc-600 mb-8 leading-relaxed">
-            We can design floating vanities for a modern look or traditional face-frame cabinets for timeless elegance. We also specialize in linen towers and over-the-toilet storage solutions to maximize small bathroom footprints.
+            We specialize in both modern floating vanities and traditional face-frame cabinets, as well as luxury linen towers.
           </p>
         </div>
       </div>
@@ -113,18 +112,18 @@ const pageDescription = "Explore our premium woodworking services in Murrieta. F
           <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Fireplace Mantels & Surrounds</h2>
           <div class="h-1 w-20 bg-yellow-600 rounded-full mb-6"></div>
           <p class="text-zinc-600 mb-6 leading-relaxed">
-            A custom mantel is often the centerpiece of a home. We craft solid wood mantels, shiplap surrounds, and full floor-to-ceiling fireplace build-outs. 
+            A custom mantel is often the centerpiece of a home. We craft solid wood mantels, shiplap surrounds, and full floor-to-ceiling fireplace build-outs.
           </p>
           <p class="text-zinc-600 mb-8 leading-relaxed">
-            We work with you to match existing trim work in your house or create a completely new style, from rustic reclaimed wood looks to clean, painted shaker styles common in modern farmhouse designs.
+            We work with you to match existing trim work or create a completely new style, from rustic reclaimed wood to clean shaker styles.
           </p>
           <a href="/contact" class="inline-block bg-yellow-600 text-white px-8 py-3 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition shadow-lg">
             Get A Design Quote
           </a>
         </div>
         <div class="order-1 md:order-2 reveal delay-200">
-          <div class="relative rounded-sm overflow-hidden shadow-2xl">
-             <Image src={fireplaceImage} alt="Custom Fireplace Mantel" class="w-full h-auto object-cover hover:scale-105 transition duration-700" />
+          <div class="relative rounded-sm overflow-hidden shadow-2xl aspect-video">
+             <Image src={fireplaceImage} alt="Custom Fireplace Mantel" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
           </div>
         </div>
       </div>
@@ -144,28 +143,3 @@ const pageDescription = "Explore our premium woodworking services in Murrieta. F
   </section>
 
 </MainLayout>
-
-<script>
-  // Simple Reveal Animation
-  const observerOptions = { threshold: 0.1 };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
-    });
-  }, observerOptions);
-  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-</script>
-
-<style>
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
