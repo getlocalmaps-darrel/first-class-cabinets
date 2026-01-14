@@ -1,7 +1,8 @@
 ---
+// src/components/RecentProjects.astro
 import { Image } from 'astro:assets';
 import img1 from '../assets/murrieta-kitchen-remodeling-project-1.jpg';
-import img2 from '../assets/header.JPG'; // Must be uppercase JPG
+import img2 from '../assets/header.JPG'; // This matches your git ls-files result
 import img3 from '../assets/murrieta-kitchen-remodeling-project-3.jpg';
 
 const projects = [
@@ -29,7 +30,6 @@ const projects = [
     link: "/projects/bear-creek-remodel",
     date: "2026"
   }
-
 ];
 ---
 
@@ -38,11 +38,11 @@ const projects = [
     
     <div class="text-center max-w-4xl mx-auto mb-16 reveal">
       <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight">
-        Recent Kitchen Cabinet Remodeling Projects
+        Recent Custom Kitchen & Cabinetry Projects
       </h2>
       <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-6"></div>
       <p class="text-zinc-400 font-bold uppercase tracking-[0.2em] text-xs">
-        Crafting Luxury Woodwork Across the Temecula Valley • 2026 Portfolio
+        Master Craftsmanship Across Murrieta & Menifee • 2026 Portfolio
       </p>
     </div>
 
@@ -59,7 +59,7 @@ const projects = [
           <div class="relative aspect-[16/10] overflow-hidden rounded-sm mb-6 shadow-2xl border border-zinc-800 bg-zinc-900">
             <Image 
               src={project.image} 
-              alt={`${project.title} - Custom Cabinetry Murrieta`} 
+              alt={`${project.title} - First Class Woodworks`} 
               width={800}
               height={500}
               loading="lazy"
@@ -72,7 +72,7 @@ const projects = [
                 <span class="text-yellow-600 font-bold text-[10px] uppercase tracking-[0.15em]">{project.location}</span>
                 <span class="text-zinc-500 font-bold text-[10px] uppercase tracking-[0.15em]">{project.date}</span>
             </div>
-            <h3 class="text-2xl font-serif font-bold text-white mb-4 group-hover:text-yellow-500 transition leading-snug">
+            <h3 class="text-2xl font-serif font-bold text-white mb-4 group-hover:text-yellow-600 transition leading-snug">
                 {project.title}
             </h3>
             <div class="inline-flex items-center gap-3 text-yellow-600 font-bold text-[11px] uppercase tracking-[0.2em] border-b-2 border-yellow-600/30 pb-1 group-hover:border-yellow-600 transition-all">
