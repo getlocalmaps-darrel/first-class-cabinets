@@ -1,4 +1,7 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
 
 // 1. YOUR SEO-OPTIMIZED IMAGES
@@ -8,78 +11,86 @@ import bathroomImage from '../assets/bathroom-remodel.jpg';
 import fireplaceImage from '../assets/fireplace.jpg';
 ---
 
-<section class="py-16 bg-zinc-50 text-zinc-900">
-  <div class="max-w-7xl mx-auto px-6">
-    
-    <div class="reveal text-center mb-12">
-      <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4 text-zinc-900">
-        Kitchen & Bathroom Remodeling Services
-      </h2>
-      <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full"></div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      
-      <a href="/services" class="reveal delay-100 group relative h-64 overflow-hidden rounded-md shadow-lg block">
-        <Image 
-            src={service1} 
-            alt="Custom Kitchen Cabinets Murrieta" 
-            width={600}
-            height={450}
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
-        <div class="absolute bottom-0 left-0 w-full p-6">
-            <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
-            <h3 class="text-2xl font-serif font-bold text-white leading-none">Kitchen Cabinets</h3>
+<Layout title="Custom Woodworking Services | First Class Woodworks">
+  <Navbar />
+  
+  <main>
+    <section class="py-24 bg-zinc-50 text-zinc-900">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4 text-zinc-900">
+            Kitchen & Bathroom Remodeling Services
+          </h2>
+          <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full"></div>
         </div>
-      </a>
 
-      <a href="/services" class="reveal delay-200 group relative h-64 overflow-hidden rounded-md shadow-lg block">
-        <Image 
-            src={builtinImage} 
-            alt="Custom Built-In Cabinetry and Media Centers" 
-            width={600}
-            height={450}
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
-        <div class="absolute bottom-0 left-0 w-full p-6">
-            <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
-            <h3 class="text-2xl font-serif font-bold text-white leading-none">Built-Ins</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          
+          <a href="/services" class="group relative h-64 overflow-hidden rounded-md shadow-lg block">
+            <Image 
+                src={service1} 
+                alt="Custom Kitchen Cabinets Murrieta" 
+                width={600}
+                height={450}
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+            <div class="absolute bottom-0 left-0 w-full p-6">
+                <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
+                <h3 class="text-2xl font-serif font-bold text-white leading-none">Kitchen Cabinets</h3>
+            </div>
+          </a>
+
+          <a href="/services" class="group relative h-64 overflow-hidden rounded-md shadow-lg block">
+            <Image 
+                src={builtinImage} 
+                alt="Custom Built-In Cabinetry and Media Centers" 
+                width={600}
+                height={450}
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+            <div class="absolute bottom-0 left-0 w-full p-6">
+                <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
+                <h3 class="text-2xl font-serif font-bold text-white leading-none">Built-Ins</h3>
+            </div>
+          </a>
+
+          <a href="/services" class="group relative h-64 overflow-hidden rounded-md shadow-lg block">
+            <Image 
+                src={bathroomImage} 
+                alt="Custom Bathroom Vanities and Cabinets" 
+                width={600}
+                height={450}
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+            <div class="absolute bottom-0 left-0 w-full p-6">
+                <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
+                <h3 class="text-2xl font-serif font-bold text-white leading-none">Bathroom Cabinets</h3>
+            </div>
+          </a>
+
+          <a href="/services" class="group relative h-64 overflow-hidden rounded-md shadow-lg block">
+            <Image 
+                src={fireplaceImage} 
+                alt="Handcrafted Fireplace Mantels and Built-Ins" 
+                width={600}
+                height={450}
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+            <div class="absolute bottom-0 left-0 w-full p-6">
+                <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Handcrafted</span>
+                <h3 class="text-2xl font-serif font-bold text-white leading-none">Fireplace Built-Ins</h3>
+            </div>
+          </a>
+
         </div>
-      </a>
+      </div>
+    </section>
+  </main>
 
-      <a href="/services" class="reveal delay-300 group relative h-64 overflow-hidden rounded-md shadow-lg block">
-        <Image 
-            src={bathroomImage} 
-            alt="Custom Bathroom Vanities and Cabinets" 
-            width={600}
-            height={450}
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
-        <div class="absolute bottom-0 left-0 w-full p-6">
-            <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Custom</span>
-            <h3 class="text-2xl font-serif font-bold text-white leading-none">Bathroom Cabinets</h3>
-        </div>
-      </a>
-
-      <a href="/services" class="reveal delay-400 group relative h-64 overflow-hidden rounded-md shadow-lg block">
-        <Image 
-            src={fireplaceImage} 
-            alt="Handcrafted Fireplace Mantels and Built-Ins" 
-            width={600}
-            height={450}
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
-        <div class="absolute bottom-0 left-0 w-full p-6">
-            <span class="text-yellow-500 font-bold tracking-widest text-[10px] uppercase mb-1 block">Handcrafted</span>
-            <h3 class="text-2xl font-serif font-bold text-white leading-none">Fireplace Built-Ins</h3>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
+  <Footer />
+</Layout>
