@@ -3,7 +3,7 @@
 import { Image } from 'astro:assets';
 // Import the local Nextdoor image
 import nextdoorImage from '../assets/nextdoor.png';
-
+---
 
 <section class="bg-white py-10 border-b border-zinc-100 shadow-xl relative z-20">
   <div class="max-w-7xl mx-auto px-6">
@@ -14,6 +14,7 @@ import nextdoorImage from '../assets/nextdoor.png';
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center opacity-100">
       
+      {/* Google Reviews */}
       <a href="https://share.google/SqwNXqIDyPVCR6tM5" target="_blank" class="group flex flex-col items-center gap-3 grayscale hover:grayscale-0 transition duration-500">
         <svg class="h-12 w-auto" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="5 Star Cabinet Maker Reviews on Google">
           <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -31,16 +32,17 @@ import nextdoorImage from '../assets/nextdoor.png';
         <span class="text-[10px] font-bold text-zinc-400 group-hover:text-zinc-800 transition">5.0 RATING</span>
       </a>
 
+      {/* Yelp */}
       <a href="#" class="group flex flex-col items-center gap-3 transition duration-500">
-    <img 
-    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Yelp_Logo.svg/200px-Yelp_Logo.svg.png" 
-    alt="Top Rated Cabinetry on Yelp" 
-    width="150" 
-    height="50"
-    loading="lazy"
-    decoding="async"
-    class="h-12 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition duration-500"
-/>
+        <img 
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Yelp_Logo.svg/200px-Yelp_Logo.svg.png" 
+            alt="Top Rated Cabinetry on Yelp" 
+            width="150" 
+            height="50"
+            loading="lazy"
+            decoding="async"
+            class="h-12 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition duration-500"
+        />
         <div class="flex gap-0.5">
             <svg class="w-4 h-4 text-zinc-300 group-hover:text-[#D32323] fill-current transition duration-300" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
             <svg class="w-4 h-4 text-zinc-300 group-hover:text-[#D32323] fill-current transition duration-300" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -51,6 +53,7 @@ import nextdoorImage from '../assets/nextdoor.png';
         <span class="text-[10px] font-bold text-zinc-400 group-hover:text-zinc-800 transition">TOP RATED</span>
       </a>
 
+      {/* Facebook */}
       <a href="https://www.facebook.com/people/FirstClass-WoodWorks/61551346499466/" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-3 grayscale hover:grayscale-0 transition duration-500">
         <svg class="h-12 w-auto" fill="#1877F2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Highly Recommended Cabinet Maker on Facebook">
             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -65,16 +68,17 @@ import nextdoorImage from '../assets/nextdoor.png';
         <span class="text-[10px] font-bold text-zinc-400 group-hover:text-zinc-800 transition">RECOMMENDED</span>
       </a>
 
+      {/* Nextdoor */}
       <a href="#" class="group flex flex-col items-center gap-3 transition duration-500">
-<Image 
-    src={nextdoorImage} 
-    alt="Top Rated Cabinet Builder on Nextdoor" 
-    width={250} 
-    height={94}
-    loading="lazy"
-    decoding="async"
-    class="h-12 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition duration-500"
-/>
+        <Image 
+            src={nextdoorImage} 
+            alt="Top Rated Cabinet Builder on Nextdoor" 
+            width={250} 
+            height={94}
+            loading="lazy"
+            decoding="async"
+            class="h-12 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition duration-500"
+        />
         <div class="flex gap-0.5">
             <svg class="w-4 h-4 text-zinc-300 group-hover:text-[#00B246] fill-current transition duration-300" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
             <svg class="w-4 h-4 text-zinc-300 group-hover:text-[#00B246] fill-current transition duration-300" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
