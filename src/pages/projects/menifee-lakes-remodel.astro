@@ -2,8 +2,8 @@
 // src/pages/projects/menifee-lakes-remodel.astro
 import MainLayout from '../../layouts/MainLayout.astro';
 
-// 1. IMAGE IMPORTS (Updated for Menifee project)
-import img1 from '../../assets/header.jpg';
+// 1. IMAGE IMPORTS - Matched to your git ls-files results
+import img1 from '../../assets/header.JPG'; // Corrected uppercase extension
 import img2 from '../../assets/hero-kitchen.jpg';
 import img3 from '../../assets/kitchen-5.jpg';
 import img4 from '../../assets/kitchen-2.jpg';
@@ -15,11 +15,11 @@ const images = [
   { src: img4.src, alt: "Luxury kitchen renovation near Menifee Lakes Country Club" }
 ];
 
-// 2. SEO SCHEMA UPDATED FOR MENIFEE
+// 2. SEO SCHEMA - Project Specific (Excluding duplicate Org/LocalBusiness) [cite: 41, 42]
 const projectSchema = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
-  "name": "First Class Woodworks",
+  "name": "First Class Woodworks - Menifee Lakes Project",
   "description": "2026 Custom kitchen remodeling and handcrafted cabinetry project in Menifee Lakes, CA.",
   "url": "https://firstclasswoodworks.com/projects/menifee-lakes-remodel",
   "datePublished": "2026-01-14",
@@ -42,8 +42,7 @@ const projectSchema = {
   },
   "areaServed": [
     { "@type": "City", "name": "Menifee" },
-    { "@type": "Neighborhood", "name": "Menifee Lakes" },
-    { "@type": "Neighborhood", "name": "Heritage Lake" }
+    { "@type": "Neighborhood", "name": "Menifee Lakes" }
   ],
   "keywords": "Custom Kitchen Cabinets Menifee, Kitchen Remodeling Menifee Lakes, Cabinet Maker Menifee CA"
 };
@@ -51,7 +50,7 @@ const projectSchema = {
 
 <MainLayout 
   title="Menifee Lakes Kitchen Remodel | Custom Cabinetry 2026" 
-  description="View our latest custom kitchen cabinetry project in Menifee Lakes. Expert kitchen remodeling near Menifee Lakes Country Club and Newport Road."
+  description="Explore our 2026 custom kitchen cabinetry and remodeling project in Menifee Lakes, CA near the Menifee Lakes Country Club."
 >
   <script type="application/ld+json" set:html={JSON.stringify(projectSchema)} />
 
@@ -79,17 +78,13 @@ const projectSchema = {
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 items-start">
         <div class="lg:col-span-7 text-lg text-zinc-600 leading-relaxed space-y-6 reveal">
           <p>
-            Our latest 2026 transformation took us to the beautiful <strong>Menifee Lakes</strong> community, 
-            located just east of the <strong>Menifee Lakes Country Club</strong> and minutes from the <strong>Menifee Countryside Marketplace</strong>.
+            Our latest 2026 transformation took us to the heart of <strong>Menifee Lakes</strong>, 
+            nestled just east of the <strong>Menifee Lakes Country Club</strong> and south of <strong>Newport Road</strong>.
           </p>
           <p>
-            The project involved a complete kitchen overhaul south of <strong>Newport Road</strong>. 
-            We replaced dated builder-grade units with <strong>100% in-house custom cabinetry</strong>, specifically engineered 
-            to maximize the unique layout of this Menifee home.
-          </p>
-          <p>
-            By focusing on precision finish carpentry, we created a high-end aesthetic that stands out in the Menifee Valley, 
-            blending modern functionality with timeless craftsmanship.
+            The homeowners sought to maximize their kitchen's footprint near <strong>Menifee Countryside Marketplace</strong>. 
+            We replaced standard units with <strong>100% in-house custom cabinetry</strong>, featuring precision-milled trim work and 
+            engineering that utilizes every inch of space[cite: 48, 49].
           </p>
         </div>
         
@@ -97,16 +92,12 @@ const projectSchema = {
           <h3 class="font-serif font-bold text-2xl mb-6 text-zinc-900 underline decoration-yellow-600 underline-offset-8">Project Details</h3>
           <ul class="space-y-4">
             <li class="flex flex-col">
-              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Location</span>
-              <span class="text-zinc-800 font-bold">Menifee Lakes, CA</span>
-            </li>
-            <li class="flex flex-col pt-2">
               <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Services</span>
-              <span class="text-zinc-800 font-bold">Custom Kitchen Cabinetry & Design</span>
+              <span class="text-zinc-800 font-bold">Kitchen & Cabinetry Remodel</span>
             </li>
             <li class="flex flex-col pt-4">
                 <a href="/contact" class="text-center bg-zinc-900 text-white py-3 font-bold text-sm uppercase tracking-widest hover:bg-yellow-600 transition">
-                    Request Similar Project
+                    Get a Quote
                 </a>
             </li>
           </ul>
