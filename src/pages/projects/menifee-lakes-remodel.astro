@@ -2,17 +2,17 @@
 // src/pages/projects/menifee-lakes-remodel.astro
 import MainLayout from '../../layouts/MainLayout.astro';
 
-// 1. IMAGE IMPORTS - Updated to lowercase to match your Git rename
-import img1 from '../../assets/header.jpg'; 
+// 1. IMAGE IMPORTS - Updated to include dimensions to prevent distortion
+import img1 from '../../assets/header.jpg';
 import img2 from '../../assets/hero-kitchen.jpg';
 import img3 from '../../assets/kitchen-5.jpg';
 import img4 from '../../assets/kitchen-2.jpg';
 
 const images = [
-  { src: img1.src, alt: "Custom Kitchen Cabinets Menifee Lakes 2026" },
-  { src: img2.src, alt: "Modern Kitchen Remodeling near Menifee Countryside Marketplace" },
-  { src: img3.src, alt: "Handcrafted cabinetry details in Menifee CA" },
-  { src: img4.src, alt: "Luxury kitchen renovation near Menifee Lakes Country Club" }
+  { src: img1.src, width: img1.width, height: img1.height, alt: "Custom Kitchen Cabinets Menifee Lakes 2026" },
+  { src: img2.src, width: img2.width, height: img2.height, alt: "Modern Kitchen Remodeling near Menifee Countryside Marketplace" },
+  { src: img3.src, width: img3.width, height: img3.height, alt: "Handcrafted cabinetry details in Menifee CA" },
+  { src: img4.src, width: img4.width, height: img4.height, alt: "Luxury kitchen renovation near Menifee Lakes Country Club" }
 ];
 
 // 2. SEO SCHEMA
@@ -67,18 +67,18 @@ const projectSchema = {
             <span class="text-zinc-500">33.6648° N, 117.1628° W</span>
         </div>
         <div class="h-px w-24 bg-yellow-600/30 mx-auto mt-10"></div>
-      </header>
+    </header>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 items-start">
         <div class="lg:col-span-7 text-lg text-zinc-600 leading-relaxed space-y-6 reveal">
           <h2 class="text-2xl font-serif font-bold text-zinc-900">Elevating Craftsmanship in the Heart of Menifee Lakes</h2>
           <p>
-            Our latest 2026 transformation took us to the heart of the <strong>Menifee Lakes</strong> community[cite: 46]. 
-            As a premier <a href="/" class="text-yellow-600 font-bold hover:underline">custom cabinet maker in Menifee</a>, we specialize in high-end projects situated near the <strong>Menifee Lakes Country Club</strong>[cite: 46].
+            Our latest 2026 transformation took us to the heart of the <strong>Menifee Lakes</strong> community.
+            As a premier <a href="/" class="text-yellow-600 font-bold hover:underline">custom cabinet maker in Menifee</a>, we specialize in high-end projects situated near the <strong>Menifee Lakes Country Club</strong>.
           </p>
           <p>
-            Located just south of <strong>Newport Road</strong> and near the <strong>Menifee Countryside Marketplace</strong>, this project highlights our commitment to serving homeowners with furniture-grade finish carpentry[cite: 47]. 
-            The owners sought <strong>100% in-house custom cabinetry</strong> to replace aging builder-grade units, opting for premium solid wood boxes and handcrafted faces[cite: 48].
+            Located just south of <strong>Newport Road</strong> and near the <strong>Menifee Countryside Marketplace</strong>, this project highlights our commitment to serving homeowners with furniture-grade finish carpentry.
+            The owners sought <strong>100% in-house custom cabinetry</strong> to replace aging builder-grade units, opting for premium solid wood boxes and handcrafted faces.
           </p>
         </div>
         
@@ -99,13 +99,18 @@ const projectSchema = {
                 </a>
             </li>
           </ul>
-        </div>
+       </div>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20" id="project-gallery">
         {images.map((img, index) => (
           <div class="reveal" style={`transition-delay: ${index * 100}ms`}>
-            <a href={img.src} class="pswp-project-link group relative aspect-[4/5] overflow-hidden rounded-sm shadow-sm cursor-zoom-in bg-zinc-200 block" data-pswp-width="1200" data-pswp-height="1600">
+            <a 
+              href={img.src} 
+              class="pswp-project-link group relative aspect-[4/5] overflow-hidden rounded-sm shadow-sm cursor-zoom-in bg-zinc-200 block" 
+              data-pswp-width={img.width} 
+              data-pswp-height={img.height}
+            >
               <img src={img.src} alt={img.alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             </a>
           </div>
