@@ -1,0 +1,166 @@
+---
+// src/pages/projects/menifee-lakes-remodel.astro
+import MainLayout from '../../layouts/MainLayout.astro';
+
+// 1. IMAGE IMPORTS (Updated for Menifee project)
+import img1 from '../../assets/header.jpg';
+import img2 from '../../assets/hero-kitchen.jpg';
+import img3 from '../../assets/kitchen-5.jpg';
+import img4 from '../../assets/kitchen-2.jpg';
+
+const images = [
+  { src: img1.src, alt: "Custom Kitchen Cabinets Menifee Lakes 2026" },
+  { src: img2.src, alt: "Modern Kitchen Remodeling near Menifee Countryside Marketplace" },
+  { src: img3.src, alt: "Handcrafted cabinetry details in Menifee CA" },
+  { src: img4.src, alt: "Luxury kitchen renovation near Menifee Lakes Country Club" }
+];
+
+// 2. SEO SCHEMA UPDATED FOR MENIFEE
+const projectSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "First Class Woodworks",
+  "description": "2026 Custom kitchen remodeling and handcrafted cabinetry project in Menifee Lakes, CA.",
+  "url": "https://firstclasswoodworks.com/projects/menifee-lakes-remodel",
+  "datePublished": "2026-01-14",
+  "location": {
+    "@type": "Place",
+    "name": "Menifee Lakes Residence",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Menifee Lakes",
+      "addressLocality": "Menifee",
+      "addressRegion": "CA",
+      "postalCode": "92584",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "33.664853",
+      "longitude": "-117.162850"
+    }
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Menifee" },
+    { "@type": "Neighborhood", "name": "Menifee Lakes" },
+    { "@type": "Neighborhood", "name": "Heritage Lake" }
+  ],
+  "keywords": "Custom Kitchen Cabinets Menifee, Kitchen Remodeling Menifee Lakes, Cabinet Maker Menifee CA"
+};
+---
+
+<MainLayout 
+  title="Menifee Lakes Kitchen Remodel | Custom Cabinetry 2026" 
+  description="View our latest custom kitchen cabinetry project in Menifee Lakes. Expert kitchen remodeling near Menifee Lakes Country Club and Newport Road."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(projectSchema)} />
+
+  <link rel="stylesheet" href="https://unpkg.com/photoswipe/dist/photoswipe.css">
+
+  <article class="pt-32 pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <header class="max-w-3xl mx-auto text-center mb-16 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Menifee Lakes <span class="text-yellow-600 italic">Project</span>
+        </h1>
+        
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-xs font-bold uppercase tracking-[0.3em] text-zinc-400">
+            <span class="text-yellow-600">Menifee, California</span>
+            <span class="hidden md:block text-zinc-200">•</span>
+            <span>Completed January 2026</span>
+            <span class="hidden md:block text-zinc-200">•</span>
+            <span class="text-zinc-500">33.6648° N, 117.1628° W</span>
+        </div>
+        
+        <div class="h-px w-24 bg-yellow-600/30 mx-auto mt-10"></div>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 items-start">
+        <div class="lg:col-span-7 text-lg text-zinc-600 leading-relaxed space-y-6 reveal">
+          <p>
+            Our latest 2026 transformation took us to the beautiful <strong>Menifee Lakes</strong> community, 
+            located just east of the <strong>Menifee Lakes Country Club</strong> and minutes from the <strong>Menifee Countryside Marketplace</strong>.
+          </p>
+          <p>
+            The project involved a complete kitchen overhaul south of <strong>Newport Road</strong>. 
+            We replaced dated builder-grade units with <strong>100% in-house custom cabinetry</strong>, specifically engineered 
+            to maximize the unique layout of this Menifee home.
+          </p>
+          <p>
+            By focusing on precision finish carpentry, we created a high-end aesthetic that stands out in the Menifee Valley, 
+            blending modern functionality with timeless craftsmanship.
+          </p>
+        </div>
+        
+        <div class="lg:col-span-5 bg-zinc-50 p-10 rounded-sm border border-zinc-100 reveal delay-200">
+          <h3 class="font-serif font-bold text-2xl mb-6 text-zinc-900 underline decoration-yellow-600 underline-offset-8">Project Details</h3>
+          <ul class="space-y-4">
+            <li class="flex flex-col">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Location</span>
+              <span class="text-zinc-800 font-bold">Menifee Lakes, CA</span>
+            </li>
+            <li class="flex flex-col pt-2">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Services</span>
+              <span class="text-zinc-800 font-bold">Custom Kitchen Cabinetry & Design</span>
+            </li>
+            <li class="flex flex-col pt-4">
+                <a href="/contact" class="text-center bg-zinc-900 text-white py-3 font-bold text-sm uppercase tracking-widest hover:bg-yellow-600 transition">
+                    Request Similar Project
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20" id="project-gallery">
+        {images.map((img, index) => (
+          <div class="reveal" style={`transition-delay: ${index * 100}ms`}>
+            <a 
+              href={img.src} 
+              class="pswp-project-link group relative aspect-[4/5] overflow-hidden rounded-sm shadow-sm cursor-zoom-in bg-zinc-200 block"
+              data-pswp-width="1200" 
+              data-pswp-height="1600"
+            >
+              <img 
+                src={img.src} 
+                alt={img.alt} 
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+              />
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <div class="pt-16 border-t border-zinc-100 flex flex-col md:flex-row justify-between items-center gap-8 reveal">
+        <a href="/gallery" class="flex items-center gap-3 text-zinc-400 hover:text-zinc-900 font-bold uppercase tracking-widest text-xs transition">
+            Back to Gallery
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <script>
+    import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#project-gallery',
+      children: '.pswp-project-link',
+      pswpModule: () => import('https://unpkg.com/photoswipe/dist/photoswipe.esm.js')
+    });
+    lightbox.init();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+
+  <style>
+    .pswp-project-link img { object-fit: cover; display: block; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .delay-200 { transition-delay: 0.2s; }
+  </style>
+</MainLayout>

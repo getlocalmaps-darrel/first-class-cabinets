@@ -2,7 +2,7 @@
 // src/components/RecentProjects.astro
 import { Image } from 'astro:assets';
 import img1 from '../assets/murrieta-kitchen-remodeling-project-1.jpg';
-import img2 from '../assets/murrieta-kitchen-remodeling-project-2.jpg';
+import img2 from '../assets/header.jpg'; // Updated to Menifee Project Image
 import img3 from '../assets/murrieta-kitchen-remodeling-project-3.jpg';
 
 const projects = [
@@ -15,12 +15,12 @@ const projects = [
     date: "2025"
   },
   {
-    title: "Modern Build-In Project",
-    location: "Temecula, CA",
-    description: "New 2025 handcrafted cabinetry and finish carpentry details. Full project gallery coming soon.",
+    title: "Menifee Lakes Luxury Kitchen",
+    location: "Menifee • Menifee Lakes",
+    description: "New 2026 custom cabinetry and handcrafted kitchen remodel near Menifee Lakes Country Club.",
     image: img2,
-    link: "#",
-    date: "2025"
+    link: "/projects/menifee-lakes-remodel",
+    date: "2026"
   },
   {
     title: "Custom Woodwork Suite",
@@ -38,11 +38,11 @@ const projects = [
     
     <div class="text-center max-w-4xl mx-auto mb-16 reveal">
       <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight">
-        Recent Kitchen Cabinet Remodeling Projects in Murrieta
+        Recent Kitchen Cabinet Remodeling Projects
       </h2>
       <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-6"></div>
       <p class="text-zinc-400 font-bold uppercase tracking-[0.2em] text-xs">
-        Crafting Luxury Woodwork Across the Temecula Valley • 2025 Portfolio
+        Crafting Luxury Woodwork Across the Temecula Valley • 2026 Portfolio
       </p>
     </div>
 
@@ -92,8 +92,6 @@ const projects = [
 </section>
 
 <script>
-    // PERFORMANCE FIX: Only keeping the scroll-bar script here. 
-    // The "Reveal" animations are now handled by the main layout!
     const slider = document.getElementById('project-slider');
     const progressBar = document.getElementById('scroll-progress');
     if (slider && progressBar) {
@@ -107,5 +105,4 @@ const projects = [
 <style>
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-  /* Reveal styles are now global in MainLayout, removing redundant CSS here */
 </style>
