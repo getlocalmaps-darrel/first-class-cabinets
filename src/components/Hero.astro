@@ -6,7 +6,6 @@ import image2 from '../assets/kitchen-2.jpg';
 ---
 
 <section class="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
-  
   <div class="absolute inset-0 z-0 animate-slideshow">
     <Image 
       src={image1} 
@@ -34,20 +33,20 @@ import image2 from '../assets/kitchen-2.jpg';
     <div class="absolute inset-0 bg-black/50"></div>
   </div>
 
-  <div class="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+  <div class="relative z-10 text-center text-white px-4 max-w-5xl mx-auto pt-32 md:pt-40">
     <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 drop-shadow-lg leading-tight opacity-0 animate-fade-up" style="animation-delay: 0.4s;">
       First Class Woodworks: <span class="text-yellow-500 italic">Murrieta's Premier Cabinet Makers.</span>
     </h1>
 
     <p class="text-lg md:text-2xl font-light mb-10 text-gray-100 max-w-3xl mx-auto opacity-0 animate-fade-up leading-relaxed" style="animation-delay: 0.6s;">
-      Providing <strong>expert kitchen remodeling</strong>, custom cabinetry, and master finish carpentry for homes in the Temecula Valley. [cite: 58-59]
+      Providing expert kitchen remodeling, custom cabinetry, and master finish carpentry for homes in the Temecula Valley.
     </p>
 
     <div class="flex flex-wrap justify-center items-center gap-6 mb-12 opacity-0 animate-fade-up" style="animation-delay: 0.7s;">
-      <span class="text-[10px] uppercase tracking-[0.2em] text-zinc-400 font-bold border-r border-zinc-700 pr-6">Direct Proof:</span>
+      <span class="text-[10px] uppercase tracking-[0.2em] text-zinc-400 font-bold border-r border-zinc-700 pr-6">Verified Status:</span>
       <span class="text-xs font-bold text-white/90">5.0 Star Google Rated</span>
       <span class="text-xs font-bold text-white/90">A+ BBB Accredited</span>
-      <span class="text-xs font-bold text-white/90">Verified Local Pro</span>
+      <span class="text-xs font-bold text-white/90">Local Licensed Pro</span>
     </div>
 
     <div class="flex flex-col md:flex-row gap-4 justify-center opacity-0 animate-fade-up" style="animation-delay: 0.8s;">
@@ -62,7 +61,6 @@ import image2 from '../assets/kitchen-2.jpg';
 </section>
 
 <style>
-  /* Slideshow Logic Restored [cite: 60-64] */
   @keyframes kenburns {
     0% { opacity: 0; transform: scale(1); }
     10% { opacity: 1; }
@@ -75,10 +73,8 @@ import image2 from '../assets/kitchen-2.jpg';
     animation: kenburns 16s ease-in-out infinite;
   }
   .delay-animation {
-    animation-delay: 8s; /*cite: 64*/
+    animation-delay: 8s;
   }
-
-  /* FadeUp Logic Restored  */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
