@@ -4,6 +4,7 @@ const { title, description } = Astro.props;
 import { Image } from 'astro:assets';
 import '../styles/global.css';
 import logoImage from '../assets/logo.png';
+import Footer from '../components/Footer.astro';
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -96,18 +97,7 @@ import logoImage from '../assets/logo.png';
     </div>
 
     <main><slot /></main>
-
-    <footer class="bg-black text-white py-12 text-center border-t border-zinc-900 pb-20 md:pb-12">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="font-serif text-2xl mb-4 text-white">First Class Woodworks</h2>
-            <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-zinc-500 text-xs">
-                <p>© 2026 Serving Murrieta & Temecula Valley</p>
-                <span class="hidden md:block text-zinc-800">|</span>
-                <p>Website by <a href="https://murrietawebdesigns.com" target="_blank" class="text-zinc-400 hover:text-yellow-600 transition underline">Murrieta Web Designs</a></p>
-            </div>
-        </div>
-    </footer>
-
+<Footer />
 <script>
     const navbar = document.getElementById('navbar');
     const navContainer = document.getElementById('nav-container');
