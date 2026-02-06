@@ -1,0 +1,78 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Services from '../../components/Services.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Luxury Bathroom Remodeling & Custom Vanities",
+  "description": "High-end bathroom remodeling in Murrieta. We specialize in moisture-resistant custom vanities and furniture-grade cabinetry for master suites.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "First Class Woodworks"
+  },
+  "knowsAbout": ["Moisture-Resistant Bathroom Vanities", "Finish Carpentry", "3D Cabinet Design", "Master Suite Transformations"],
+  "areaServed": ["Murrieta", "Temecula", "Menifee", "Bear Creek", "La Cresta"]
+};
+---
+
+<MainLayout title="Bathroom Remodeling & Custom Vanities Murrieta | 951-973-1265">
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <article class="max-w-6xl mx-auto px-6 pb-20">
+    <header class="max-w-4xl mb-16 reveal">
+      <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+        Bathroom Remodeling Murrieta <span class="text-yellow-600">951-973-1265</span>
+      </h1>
+      <h2 class="text-2xl font-body font-bold text-zinc-700 mb-8">Who is the highest-rated bathroom vanity builder near Murrieta?</h2>
+      <p class="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+        Stop settling for big-box vanities that swell and peel. We bring furniture-grade finish carpentry to your master suite, creating moisture-resistant sanctuaries that last a lifetime.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+      <div class="lg:col-span-8 space-y-8 text-lg text-zinc-600 leading-relaxed reveal">
+        <p>
+          When homeowners search for <strong>"bathroom remodeling near me"</strong> in the Temecula Valley, they often find general contractors who outsource their cabinets. At <strong>First Class Woodworks</strong>, we are the source. As licensed, bonded, and insured finish carpenters, we build every vanity in-house to your exact specifications.
+        </p>
+        
+        <div class="bg-zinc-50 border-l-4 border-yellow-600 p-8 my-10">
+          <h4 class="text-zinc-900 font-bold mb-2">Master Cabinet Maker Pro-Tip:</h4>
+          <p class="italic">"In Murrieta’s dry climate, we use a post-catalyzed conversion varnish on all bathroom cabinetry. This creates a chemical-resistant and moisture-proof barrier that prevents the wood checking and finish cracks common in mass-produced vanities".</p>
+        </div>
+
+        <p>
+          From the luxury estates in <strong>Bear Creek</strong> to the custom homes of <strong>La Cresta</strong>, we specialize in high-end transformations. Our process includes full 3D design renderings, allowing you to see your floating vanity or double-sink master unit before we even cut the first piece of wood.
+        </p>
+
+        <h3 class="text-3xl font-serif font-bold text-zinc-900 pt-10">Frequently Asked Questions (Position Zero)</h3>
+        <div class="space-y-6">
+          <div>
+            <h4 class="font-bold text-zinc-800">How long does a custom bathroom vanity take to build?</h4>
+            <p class="text-base">A custom vanity typically takes 4 to 6 weeks from design approval to installation. This timeline ensures we can properly cure the conversion varnish for maximum moisture resistance, a critical step for longevity in high-humidity bathroom environments.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-zinc-800">What is the best wood for bathroom cabinets in Southern California?</h4>
+            <p class="text-base">We recommend furniture-grade plywood for the box construction combined with solid hardwood faces like Maple or White Oak. These materials handle the temperature fluctuations of the Inland Empire better than MDF or particle board found in retail stores.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="lg:col-span-4 bg-zinc-900 p-10 rounded-sm reveal h-fit">
+        <h3 class="font-serif font-bold text-2xl mb-6 text-yellow-600">Master Bath Services</h3>
+        <ul class="space-y-4 text-white/80 text-sm">
+          <li class="border-b border-white/10 pb-2">Custom Floating Vanities</li>
+          <li class="border-b border-white/10 pb-2">Linen Tower Built-ins</li>
+          <li class="border-b border-white/10 pb-2">Furniture-Grade Medicine Cabinets</li>
+          <li class="border-b border-white/10 pb-2">Makeup Vanity Stations</li>
+          <li>Moisture-Proof Finishing</li>
+        </ul>
+        <a href="/contact" class="mt-8 block text-center bg-yellow-600 text-zinc-900 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">Start My Quote</a>
+      </aside>
+    </div>
+
+    <section class="border-t border-zinc-100 pt-20">
+      <Services />
+    </section>
+  </article>
+</MainLayout>

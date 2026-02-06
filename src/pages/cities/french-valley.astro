@@ -1,0 +1,222 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const city = "French Valley";
+const phone = "951-973-1265";
+const phoneFull = "(951) 973-1265";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "First Class WoodWorks — Custom Cabinets " + city,
+  "telephone": "+19519731265",
+  "url": "https://www.firstclasswoodworks.com/cities/french-valley",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "24491 Avenida Arconte",
+    "addressLocality": "Murrieta",
+    "addressRegion": "CA",
+    "postalCode": "92562",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.6028,
+    "longitude": -117.1052
+  },
+  "areaServed": ["French Valley", "Auld Valley", "Glenoaks", "Wine Country Corridor"],
+  "knowsAbout": ["Finish Carpentry", "Custom Kitchen Islands", "Moisture-Resistant Cabinetry", "3D Design Renderings", "New Construction Upgrades", "Blum Soft-Close Hardware"],
+  "priceRange": "$$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "25"
+  }
+};
+
+const faqs = [
+  {
+    question: "How much do custom kitchen cabinets cost in French Valley?",
+    answer: "Custom kitchen cabinets in French Valley range from $35,000 to $75,000 or more depending on wood species, layout complexity, and finish grade. This reflects furniture-grade plywood construction with Blum soft-close hardware — built to outlast the builder-grade particle board found in most new French Valley homes."
+  },
+  {
+    question: "Who is the best cabinet builder in French Valley?",
+    answer: "First Class WoodWorks is the highest-rated cabinet maker serving French Valley with an A+ BBB rating and 5.0-star reviews. Based in adjacent Murrieta, we build every cabinet in-house and install with our own licensed, bonded, and insured finish carpentry team."
+  },
+  {
+    question: "What areas in French Valley do you serve?",
+    answer: "We serve the entire French Valley area within the 92596 zip code including Auld Valley, Glenoaks, the Wine Country corridor communities, and all master-planned developments. Our Murrieta shop neighbors French Valley directly for fast, responsive project service."
+  },
+  {
+    question: "Should I upgrade builder-grade cabinets in my new French Valley home?",
+    answer: "Yes. Builder-grade cabinets in new French Valley homes use particle board and melamine that degrade within five years in the Inland Empire heat. Upgrading to furniture-grade custom cabinets immediately increases storage capacity, home value, and visual impact."
+  },
+  {
+    question: "How long does a custom cabinet project take in French Valley?",
+    answer: "Custom cabinet projects in French Valley take 8 to 12 weeks from design approval to installation. This timeline includes 3D rendering review, material selection, precision fabrication in our Murrieta shop, and a complete conversion varnish cure for lasting protection."
+  },
+  {
+    question: "Do you design custom pantry systems for French Valley kitchens?",
+    answer: "Absolutely. We design floor-to-ceiling custom pantry systems with pull-out shelving, spice racks, and adjustable storage tiers. Unlike wire pantry kits from retail stores, our pantries are built from furniture-grade plywood with Blum soft-close slides for daily heavy use."
+  },
+  {
+    question: "What wood works best for French Valley kitchen cabinets?",
+    answer: "We recommend furniture-grade plywood for cabinet boxes paired with solid Maple, White Oak, or Alder face frames. These hardwoods handle the temperature extremes in the 92596 zip code without the warping, swelling, or finish failure common in MDF and melamine."
+  },
+  {
+    question: "Can you build custom bathroom vanities in French Valley?",
+    answer: "Yes. We build moisture-resistant custom vanities, floating units, and linen towers for French Valley master bathrooms. Every piece is sealed with post-catalyzed conversion varnish that provides a chemical-resistant, waterproof barrier against daily steam and humidity."
+  },
+  {
+    question: "Is First Class WoodWorks licensed to work in French Valley?",
+    answer: "Yes. We are fully licensed, bonded, and insured for finish carpentry throughout Riverside County including French Valley. Our A+ BBB accreditation and California Residential Building Code compliance ensure professional, code-approved installations on every project."
+  },
+  {
+    question: "Do you offer free consultations for French Valley homeowners?",
+    answer: "We provide complimentary in-home consultations throughout French Valley. We capture laser measurements, discuss design preferences, and deliver detailed 3D renderings so you approve every cabinet detail before fabrication begins. Call 951-973-1265 to schedule."
+  },
+  {
+    question: "What hardware comes standard on your French Valley custom cabinets?",
+    answer: "Every project includes Blum TANDEM undermount slides and CLIP top soft-close hinges with a lifetime warranty. Blum hardware is Austrian-engineered for 200,000-plus cycles, delivering whisper-quiet operation that far exceeds the roller slides in builder-grade cabinets."
+  },
+  {
+    question: "Do you build entertainment centers and media walls in French Valley?",
+    answer: "Yes. We hand-craft custom entertainment centers, fireplace built-ins, and media walls for French Valley living rooms. Each unit is designed to conceal wiring, fit your specific dimensions, and match your kitchen cabinetry for a cohesive whole-home finish."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<MainLayout
+  title={"Custom Kitchen Cabinets " + city + " | Master Cabinet Maker | " + phone}
+  description={"French Valley custom cabinet maker. Handcrafted kitchen cabinets, pantry systems & bathroom vanities by First Class WoodWorks. A+ BBB. Licensed & insured. Call " + phone}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <header class="max-w-4xl mb-16 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Custom Kitchen Cabinets {city} <span class="text-yellow-600">{phone}</span>
+        </h1>
+        <h2 class="text-2xl font-body font-bold text-zinc-700 mb-8">Who is the best cabinet builder in French Valley?</h2>
+        <p class="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+          French Valley's new communities deserve more than builder-grade particle board. We replace factory cabinets with furniture-grade custom cabinetry built to last a lifetime.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-8 space-y-8 text-lg text-zinc-600 leading-relaxed">
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">French Valley's Custom Cabinet Specialist</h2>
+            <p>
+              French Valley is booming. New master-planned communities along the <strong>Wine Country corridor</strong> and throughout the <strong>92596</strong> zip code are transforming this area into one of Southwest Riverside County's most desirable addresses. But behind the fresh stucco, most builders install the same particle board cabinets that fail within five years of Inland Empire heat. <a href="https://www.firstclasswoodworks.com/" class="text-yellow-600 font-bold hover:underline">First Class WoodWorks</a> is the <strong>cabinet maker in French Valley</strong> that replaces that compromise with heirloom-quality craftsmanship.
+            </p>
+            <p>
+              As a licensed, bonded, and insured finish carpentry firm with an A+ BBB rating, we build every cabinet from furniture-grade plywood with dovetail drawer boxes and <strong>Blum soft-close hardware</strong> that carries a lifetime warranty. Our shop in neighboring Murrieta means your project gets the same rapid service as our hometown clients.
+            </p>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Upgrade Your Builder-Grade Kitchen</h2>
+            <p>
+              Replacing factory cabinets with <a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">true custom cabinetry</a> is our most popular service in French Valley. Builder-grade units arrive in 3-inch increments with filler strips masking imperfect fits. Our <strong>cabinet builder</strong> team measures to the 1/16th of an inch, designing cabinets that maximize every square inch of your kitchen — including custom floor-to-ceiling pantry systems that retail wire kits cannot match.
+            </p>
+            <p>
+              Every French Valley project starts with a complimentary in-home consultation. We take laser measurements, map your storage needs, and produce full <strong>3D renderings</strong> so you approve the exact design before fabrication begins. From the <strong>Auld Valley</strong> foothills to the <strong>Glenoaks</strong> corridor, we bring the same precision craftsmanship to every home. Our <a href="/services/kitchen-remodeling" class="text-yellow-600 hover:underline">kitchen remodeling</a> process transforms builder-basic into magazine-worthy.
+            </p>
+          </section>
+
+          <div class="bg-zinc-50 border-l-4 border-yellow-600 p-8 my-10 reveal">
+            <h4 class="text-zinc-900 font-bold mb-2">Master Cabinet Maker Pro-Tip:</h4>
+            <p class="italic">"In new French Valley construction, we often find that builder-installed pantry cabinets waste 30% of their depth because shelves are fixed and too deep for single-row access. We build custom pull-out pantry systems with tiered, full-extension Blum slides that put every item at arm's reach — doubling your usable pantry storage overnight."</p>
+          </div>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Whole-Home Cabinetry for French Valley Families</h2>
+            <p>
+              Our craftsmanship extends to every room. French Valley homeowners choose us for <a href="/services/bathroom-remodeling" class="text-yellow-600 hover:underline">moisture-resistant bathroom vanities</a> sealed with conversion varnish, <a href="/services/custom-closets" class="text-yellow-600 hover:underline">walk-in closet built-ins</a> from solid hardwoods, and <a href="/services/media-centers" class="text-yellow-600 hover:underline">hand-crafted entertainment centers</a> designed as your living room's focal point. Every piece receives the same furniture-grade construction and lifetime hardware.
+            </p>
+            <p>
+              Whether your home is in a new development or an established French Valley neighborhood near the <strong>Wine Country corridor</strong>, our team delivers cabinetry that raises your home's value and outperforms every factory alternative. See the work we are completing for homeowners in <a href="/cities/lake-elsinore" class="text-yellow-600 hover:underline">Lake Elsinore</a>, or call <strong>{phoneFull}</strong> to start your free design consultation today.
+            </p>
+          </section>
+
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8">
+          <div class="bg-zinc-900 text-white p-10 rounded-sm reveal sticky top-32">
+            <h3 class="font-serif font-bold text-2xl mb-4 text-yellow-600">Build With the Best</h3>
+            <ul class="space-y-3 text-white/80 text-sm mb-8">
+              <li class="border-b border-white/10 pb-2">Licensed, Bonded & Insured</li>
+              <li class="border-b border-white/10 pb-2">A+ BBB Accredited</li>
+              <li class="border-b border-white/10 pb-2">100% In-House Craftsmanship</li>
+              <li class="border-b border-white/10 pb-2">Blum Lifetime-Warranty Hardware</li>
+              <li class="border-b border-white/10 pb-2">Free 3D Design Renderings</li>
+              <li>Serving French Valley 92596</li>
+            </ul>
+            <a href="tel:9519731265" class="block text-center border border-yellow-600 py-4 font-bold hover:bg-yellow-600 transition tracking-wider">
+              {phoneFull}
+            </a>
+            <a href="/contact" class="mt-4 block text-center bg-yellow-600 text-zinc-900 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">
+              Get My Free Quote
+            </a>
+          </div>
+        </aside>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="py-16 border-t border-zinc-200">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16 reveal">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">
+              Custom Cabinet <span class="text-yellow-600">FAQs</span> — French Valley
+            </h2>
+            <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-6"></div>
+            <p class="text-zinc-500 italic">Common questions about custom cabinetry, costs, and timelines for French Valley homeowners.</p>
+          </div>
+          <div class="space-y-4">
+            {faqs.map((faq, index) => (
+              <details class="group bg-white border border-zinc-200 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 reveal" style={`transition-delay: ${index * 80}ms`}>
+                <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
+                  <h3 class="text-lg md:text-xl font-serif font-bold text-zinc-800 group-hover:text-yellow-600 transition-colors pr-8">
+                    {faq.question}
+                  </h3>
+                  <span class="text-yellow-600 transition-transform duration-300 group-open:rotate-180 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-6 text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+</style>

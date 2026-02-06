@@ -1,0 +1,73 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Services from '../../components/Services.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Full Kitchen Remodeling Services",
+  "description": "Premier kitchen remodeling in Murrieta. From custom island design to full cabinetry overhauls, we provide A+ BBB rated carpentry services.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "First Class Woodworks"
+  },
+  "knowsAbout": ["Kitchen Island Design", "Cabinet Fabrication", "Kitchen Layout Optimization", "Luxury Remodeling"]
+};
+---
+
+<MainLayout title="Kitchen Remodeling Murrieta | First Class Woodworks | 951-973-1265">
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <article class="max-w-6xl mx-auto px-6 pb-20">
+    <header class="max-w-4xl mb-16 reveal">
+      <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+        Kitchen Remodeling Murrieta <span class="text-yellow-600">951-973-1265</span>
+      </h1>
+      <h2 class="text-2xl font-body font-bold text-zinc-700 mb-8">Who is the best kitchen remodeling contractor near Temecula?</h2>
+      <p class="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+        The kitchen is the heart of your home. We specialize in transforming dated layouts into high-performance culinary spaces using master-level finish carpentry.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+      <div class="lg:col-span-8 space-y-8 text-lg text-zinc-600 leading-relaxed reveal">
+        <p>
+          If you are searching for <strong>"kitchen remodeling near me"</strong> in Murrieta, Temecula, or Menifee, you need a team that understands the structural and aesthetic value of high-end cabinetry. We aren't just installers; we are <strong>finish carpentry specialists</strong> who handle the design, fabrication, and installation in-house.
+        </p>
+
+        <div class="bg-zinc-50 border-l-4 border-yellow-600 p-8 my-10">
+          <h4 class="text-zinc-900 font-bold mb-2">Master Cabinet Maker Pro-Tip:</h4>
+          <p class="italic">"When planning a kitchen remodel in the Temecula Valley, we suggest focusing on the 'Work Triangle.' By optimizing the distance between your sink, stove, and refrigerator with a custom island, you can improve kitchen efficiency by up to 30%".</p>
+        </div>
+
+        <p>
+          We serve luxury neighborhoods from <strong>Copper Canyon</strong> to <strong>Greer Ranch</strong>. [cite_start]Every project begins with an <strong>A+ BBB Accredited</strong> consultation where we discuss your storage needs, workflow, and the latest in soft-close technology[cite: 7].
+        </p>
+        
+        <h3 class="text-3xl font-serif font-bold text-zinc-900 pt-10">Kitchen FAQ</h3>
+        <div class="space-y-6">
+          <div>
+            <h4 class="font-bold text-zinc-800">Does a kitchen remodel increase home value in Murrieta?</h4>
+            <p class="text-base">Absolutely. In Southern California, a high-end kitchen remodel typically yields a 60-80% return on investment. Custom cabinetry is the top feature buyers look for in luxury zip codes like 92562 and 92591.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="lg:col-span-4 bg-zinc-900 p-10 rounded-sm reveal h-fit">
+        <h3 class="font-serif font-bold text-2xl mb-6 text-yellow-600">Kitchen Expertise</h3>
+        <ul class="space-y-4 text-white/80 text-sm">
+          <li class="border-b border-white/10 pb-2">Full Gut Remodels</li>
+          <li class="border-b border-white/10 pb-2">Custom Island Installation</li>
+          <li class="border-b border-white/10 pb-2">Pantry Organization Systems</li>
+          <li class="border-b border-white/10 pb-2">Crown Molding & Trim</li>
+          <li>Integrated Appliance Panels</li>
+        </ul>
+        <a href="/contact" class="mt-8 block text-center bg-yellow-600 text-zinc-900 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">Get My Kitchen Quote</a>
+      </aside>
+    </div>
+
+    <section class="border-t border-zinc-100 pt-20">
+      <Services />
+    </section>
+  </article>
+</MainLayout>

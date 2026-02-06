@@ -1,0 +1,222 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const city = "Perris";
+const phone = "951-973-1265";
+const phoneFull = "(951) 973-1265";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "First Class WoodWorks — Custom Cabinets " + city,
+  "telephone": "+19519731265",
+  "url": "https://www.firstclasswoodworks.com/cities/perris",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "24491 Avenida Arconte",
+    "addressLocality": "Murrieta",
+    "addressRegion": "CA",
+    "postalCode": "92562",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.7825,
+    "longitude": -117.2286
+  },
+  "areaServed": ["Perris", "May Ranch", "Perris Valley", "Morgan Hill", "Lake Perris"],
+  "knowsAbout": ["Finish Carpentry", "Custom Kitchen Islands", "Moisture-Resistant Cabinetry", "3D Design Renderings", "Space-Maximizing Cabinet Design", "Blum Soft-Close Hardware"],
+  "priceRange": "$$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "25"
+  }
+};
+
+const faqs = [
+  {
+    question: "How much do custom kitchen cabinets cost in Perris?",
+    answer: "Custom kitchen cabinets in Perris typically range from $35,000 to $75,000 depending on kitchen size, wood species, and finish complexity. This reflects furniture-grade plywood construction with Blum soft-close hardware — a permanent upgrade that vastly outlasts the builder-grade particle board found in most Perris homes."
+  },
+  {
+    question: "Who is the top-rated cabinet maker near Perris, CA?",
+    answer: "First Class WoodWorks is the highest-rated custom cabinet maker serving Perris with an A+ BBB rating and 5.0-star reviews. Our licensed, bonded, and insured team builds every cabinet in-house at our Murrieta shop and installs with our own finish carpentry crew."
+  },
+  {
+    question: "What Perris neighborhoods do you serve for custom cabinetry?",
+    answer: "We serve all Perris communities including May Ranch, Perris Valley, Morgan Hill, and homes near Lake Perris State Recreation Area. We cover the 92570, 92571, and 92572 zip codes with the same precision craftsmanship we deliver throughout Riverside County."
+  },
+  {
+    question: "How long does a custom cabinet project take in Perris?",
+    answer: "Most custom cabinet projects in Perris take 8 to 12 weeks from design approval to professional installation. This includes your 3D rendering review, material selection, precision fabrication, and a full post-catalyzed conversion varnish cure for maximum durability."
+  },
+  {
+    question: "Is it worth upgrading from builder-grade cabinets in Perris?",
+    answer: "Absolutely. Builder-grade particle board cabinets delaminate in the Inland Empire heat within five to seven years. Our furniture-grade custom cabinets last decades, increase your home appraisal value, and provide significantly more storage than the standard-increment factory units."
+  },
+  {
+    question: "What wood species work best in the Perris climate?",
+    answer: "We use furniture-grade plywood for cabinet boxes with solid Maple, White Oak, or Alder for face frames and doors. These species handle the extreme temperature swings in the 92570 and 92571 zip codes without warping or cracking like MDF and melamine alternatives."
+  },
+  {
+    question: "Do you maximize storage in smaller Perris kitchens?",
+    answer: "Yes. Many Perris homes have compact kitchen footprints where every inch counts. We design custom pull-out pantries, corner carousel systems, and vertical tray dividers that extract maximum function from limited space — solutions impossible with fixed-size retail cabinets."
+  },
+  {
+    question: "Can you build custom bathroom vanities for Perris homes?",
+    answer: "We specialize in moisture-resistant custom vanities, floating units, and linen towers for Perris bathrooms. Every piece is sealed with post-catalyzed conversion varnish that prevents the finish peeling and wood swelling found in retail big-box vanities."
+  },
+  {
+    question: "Is First Class WoodWorks licensed to work in Perris?",
+    answer: "Yes. We are fully licensed, bonded, and insured for finish carpentry throughout Riverside County including all Perris neighborhoods. Our A+ BBB accreditation ensures every project complies with California Residential Building Code requirements."
+  },
+  {
+    question: "Do you offer free design consultations in Perris?",
+    answer: "We provide complimentary in-home consultations throughout Perris. We take laser measurements, discuss your design vision and storage needs, then deliver detailed 3D renderings before any fabrication begins. Call 951-973-1265 to schedule your appointment."
+  },
+  {
+    question: "What hardware do you install on custom cabinets?",
+    answer: "Every Perris project includes Blum TANDEM undermount slides and CLIP top soft-close hinges carrying a lifetime warranty. Blum hardware is Austrian-engineered for over 200,000 open-close cycles — significantly outperforming the roller slides found in retail cabinets."
+  },
+  {
+    question: "Do you build entertainment centers for Perris homes?",
+    answer: "Yes. We hand-craft custom entertainment centers, fireplace surrounds, and media walls for Perris living rooms. Each unit conceals wiring, fits your specific TV dimensions, and is built from the same furniture-grade materials as our kitchen cabinetry."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<MainLayout
+  title={"Custom Kitchen Cabinets " + city + " | Master Cabinet Maker | " + phone}
+  description={"Perris custom cabinet maker. Handcrafted kitchen cabinets, bathroom vanities & built-ins by First Class WoodWorks. A+ BBB rated. Licensed & insured. Call " + phone}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <header class="max-w-4xl mb-16 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Custom Kitchen Cabinets {city} <span class="text-yellow-600">{phone}</span>
+        </h1>
+        <h2 class="text-2xl font-body font-bold text-zinc-700 mb-8">Who is the top-rated cabinet maker near Perris?</h2>
+        <p class="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+          Your Perris home deserves cabinetry that survives the Inland Empire's toughest conditions. We build every piece from furniture-grade hardwoods — never particle board.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-8 space-y-8 text-lg text-zinc-600 leading-relaxed">
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Perris Deserves a Real Cabinet Maker</h2>
+            <p>
+              From the family communities of <strong>May Ranch</strong> to the hillside properties near <strong>Lake Perris State Recreation Area</strong>, homeowners in the <strong>92570</strong>, <strong>92571</strong>, and <strong>92572</strong> zip codes are discovering that factory cabinets simply do not survive out here. The Inland Empire's triple-digit summers cause particle board to swell, melamine to blister, and cheap finishes to peel. <a href="https://www.firstclasswoodworks.com/" class="text-yellow-600 font-bold hover:underline">First Class WoodWorks</a> is the <strong>cabinet maker near Perris</strong> that builds for this climate.
+            </p>
+            <p>
+              As a licensed, bonded, and insured finish carpentry firm with an A+ BBB rating, we construct every cabinet from furniture-grade plywood with dovetail drawer boxes, mortise-and-tenon face frames, and <strong>Blum soft-close hardware</strong> that carries a lifetime warranty. Everything is built and installed by our own team — no subcontractors.
+            </p>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Maximum Storage From Every Square Inch</h2>
+            <p>
+              Many Perris kitchens have compact footprints where storage efficiency is critical. Big-box cabinets in 3-inch increments waste precious inches with filler strips. Our <a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">custom kitchen cabinets</a> are measured to the 1/16th of an inch, filling every gap with functional storage — custom pull-out pantries, corner carousels, vertical tray dividers, and deep drawer systems that turn dead space into daily-use organization.
+            </p>
+            <p>
+              Every Perris project starts with a free in-home consultation. We take laser measurements, map your cooking workflow, and create <strong>3D design renderings</strong> so you approve the layout and finish before fabrication begins. Our <strong>cabinet builder</strong> team then builds your kitchen in our local shop and installs it to exacting standards.
+            </p>
+          </section>
+
+          <div class="bg-zinc-50 border-l-4 border-yellow-600 p-8 my-10 reveal">
+            <h4 class="text-zinc-900 font-bold mb-2">Master Cabinet Maker Pro-Tip:</h4>
+            <p class="italic">"In compact Perris kitchens, we design custom 6-inch pull-out spice racks and 9-inch vertical tray dividers that transform the dead space beside your refrigerator or range into high-function storage. These precision-fit inserts are impossible with standard-size retail cabinets and can double your accessible storage capacity."</p>
+          </div>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Whole-Home Craftsmanship for Perris Families</h2>
+            <p>
+              Beyond kitchens, Perris homeowners trust us for <a href="/services/bathroom-remodeling" class="text-yellow-600 hover:underline">custom bathroom vanities</a> sealed with moisture-proof conversion varnish, <a href="/services/custom-closets" class="text-yellow-600 hover:underline">walk-in closet built-ins</a> constructed from solid hardwoods, and <a href="/services/media-centers" class="text-yellow-600 hover:underline">entertainment centers</a> designed to anchor your family room. Every piece receives the same furniture-grade construction and lifetime hardware.
+            </p>
+            <p>
+              Whether your home is in <strong>Morgan Hill</strong>, the <strong>Perris Valley</strong>, or minutes from <strong>March Air Reserve Base</strong>, our <a href="/services/kitchen-remodeling" class="text-yellow-600 hover:underline">kitchen remodeling</a> transforms builder-grade kitchens into showcase spaces. See the work we are completing for homeowners in <a href="/cities/menifee" class="text-yellow-600 hover:underline">Menifee</a>, or call <strong>{phoneFull}</strong> to start your free design consultation today.
+            </p>
+          </section>
+
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8">
+          <div class="bg-zinc-900 text-white p-10 rounded-sm reveal sticky top-32">
+            <h3 class="font-serif font-bold text-2xl mb-4 text-yellow-600">Build With the Best</h3>
+            <ul class="space-y-3 text-white/80 text-sm mb-8">
+              <li class="border-b border-white/10 pb-2">Licensed, Bonded & Insured</li>
+              <li class="border-b border-white/10 pb-2">A+ BBB Accredited</li>
+              <li class="border-b border-white/10 pb-2">100% In-House Craftsmanship</li>
+              <li class="border-b border-white/10 pb-2">Blum Lifetime-Warranty Hardware</li>
+              <li class="border-b border-white/10 pb-2">Free 3D Design Renderings</li>
+              <li>Serving 92570, 92571 & 92572</li>
+            </ul>
+            <a href="tel:9519731265" class="block text-center border border-yellow-600 py-4 font-bold hover:bg-yellow-600 transition tracking-wider">
+              {phoneFull}
+            </a>
+            <a href="/contact" class="mt-4 block text-center bg-yellow-600 text-zinc-900 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">
+              Get My Free Quote
+            </a>
+          </div>
+        </aside>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="py-16 border-t border-zinc-200">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16 reveal">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">
+              Custom Cabinet <span class="text-yellow-600">FAQs</span> — Perris
+            </h2>
+            <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-6"></div>
+            <p class="text-zinc-500 italic">Common questions about custom cabinetry, costs, and timelines for Perris homeowners.</p>
+          </div>
+          <div class="space-y-4">
+            {faqs.map((faq, index) => (
+              <details class="group bg-white border border-zinc-200 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 reveal" style={`transition-delay: ${index * 80}ms`}>
+                <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
+                  <h3 class="text-lg md:text-xl font-serif font-bold text-zinc-800 group-hover:text-yellow-600 transition-colors pr-8">
+                    {faq.question}
+                  </h3>
+                  <span class="text-yellow-600 transition-transform duration-300 group-open:rotate-180 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-6 text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+</style>

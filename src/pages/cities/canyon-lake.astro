@@ -1,0 +1,222 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const city = "Canyon Lake";
+const phone = "951-973-1265";
+const phoneFull = "(951) 973-1265";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "First Class WoodWorks — Custom Cabinets " + city,
+  "telephone": "+19519731265",
+  "url": "https://www.firstclasswoodworks.com/cities/canyon-lake",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "24491 Avenida Arconte",
+    "addressLocality": "Murrieta",
+    "addressRegion": "CA",
+    "postalCode": "92562",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.6850,
+    "longitude": -117.2728
+  },
+  "areaServed": ["Canyon Lake", "Holiday Beach", "The Lodge", "Railroad Canyon", "East Shore"],
+  "knowsAbout": ["Finish Carpentry", "Custom Kitchen Islands", "Moisture-Resistant Cabinetry", "3D Design Renderings", "Waterfront Cabinetry", "Blum Soft-Close Hardware"],
+  "priceRange": "$$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "25"
+  }
+};
+
+const faqs = [
+  {
+    question: "How much do custom kitchen cabinets cost in Canyon Lake?",
+    answer: "Custom kitchen cabinets in Canyon Lake range from $35,000 to $75,000 or more depending on wood species, finish, and kitchen size. This reflects furniture-grade plywood construction with Blum soft-close hardware — built to withstand the lakeside humidity that destroys particle board cabinets within a few years."
+  },
+  {
+    question: "Who builds the best custom cabinets near Canyon Lake?",
+    answer: "First Class WoodWorks is the highest-rated custom cabinet maker serving Canyon Lake with an A+ BBB rating and 5.0-star reviews. We build every cabinet in-house using furniture-grade materials and install with our own licensed, bonded, and insured finish carpentry team."
+  },
+  {
+    question: "Does Canyon Lake's humidity damage kitchen cabinets?",
+    answer: "Standard retail cabinets made from particle board and MDF absorb lakeside moisture, causing swelling, warping, and finish failure. Our cabinets use furniture-grade plywood sealed with post-catalyzed conversion varnish, creating a moisture-proof barrier engineered for waterfront environments like Canyon Lake."
+  },
+  {
+    question: "What Canyon Lake communities do you serve?",
+    answer: "We serve the entire Canyon Lake gated community including Holiday Beach, The Lodge area, East Shore, and homes along Railroad Canyon. Every property in the 92587 zip code receives our full-service design, fabrication, and installation from our nearby Murrieta shop."
+  },
+  {
+    question: "How long does a custom cabinet project take in Canyon Lake?",
+    answer: "Custom cabinet projects in Canyon Lake take 8 to 12 weeks from design approval to installation. This includes 3D rendering review, material selection, precision fabrication, and a thorough conversion varnish cure — essential for long-term moisture resistance near the water."
+  },
+  {
+    question: "Can you build outdoor kitchen cabinets for Canyon Lake waterfront homes?",
+    answer: "Yes. We build outdoor-rated cabinetry using marine-grade plywood and UV-resistant conversion finishes designed for lakeside patios and outdoor entertaining areas. These cabinets withstand direct sun, humidity, and temperature swings that would destroy standard indoor cabinetry."
+  },
+  {
+    question: "What wood is best for cabinets in a lakeside Canyon Lake home?",
+    answer: "We recommend furniture-grade plywood for box construction with solid White Oak or Maple face frames. These species are naturally more moisture-resistant than the softwoods and composites used in retail cabinets, and our conversion varnish provides an additional waterproof seal."
+  },
+  {
+    question: "Do you build custom bathroom vanities for Canyon Lake homes?",
+    answer: "Absolutely. We specialize in moisture-resistant vanities, floating units, and linen towers for Canyon Lake master suites. Our post-catalyzed conversion varnish creates a waterproof barrier that prevents the swelling and finish peeling common in retail vanities near the lake."
+  },
+  {
+    question: "Is First Class WoodWorks licensed to work in Canyon Lake?",
+    answer: "Yes. We are fully licensed, bonded, and insured for finish carpentry throughout Riverside County including Canyon Lake's gated community. Our A+ BBB accreditation ensures professional, code-compliant installations that meet California Residential Building Code requirements."
+  },
+  {
+    question: "Do you offer free consultations for Canyon Lake homeowners?",
+    answer: "We provide complimentary in-home consultations within Canyon Lake's gates. Our team takes laser measurements, discusses your design vision, and creates detailed 3D renderings for your approval before any fabrication begins. Call 951-973-1265 to schedule your visit."
+  },
+  {
+    question: "What makes your cabinets last longer than retail options near a lake?",
+    answer: "Three factors: furniture-grade plywood resists moisture absorption, dovetail joinery prevents joint failure from humidity cycling, and our post-catalyzed conversion varnish creates a chemical-resistant seal on all surfaces. Retail particle board cabinets lack all three protections."
+  },
+  {
+    question: "Can you build entertainment centers for Canyon Lake living rooms?",
+    answer: "Yes. We hand-craft custom entertainment centers, fireplace surrounds, and media walls for Canyon Lake homes. Each unit conceals wiring, fits your specific TV dimensions, and is built with the same moisture-resistant materials and finishes used in our kitchen cabinetry."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<MainLayout
+  title={"Custom Kitchen Cabinets " + city + " | Master Cabinet Builder | " + phone}
+  description={"Canyon Lake custom cabinet builder. Moisture-proof kitchen cabinets & waterfront cabinetry by First Class WoodWorks. A+ BBB rated. Licensed & insured. Call " + phone}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <header class="max-w-4xl mb-16 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Custom Kitchen Cabinets {city} <span class="text-yellow-600">{phone}</span>
+        </h1>
+        <h2 class="text-2xl font-body font-bold text-zinc-700 mb-8">Who builds the best custom cabinets near Canyon Lake?</h2>
+        <p class="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+          Living on the water demands cabinetry engineered for humidity. We build moisture-proof custom cabinets specifically designed for Canyon Lake's lakeside environment.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-8 space-y-8 text-lg text-zinc-600 leading-relaxed">
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Canyon Lake's Waterfront Cabinet Specialist</h2>
+            <p>
+              Canyon Lake is one of Riverside County's most exclusive communities — a private, gated enclave where homes along <strong>Holiday Beach</strong>, <strong>The Lodge</strong>, and the <strong>East Shore</strong> enjoy direct waterfront living. But that proximity to the lake creates a humidity challenge that standard cabinetry cannot survive. <a href="https://www.firstclasswoodworks.com/" class="text-yellow-600 font-bold hover:underline">First Class WoodWorks</a> is the <strong>cabinet builder Canyon Lake</strong> homeowners trust because we engineer for this exact environment.
+            </p>
+            <p>
+              Every cabinet we build for the <strong>92587</strong> zip code uses furniture-grade plywood sealed on all six sides with post-catalyzed conversion varnish — a professional-grade, moisture-proof barrier that prevents the swelling and delamination that destroys particle board within a few lakeside years. We are licensed, bonded, and insured with an A+ BBB rating, and our own team handles every cut and every installation.
+            </p>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Precision Cabinetry for Exclusive Canyon Lake Homes</h2>
+            <p>
+              Canyon Lake residences are not cookie-cutter homes, and your <a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">kitchen cabinets</a> should not be either. Retail units in 3-inch increments waste space and require unsightly filler strips. Our <strong>master cabinet maker</strong> team measures your walls to the 1/16th of an inch and builds cabinets that fit your specific layout perfectly — maximizing storage and delivering the seamless look that a luxury lakeside home demands.
+            </p>
+            <p>
+              Each Canyon Lake project begins with a complimentary in-home consultation inside the gates. We capture laser measurements, discuss your entertaining lifestyle and storage workflow, then produce full <strong>3D design renderings</strong> so you approve every detail before we begin fabrication. For homeowners planning a full <a href="/services/kitchen-remodeling" class="text-yellow-600 hover:underline">kitchen remodel</a>, we coordinate the entire cabinetry scope from design through final installation.
+            </p>
+          </section>
+
+          <div class="bg-zinc-50 border-l-4 border-yellow-600 p-8 my-10 reveal">
+            <h4 class="text-zinc-900 font-bold mb-2">Master Cabinet Maker Pro-Tip:</h4>
+            <p class="italic">"For waterfront Canyon Lake homes, we seal every cabinet panel on all six sides with post-catalyzed conversion varnish — including the backs and bottoms that most builders leave raw. This 360-degree seal prevents hidden moisture absorption that causes particle board cabinets to silently rot from the inside in lakeside environments."</p>
+          </div>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Full-Home Luxury for Canyon Lake Residences</h2>
+            <p>
+              Our craftsmanship extends to every room in your lakeside home. Canyon Lake residents choose us for <a href="/services/bathroom-remodeling" class="text-yellow-600 hover:underline">moisture-resistant bathroom vanities</a> that thrive in high-humidity master suites, <a href="/services/custom-closets" class="text-yellow-600 hover:underline">walk-in closet systems</a> from solid hardwoods, and <a href="/services/media-centers" class="text-yellow-600 hover:underline">hand-crafted entertainment centers</a> worthy of your lakeside entertaining space. We also build outdoor kitchen cabinetry using marine-grade materials for patio installations overlooking the water.
+            </p>
+            <p>
+              Whether your home faces <strong>Holiday Beach</strong> or sits along the <strong>Railroad Canyon</strong> ridgeline, our team delivers cabinetry that matches the exclusivity of your address. See the work we are completing for homeowners in <a href="/cities/winchester" class="text-yellow-600 hover:underline">Winchester</a>, or call <strong>{phoneFull}</strong> to schedule your free in-home consultation inside the gates.
+            </p>
+          </section>
+
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8">
+          <div class="bg-zinc-900 text-white p-10 rounded-sm reveal sticky top-32">
+            <h3 class="font-serif font-bold text-2xl mb-4 text-yellow-600">Lakeside Cabinet Experts</h3>
+            <ul class="space-y-3 text-white/80 text-sm mb-8">
+              <li class="border-b border-white/10 pb-2">Licensed, Bonded & Insured</li>
+              <li class="border-b border-white/10 pb-2">A+ BBB Accredited</li>
+              <li class="border-b border-white/10 pb-2">Moisture-Proof Construction</li>
+              <li class="border-b border-white/10 pb-2">Blum Lifetime-Warranty Hardware</li>
+              <li class="border-b border-white/10 pb-2">Free 3D Design Renderings</li>
+              <li>Serving Canyon Lake 92587</li>
+            </ul>
+            <a href="tel:9519731265" class="block text-center border border-yellow-600 py-4 font-bold hover:bg-yellow-600 transition tracking-wider">
+              {phoneFull}
+            </a>
+            <a href="/contact" class="mt-4 block text-center bg-yellow-600 text-zinc-900 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">
+              Get My Free Quote
+            </a>
+          </div>
+        </aside>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="py-16 border-t border-zinc-200">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16 reveal">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">
+              Custom Cabinet <span class="text-yellow-600">FAQs</span> — Canyon Lake
+            </h2>
+            <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-6"></div>
+            <p class="text-zinc-500 italic">Common questions about custom cabinetry, costs, and timelines for Canyon Lake homeowners.</p>
+          </div>
+          <div class="space-y-4">
+            {faqs.map((faq, index) => (
+              <details class="group bg-white border border-zinc-200 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 reveal" style={`transition-delay: ${index * 80}ms`}>
+                <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
+                  <h3 class="text-lg md:text-xl font-serif font-bold text-zinc-800 group-hover:text-yellow-600 transition-colors pr-8">
+                    {faq.question}
+                  </h3>
+                  <span class="text-yellow-600 transition-transform duration-300 group-open:rotate-180 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-6 text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+</style>

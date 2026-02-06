@@ -1,0 +1,222 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const city = "Lake Elsinore";
+const phone = "951-973-1265";
+const phoneFull = "(951) 973-1265";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "First Class WoodWorks — Custom Cabinets " + city,
+  "telephone": "+19519731265",
+  "url": "https://www.firstclasswoodworks.com/cities/lake-elsinore",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "24491 Avenida Arconte",
+    "addressLocality": "Murrieta",
+    "addressRegion": "CA",
+    "postalCode": "92562",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.6681,
+    "longitude": -117.3273
+  },
+  "areaServed": ["Lake Elsinore", "Canyon Hills", "Tuscany Hills", "Rosetta Canyon", "Terra Cotta", "Historic Downtown"],
+  "knowsAbout": ["Finish Carpentry", "Custom Kitchen Islands", "Moisture-Resistant Cabinetry", "3D Design Renderings", "Lakeside Humidity Protection", "Blum Soft-Close Hardware"],
+  "priceRange": "$$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "25"
+  }
+};
+
+const faqs = [
+  {
+    question: "How much do custom cabinets cost in Lake Elsinore?",
+    answer: "Custom kitchen cabinets in Lake Elsinore range from $35,000 to $75,000 or more depending on wood selection, finish complexity, and kitchen layout. This investment delivers furniture-grade plywood construction with Blum lifetime-warranty hardware — engineered to withstand the lakeside humidity that destroys retail particle board."
+  },
+  {
+    question: "Who is the best cabinet maker near Lake Elsinore?",
+    answer: "First Class WoodWorks is the highest-rated cabinet maker serving Lake Elsinore with an A+ BBB rating and 5.0-star reviews. We build every cabinet in-house using furniture-grade materials and install with our own licensed, bonded, and insured finish carpentry team."
+  },
+  {
+    question: "What Lake Elsinore neighborhoods do you serve?",
+    answer: "We serve all Lake Elsinore communities including Canyon Hills, Tuscany Hills, Rosetta Canyon, Terra Cotta, and the Historic Downtown area. Both the 92530 and 92532 zip codes receive the same precision craftsmanship and responsive service from our nearby shop."
+  },
+  {
+    question: "Does lakeside humidity damage kitchen cabinets in Lake Elsinore?",
+    answer: "It absolutely damages retail cabinets. Particle board and MDF absorb moisture from the lake microclimate, causing swelling and delamination. Our cabinets use furniture-grade plywood sealed with post-catalyzed conversion varnish — a moisture-proof barrier specifically chosen for lakeside environments."
+  },
+  {
+    question: "How long does a custom cabinet project take in Lake Elsinore?",
+    answer: "Custom cabinet projects in Lake Elsinore take 8 to 12 weeks from design approval through installation. This timeline includes 3D rendering review, material procurement, precision fabrication, and a complete conversion varnish cure that ensures long-term moisture resistance near the lake."
+  },
+  {
+    question: "Are custom cabinets a good investment for Lake Elsinore homes?",
+    answer: "Yes. In the competitive Lake Elsinore market, custom kitchen cabinets typically return 60 to 80 percent on investment. Buyers actively seek upgraded cabinetry in the 92530 and 92532 zip codes, making custom builds one of the highest-ROI home improvements available."
+  },
+  {
+    question: "What wood resists humidity best for Lake Elsinore kitchens?",
+    answer: "We use furniture-grade plywood for box construction with solid Maple or White Oak face frames. These materials resist moisture absorption far better than MDF or particle board. Combined with our post-catalyzed conversion varnish finish, your cabinets are armored against Lake Elsinore's humidity."
+  },
+  {
+    question: "Do you build custom bathroom vanities in Lake Elsinore?",
+    answer: "Yes. We specialize in moisture-resistant bathroom vanities, floating units, and linen towers for Lake Elsinore master suites. Our conversion varnish finish creates a waterproof barrier that prevents the swelling and finish cracking common in retail big-box vanities."
+  },
+  {
+    question: "Is First Class WoodWorks licensed to work in Lake Elsinore?",
+    answer: "Yes. We are fully licensed, bonded, and insured for finish carpentry throughout Riverside County including all Lake Elsinore neighborhoods. Our A+ BBB accreditation ensures every installation meets California Residential Building Code standards for quality and safety."
+  },
+  {
+    question: "Do you offer free cabinet consultations in Lake Elsinore?",
+    answer: "We provide complimentary in-home consultations throughout Lake Elsinore where we take laser measurements, discuss your design vision, and create 3D renderings of your new cabinetry. Call 951-973-1265 to schedule — most appointments are available within one week."
+  },
+  {
+    question: "Can you build custom closets and entertainment centers in Lake Elsinore?",
+    answer: "Absolutely. We build walk-in closet systems from furniture-grade hardwoods and hand-craft entertainment centers designed to conceal wiring and fit specific dimensions. Every piece receives the same Blum hardware and conversion varnish finish as our kitchen cabinetry."
+  },
+  {
+    question: "What finish protects cabinets from Lake Elsinore's climate?",
+    answer: "We apply post-catalyzed conversion varnish, a professional-grade finish that creates a chemical-resistant, moisture-proof barrier. Unlike the spray lacquer on retail cabinets, our finish prevents yellowing, resists water damage, and maintains its factory-fresh appearance for decades near the lake."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<MainLayout
+  title={"Custom Kitchen Cabinets " + city + " | Cabinet Maker & Builder | " + phone}
+  description={"Lake Elsinore custom cabinet maker. Moisture-resistant kitchen cabinets, bathroom vanities & built-ins by First Class WoodWorks. A+ BBB rated. Call " + phone}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <header class="max-w-4xl mb-16 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Custom Kitchen Cabinets {city} <span class="text-yellow-600">{phone}</span>
+        </h1>
+        <h2 class="text-2xl font-body font-bold text-zinc-700 mb-8">How much do custom cabinets cost in Lake Elsinore?</h2>
+        <p class="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+          Living near the lake means your cabinets face humidity that retail particle board cannot survive. We build moisture-proof cabinetry engineered for the Lake Elsinore microclimate.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-8 space-y-8 text-lg text-zinc-600 leading-relaxed">
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Lake Elsinore's Moisture-Proof Cabinet Builder</h2>
+            <p>
+              The lakeside microclimate that makes <strong>Lake Elsinore</strong> such a desirable place to live also creates a unique challenge for cabinetry. Elevated humidity levels near the water cause particle board to swell, MDF to warp, and retail finishes to crack within a few short years. <a href="https://www.firstclasswoodworks.com/" class="text-yellow-600 font-bold hover:underline">First Class WoodWorks</a> is the <strong>cabinet builder in Lake Elsinore</strong> that solves this problem permanently.
+            </p>
+            <p>
+              We build every cabinet from furniture-grade plywood sealed with post-catalyzed conversion varnish — a professional finish that creates a chemical-resistant, moisture-proof barrier far superior to the spray lacquer on retail cabinets. Homeowners in <strong>Canyon Hills</strong>, <strong>Tuscany Hills</strong>, <strong>Rosetta Canyon</strong>, and throughout the <strong>92530</strong> and <strong>92532</strong> zip codes trust us because our cabinets are engineered for this exact environment.
+            </p>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Custom Precision for Every Lake Elsinore Kitchen</h2>
+            <p>
+              Chain-store cabinets arrive in 3-inch increments, forcing filler strips into the gaps your walls create. Our <a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">custom kitchen cabinets</a> are measured to the 1/16th of an inch, turning every corner and odd angle into functional storage. Whether your home overlooks the lake from <strong>Terra Cotta</strong> or sits in the established neighborhoods near <strong>Historic Downtown</strong>, our <strong>master cabinet maker</strong> team delivers a seamless fit.
+            </p>
+            <p>
+              Every Lake Elsinore project includes a complimentary in-home consultation with laser measurements and full <strong>3D design renderings</strong>. You approve the exact layout, wood species, and finish before we cut a single board. As a licensed, bonded, and insured firm with an A+ BBB rating, we handle the design, fabrication, and <a href="/services/kitchen-remodeling" class="text-yellow-600 hover:underline">kitchen remodel installation</a> entirely in-house.
+            </p>
+          </section>
+
+          <div class="bg-zinc-50 border-l-4 border-yellow-600 p-8 my-10 reveal">
+            <h4 class="text-zinc-900 font-bold mb-2">Master Cabinet Maker Pro-Tip:</h4>
+            <p class="italic">"For homes near the lake in Canyon Hills and Rosetta Canyon, we apply an additional moisture barrier to cabinet interiors — not just the exterior faces. This 360-degree protection prevents the hidden condensation damage that silently destroys particle board cabinets from the inside out in lakeside microclimates."</p>
+          </div>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Full-Home Cabinetry for Lake Elsinore Residences</h2>
+            <p>
+              Our craftsmanship extends beyond the kitchen. Lake Elsinore homeowners trust us for <a href="/services/bathroom-remodeling" class="text-yellow-600 hover:underline">moisture-resistant bathroom vanities</a> that thrive in high-humidity environments, <a href="/services/custom-closets" class="text-yellow-600 hover:underline">premium closet built-ins</a> from solid hardwoods, and <a href="/services/media-centers" class="text-yellow-600 hover:underline">custom entertainment centers</a> built to anchor your living room. Each piece receives the same <strong>Blum soft-close hardware</strong> and conversion varnish that protects our kitchen builds.
+            </p>
+            <p>
+              From the hilltop views of <strong>Tuscany Hills</strong> to the family communities of <strong>Canyon Hills</strong>, we build cabinetry that increases your home's value and withstands the lakeside climate for decades. See the projects we are delivering to homeowners in <a href="/cities/perris" class="text-yellow-600 hover:underline">Perris</a>, or call <strong>{phoneFull}</strong> to schedule your free design consultation today.
+            </p>
+          </section>
+
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8">
+          <div class="bg-zinc-900 text-white p-10 rounded-sm reveal sticky top-32">
+            <h3 class="font-serif font-bold text-2xl mb-4 text-yellow-600">Build With the Best</h3>
+            <ul class="space-y-3 text-white/80 text-sm mb-8">
+              <li class="border-b border-white/10 pb-2">Licensed, Bonded & Insured</li>
+              <li class="border-b border-white/10 pb-2">A+ BBB Accredited</li>
+              <li class="border-b border-white/10 pb-2">Moisture-Proof Construction</li>
+              <li class="border-b border-white/10 pb-2">Blum Lifetime-Warranty Hardware</li>
+              <li class="border-b border-white/10 pb-2">Free 3D Design Renderings</li>
+              <li>Serving 92530 & 92532</li>
+            </ul>
+            <a href="tel:9519731265" class="block text-center border border-yellow-600 py-4 font-bold hover:bg-yellow-600 transition tracking-wider">
+              {phoneFull}
+            </a>
+            <a href="/contact" class="mt-4 block text-center bg-yellow-600 text-zinc-900 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">
+              Get My Free Quote
+            </a>
+          </div>
+        </aside>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="py-16 border-t border-zinc-200">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16 reveal">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">
+              Custom Cabinet <span class="text-yellow-600">FAQs</span> — Lake Elsinore
+            </h2>
+            <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-6"></div>
+            <p class="text-zinc-500 italic">Common questions about custom cabinetry, costs, and timelines for Lake Elsinore homeowners.</p>
+          </div>
+          <div class="space-y-4">
+            {faqs.map((faq, index) => (
+              <details class="group bg-white border border-zinc-200 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 reveal" style={`transition-delay: ${index * 80}ms`}>
+                <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
+                  <h3 class="text-lg md:text-xl font-serif font-bold text-zinc-800 group-hover:text-yellow-600 transition-colors pr-8">
+                    {faq.question}
+                  </h3>
+                  <span class="text-yellow-600 transition-transform duration-300 group-open:rotate-180 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-6 text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+</style>

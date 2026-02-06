@@ -1,0 +1,222 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const city = "Winchester";
+const phone = "951-973-1265";
+const phoneFull = "(951) 973-1265";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "First Class WoodWorks — Custom Cabinets " + city,
+  "telephone": "+19519731265",
+  "url": "https://www.firstclasswoodworks.com/cities/winchester",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "24491 Avenida Arconte",
+    "addressLocality": "Murrieta",
+    "addressRegion": "CA",
+    "postalCode": "92562",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.7068,
+    "longitude": -117.0845
+  },
+  "areaServed": ["Winchester", "Liberty", "Thompson Ranch", "Silverhawk", "Diamond Valley"],
+  "knowsAbout": ["Finish Carpentry", "Custom Kitchen Islands", "Moisture-Resistant Cabinetry", "3D Design Renderings", "Family-Safe Soft-Close Systems", "Blum Soft-Close Hardware"],
+  "priceRange": "$$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "25"
+  }
+};
+
+const faqs = [
+  {
+    question: "How much does custom cabinetry cost in Winchester?",
+    answer: "Custom kitchen cabinets in Winchester range from $35,000 to $75,000 or more based on wood species, kitchen size, and finish complexity. This investment delivers furniture-grade plywood construction with Blum lifetime-warranty hardware — a permanent upgrade over the builder-grade particle board in most Winchester homes."
+  },
+  {
+    question: "Who is the best cabinet maker near Winchester, CA?",
+    answer: "First Class WoodWorks is the highest-rated cabinet maker serving Winchester with an A+ BBB rating and 5.0-star reviews. We build every cabinet in-house at our Murrieta shop and install with our own licensed, bonded, and insured finish carpentry team — no subcontractors."
+  },
+  {
+    question: "What Winchester neighborhoods do you serve?",
+    answer: "We serve all Winchester communities including Liberty, Thompson Ranch, Silverhawk, and homes near Diamond Valley Lake. The entire 92596 zip code receives the same precision craftsmanship and responsive service from our nearby Murrieta shop."
+  },
+  {
+    question: "How long does a custom cabinet project take in Winchester?",
+    answer: "Custom cabinet projects in Winchester typically take 8 to 12 weeks from design approval to professional installation. This includes 3D rendering review, material procurement, precision fabrication, and a complete post-catalyzed conversion varnish cure for lasting durability."
+  },
+  {
+    question: "Are soft-close cabinets safer for families with children?",
+    answer: "Yes. Our Blum soft-close hinges and undermount slides eliminate finger-pinching hazards by decelerating doors and drawers before they close. For Winchester families with young children, this safety feature combined with heavy-duty construction prevents the slamming that damages retail cabinets."
+  },
+  {
+    question: "Should I replace builder-grade cabinets in my Winchester home?",
+    answer: "Absolutely. Builder-grade particle board cabinets installed in new Winchester construction begin degrading within five years in the Inland Empire heat. Upgrading to furniture-grade custom cabinets increases storage, improves daily function, and boosts your home appraisal value."
+  },
+  {
+    question: "What wood species do you recommend for Winchester kitchens?",
+    answer: "We use furniture-grade plywood for cabinet boxes with solid Maple, White Oak, or Alder face frames and doors. These hardwoods handle the extreme heat near Diamond Valley Lake without the warping and delamination found in MDF and melamine alternatives."
+  },
+  {
+    question: "Do you build custom bathroom vanities in Winchester?",
+    answer: "Yes. We specialize in moisture-resistant custom vanities, floating units, and linen towers for Winchester bathrooms. Every piece is sealed with post-catalyzed conversion varnish, a professional-grade barrier that prevents the moisture damage common in retail vanities."
+  },
+  {
+    question: "Is First Class WoodWorks licensed to work in Winchester?",
+    answer: "Yes. We are fully licensed, bonded, and insured for finish carpentry throughout Riverside County including Winchester. Our A+ BBB accreditation ensures every installation meets California Residential Building Code standards for safety and craftsmanship."
+  },
+  {
+    question: "Do you offer free consultations for Winchester homeowners?",
+    answer: "We provide complimentary in-home consultations throughout Winchester. Our team takes laser measurements, discusses your design vision and storage needs, then creates detailed 3D renderings for your approval before fabrication. Call 951-973-1265 to schedule."
+  },
+  {
+    question: "What hardware do you install on Winchester custom cabinets?",
+    answer: "Every project features Blum TANDEM undermount slides and CLIP top soft-close hinges with a lifetime warranty. Blum hardware is Austrian-engineered for 200,000-plus open-close cycles — whisper-quiet, family-safe performance that outlasts any retail cabinet hardware."
+  },
+  {
+    question: "Can you build custom closets and entertainment centers in Winchester?",
+    answer: "Yes. We build walk-in closet systems from furniture-grade hardwoods and hand-craft entertainment centers designed to conceal wiring and fit your exact specifications. Every piece receives the same Blum hardware and conversion varnish finish as our kitchen cabinetry."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<MainLayout
+  title={"Custom Kitchen Cabinets " + city + " | Cabinet Maker & Builder | " + phone}
+  description={"Winchester custom cabinet maker. Handcrafted kitchen cabinets, bathroom vanities & family-safe soft-close cabinetry by First Class WoodWorks. A+ BBB. Call " + phone}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <header class="max-w-4xl mb-16 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Custom Kitchen Cabinets {city} <span class="text-yellow-600">{phone}</span>
+        </h1>
+        <h2 class="text-2xl font-body font-bold text-zinc-700 mb-8">How much does custom cabinetry cost in Winchester?</h2>
+        <p class="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+          Winchester families deserve cabinetry built to withstand decades of heavy use. We handcraft every cabinet with family-safe soft-close hardware and furniture-grade hardwoods.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-8 space-y-8 text-lg text-zinc-600 leading-relaxed">
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Winchester's Family-Focused Cabinet Builder</h2>
+            <p>
+              Winchester is a community built around families. From the master-planned streets of <strong>Liberty</strong> and <strong>Thompson Ranch</strong> to the spacious lots near <strong>Diamond Valley Lake</strong>, homes in the <strong>92596</strong> zip code need kitchens that work as hard as the families living in them. <a href="https://www.firstclasswoodworks.com/" class="text-yellow-600 font-bold hover:underline">First Class WoodWorks</a> is the <strong>cabinet maker in Winchester</strong> that builds for real life — furniture-grade plywood, soft-close everything, and a finish that survives decades of daily use.
+            </p>
+            <p>
+              We are a licensed, bonded, and insured finish carpentry firm with an A+ BBB rating. Every cabinet is built in-house at our Murrieta shop using dovetail drawer boxes, mortise-and-tenon face frames, and <strong>Blum soft-close hardware</strong> backed by a lifetime warranty. No subcontractors. No compromises.
+            </p>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Built for Busy Winchester Kitchens</h2>
+            <p>
+              Retail cabinets ship in fixed sizes and sag after a few years of school-morning rush and weekend meal prep. Our <a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">custom kitchen cabinets</a> are measured to the 1/16th of an inch, maximizing every square inch of storage in your Winchester kitchen. Deep pot drawers with Blum undermount slides rated for over 200,000 cycles handle heavy cookware without bowing, while our soft-close hinges eliminate the finger-pinching hazard that worries parents of young children.
+            </p>
+            <p>
+              Every Winchester project includes a free in-home consultation with laser measurements and <strong>3D design renderings</strong>. You see your new kitchen in detail before fabrication starts. Whether you are planning a full <a href="/services/kitchen-remodeling" class="text-yellow-600 hover:underline">kitchen remodel</a> in <strong>Silverhawk</strong> or upgrading builder-grade cabinets in <strong>Liberty</strong>, our <strong>master cabinet builder</strong> team delivers precision results.
+            </p>
+          </section>
+
+          <div class="bg-zinc-50 border-l-4 border-yellow-600 p-8 my-10 reveal">
+            <h4 class="text-zinc-900 font-bold mb-2">Master Cabinet Maker Pro-Tip:</h4>
+            <p class="italic">"In Winchester family kitchens, we install Blum BLUMOTION soft-close dampers on every door and drawer — not just select ones like retail 'soft-close' packages. Full soft-close eliminates slamming on all 40-plus openings in a typical kitchen, protecting little fingers and reducing the daily wear that destroys non-dampened hardware."</p>
+          </div>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Complete Cabinetry for Winchester Homes</h2>
+            <p>
+              Our craftsmanship reaches every room. Winchester families trust us for <a href="/services/bathroom-remodeling" class="text-yellow-600 hover:underline">moisture-resistant bathroom vanities</a> sealed with conversion varnish, <a href="/services/custom-closets" class="text-yellow-600 hover:underline">walk-in closet systems</a> built from solid hardwoods, and <a href="/services/media-centers" class="text-yellow-600 hover:underline">custom entertainment centers</a> designed to organize your family room. Every piece receives the same furniture-grade construction and lifetime Blum hardware as our kitchen builds.
+            </p>
+            <p>
+              From the family homes of <strong>Thompson Ranch</strong> to the properties near <strong>Diamond Valley Lake</strong>, we are building kitchens that increase home values and stand up to years of heavy family use. See the projects we deliver to our neighbors in <a href="/cities/french-valley" class="text-yellow-600 hover:underline">French Valley</a>, or call <strong>{phoneFull}</strong> to schedule your complimentary design consultation today.
+            </p>
+          </section>
+
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8">
+          <div class="bg-zinc-900 text-white p-10 rounded-sm reveal sticky top-32">
+            <h3 class="font-serif font-bold text-2xl mb-4 text-yellow-600">Build With the Best</h3>
+            <ul class="space-y-3 text-white/80 text-sm mb-8">
+              <li class="border-b border-white/10 pb-2">Licensed, Bonded & Insured</li>
+              <li class="border-b border-white/10 pb-2">A+ BBB Accredited</li>
+              <li class="border-b border-white/10 pb-2">Family-Safe Soft-Close Hardware</li>
+              <li class="border-b border-white/10 pb-2">Blum Lifetime-Warranty Hardware</li>
+              <li class="border-b border-white/10 pb-2">Free 3D Design Renderings</li>
+              <li>Serving Winchester 92596</li>
+            </ul>
+            <a href="tel:9519731265" class="block text-center border border-yellow-600 py-4 font-bold hover:bg-yellow-600 transition tracking-wider">
+              {phoneFull}
+            </a>
+            <a href="/contact" class="mt-4 block text-center bg-yellow-600 text-zinc-900 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">
+              Get My Free Quote
+            </a>
+          </div>
+        </aside>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="py-16 border-t border-zinc-200">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16 reveal">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">
+              Custom Cabinet <span class="text-yellow-600">FAQs</span> — Winchester
+            </h2>
+            <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-6"></div>
+            <p class="text-zinc-500 italic">Common questions about custom cabinetry, costs, and timelines for Winchester homeowners.</p>
+          </div>
+          <div class="space-y-4">
+            {faqs.map((faq, index) => (
+              <details class="group bg-white border border-zinc-200 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 reveal" style={`transition-delay: ${index * 80}ms`}>
+                <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
+                  <h3 class="text-lg md:text-xl font-serif font-bold text-zinc-800 group-hover:text-yellow-600 transition-colors pr-8">
+                    {faq.question}
+                  </h3>
+                  <span class="text-yellow-600 transition-transform duration-300 group-open:rotate-180 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-6 text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+</style>

@@ -1,0 +1,230 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const city = "Temecula";
+const phone = "951-973-1265";
+const phoneFull = "(951) 973-1265";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "First Class WoodWorks — Custom Cabinets " + city,
+  "telephone": "+19519731265",
+  "url": "https://www.firstclasswoodworks.com/cities/temecula",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "24491 Avenida Arconte",
+    "addressLocality": "Murrieta",
+    "addressRegion": "CA",
+    "postalCode": "92562",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.4936,
+    "longitude": -117.1484
+  },
+  "areaServed": ["Temecula", "Old Town Temecula", "Redhawk", "Harveston", "Paloma del Sol", "De Luz", "Wine Country"],
+  "knowsAbout": ["Finish Carpentry", "Custom Kitchen Islands", "Moisture-Resistant Cabinetry", "3D Design Renderings", "Wine Storage Cabinetry", "Blum Soft-Close Hardware"],
+  "priceRange": "$$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "25"
+  }
+};
+
+const faqs = [
+  {
+    question: "How much do custom kitchen cabinets cost in Temecula?",
+    answer: "Custom kitchen cabinets in Temecula range from $35,000 to $75,000 or more based on wood selection, layout complexity, and finish grade. Our pricing reflects furniture-grade plywood, Blum lifetime-warranty hardware, and precision fitting — a long-term investment that outperforms every big-box alternative in Wine Country homes."
+  },
+  {
+    question: "Who is the top-rated custom cabinet maker in Temecula?",
+    answer: "First Class WoodWorks holds an A+ BBB rating and 5.0-star reviews from Temecula homeowners across Redhawk, Harveston, and Wine Country. We are the only local cabinet maker that builds, finishes, and installs every piece in-house with zero subcontractors."
+  },
+  {
+    question: "Do you build wine storage cabinets for Temecula homes?",
+    answer: "Yes. Living in Temecula Wine Country means proper wine storage matters. We build temperature-conscious wine cabinetry with individual bottle cradles, humidity-sealed compartments, and integrated cooling zones using the same furniture-grade hardwoods found in our kitchen cabinetry."
+  },
+  {
+    question: "What Temecula neighborhoods does First Class WoodWorks serve?",
+    answer: "We serve every Temecula community including Redhawk, Harveston, Paloma del Sol, Vail Ranch, De Luz, and the Wine Country estates. Our shop in nearby Murrieta provides fast turnaround for all projects in the 92591 and 92592 zip codes."
+  },
+  {
+    question: "How long does a custom kitchen remodel take in Temecula?",
+    answer: "A complete kitchen remodel with custom cabinetry typically takes 8 to 12 weeks from design approval to final installation. This timeline includes 3D renderings, material procurement, precision fabrication, and a full conversion varnish cure for a flawless, long-lasting finish."
+  },
+  {
+    question: "Are custom cabinets better than IKEA for Temecula homes?",
+    answer: "IKEA cabinets use particle board boxes in fixed sizes, requiring filler strips and sacrificing storage. Our custom cabinets are built from furniture-grade plywood to your exact wall dimensions, maximizing space and surviving the Inland Empire heat that causes particle board to swell and delaminate."
+  },
+  {
+    question: "Do you offer 3D kitchen design renderings in Temecula?",
+    answer: "Every Temecula project includes complimentary 3D design renderings so you can visualize your new kitchen before fabrication begins. We take precise laser measurements in your home and present photorealistic views of cabinet layouts, finishes, and hardware selections during your consultation."
+  },
+  {
+    question: "What kind of wood is best for Temecula kitchen cabinets?",
+    answer: "We recommend furniture-grade plywood for box construction with solid Maple, White Oak, or Alder face frames. These hardwoods handle the Temecula Valley's temperature extremes without warping, unlike the MDF and melamine used in retail cabinets that fail within a decade."
+  },
+  {
+    question: "Does a kitchen remodel increase home value in Temecula?",
+    answer: "In the 92591 and 92592 zip codes, a high-end kitchen remodel with custom cabinetry typically returns 60 to 80 percent on investment. Custom cabinets are the number one feature luxury buyers seek in Temecula's competitive Wine Country real estate market."
+  },
+  {
+    question: "Can you build custom bathroom vanities in Temecula?",
+    answer: "Absolutely. We build moisture-resistant custom vanities, floating units, and linen towers for Temecula master suites. Every bathroom piece is sealed with post-catalyzed conversion varnish to prevent the finish cracking and wood swelling common in big-box vanities."
+  },
+  {
+    question: "Is First Class WoodWorks licensed for work in Temecula?",
+    answer: "Yes. We are fully licensed, bonded, and insured for finish carpentry throughout Riverside County including all Temecula neighborhoods. Our A+ BBB accreditation and compliance with the California Residential Building Code guarantee professional, code-compliant installations."
+  },
+  {
+    question: "What hardware do you use on Temecula custom cabinets?",
+    answer: "We install Blum TANDEM undermount slides and CLIP top soft-close hinges on every project. Blum hardware is Austrian-engineered for over 200,000 open-close cycles with a lifetime warranty — the industry gold standard for luxury Temecula kitchen cabinetry."
+  },
+  {
+    question: "Do you build custom entertainment centers in Temecula?",
+    answer: "Yes. Our hand-crafted entertainment centers and fireplace surrounds start at $8,000 and are designed to conceal wiring, accommodate specific TV sizes, and integrate seamlessly with your existing cabinetry style. We serve Temecula homes from Redhawk to De Luz."
+  },
+  {
+    question: "How do I schedule a cabinet consultation in Temecula?",
+    answer: "Call 951-973-1265 or visit our contact page to book a free in-home consultation. We serve all Temecula zip codes and typically schedule visits within one week. You will receive laser measurements, design concepts, and a detailed written estimate at no cost."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<MainLayout
+  title={"Custom Kitchen Cabinets " + city + " | Master Cabinet Builder | " + phone}
+  description={"Temecula's trusted custom cabinet builder. Handcrafted kitchen cabinets, bathroom vanities & wine storage by First Class WoodWorks. A+ BBB. Licensed & insured. Call " + phone}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <header class="max-w-4xl mb-16 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Custom Kitchen Cabinets {city} <span class="text-yellow-600">{phone}</span>
+        </h1>
+        <h2 class="text-2xl font-body font-bold text-zinc-700 mb-8">How much do custom kitchen cabinets cost in Temecula?</h2>
+        <p class="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+          From Old Town Temecula estates to Wine Country dream kitchens, we handcraft every cabinet in-house with furniture-grade materials and lifetime-warranty hardware.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-8 space-y-8 text-lg text-zinc-600 leading-relaxed">
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Temecula's Trusted Cabinet Builder</h2>
+            <p>
+              Temecula is a city of fine taste — from the vineyards of <strong>De Luz</strong> to the resort living near <strong>Pechanga</strong>. Your kitchen should reflect that standard. <a href="https://www.firstclasswoodworks.com/" class="text-yellow-600 font-bold hover:underline">First Class WoodWorks</a> is the <strong>cabinet builder Temecula</strong> homeowners call when they refuse to settle for factory-made particle board. Every cabinet leaves our shop built from furniture-grade plywood with dovetail drawer boxes and mortise-and-tenon face frames.
+            </p>
+            <p>
+              Serving <strong>Redhawk</strong>, <strong>Harveston</strong>, <strong>Paloma del Sol</strong>, and the luxury estates throughout the <strong>92591</strong> and <strong>92592</strong> zip codes, we bring decades of finish carpentry expertise to every project. As a licensed, bonded, and insured contractor with an A+ BBB rating, we handle the design, fabrication, and installation entirely in-house — no subcontractors touch your home.
+            </p>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Why Temecula Homeowners Choose Custom</h2>
+            <p>
+              The Temecula Valley real estate market rewards quality. When you invest in <a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">custom kitchen cabinets</a>, you are adding permanent equity to your home. Retail cabinets from chain stores arrive in fixed 3-inch increments and require filler strips to hide gaps. Our <strong>master cabinet maker</strong> team measures your walls to the 1/16th of an inch, delivering a seamless fit that maximizes storage and eliminates wasted space.
+            </p>
+            <p>
+              Every Temecula kitchen project begins with a free in-home consultation where we capture laser measurements and produce <strong>3D design renderings</strong>. Whether you are reimagining a <strong>Wine Country</strong> estate kitchen or planning a <a href="/services/kitchen-remodeling" class="text-yellow-600 hover:underline">full kitchen remodel</a> in a <strong>Vail Ranch</strong> family home, you see the finished result before we cut the first board.
+            </p>
+          </section>
+
+          <div class="bg-zinc-50 border-l-4 border-yellow-600 p-8 my-10 reveal">
+            <h4 class="text-zinc-900 font-bold mb-2">Master Cabinet Maker Pro-Tip:</h4>
+            <p class="italic">"For Wine Country estates in Temecula, we integrate climate-conscious wine storage into kitchen island designs. By pairing a thermoelectric cooling zone with individually routed bottle cradles in furniture-grade walnut, your collection stays at optimal temperature without a standalone wine fridge disrupting the cabinetry line."</p>
+          </div>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Full-Home Cabinetry for Temecula Estates</h2>
+            <p>
+              Our craftsmanship extends well beyond the kitchen. Temecula homeowners trust us for <a href="/services/bathroom-remodeling" class="text-yellow-600 hover:underline">custom bathroom vanities</a> sealed against daily moisture, <a href="/services/custom-closets" class="text-yellow-600 hover:underline">walk-in closet built-ins</a> constructed from solid hardwoods, and <a href="/services/media-centers" class="text-yellow-600 hover:underline">hand-built entertainment centers</a> that anchor your living room. Every piece receives our signature post-catalyzed conversion varnish — a professional finish that outperforms the spray lacquer on retail furniture.
+            </p>
+            <p>
+              See what homeowners near <strong>Old Town Temecula</strong> and the <strong>Pechanga</strong> corridor are building, or explore the work we do for our neighbors in <a href="/cities/murrieta" class="text-yellow-600 hover:underline">Murrieta</a>. Call <strong>{phoneFull}</strong> to schedule your complimentary design consultation and discover why Temecula's most discerning families choose First Class WoodWorks.
+            </p>
+          </section>
+
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8">
+          <div class="bg-zinc-900 text-white p-10 rounded-sm reveal sticky top-32">
+            <h3 class="font-serif font-bold text-2xl mb-4 text-yellow-600">Build With Temecula's Best</h3>
+            <ul class="space-y-3 text-white/80 text-sm mb-8">
+              <li class="border-b border-white/10 pb-2">Licensed, Bonded & Insured</li>
+              <li class="border-b border-white/10 pb-2">A+ BBB Accredited</li>
+              <li class="border-b border-white/10 pb-2">100% In-House Craftsmanship</li>
+              <li class="border-b border-white/10 pb-2">Blum Lifetime-Warranty Hardware</li>
+              <li class="border-b border-white/10 pb-2">Free 3D Design Renderings</li>
+              <li>Serving 92591 & 92592</li>
+            </ul>
+            <a href="tel:9519731265" class="block text-center border border-yellow-600 py-4 font-bold hover:bg-yellow-600 transition tracking-wider">
+              {phoneFull}
+            </a>
+            <a href="/contact" class="mt-4 block text-center bg-yellow-600 text-zinc-900 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">
+              Get My Free Quote
+            </a>
+          </div>
+        </aside>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="py-16 border-t border-zinc-200">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16 reveal">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">
+              Custom Cabinet <span class="text-yellow-600">FAQs</span> — Temecula
+            </h2>
+            <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-6"></div>
+            <p class="text-zinc-500 italic">Common questions about custom cabinetry, costs, and timelines for Temecula homeowners.</p>
+          </div>
+          <div class="space-y-4">
+            {faqs.map((faq, index) => (
+              <details class="group bg-white border border-zinc-200 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 reveal" style={`transition-delay: ${index * 80}ms`}>
+                <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
+                  <h3 class="text-lg md:text-xl font-serif font-bold text-zinc-800 group-hover:text-yellow-600 transition-colors pr-8">
+                    {faq.question}
+                  </h3>
+                  <span class="text-yellow-600 transition-transform duration-300 group-open:rotate-180 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-6 text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+</style>

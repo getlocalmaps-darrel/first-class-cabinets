@@ -1,0 +1,226 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const city = "Menifee";
+const phone = "951-973-1265";
+const phoneFull = "(951) 973-1265";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "First Class WoodWorks — Custom Cabinets " + city,
+  "telephone": "+19519731265",
+  "url": "https://www.firstclasswoodworks.com/cities/menifee",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "24491 Avenida Arconte",
+    "addressLocality": "Murrieta",
+    "addressRegion": "CA",
+    "postalCode": "92562",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.6971,
+    "longitude": -117.1851
+  },
+  "areaServed": ["Menifee", "Audie Murphy Ranch", "Menifee Lakes", "Heritage Lake", "Sun City"],
+  "knowsAbout": ["Finish Carpentry", "Custom Kitchen Islands", "Moisture-Resistant Cabinetry", "3D Design Renderings", "New Construction Cabinetry", "Blum Soft-Close Hardware"],
+  "priceRange": "$$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "25"
+  }
+};
+
+const faqs = [
+  {
+    question: "How much does a kitchen remodel cost in Menifee?",
+    answer: "A comprehensive kitchen remodel with custom cabinetry in Menifee typically ranges from $35,000 to $75,000 or more. This includes furniture-grade plywood construction, Blum lifetime-warranty hardware, and precision fitting — a permanent upgrade that increases your home's appraisal value in the 92584, 92585, and 92586 zip codes."
+  },
+  {
+    question: "Who is the highest-rated cabinet maker serving Menifee?",
+    answer: "First Class WoodWorks holds an A+ BBB rating and 5.0-star reviews from homeowners across Menifee. We build every cabinet in-house at our nearby Murrieta shop and install with our own licensed, bonded, and insured finish carpentry team — no subcontractors ever."
+  },
+  {
+    question: "What Menifee neighborhoods do you serve for custom cabinets?",
+    answer: "We serve every Menifee community including Audie Murphy Ranch, Menifee Lakes, Heritage Lake, Sun City, and the entire 92584, 92585, and 92586 zip codes. Our proximity in Murrieta means fast project starts and responsive service for all Menifee homeowners."
+  },
+  {
+    question: "How long does it take to build custom cabinets for a Menifee home?",
+    answer: "Custom cabinet projects in Menifee take 8 to 12 weeks from design approval to professional installation. This timeline covers 3D rendering review, material procurement, precision fabrication, and a complete post-catalyzed conversion varnish cure for lasting durability."
+  },
+  {
+    question: "Are custom cabinets worth it for new construction homes in Menifee?",
+    answer: "Absolutely. Menifee's newer developments often include builder-grade particle board cabinets that delaminate within five years in the Inland Empire heat. Upgrading to custom furniture-grade cabinetry immediately elevates your home's function, appearance, and resale value above every comparable property."
+  },
+  {
+    question: "What wood is best for kitchen cabinets in the Menifee heat?",
+    answer: "We use furniture-grade plywood for cabinet boxes and solid Maple, White Oak, or Alder for doors and face frames. These materials handle Menifee's extreme summer temperatures without the warping, swelling, or delamination common in the MDF and melamine found in builder-grade and retail cabinets."
+  },
+  {
+    question: "Do you replace builder-grade cabinets in Menifee new construction?",
+    answer: "Yes. This is one of our most popular services in Menifee. We remove the factory particle board cabinets and replace them with precision-built, furniture-grade cabinetry that transforms the look and storage capacity of your kitchen while significantly increasing your home value."
+  },
+  {
+    question: "Can you build custom bathroom vanities in Menifee?",
+    answer: "We specialize in moisture-resistant custom vanities, floating units, and linen towers for Menifee master suites. Every bathroom piece receives our post-catalyzed conversion varnish, creating a waterproof seal that prevents the finish cracking common in retail vanities."
+  },
+  {
+    question: "Is First Class WoodWorks licensed to work in Menifee?",
+    answer: "Yes. We are fully licensed, bonded, and insured for finish carpentry throughout Riverside County including all Menifee neighborhoods and zip codes. Our A+ BBB accreditation guarantees code-compliant workmanship on every custom cabinet installation."
+  },
+  {
+    question: "Do you offer free cabinet consultations in Menifee?",
+    answer: "We provide complimentary in-home consultations throughout Menifee. Our team takes laser measurements, discusses your storage goals and design preferences, then delivers detailed 3D renderings so you approve every detail before fabrication. Call 951-973-1265 to schedule."
+  },
+  {
+    question: "What hardware comes standard on your Menifee custom cabinets?",
+    answer: "Every project includes Blum TANDEM undermount slides and CLIP top soft-close hinges with a lifetime warranty. Blum hardware is Austrian-engineered for over 200,000 open-close cycles — whisper-quiet performance that outlasts any big-box cabinet hardware on the market."
+  },
+  {
+    question: "Do you build custom closets for Menifee homes?",
+    answer: "Yes. We build premium walk-in closet systems from the same furniture-grade materials used in our kitchen cabinets. No wire shelving or particle board. Our closet built-ins feature dovetail drawer boxes, adjustable shelving, and integrated lighting for Menifee master suites."
+  },
+  {
+    question: "How do custom cabinets affect home resale value in Menifee?",
+    answer: "In the competitive Menifee real estate market, custom kitchen cabinets typically return 60 to 80 percent on investment. Buyers in the 92584 and 92585 zip codes specifically seek homes with upgraded cabinetry, making custom builds one of the highest-ROI improvements available."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<MainLayout
+  title={"Custom Kitchen Cabinets " + city + " | Cabinet Maker & Builder | " + phone}
+  description={"Menifee's trusted custom cabinet maker. Handcrafted kitchen cabinets, bathroom vanities & built-ins by First Class WoodWorks. A+ BBB. Licensed & insured. Call " + phone}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <header class="max-w-4xl mb-16 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Custom Kitchen Cabinets {city} <span class="text-yellow-600">{phone}</span>
+        </h1>
+        <h2 class="text-2xl font-body font-bold text-zinc-700 mb-8">How much does a custom kitchen remodel cost in Menifee?</h2>
+        <p class="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+          Menifee is one of the fastest-growing cities in Riverside County. Make sure your kitchen keeps pace with cabinetry built to last a lifetime.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-8 space-y-8 text-lg text-zinc-600 leading-relaxed">
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Menifee's Expert Cabinet Maker & Builder</h2>
+            <p>
+              <strong>Audie Murphy Ranch</strong>, <strong>Menifee Lakes</strong>, <strong>Heritage Lake</strong> — Menifee's communities are among the most sought-after in the Inland Empire. Yet most new construction in the <strong>92584</strong>, <strong>92585</strong>, and <strong>92586</strong> zip codes ships with builder-grade particle board cabinets that begin failing within five years. <a href="https://www.firstclasswoodworks.com/" class="text-yellow-600 font-bold hover:underline">First Class WoodWorks</a> is the <strong>cabinet maker Menifee</strong> homeowners call to replace that compromise with something permanent.
+            </p>
+            <p>
+              We are a licensed, bonded, and insured finish carpentry firm with an A+ BBB rating. Every cabinet we build uses furniture-grade plywood with dovetail drawer boxes and <strong>Blum soft-close hardware</strong> — all fabricated and installed by our own employees. No subcontractors. No shortcuts.
+            </p>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Replacing Builder-Grade with Heirloom Quality</h2>
+            <p>
+              One of our most popular services in Menifee is ripping out factory cabinets and replacing them with <a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">true custom cabinetry</a>. Builder-grade units arrive in fixed sizes with filler strips hiding the gaps. Our <strong>master cabinet builder</strong> team measures your walls to the 1/16th of an inch, designing cabinets that maximize every square inch of storage your kitchen can offer.
+            </p>
+            <p>
+              Each Menifee project begins with a free in-home consultation. We capture laser measurements, understand your cooking workflow, and deliver <strong>3D design renderings</strong> so you see the finished kitchen before we start fabrication. Whether you need a full <a href="/services/kitchen-remodeling" class="text-yellow-600 hover:underline">kitchen remodel</a> or a targeted cabinet replacement, we build it right the first time.
+            </p>
+          </section>
+
+          <div class="bg-zinc-50 border-l-4 border-yellow-600 p-8 my-10 reveal">
+            <h4 class="text-zinc-900 font-bold mb-2">Master Cabinet Maker Pro-Tip:</h4>
+            <p class="italic">"In Menifee's new-construction homes, builder-grade cabinets use melamine-coated particle board that blisters when exposed to sustained heat above 100°F. We use furniture-grade maple plywood with a post-catalyzed conversion varnish rated for 275°F — engineered specifically for the Inland Empire's brutal summer months."</p>
+          </div>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Complete Cabinetry Services Across Menifee</h2>
+            <p>
+              Our expertise reaches every room. Menifee homeowners choose us for <a href="/services/bathroom-remodeling" class="text-yellow-600 hover:underline">moisture-resistant bathroom vanities</a>, <a href="/services/custom-closets" class="text-yellow-600 hover:underline">walk-in closet systems</a> built from solid hardwoods, and <a href="/services/media-centers" class="text-yellow-600 hover:underline">custom entertainment centers</a> that anchor your family room. Every piece receives the same furniture-grade construction and Blum hardware as our kitchen builds.
+            </p>
+            <p>
+              From the master-planned streets of <strong>Audie Murphy Ranch</strong> to the established neighborhoods around <strong>Menifee Lakes</strong>, we are building kitchens that increase appraisal values and stand the test of time. See the craftsmanship we bring to our neighbors in <a href="/cities/wildomar" class="text-yellow-600 hover:underline">Wildomar</a>, or call <strong>{phoneFull}</strong> to schedule your complimentary design consultation today.
+            </p>
+          </section>
+
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8">
+          <div class="bg-zinc-900 text-white p-10 rounded-sm reveal sticky top-32">
+            <h3 class="font-serif font-bold text-2xl mb-4 text-yellow-600">Build With the Best</h3>
+            <ul class="space-y-3 text-white/80 text-sm mb-8">
+              <li class="border-b border-white/10 pb-2">Licensed, Bonded & Insured</li>
+              <li class="border-b border-white/10 pb-2">A+ BBB Accredited</li>
+              <li class="border-b border-white/10 pb-2">100% In-House Craftsmanship</li>
+              <li class="border-b border-white/10 pb-2">Blum Lifetime-Warranty Hardware</li>
+              <li class="border-b border-white/10 pb-2">Free 3D Design Renderings</li>
+              <li>Serving 92584, 92585 & 92586</li>
+            </ul>
+            <a href="tel:9519731265" class="block text-center border border-yellow-600 py-4 font-bold hover:bg-yellow-600 transition tracking-wider">
+              {phoneFull}
+            </a>
+            <a href="/contact" class="mt-4 block text-center bg-yellow-600 text-zinc-900 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">
+              Get My Free Quote
+            </a>
+          </div>
+        </aside>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="py-16 border-t border-zinc-200">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16 reveal">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">
+              Custom Cabinet <span class="text-yellow-600">FAQs</span> — Menifee
+            </h2>
+            <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-6"></div>
+            <p class="text-zinc-500 italic">Common questions about custom cabinetry, costs, and timelines for Menifee homeowners.</p>
+          </div>
+          <div class="space-y-4">
+            {faqs.map((faq, index) => (
+              <details class="group bg-white border border-zinc-200 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 reveal" style={`transition-delay: ${index * 80}ms`}>
+                <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
+                  <h3 class="text-lg md:text-xl font-serif font-bold text-zinc-800 group-hover:text-yellow-600 transition-colors pr-8">
+                    {faq.question}
+                  </h3>
+                  <span class="text-yellow-600 transition-transform duration-300 group-open:rotate-180 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-6 text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+</style>

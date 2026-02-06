@@ -1,0 +1,234 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const city = "Murrieta";
+const phone = "951-973-1265";
+const phoneFull = "(951) 973-1265";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "First Class WoodWorks — Custom Cabinets " + city,
+  "telephone": "+19519731265",
+  "url": "https://www.firstclasswoodworks.com/cities/murrieta",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "24491 Avenida Arconte",
+    "addressLocality": "Murrieta",
+    "addressRegion": "CA",
+    "postalCode": "92562",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.5539,
+    "longitude": -117.2139
+  },
+  "areaServed": ["Murrieta", "Bear Creek", "Greer Ranch", "Copper Canyon", "Murrieta Hot Springs"],
+  "knowsAbout": ["Finish Carpentry", "Custom Kitchen Islands", "Moisture-Resistant Cabinetry", "3D Design Renderings", "Dovetail Joinery", "Blum Soft-Close Hardware"],
+  "priceRange": "$$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "25"
+  }
+};
+
+const faqs = [
+  {
+    question: "How much do custom kitchen cabinets cost in Murrieta?",
+    answer: "Custom kitchen cabinets in Murrieta typically range from $35,000 to $75,000 or more depending on wood species, finish complexity, and kitchen size. This reflects furniture-grade plywood construction, Blum soft-close hardware, and precision fitting to the 1/16th of an inch — a permanent upgrade over big-box particle board."
+  },
+  {
+    question: "Who is the best cabinet maker in Murrieta, CA?",
+    answer: "First Class WoodWorks is Murrieta's highest-rated custom cabinet maker with an A+ BBB rating and 5.0-star reviews. Unlike competitors who subcontract, our licensed and bonded team handles every cut, joint, and installation in-house from our local shop near Bear Creek."
+  },
+  {
+    question: "What neighborhoods in Murrieta do you serve for custom cabinets?",
+    answer: "We serve every Murrieta neighborhood including Bear Creek, Greer Ranch, Copper Canyon, Murrieta Hot Springs, and the 92562 and 92563 zip codes. Our shop is centrally located on Avenida Arconte, giving us fast access to every community in the city."
+  },
+  {
+    question: "How long does it take to get custom cabinets built in Murrieta?",
+    answer: "From design approval to professional installation, custom cabinets take 8 to 12 weeks. This includes full 3D renderings, material procurement, precision fabrication in our local shop, and a post-catalyzed conversion varnish cure that ensures a lifetime finish on your cabinetry."
+  },
+  {
+    question: "Are custom cabinets worth the investment over Home Depot or IKEA?",
+    answer: "Absolutely. Retail cabinets use particle board that swells in Southern California heat and fails within 5 to 10 years. Our custom cabinets use furniture-grade plywood with dovetail joinery, increasing your home appraisal value and lasting a lifetime without peeling or warping."
+  },
+  {
+    question: "Do you offer free cabinet design consultations in Murrieta?",
+    answer: "Yes. We provide complimentary in-home consultations throughout Murrieta where we take laser measurements, discuss your storage workflow, and create full 3D renderings so you can visualize your new cabinetry before a single board is cut. Call 951-973-1265 to schedule."
+  },
+  {
+    question: "What type of wood do you use for custom cabinets in Murrieta?",
+    answer: "We use furniture-grade plywood for box construction paired with solid hardwoods like Maple, White Oak, or Alder for face frames and doors. These materials handle the Inland Empire's temperature swings far better than the MDF or melamine found in big-box stores."
+  },
+  {
+    question: "Do you build bathroom vanities in addition to kitchen cabinets?",
+    answer: "Yes. We specialize in moisture-resistant custom bathroom vanities, linen towers, and medicine cabinets finished with post-catalyzed conversion varnish. From master suites in Bear Creek to guest baths in Copper Canyon, every vanity is built to withstand daily humidity exposure."
+  },
+  {
+    question: "What hardware brands do you install on custom cabinets?",
+    answer: "We exclusively use Blum undermount slides and soft-close hinges, which carry a lifetime warranty. Blum hardware operates silently and withstands over 200,000 cycles — critical for busy Murrieta family kitchens where drawers and doors are opened dozens of times daily."
+  },
+  {
+    question: "Is First Class WoodWorks licensed and insured in Murrieta?",
+    answer: "Yes. First Class WoodWorks is fully licensed, bonded, and insured for finish carpentry throughout Riverside County. We maintain an A+ BBB accreditation and comply with all California Residential Building Code requirements for cabinetry and remodeling projects."
+  },
+  {
+    question: "Can you build custom closet systems for Murrieta homes?",
+    answer: "We build premium walk-in closet systems using the same furniture-grade materials as our kitchen cabinets. No particle board, no wire shelving. Our closet built-ins include dovetail drawer boxes, adjustable shelving, and integrated LED lighting for luxury Murrieta master suites."
+  },
+  {
+    question: "What is the difference between custom and semi-custom cabinets?",
+    answer: "Semi-custom cabinets are factory-made in standard increments requiring filler strips for imperfect walls. Our true custom cabinets are built to your exact dimensions in our local shop, eliminating gaps and maximizing every inch of usable storage in your Murrieta kitchen."
+  },
+  {
+    question: "Do you build entertainment centers and media walls in Murrieta?",
+    answer: "Yes. We hand-craft custom entertainment centers, fireplace surrounds, and full media walls starting at $8,000. Each unit is designed to conceal wiring, accommodate specific TV dimensions, and match your existing cabinetry style throughout your Murrieta home."
+  },
+  {
+    question: "What finish do you apply to custom kitchen cabinets?",
+    answer: "We use post-catalyzed conversion varnish, a professional-grade finish far superior to the house paint or thin lacquer used by big-box retailers. This chemical-resistant coating prevents yellowing, resists moisture, and maintains its factory-fresh appearance for decades in the Murrieta climate."
+  },
+  {
+    question: "How do I get a quote for custom cabinets in Murrieta?",
+    answer: "Call us at 951-973-1265 or visit our contact page to schedule a free in-home consultation. We measure your space, discuss design goals, and provide a detailed written quote within one week. We serve all Murrieta zip codes including 92562 and 92563."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<MainLayout
+  title={"Custom Kitchen Cabinets " + city + " | Master Cabinet Maker | " + phone}
+  description={"Murrieta's premier custom cabinet maker. Handcrafted kitchen cabinets, bathroom vanities & built-ins by First Class WoodWorks. Licensed, bonded & insured. A+ BBB. Call " + phone}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <header class="max-w-4xl mb-16 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Custom Kitchen Cabinets {city} <span class="text-yellow-600">{phone}</span>
+        </h1>
+        <h2 class="text-2xl font-body font-bold text-zinc-700 mb-8">Who is the highest-rated cabinet maker near Murrieta?</h2>
+        <p class="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+          Your Murrieta home deserves cabinetry built by a master craftsman — not assembled from a flat-pack. We build every cabinet in-house to the 1/16th of an inch.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-8 space-y-8 text-lg text-zinc-600 leading-relaxed">
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Murrieta's Master Cabinet Maker & Builder</h2>
+            <p>
+              Homeowners across <strong>Bear Creek</strong>, <strong>Greer Ranch</strong>, and <strong>Copper Canyon</strong> trust <a href="https://www.firstclasswoodworks.com/" class="text-yellow-600 font-bold hover:underline">First Class WoodWorks</a> for one reason: we never cut corners. As a licensed, bonded, and insured <strong>cabinet maker in Murrieta</strong>, we build every kitchen cabinet, bathroom vanity, and entertainment center right here in our local shop — never outsourced, never subcontracted.
+            </p>
+            <p>
+              Murrieta homeowners in the <strong>92562</strong> and <strong>92563</strong> zip codes have watched big-box particle board cabinets swell and delaminate under the Inland Empire's triple-digit summers. That is exactly why families near <strong>Murrieta Hot Springs</strong> and the <strong>Santa Rosa Plateau</strong> choose our furniture-grade plywood construction paired with <strong>Blum soft-close hardware</strong> that carries a lifetime warranty.
+            </p>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Why Custom Cabinets Outperform Pre-Fab in Murrieta</h2>
+            <p>
+              When you invest in <a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">custom kitchen cabinets</a>, you are choosing precision over compromise. Retail cabinets ship in 3-inch increments — if your wall is 32 inches, you lose 2 inches to filler strips. Our <strong>cabinet builder</strong> team measures to the 1/16th of an inch, maximizing every square inch of storage in your Murrieta kitchen.
+            </p>
+            <p>
+              Every project starts with a complimentary in-home consultation where we take laser measurements and deliver full <strong>3D design renderings</strong>. You see your dream kitchen before we cut the first board. From dovetail drawer boxes to mortise-and-tenon face frames, our joinery methods are the same ones used in heirloom furniture — built to outlast the home itself.
+            </p>
+          </section>
+
+          <div class="bg-zinc-50 border-l-4 border-yellow-600 p-8 my-10 reveal">
+            <h4 class="text-zinc-900 font-bold mb-2">Master Cabinet Maker Pro-Tip:</h4>
+            <p class="italic">"In busy Murrieta family kitchens near Bear Creek, we install Blum TANDEM undermount slides rated for 200,000+ cycles. Combined with BLUMOTION soft-close dampening, heavy pot drawers glide silently for decades — something no big-box roller slide can match."</p>
+          </div>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Complete Cabinet Services for Every Room</h2>
+            <p>
+              Beyond kitchens, Murrieta homeowners rely on us for <a href="/services/bathroom-remodeling" class="text-yellow-600 hover:underline">custom bathroom vanities</a> sealed with post-catalyzed conversion varnish, <a href="/services/custom-closets" class="text-yellow-600 hover:underline">walk-in closet systems</a> crafted from solid hardwoods, and hand-built <a href="/services/media-centers" class="text-yellow-600 hover:underline">entertainment centers</a> designed to conceal every wire. Each piece receives the same furniture-grade construction whether it lives in a master suite off the <strong>Promenade Mall</strong> corridor or a ranch estate bordering the <strong>Santa Rosa Plateau</strong>.
+            </p>
+            <p>
+              Ready to see why Murrieta's most discerning homeowners choose us over every competitor? Whether your home sits in <strong>Copper Canyon</strong> or the hilltops of <strong>Greer Ranch</strong>, our A+ BBB-rated team delivers <a href="/services/kitchen-remodeling" class="text-yellow-600 hover:underline">kitchen remodeling</a> that increases your home's appraisal value. Explore what our neighbors in <a href="/cities/fallbrook" class="text-yellow-600 hover:underline">Fallbrook</a> are building with us, or call <strong>{phoneFull}</strong> to start your free consultation today.
+            </p>
+          </section>
+
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8">
+          <div class="bg-zinc-900 text-white p-10 rounded-sm reveal sticky top-32">
+            <h3 class="font-serif font-bold text-2xl mb-4 text-yellow-600">Build With Murrieta's Best</h3>
+            <ul class="space-y-3 text-white/80 text-sm mb-8">
+              <li class="border-b border-white/10 pb-2">Licensed, Bonded & Insured</li>
+              <li class="border-b border-white/10 pb-2">A+ BBB Accredited</li>
+              <li class="border-b border-white/10 pb-2">100% In-House Craftsmanship</li>
+              <li class="border-b border-white/10 pb-2">Blum Lifetime-Warranty Hardware</li>
+              <li class="border-b border-white/10 pb-2">Free 3D Design Renderings</li>
+              <li>Serving 92562 & 92563</li>
+            </ul>
+            <a href="tel:9519731265" class="block text-center border border-yellow-600 py-4 font-bold hover:bg-yellow-600 transition tracking-wider">
+              {phoneFull}
+            </a>
+            <a href="/contact" class="mt-4 block text-center bg-yellow-600 text-zinc-900 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">
+              Get My Free Quote
+            </a>
+          </div>
+        </aside>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="py-16 border-t border-zinc-200">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16 reveal">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">
+              Custom Cabinet <span class="text-yellow-600">FAQs</span> — Murrieta
+            </h2>
+            <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-6"></div>
+            <p class="text-zinc-500 italic">Common questions about custom cabinetry, costs, and timelines for Murrieta homeowners.</p>
+          </div>
+          <div class="space-y-4">
+            {faqs.map((faq, index) => (
+              <details class="group bg-white border border-zinc-200 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 reveal" style={`transition-delay: ${index * 80}ms`}>
+                <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
+                  <h3 class="text-lg md:text-xl font-serif font-bold text-zinc-800 group-hover:text-yellow-600 transition-colors pr-8">
+                    {faq.question}
+                  </h3>
+                  <span class="text-yellow-600 transition-transform duration-300 group-open:rotate-180 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-6 text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+</style>
