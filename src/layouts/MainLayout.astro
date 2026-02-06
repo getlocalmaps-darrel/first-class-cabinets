@@ -14,7 +14,7 @@ const isHome = Astro.url.pathname === "/";
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <meta name="description" content={description || "Murrieta's premier custom kitchen cabinet makers specializing in luxury cabinetry and bathroom remodeling."} />
-  <title>{title ? `${title} | Custom Kitchen Cabinets Murrieta` : "Custom Kitchen Cabinets Murrieta | First Class Woodworks"}</title>
+  <title>{title && isHome ? title : title ? `${title} | Custom Kitchen Cabinets Murrieta` : "Custom Kitchen Cabinets Murrieta | First Class Woodworks"}</title>
 
   <meta property="og:title" content="First Class Woodworks | Custom Cabinets Murrieta" />
   <meta property="og:description" content="Handcrafted cabinetry and kitchen remodeling in the Temecula Valley. A+ Rated BBB Professional." />

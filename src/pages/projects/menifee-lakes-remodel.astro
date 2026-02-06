@@ -2,113 +2,267 @@
 // src/pages/projects/menifee-lakes-remodel.astro
 import MainLayout from '../../layouts/MainLayout.astro';
 
-// 1. IMAGE IMPORTS - Updated to include dimensions to prevent distortion
+// 1. IMAGE IMPORTS
 import img1 from '../../assets/header.jpg';
 import img2 from '../../assets/hero-kitchen.jpg';
 import img3 from '../../assets/kitchen-5.jpg';
 import img4 from '../../assets/kitchen-2.jpg';
 
 const images = [
-  { src: img1.src, width: img1.width, height: img1.height, alt: "Custom Kitchen Cabinets Menifee Lakes 2026" },
-  { src: img2.src, width: img2.width, height: img2.height, alt: "Modern Kitchen Remodeling near Menifee Countryside Marketplace" },
-  { src: img3.src, width: img3.width, height: img3.height, alt: "Handcrafted cabinetry details in Menifee CA" },
-  { src: img4.src, width: img4.width, height: img4.height, alt: "Luxury kitchen renovation near Menifee Lakes Country Club" }
+  { src: img1.src, width: img1.width, height: img1.height, alt: "Custom kitchen cabinets installed in Menifee Lakes by First Class Woodworks cabinet maker 2026" },
+  { src: img2.src, width: img2.width, height: img2.height, alt: "Modern kitchen remodel with handcrafted cabinetry near Menifee Countryside Marketplace" },
+  { src: img3.src, width: img3.width, height: img3.height, alt: "Dovetail drawer boxes and Blum soft-close hardware in a Menifee CA custom kitchen" },
+  { src: img4.src, width: img4.width, height: img4.height, alt: "Luxury kitchen renovation featuring solid hardwood cabinetry near Menifee Lakes Country Club" }
 ];
 
-// 2. SEO SCHEMA
-const projectSchema = {
+// 2. RICH STRUCTURED DATA — @graph for Voice Search, AI & Google
+const schema = {
   "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "name": "First Class Woodworks - Menifee Lakes Project",
-  "description": "2026 Custom kitchen remodeling and handcrafted cabinetry project in Menifee Lakes, CA.",
-  "url": "https://firstclasswoodworks.com/projects/menifee-lakes-remodel",
-  "datePublished": "2026-01-14",
-  "location": {
-    "@type": "Place",
-    "name": "Menifee Lakes Residence",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Menifee Lakes",
-      "addressLocality": "Menifee",
-      "addressRegion": "CA",
-      "postalCode": "92584",
-      "addressCountry": "US"
+  "@graph": [
+    {
+      "@type": "HomeAndConstructionBusiness",
+      "@id": "https://firstclasswoodworks.com/#business",
+      "name": "First Class Woodworks",
+      "url": "https://firstclasswoodworks.com",
+      "telephone": "(951) 973-1265",
+      "image": "https://firstclasswoodworks.com/assets/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "24491 Avenida Arconte",
+        "addressLocality": "Murrieta",
+        "addressRegion": "CA",
+        "postalCode": "92562",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "33.5539",
+        "longitude": "-117.1903"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Murrieta", "sameAs": "https://en.wikipedia.org/wiki/Murrieta,_California" },
+        { "@type": "City", "name": "Temecula", "sameAs": "https://en.wikipedia.org/wiki/Temecula,_California" },
+        { "@type": "City", "name": "Menifee", "sameAs": "https://en.wikipedia.org/wiki/Menifee,_California" },
+        { "@type": "City", "name": "Wildomar" },
+        { "@type": "City", "name": "Fallbrook" }
+      ],
+      "priceRange": "$$$",
+      "knowsAbout": ["Custom Kitchen Cabinets", "Kitchen Remodeling", "Finish Carpentry", "Custom Cabinet Making", "Bathroom Vanities"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Custom Cabinetry Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Kitchen Cabinets" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kitchen Remodeling" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bathroom Vanities" } }
+        ]
+      }
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "33.664853",
-      "longitude": "-117.162850"
+    {
+      "@type": "WebPage",
+      "@id": "https://firstclasswoodworks.com/projects/menifee-lakes-remodel",
+      "name": "Menifee Lakes Luxury Kitchen Remodel — Custom Cabinetry 2026",
+      "description": "Custom kitchen remodeling project completed by First Class Woodworks in the Menifee Lakes community near the Menifee Lakes Country Club. Furniture-grade cabinetry with Blum soft-close hardware.",
+      "url": "https://firstclasswoodworks.com/projects/menifee-lakes-remodel",
+      "datePublished": "2026-01-14",
+      "isPartOf": { "@id": "https://firstclasswoodworks.com/#website" },
+      "about": { "@id": "https://firstclasswoodworks.com/#business" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".project-summary", ".faq-answer"]
+      },
+      "contentLocation": {
+        "@type": "Place",
+        "name": "Menifee Lakes, Menifee",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Menifee",
+          "addressRegion": "CA",
+          "postalCode": "92584",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "33.664853",
+          "longitude": "-117.162850"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://firstclasswoodworks.com" },
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://firstclasswoodworks.com/gallery" },
+        { "@type": "ListItem", "position": 3, "name": "Menifee Lakes Kitchen Remodel" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who does custom kitchen cabinets in Menifee, CA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "First Class Woodworks is a premier custom cabinet maker serving Menifee and the surrounding Inland Empire communities. We built this luxury kitchen in the Menifee Lakes neighborhood near the Menifee Lakes Country Club, replacing builder-grade cabinets with 100% handcrafted, furniture-grade cabinetry. Call us at (951) 973-1265."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a kitchen remodel take in Menifee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A typical custom kitchen remodel by First Class Woodworks takes 8 to 12 weeks from design approval to professional installation. We provide full 3D renderings so you can visualize the finished result before a single cut is made. Our team handles every step in-house—no subcontractors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What hardware does First Class Woodworks use in their custom cabinets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We exclusively use Blum undermount slides and soft-close hinges, which come with a lifetime warranty. Blum hardware is the industry gold standard for smooth, silent operation and long-term durability—far superior to the basic plastic and metal hardware found in prefabricated cabinets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does First Class Woodworks serve the Menifee area?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. First Class Woodworks is based in Murrieta at 24491 Avenida Arconte and proudly serves all of Menifee, including the Menifee Lakes, Audie Murphy Ranch, and Newport Road corridor neighborhoods. Our Menifee Lakes project showcases the same level of luxury craftsmanship we bring to every home in the Temecula Valley."
+          }
+        }
+      ]
     }
-  }
+  ]
 };
 ---
 
-<MainLayout 
-  title="Menifee Lakes Kitchen Remodel | Custom Cabinetry 2026" 
-  description="Explore our 2026 custom kitchen cabinetry and remodeling project in Menifee Lakes, CA near the Menifee Lakes Country Club."
+<MainLayout
+  title="Menifee Lakes Luxury Kitchen Remodel | Custom Cabinet Maker 2026"
+  description="First Class Woodworks completed this luxury kitchen remodel in Menifee Lakes, CA near the Country Club. 100% in-house custom cabinetry with Blum hardware and furniture-grade plywood."
 >
-  <script type="application/ld+json" set:html={JSON.stringify(projectSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
   <link rel="stylesheet" href="https://unpkg.com/photoswipe/dist/photoswipe.css">
 
   <article class="pt-32 pb-20 bg-white">
     <div class="max-w-6xl mx-auto px-6">
-      
+
+      <!-- Breadcrumb Navigation -->
+      <nav class="text-xs text-zinc-400 mb-8 reveal" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-yellow-600 transition">Home</a></li>
+          <li class="text-zinc-300">/</li>
+          <li><a href="/gallery" class="hover:text-yellow-600 transition">Projects</a></li>
+          <li class="text-zinc-300">/</li>
+          <li class="text-zinc-600 font-bold">Menifee Lakes</li>
+        </ol>
+      </nav>
+
       <header class="max-w-3xl mx-auto text-center mb-16 reveal">
         <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
-          Menifee Lakes <span class="text-yellow-600 italic">Project</span>
+          Menifee Lakes <span class="text-yellow-600 italic">Luxury Kitchen</span>
         </h1>
-        
+
         <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-xs font-bold uppercase tracking-[0.3em] text-zinc-400">
             <span class="text-yellow-600">Menifee, California</span>
-            <span class="hidden md:block text-zinc-200">•</span>
+            <span class="hidden md:block text-zinc-200">&bull;</span>
             <span>Completed January 2026</span>
-            <span class="hidden md:block text-zinc-200">•</span>
-            <span class="text-zinc-500">33.6648° N, 117.1628° W</span>
+            <span class="hidden md:block text-zinc-200">&bull;</span>
+            <span class="text-zinc-500">33.6648&deg; N, 117.1628&deg; W</span>
         </div>
         <div class="h-px w-24 bg-yellow-600/30 mx-auto mt-10"></div>
-    </header>
+      </header>
+
+      <!-- Voice-search-friendly project summary — marked as speakable -->
+      <div class="project-summary max-w-3xl mx-auto text-center mb-16 reveal">
+        <p class="text-lg text-zinc-500 leading-relaxed italic">
+          First Class Woodworks completed this luxury kitchen remodel in the Menifee Lakes community of Menifee, California in January 2026. The project replaced aging builder-grade cabinets with 100% handcrafted, furniture-grade custom cabinetry featuring Blum soft-close hardware and post-catalyzed conversion varnish finishes.
+        </p>
+      </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 items-start">
         <div class="lg:col-span-7 text-lg text-zinc-600 leading-relaxed space-y-6 reveal">
           <h2 class="text-2xl font-serif font-bold text-zinc-900">Elevating Craftsmanship in the Heart of Menifee Lakes</h2>
           <p>
             Our latest 2026 transformation took us to the heart of the <strong>Menifee Lakes</strong> community.
-            As a premier <a href="/" class="text-yellow-600 font-bold hover:underline">custom cabinet maker in Menifee</a>, we specialize in high-end projects situated near the <strong>Menifee Lakes Country Club</strong>.
+            As a premier <a href="/" class="text-yellow-600 font-bold hover:underline">custom cabinet maker serving Menifee</a>, we specialize in high-end projects situated near the <strong>Menifee Lakes Country Club</strong>.
           </p>
           <p>
             Located just south of <strong>Newport Road</strong> and near the <strong>Menifee Countryside Marketplace</strong>, this project highlights our commitment to serving homeowners with furniture-grade finish carpentry.
-            The owners sought <strong>100% in-house custom cabinetry</strong> to replace aging builder-grade units, opting for premium solid wood boxes and handcrafted faces.
+            The owners sought <strong>100% in-house custom cabinetry</strong> to replace aging builder-grade units, opting for premium solid wood boxes and handcrafted faces that will outlast anything from a big-box store.
+          </p>
+
+          <h2 class="text-2xl font-serif font-bold text-zinc-900 pt-4">Materials &amp; Techniques</h2>
+          <p>
+            Every drawer in this Menifee Lakes kitchen features <strong>dovetail joinery</strong>&mdash;the hallmark of furniture-grade construction. The cabinet boxes are built from <strong>furniture-grade plywood</strong>, not the particle board or melamine found in prefabricated units.
+            We installed <strong>Blum undermount slides and soft-close hinges</strong> throughout the kitchen, providing whisper-quiet operation backed by a lifetime warranty.
+          </p>
+          <p>
+            The finish is a <strong>post-catalyzed conversion varnish</strong>, a commercial-grade coating that resists chipping, yellowing, and moisture damage far better than the latex or alkyd paints used on mass-produced cabinets. In the dry heat and occasional humidity of the <strong>Menifee</strong> area, this finish ensures the cabinetry looks flawless for decades.
+          </p>
+
+          <h2 class="text-2xl font-serif font-bold text-zinc-900 pt-4">Our Design Process</h2>
+          <p>
+            Before building a single cabinet, we provided the homeowners with <strong>full 3D renderings</strong> so they could see the finished kitchen before we made the first cut. Every measurement was taken to the <strong>1/16th of an inch</strong>&mdash;no standard 3-inch increments, no filler strips, no gaps. The result is a seamless, built-in look that transforms the entire room.
+          </p>
+
+          <h2 class="text-2xl font-serif font-bold text-zinc-900 pt-4">Serving Menifee &amp; the Temecula Valley</h2>
+          <p>
+            From <strong>Menifee Lakes</strong> and <strong>Audie Murphy Ranch</strong> to <strong>Sun City</strong> and the <strong>Newport Road corridor</strong>,
+            <a href="/services/kitchen-remodeling" class="text-yellow-600 font-bold hover:underline">First Class Woodworks</a> brings the same level of luxury craftsmanship to every home we touch.
+            Based in nearby Murrieta, our team is local to the Temecula Valley and understands the architectural styles and building standards of Riverside County homes.
           </p>
         </div>
-        
+
         <div class="lg:col-span-5 bg-zinc-50 p-10 rounded-sm border border-zinc-100 reveal delay-200 sticky top-32">
           <h3 class="font-serif font-bold text-2xl mb-6 text-zinc-900 underline decoration-yellow-600 underline-offset-8">Project Details</h3>
           <ul class="space-y-4">
             <li class="flex flex-col">
               <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Neighborhood</span>
-              <span class="text-zinc-800 font-bold">Menifee Lakes / Newport Rd Corridor</span>
+              <span class="text-zinc-800 font-bold">Menifee Lakes, Menifee CA 92584</span>
             </li>
             <li class="flex flex-col pt-2">
               <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Services</span>
-              <span class="text-zinc-800 font-bold">Kitchen & Cabinetry Remodel</span>
+              <span class="text-zinc-800 font-bold">Complete Kitchen Cabinetry Remodel</span>
+            </li>
+            <li class="flex flex-col pt-2">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Materials</span>
+              <span class="text-zinc-800 font-bold">Furniture-Grade Plywood &amp; Solid Hardwoods</span>
+            </li>
+            <li class="flex flex-col pt-2">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Hardware</span>
+              <span class="text-zinc-800 font-bold">Blum Soft-Close (Lifetime Warranty)</span>
+            </li>
+            <li class="flex flex-col pt-2">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Completed</span>
+              <span class="text-zinc-800 font-bold">January 2026</span>
+            </li>
+            <li class="flex flex-col pt-2">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Lead Time</span>
+              <span class="text-zinc-800 font-bold">8&ndash;12 Weeks Design to Install</span>
             </li>
             <li class="flex flex-col pt-4">
                 <a href="/contact" class="text-center bg-zinc-900 text-white py-3 font-bold text-sm uppercase tracking-widest hover:bg-yellow-600 transition">
                     Request a Menifee Quote
                 </a>
             </li>
+            <li class="flex flex-col pt-2">
+                <a href="tel:9519731265" class="text-center border-2 border-zinc-900 text-zinc-900 py-3 font-bold text-sm uppercase tracking-widest hover:bg-zinc-900 hover:text-white transition">
+                    Call (951) 973-1265
+                </a>
+            </li>
           </ul>
-       </div>
+        </div>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20" id="project-gallery">
         {images.map((img, index) => (
           <div class="reveal" style={`transition-delay: ${index * 100}ms`}>
-            <a 
-              href={img.src} 
-              class="pswp-project-link group relative aspect-[4/5] overflow-hidden rounded-sm shadow-sm cursor-zoom-in bg-zinc-200 block" 
-              data-pswp-width={img.width} 
+            <a
+              href={img.src}
+              class="pswp-project-link group relative aspect-[4/5] overflow-hidden rounded-sm shadow-sm cursor-zoom-in bg-zinc-200 block"
+              data-pswp-width={img.width}
               data-pswp-height={img.height}
             >
               <img src={img.src} alt={img.alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
@@ -117,14 +271,65 @@ const projectSchema = {
         ))}
       </div>
 
+      <!-- FAQ Section — Voice Search & AI Extraction -->
+      <section class="mb-20 reveal">
+        <h2 class="text-3xl font-serif font-bold text-zinc-900 text-center mb-12">
+          Frequently Asked <span class="text-yellow-600">Questions</span>
+        </h2>
+        <div class="max-w-3xl mx-auto space-y-4">
+          <details class="group border border-zinc-200 rounded-sm" open>
+            <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-zinc-900 hover:text-yellow-600 transition">
+              <span>Who does custom kitchen cabinets in Menifee, CA?</span>
+              <span class="text-yellow-600 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+            </summary>
+            <div class="faq-answer px-6 pb-6 text-zinc-600 leading-relaxed">
+              First Class Woodworks is a premier custom cabinet maker serving Menifee and the surrounding Temecula Valley. We built this luxury kitchen in the Menifee Lakes neighborhood near the Menifee Lakes Country Club, replacing builder-grade cabinets with 100% handcrafted, furniture-grade cabinetry. Call us at <a href="tel:9519731265" class="text-yellow-600 font-bold hover:underline">(951) 973-1265</a> for a free consultation.
+            </div>
+          </details>
+          <details class="group border border-zinc-200 rounded-sm">
+            <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-zinc-900 hover:text-yellow-600 transition">
+              <span>How long does a kitchen remodel take in Menifee?</span>
+              <span class="text-yellow-600 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+            </summary>
+            <div class="faq-answer px-6 pb-6 text-zinc-600 leading-relaxed">
+              A typical custom kitchen remodel by First Class Woodworks takes 8 to 12 weeks from design approval to professional installation. We provide full 3D renderings so you can visualize the finished result before a single cut is made. Our team handles every step in-house&mdash;no subcontractors, ever.
+            </div>
+          </details>
+          <details class="group border border-zinc-200 rounded-sm">
+            <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-zinc-900 hover:text-yellow-600 transition">
+              <span>What hardware does First Class Woodworks use?</span>
+              <span class="text-yellow-600 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+            </summary>
+            <div class="faq-answer px-6 pb-6 text-zinc-600 leading-relaxed">
+              We exclusively use Blum undermount slides and soft-close hinges, which come with a lifetime warranty. Blum hardware is the industry gold standard for smooth, silent operation and long-term durability&mdash;far superior to the basic plastic and metal hardware found in prefabricated cabinets from big-box stores.
+            </div>
+          </details>
+          <details class="group border border-zinc-200 rounded-sm">
+            <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-zinc-900 hover:text-yellow-600 transition">
+              <span>Does First Class Woodworks serve the Menifee area?</span>
+              <span class="text-yellow-600 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+            </summary>
+            <div class="faq-answer px-6 pb-6 text-zinc-600 leading-relaxed">
+              Yes. First Class Woodworks is based in Murrieta at 24491 Avenida Arconte and proudly serves all of Menifee, including Menifee Lakes, Audie Murphy Ranch, Sun City, and the Newport Road corridor. This Menifee Lakes project showcases the same level of luxury craftsmanship we bring to every home in the Temecula Valley.
+            </div>
+          </details>
+        </div>
+      </section>
+
       <div class="pt-16 border-t border-zinc-100 flex flex-col md:flex-row justify-between items-center gap-8 reveal">
+        <a href="/projects/murrieta-home-remodel" class="group flex items-center gap-4">
+          <div class="flex flex-col">
+            <span class="text-[10px] font-black text-yellow-600 uppercase tracking-widest">Previous Project</span>
+            <span class="text-zinc-900 font-serif font-bold group-hover:text-yellow-600 transition">&larr; Los Alamos Hills Kitchen</span>
+          </div>
+        </a>
         <a href="/gallery" class="flex items-center gap-3 text-zinc-400 hover:text-zinc-900 font-bold uppercase tracking-widest text-xs transition">
             View All Projects
         </a>
         <a href="/projects/bear-creek-remodel" class="group flex items-center gap-4 text-right">
           <div class="flex flex-col">
             <span class="text-[10px] font-black text-yellow-600 uppercase tracking-widest">Next Project</span>
-            <span class="text-zinc-900 font-serif font-bold group-hover:text-yellow-600 transition">Bear Creek Estate Remodel →</span>
+            <span class="text-zinc-900 font-serif font-bold group-hover:text-yellow-600 transition">Bear Creek Estate Remodel &rarr;</span>
           </div>
         </a>
       </div>

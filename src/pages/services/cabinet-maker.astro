@@ -1,0 +1,318 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Services from '../../components/Services.astro';
+
+const phone = "(951) 973-1265";
+
+// Schema: Cabinet Maker Service
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Cabinet Maker",
+  "name": "Cabinet Maker in Murrieta, CA",
+  "description": "First Class WoodWorks is a cabinet maker in Murrieta, California specializing in handcrafted custom cabinetry for kitchens, bathrooms, and built-ins. 100% in-house construction using furniture-grade plywood, solid hardwoods, dovetail joinery, and Blum soft-close hardware.",
+  "provider": {
+    "@type": "HomeAndConstructionBusiness",
+    "name": "First Class WoodWorks",
+    "telephone": "+1-951-973-1265",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "24491 Avenida Arconte",
+      "addressLocality": "Murrieta",
+      "addressRegion": "CA",
+      "postalCode": "92562",
+      "addressCountry": "US"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "30"
+    }
+  },
+  "areaServed": ["Murrieta", "Temecula", "Menifee", "Wildomar", "Perris", "Lake Elsinore", "French Valley", "Winchester", "Canyon Lake", "Fallbrook"],
+  "knowsAbout": [
+    "Cabinet Making",
+    "Dovetail Joinery",
+    "Mortise-and-Tenon Construction",
+    "Post-Catalyzed Conversion Varnish",
+    "Furniture-Grade Plywood",
+    "Blum Soft-Close Hardware",
+    "Custom Kitchen Cabinets",
+    "Custom Bathroom Vanities",
+    "Built-In Entertainment Centers"
+  ]
+};
+
+const faqs = [
+  {
+    question: "What is a cabinet maker?",
+    answer: "A cabinet maker is a specialized woodworking craftsman who designs, builds, and installs custom cabinetry from raw lumber. Unlike general contractors who install pre-fabricated boxes, a cabinet maker controls every step — from milling the wood, to cutting precision joinery, to applying professional-grade finishes. First Class WoodWorks is a cabinet maker in Murrieta, CA that builds 100% in-house with zero subcontractors."
+  },
+  {
+    question: "What is the difference between a cabinet maker and a carpenter?",
+    answer: "A carpenter is a broad trade that covers framing, rough construction, and general woodwork. A cabinet maker is a specialist within finish carpentry focused exclusively on building fine cabinetry and furniture-grade storage systems. Cabinet makers use advanced joinery techniques like dovetails and mortise-and-tenon joints, and apply professional finishes like post-catalyzed conversion varnish — skills that general carpenters typically do not possess."
+  },
+  {
+    question: "Who is the best cabinet maker near me in Murrieta?",
+    answer: "First Class WoodWorks is the highest-rated cabinet maker in Murrieta with a 5.0-star Google rating and A+ BBB accreditation. Located at 24491 Avenida Arconte, Murrieta, CA 92562, we serve homeowners across the Temecula Valley including Temecula, Menifee, Wildomar, and Fallbrook. Call us at (951) 973-1265 for a free consultation."
+  },
+  {
+    question: "How much does a cabinet maker charge in Murrieta?",
+    answer: "Custom kitchen cabinets from a cabinet maker in Murrieta typically range from $35,000 to $75,000+ depending on wood species, finish complexity, and kitchen size. Bathroom vanities run $3,000 to $12,000+, and entertainment centers range from $8,000 to $25,000+. While custom costs more upfront than big-box pre-fab, the heirloom quality, perfect fit, and increased home value make it the better long-term investment."
+  },
+  {
+    question: "Do cabinet makers use subcontractors?",
+    answer: "Many companies that call themselves cabinet makers actually subcontract the building or installation to third parties. At First Class WoodWorks, we never use subcontractors. Our own employees handle every cut, every joint, every finish coat, and every installation. That's how we maintain the precision and quality control that defines true cabinet making."
+  },
+  {
+    question: "How long does it take a cabinet maker to build custom cabinets?",
+    answer: "From design approval to professional installation, a typical custom cabinet project takes 8 to 12 weeks. This includes laser measurement, 3D rendering approval, material selection, in-shop fabrication, finish curing, and on-site installation. We do not rush because rushed work leads to poor fit and inferior finish quality."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<MainLayout
+  title="Cabinet Maker Murrieta, CA | Custom Cabinetry | First Class WoodWorks"
+  description="Looking for a cabinet maker near me in Murrieta? First Class WoodWorks is a 5-star rated cabinet maker building custom kitchen cabinets, bathroom vanities, and built-ins 100% in-house. Call (951) 973-1265."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <header class="max-w-4xl mb-16 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Cabinet Maker in <span class="text-yellow-600 italic">Murrieta, CA</span>
+        </h1>
+        <h2 class="text-2xl font-body font-bold text-zinc-700 mb-8">Who is the best cabinet maker near Murrieta and Temecula?</h2>
+        <p class="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+          <strong>First Class WoodWorks is a cabinet maker in Murrieta, California.</strong>
+          We design, build, and install custom cabinetry for kitchens, bathrooms,
+          and living spaces — 100% in-house, with zero subcontractors.
+          Call <a href="tel:9519731265" class="text-yellow-600 font-bold hover:underline">{phone}</a> for a free consultation.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-8 space-y-8 text-lg text-zinc-600 leading-relaxed">
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">What Does a Cabinet Maker Do?</h2>
+            <p>
+              A <strong>cabinet maker</strong> is not a general contractor who orders pre-built boxes from a warehouse.
+              A cabinet maker is a finish carpentry specialist who transforms raw lumber into precision-fitted cabinetry
+              designed for your exact space. At <a href="/" class="text-yellow-600 font-bold hover:underline">First Class WoodWorks</a>,
+              cabinet making is our entire identity — it's the only thing we do, and we do it at the highest level
+              in the Temecula Valley.
+            </p>
+            <p>
+              Every cabinet we build starts as rough-sawn plywood and solid hardwood in our shop.
+              We mill it, join it with traditional dovetail and mortise-and-tenon joinery,
+              and finish it with post-catalyzed conversion varnish — a professional coating that
+              chemically bonds to the wood and outperforms any spray lacquer or house paint.
+              The result is cabinetry built to last generations, not the 5-10 years you get from
+              a particle board flat-pack.
+            </p>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Cabinet Maker vs. General Contractor</h2>
+            <p>
+              When Murrieta homeowners search for "cabinet maker near me," they sometimes land on general contractors
+              who subcontract the cabinetry work to the lowest bidder. Here's the problem: that subcontractor
+              has no relationship with you, no accountability for the final result, and no incentive to
+              use premium materials.
+            </p>
+            <p>
+              At First Class WoodWorks, <strong>our own employees handle every cut, every joint, and every screw.</strong>
+              When you hire us as your <a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">cabinet builder</a>,
+              you're hiring the craftsmen who will physically be in your kitchen or bathroom —
+              not a middleman managing someone else's work.
+            </p>
+          </section>
+
+          <section class="reveal bg-zinc-50 p-8 rounded-sm border border-zinc-100">
+            <h3 class="text-2xl font-serif font-bold text-zinc-900 mb-6 text-center">Cabinet Maker vs. Big-Box Installation</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm text-left">
+                <thead class="border-b border-zinc-200">
+                  <tr>
+                    <th class="pb-4 font-bold uppercase tracking-wider text-zinc-600">Feature</th>
+                    <th class="pb-4 font-bold uppercase tracking-wider text-zinc-400">Big-Box / Pre-Fab</th>
+                    <th class="pb-4 font-bold uppercase tracking-wider text-yellow-600">Cabinet Maker (Us)</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-zinc-200">
+                  <tr><td class="py-4 font-bold">Who builds it?</td><td class="py-4 text-zinc-500">Overseas factory</td><td class="py-4 font-bold text-zinc-900">Our craftsmen in Murrieta</td></tr>
+                  <tr><td class="py-4 font-bold">Materials</td><td class="py-4 text-zinc-500">Particle board / Melamine</td><td class="py-4 font-bold text-zinc-900">Furniture-grade plywood & hardwoods</td></tr>
+                  <tr><td class="py-4 font-bold">Joinery</td><td class="py-4 text-zinc-500">Staples & cam locks</td><td class="py-4 font-bold text-zinc-900">Dovetail & mortise-and-tenon</td></tr>
+                  <tr><td class="py-4 font-bold">Hardware</td><td class="py-4 text-zinc-500">Basic hinges (2-3 yr life)</td><td class="py-4 font-bold text-zinc-900">Blum soft-close (lifetime warranty)</td></tr>
+                  <tr><td class="py-4 font-bold">Finish</td><td class="py-4 text-zinc-500">Vinyl wrap or spray paint</td><td class="py-4 font-bold text-zinc-900">Conversion varnish (chemical bond)</td></tr>
+                  <tr><td class="py-4 font-bold">Fit</td><td class="py-4 text-zinc-500">3" increments + filler strips</td><td class="py-4 font-bold text-zinc-900">Built to the 1/16th inch</td></tr>
+                  <tr><td class="py-4 font-bold">Lifespan</td><td class="py-4 text-zinc-500">5-10 years</td><td class="py-4 font-bold text-zinc-900">Lifetime (heirloom quality)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">What We Build as Your Cabinet Maker</h2>
+            <p>
+              Our cabinet making expertise covers every room in your home:
+            </p>
+            <ul class="space-y-3 mt-4">
+              <li class="flex items-start gap-3">
+                <span class="text-yellow-600 font-bold mt-1">&#10003;</span>
+                <span><a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">Custom Kitchen Cabinets</a> — Full kitchen builds from $35,000 to $75,000+, including islands, pantries, and integrated appliance panels.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-yellow-600 font-bold mt-1">&#10003;</span>
+                <span><a href="/services/bathroom-remodeling" class="text-yellow-600 font-bold hover:underline">Bathroom Vanity Cabinets</a> — Custom vanities and master suite storage from $3,000 to $12,000+, finished with moisture-resistant conversion varnish.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-yellow-600 font-bold mt-1">&#10003;</span>
+                <span><strong>Entertainment Centers & Fireplace Built-Ins</strong> — Handcrafted media walls from $8,000 to $25,000+ designed to be the centerpiece of your living room.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-yellow-600 font-bold mt-1">&#10003;</span>
+                <span><strong>Custom Closet Built-Ins</strong> — Premium walk-in systems built from real wood. No particle board, no wire racks.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Our Cabinet Making Process</h2>
+            <div class="space-y-6 mt-6">
+              <div class="flex items-start gap-4">
+                <span class="text-yellow-600 font-serif text-2xl font-bold">1.</span>
+                <div>
+                  <p class="font-bold text-zinc-900">Free In-Home Consultation</p>
+                  <p>We visit your Murrieta, Temecula, or Menifee home, take laser measurements, and discuss your vision, budget, and timeline.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="text-yellow-600 font-serif text-2xl font-bold">2.</span>
+                <div>
+                  <p class="font-bold text-zinc-900">3D Design & Rendering</p>
+                  <p>You see your cabinetry in full 3D before we cut a single board. No surprises.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="text-yellow-600 font-serif text-2xl font-bold">3.</span>
+                <div>
+                  <p class="font-bold text-zinc-900">In-Shop Fabrication</p>
+                  <p>Every component is built by our employees in our own shop — dovetailed drawers, mortise-and-tenon face frames, conversion varnish finish.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="text-yellow-600 font-serif text-2xl font-bold">4.</span>
+                <div>
+                  <p class="font-bold text-zinc-900">Professional Installation</p>
+                  <p>Our own team installs every cabinet with HEPA dust extraction and full floor and surface protection. 8-12 weeks from approval to completion.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="reveal">
+            <h3 class="text-3xl font-serif font-bold text-zinc-900 pt-10 mb-6">Cabinet Maker FAQ</h3>
+            <div class="space-y-6">
+              {faqs.map((faq) => (
+                <details class="group bg-zinc-50 border border-zinc-200 rounded-sm hover:shadow-md transition-all">
+                  <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
+                    <h4 class="font-serif font-bold text-zinc-800 group-hover:text-yellow-600 transition-colors pr-8">
+                      {faq.question}
+                    </h4>
+                    <span class="text-yellow-600 transition-transform duration-300 group-open:rotate-180 flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div class="px-6 pb-6 text-zinc-600 leading-relaxed text-base border-t border-zinc-100 pt-4">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </section>
+
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8 sticky top-32">
+          <div class="bg-zinc-900 text-white p-10 rounded-sm reveal">
+            <h3 class="font-serif font-bold text-2xl mb-2 text-yellow-600">Hire a Real Cabinet Maker</h3>
+            <p class="text-zinc-500 text-xs uppercase tracking-[0.15em] font-bold mb-6">Murrieta, CA &bull; 5.0 Star Rated</p>
+            <ul class="space-y-3 text-white/80 text-sm mb-8">
+              <li class="border-b border-white/10 pb-3">100% In-House — No Subcontractors</li>
+              <li class="border-b border-white/10 pb-3">Furniture-Grade Plywood & Hardwoods</li>
+              <li class="border-b border-white/10 pb-3">Dovetail & Mortise-and-Tenon Joinery</li>
+              <li class="border-b border-white/10 pb-3">Blum Soft-Close Hardware (Lifetime)</li>
+              <li class="border-b border-white/10 pb-3">Post-Catalyzed Conversion Varnish</li>
+              <li class="border-b border-white/10 pb-3">Full 3D Renderings Before Build</li>
+              <li class="border-b border-white/10 pb-3">HEPA Dust Extraction On-Site</li>
+              <li>A+ BBB Accredited &bull; Licensed &amp; Bonded</li>
+            </ul>
+            <a href="tel:9519731265" class="block text-center border border-yellow-600 py-4 font-bold hover:bg-yellow-600 hover:text-zinc-900 transition mb-3">
+              {phone}
+            </a>
+            <a href="/contact" class="block text-center bg-yellow-600 text-zinc-900 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">
+              Get a Free Quote
+            </a>
+          </div>
+
+          <div class="bg-zinc-50 border border-zinc-200 p-8 rounded-sm reveal">
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-6">Areas We Serve</h3>
+            <ul class="space-y-2 text-sm text-zinc-600">
+              <li><a href="/cities/murrieta" class="hover:text-yellow-600 transition font-bold">Murrieta (HQ)</a></li>
+              <li><a href="/cities/temecula" class="hover:text-yellow-600 transition">Temecula</a></li>
+              <li><a href="/cities/menifee" class="hover:text-yellow-600 transition">Menifee</a></li>
+              <li><a href="/cities/wildomar" class="hover:text-yellow-600 transition">Wildomar</a></li>
+              <li><a href="/cities/fallbrook" class="hover:text-yellow-600 transition">Fallbrook</a></li>
+              <li><a href="/cities/lake-elsinore" class="hover:text-yellow-600 transition">Lake Elsinore</a></li>
+              <li><a href="/cities/french-valley" class="hover:text-yellow-600 transition">French Valley</a></li>
+              <li><a href="/cities/winchester" class="hover:text-yellow-600 transition">Winchester</a></li>
+              <li><a href="/cities/canyon-lake" class="hover:text-yellow-600 transition">Canyon Lake</a></li>
+              <li><a href="/cities/perris" class="hover:text-yellow-600 transition">Perris</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </article>
+
+  <section class="border-t border-zinc-100 pt-20 pb-20 max-w-6xl mx-auto px-6">
+    <Services />
+  </section>
+</MainLayout>
+
+<style>
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+  .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+  .reveal.active { opacity: 1; transform: translateY(0); }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('active');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>

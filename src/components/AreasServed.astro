@@ -1,16 +1,16 @@
 ---
 // src/components/AreasServed.astro
-const primaryCity = "Murrieta";
+const primaryCity = { name: "Murrieta", slug: "murrieta" };
 const serviceAreas = [
-  "Temecula", 
-  "Wildomar", 
-  "Menifee", 
-  "Perris", 
-  "Lake Elsinore", 
-  "French Valley", 
-  "Winchester", 
-  "Canyon Lake", 
-  "Fallbrook"
+  { name: "Temecula", slug: "temecula" },
+  { name: "Wildomar", slug: "wildomar" },
+  { name: "Menifee", slug: "menifee" },
+  { name: "Perris", slug: "perris" },
+  { name: "Lake Elsinore", slug: "lake-elsinore" },
+  { name: "French Valley", slug: "french-valley" },
+  { name: "Winchester", slug: "winchester" },
+  { name: "Canyon Lake", slug: "canyon-lake" },
+  { name: "Fallbrook", slug: "fallbrook" },
 ];
 ---
 
@@ -42,17 +42,17 @@ const serviceAreas = [
         
         <div class="grid grid-cols-2 gap-y-4 gap-x-8">
           <div class="col-span-2 mb-4">
-            <div class="flex items-center gap-3">
+            <a href={`/cities/${primaryCity.slug}`} class="flex items-center gap-3 group">
               <div class="w-2 h-2 bg-yellow-600 rounded-full"></div>
-              <span class="text-white font-serif text-2xl font-bold">{primaryCity} (Headquarters)</span>
-            </div>
+              <span class="text-white font-serif text-2xl font-bold group-hover:text-yellow-600 transition-colors">{primaryCity.name} (Headquarters)</span>
+            </a>
           </div>
 
           {serviceAreas.map((area) => (
-            <div class="flex items-center gap-3 group">
+            <a href={`/cities/${area.slug}`} class="flex items-center gap-3 group">
               <div class="w-1.5 h-1.5 border border-yellow-600/50 rounded-full group-hover:bg-yellow-600 transition-colors"></div>
-              <span class="text-zinc-400 group-hover:text-white transition-colors text-sm font-medium">{area}</span>
-            </div>
+              <span class="text-zinc-400 group-hover:text-white transition-colors text-sm font-medium">{area.name}</span>
+            </a>
           ))}
         </div>
 

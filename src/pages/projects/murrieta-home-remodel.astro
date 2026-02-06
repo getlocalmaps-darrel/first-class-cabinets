@@ -9,111 +9,243 @@ import img3 from '../../assets/murrieta-kitchen-remodeling-project-3.jpg';
 import img4 from '../../assets/murrieta-kitchen-remodeling-project-4.jpg';
 
 const images = [
-  { src: img1.src, alt: "Custom Kitchen Cabinets in Los Alamos Hills Murrieta 2025" },
-  { src: img2.src, alt: "Modern Fireplace Build-In near Murrieta Oaks" },
-  { src: img3.src, alt: "Finish carpentry details in Murrieta CA" },
-  { src: img4.src, alt: "Luxury kitchen remodeling south of The Orchard" }
+  { src: img1.src, alt: "Custom white shaker kitchen cabinets built by First Class Woodworks in Los Alamos Hills Murrieta CA" },
+  { src: img2.src, alt: "Handcrafted fireplace surround and built-in entertainment center near Murrieta Oaks by First Class Woodworks" },
+  { src: img3.src, alt: "Precision crown molding and finish carpentry details in a Murrieta CA custom kitchen remodel" },
+  { src: img4.src, alt: "Luxury kitchen island with furniture-grade cabinetry south of The Orchard in Murrieta" }
 ];
 
-// 2. SEO SCHEMA FOR GOOGLE & AI
-const projectSchema = {
+// 2. RICH STRUCTURED DATA — @graph for Voice Search, AI & Google
+const schema = {
   "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "name": "First Class Woodworks - Los Alamos Hills Project",
-  "description": "2025 Custom kitchen remodeling and finish carpentry project in Los Alamos Hills, Murrieta.",
-  "url": "https://firstclasswoodworks.com/projects/murrieta-home-remodel",
-  "datePublished": "2025-01-07",
-  "location": {
-    "@type": "Place",
-    "name": "Los Alamos Hills Residence",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Los Alamos Hills",
-      "addressLocality": "Murrieta",
-      "addressRegion": "CA",
-      "postalCode": "92563",
-      "addressCountry": "US"
+  "@graph": [
+    {
+      "@type": "HomeAndConstructionBusiness",
+      "@id": "https://firstclasswoodworks.com/#business",
+      "name": "First Class Woodworks",
+      "url": "https://firstclasswoodworks.com",
+      "telephone": "(951) 973-1265",
+      "image": "https://firstclasswoodworks.com/assets/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "24491 Avenida Arconte",
+        "addressLocality": "Murrieta",
+        "addressRegion": "CA",
+        "postalCode": "92562",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "33.5539",
+        "longitude": "-117.1903"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Murrieta", "sameAs": "https://en.wikipedia.org/wiki/Murrieta,_California" },
+        { "@type": "City", "name": "Temecula", "sameAs": "https://en.wikipedia.org/wiki/Temecula,_California" },
+        { "@type": "City", "name": "Menifee", "sameAs": "https://en.wikipedia.org/wiki/Menifee,_California" },
+        { "@type": "City", "name": "Wildomar" },
+        { "@type": "City", "name": "Fallbrook" }
+      ],
+      "priceRange": "$$$",
+      "knowsAbout": ["Custom Kitchen Cabinets", "Kitchen Remodeling", "Finish Carpentry", "Custom Cabinet Making", "Fireplace Built-Ins", "Bathroom Vanities"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Custom Cabinetry Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Kitchen Cabinets" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kitchen Remodeling" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Fireplace Built-Ins" } }
+        ]
+      }
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "33.58726883",
-      "longitude": "-117.17280579"
+    {
+      "@type": "WebPage",
+      "@id": "https://firstclasswoodworks.com/projects/murrieta-home-remodel",
+      "name": "Los Alamos Hills Custom Kitchen Remodel — Murrieta 2025",
+      "description": "Custom kitchen cabinetry and fireplace remodel completed by First Class Woodworks in Los Alamos Hills, Murrieta CA. Featuring furniture-grade plywood, dovetail joinery, and Blum soft-close hardware.",
+      "url": "https://firstclasswoodworks.com/projects/murrieta-home-remodel",
+      "datePublished": "2025-01-07",
+      "isPartOf": { "@id": "https://firstclasswoodworks.com/#website" },
+      "about": { "@id": "https://firstclasswoodworks.com/#business" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".project-summary", ".faq-answer"]
+      },
+      "contentLocation": {
+        "@type": "Place",
+        "name": "Los Alamos Hills, Murrieta",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Murrieta",
+          "addressRegion": "CA",
+          "postalCode": "92563",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "33.58726883",
+          "longitude": "-117.17280579"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://firstclasswoodworks.com" },
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://firstclasswoodworks.com/gallery" },
+        { "@type": "ListItem", "position": 3, "name": "Los Alamos Hills Kitchen Remodel" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is the best custom cabinet maker in Murrieta, CA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "First Class Woodworks is Murrieta's premier custom cabinet maker, specializing in 100% in-house built cabinetry using furniture-grade plywood and solid hardwoods. Based at 24491 Avenida Arconte in Murrieta, we serve neighborhoods including Los Alamos Hills, Bear Creek, Greer Ranch, and Copper Canyon. Every cabinet is built by our own employees—never subcontracted."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a custom kitchen remodel cost in Murrieta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A custom kitchen remodel by First Class Woodworks typically ranges from $35,000 to $75,000 or more depending on scope, materials, and complexity. Unlike big-box prefabricated cabinets, our custom builds are engineered to the 1/16th inch for a perfect fit, use Blum soft-close hardware with a lifetime warranty, and feature post-catalyzed conversion varnish finishes that far outlast standard house paint."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What neighborhoods in Murrieta does First Class Woodworks serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "First Class Woodworks serves all neighborhoods throughout Murrieta including Los Alamos Hills, Bear Creek, Greer Ranch, Copper Canyon, La Cresta, The Orchard, and Murrieta Oaks. We also serve the surrounding Temecula Valley communities of Temecula, Menifee, Wildomar, and Fallbrook."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why should I choose custom cabinets instead of Home Depot or Lowe's cabinets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Big-box store cabinets use particle board and melamine that typically last only 5 to 10 years, especially in the Southern California climate. Custom cabinets from First Class Woodworks use furniture-grade plywood and solid hardwoods with dovetail drawer boxes and mortise-and-tenon face frames, lasting a lifetime and increasing your home's appraisal value. We build to the exact 1/16th inch—no fillers, no gaps."
+          }
+        }
+      ]
     }
-  }
+  ]
 };
 ---
 
-<MainLayout 
-  title="Los Alamos Hills Kitchen Remodel | Murrieta 2025" 
-  description="Explore our 2025 custom kitchen cabinetry and fireplace remodel in the Los Alamos Hills community of Murrieta, CA near Murrieta Oaks."
+<MainLayout
+  title="Los Alamos Hills Custom Kitchen Remodel | Cabinet Maker Murrieta 2025"
+  description="First Class Woodworks completed this custom kitchen and fireplace remodel in Los Alamos Hills, Murrieta CA. Furniture-grade cabinetry, dovetail joinery, and Blum soft-close hardware."
 >
-  <script type="application/ld+json" set:html={JSON.stringify(projectSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
   <link rel="stylesheet" href="https://unpkg.com/photoswipe/dist/photoswipe.css">
 
   <article class="pt-32 pb-20 bg-white">
     <div class="max-w-6xl mx-auto px-6">
-      
+
+      <!-- Breadcrumb Navigation -->
+      <nav class="text-xs text-zinc-400 mb-8 reveal" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-yellow-600 transition">Home</a></li>
+          <li class="text-zinc-300">/</li>
+          <li><a href="/gallery" class="hover:text-yellow-600 transition">Projects</a></li>
+          <li class="text-zinc-300">/</li>
+          <li class="text-zinc-600 font-bold">Los Alamos Hills</li>
+        </ol>
+      </nav>
+
       <header class="max-w-3xl mx-auto text-center mb-16 reveal">
         <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
-          Los Alamos Hills <span class="text-yellow-600 italic">Project</span>
+          Los Alamos Hills <span class="text-yellow-600 italic">Custom Kitchen</span>
         </h1>
-        
+
         <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-xs font-bold uppercase tracking-[0.3em] text-zinc-400">
             <span class="text-yellow-600">Murrieta, California</span>
-            <span class="hidden md:block text-zinc-200">•</span>
+            <span class="hidden md:block text-zinc-200">&bull;</span>
             <span>Completed January 2025</span>
-            <span class="hidden md:block text-zinc-200">•</span>
-            <span class="text-zinc-500">33.5872° N, 117.1728° W</span>
+            <span class="hidden md:block text-zinc-200">&bull;</span>
+            <span class="text-zinc-500">33.5872&deg; N, 117.1728&deg; W</span>
         </div>
         <div class="h-px w-24 bg-yellow-600/30 mx-auto mt-10"></div>
       </header>
 
+      <!-- Voice-search-friendly project summary — marked as speakable -->
+      <div class="project-summary max-w-3xl mx-auto text-center mb-16 reveal">
+        <p class="text-lg text-zinc-500 leading-relaxed italic">
+          First Class Woodworks completed this custom kitchen remodel in the Los Alamos Hills neighborhood of Murrieta, California in January 2025. The project included bespoke kitchen cabinetry built from furniture-grade plywood with dovetail drawer boxes, a handcrafted fireplace surround, and precision finish carpentry throughout the home.
+        </p>
+      </div>
+
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 items-start">
         <div class="lg:col-span-7 text-lg text-zinc-600 leading-relaxed space-y-6 reveal">
-          <h2 class="text-2xl font-serif font-bold text-zinc-900">Premium Woodworking in Murrieta’s Premier Neighborhood</h2>
+          <h2 class="text-2xl font-serif font-bold text-zinc-900">Premium Cabinet Making in Murrieta's Los Alamos Hills</h2>
           <p>
-            This 2025 transformation by <a href="/" class="text-yellow-600 font-bold hover:underline">First Class Woodworks</a> took us to the prestigious <strong>Los Alamos Hills</strong> community, 
-            nestled near <strong>Murrieta Oaks</strong> and just south of <strong>The Orchard</strong>[cite: 23]. 
-            This area of Murrieta demands a level of detail that only a "True Finish Carpenter" can provide[cite: 24].
+            This 2025 transformation by <a href="/" class="text-yellow-600 font-bold hover:underline">First Class Woodworks</a> took us to the prestigious <strong>Los Alamos Hills</strong> community,
+            nestled near <strong>Murrieta Oaks</strong> and just south of <strong>The Orchard</strong>.
+            This area of Murrieta demands the kind of precision and artistry that only a dedicated <a href="/services/cabinet-maker" class="text-yellow-600 font-bold hover:underline">cabinet maker</a> can deliver.
           </p>
           <p>
-            The homeowners sought to elevate their living space with <strong>100% in-house custom cabinetry</strong> designed specifically for their unique floor plan[cite: 25]. 
-            Unlike prefabricated units found in big-box stores, our cabinetry is engineered to maximize every square inch, 
-            providing a seamless kitchen layout that flows effortlessly into a bespoke fireplace surround[cite: 26].
+            The homeowners sought to elevate their living space with <strong>100% in-house custom cabinetry</strong> designed specifically for their unique floor plan.
+            Unlike prefabricated units found at Home Depot or Lowe's, our cabinetry is engineered to maximize every square inch,
+            providing a seamless kitchen layout that flows effortlessly into a bespoke fireplace surround.
+          </p>
+
+          <h2 class="text-2xl font-serif font-bold text-zinc-900 pt-4">Materials &amp; Craftsmanship</h2>
+          <p>
+            Every cabinet in this Los Alamos Hills kitchen was built using <strong>furniture-grade plywood</strong> with <strong>dovetail drawer boxes</strong> and <strong>mortise-and-tenon face frames</strong>&mdash;the same joinery techniques used in fine furniture making.
+            We installed <strong>Blum undermount slides and soft-close hinges</strong> throughout, each backed by a lifetime warranty.
+            The finish is a <strong>post-catalyzed conversion varnish</strong> that resists the heat and humidity of Southern California kitchens far better than standard house paint.
           </p>
           <p>
-            The project features precision-milled trim work and handcrafted build-ins that anchor the room. 
-            By building everything locally in our shop, we ensure that the quality of wood and the level of finishing 
-            surpass industry standards, creating a lasting value for this 92563-area estate.
+            The project also features precision-milled trim work and handcrafted built-ins that anchor the living room.
+            By building everything locally in our Murrieta shop, we ensure that the quality of wood and the level of finishing
+            surpass industry standards, creating lasting value for this 92563-area estate.
           </p>
+
           <h2 class="text-2xl font-serif font-bold text-zinc-900 pt-4">Serving the Murrieta Community</h2>
           <p>
-            Whether we are working in <strong>Bear Creek</strong>, <strong>La Cresta</strong>, or right here in <strong>Los Alamos Hills</strong>, 
-            our goal is to set the standard for luxury remodeling in the Temecula Valley. 
-            By focusing on the structural integrity and aesthetic flow of the cabinetry, we transform standard kitchens into 
-            one-of-a-kind architectural statements.
+            Whether we are working in <strong>Bear Creek</strong>, <strong>La Cresta</strong>, or right here in <strong>Los Alamos Hills</strong>,
+            our goal is to set the standard for luxury <a href="/services/kitchen-remodeling" class="text-yellow-600 font-bold hover:underline">kitchen remodeling</a> in the Temecula Valley.
+            Our team drives past the <strong>Santa Rosa Plateau</strong> and <strong>Murrieta Hot Springs</strong> every day&mdash;we are truly local craftsmen who understand how homes in this region are built and how they should be improved.
           </p>
         </div>
-        
+
         <div class="lg:col-span-5 bg-zinc-50 p-10 rounded-sm border border-zinc-100 reveal delay-200 sticky top-32">
           <h3 class="font-serif font-bold text-2xl mb-6 text-zinc-900 underline decoration-yellow-600 underline-offset-8">Project Details</h3>
           <ul class="space-y-4">
             <li class="flex flex-col">
               <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Location</span>
-              <span class="text-zinc-800 font-bold">Los Alamos Hills, Murrieta</span>
+              <span class="text-zinc-800 font-bold">Los Alamos Hills, Murrieta CA 92563</span>
             </li>
             <li class="flex flex-col pt-2">
               <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Services</span>
-              <span class="text-zinc-800 font-bold">Kitchen & Living Room Remodel</span>
+              <span class="text-zinc-800 font-bold">Custom Kitchen Cabinets &amp; Fireplace Surround</span>
             </li>
-             <li class="flex flex-col pt-2">
-              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Specialty</span>
-              <span class="text-zinc-800 font-bold">Custom Fireplace Build-Ins</span>
+            <li class="flex flex-col pt-2">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Materials</span>
+              <span class="text-zinc-800 font-bold">Furniture-Grade Plywood &amp; Solid Hardwoods</span>
+            </li>
+            <li class="flex flex-col pt-2">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Hardware</span>
+              <span class="text-zinc-800 font-bold">Blum Soft-Close (Lifetime Warranty)</span>
+            </li>
+            <li class="flex flex-col pt-2">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Completed</span>
+              <span class="text-zinc-800 font-bold">January 2025</span>
             </li>
             <li class="flex flex-col pt-4">
                 <a href="/contact" class="text-center bg-zinc-900 text-white py-3 font-bold text-sm uppercase tracking-widest hover:bg-yellow-600 transition">
                     Get a Murrieta Quote
+                </a>
+            </li>
+            <li class="flex flex-col pt-2">
+                <a href="tel:9519731265" class="text-center border-2 border-zinc-900 text-zinc-900 py-3 font-bold text-sm uppercase tracking-widest hover:bg-zinc-900 hover:text-white transition">
+                    Call (951) 973-1265
                 </a>
             </li>
           </ul>
@@ -130,6 +262,51 @@ const projectSchema = {
         ))}
       </div>
 
+      <!-- FAQ Section — Voice Search & AI Extraction -->
+      <section class="mb-20 reveal">
+        <h2 class="text-3xl font-serif font-bold text-zinc-900 text-center mb-12">
+          Frequently Asked <span class="text-yellow-600">Questions</span>
+        </h2>
+        <div class="max-w-3xl mx-auto space-y-4">
+          <details class="group border border-zinc-200 rounded-sm" open>
+            <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-zinc-900 hover:text-yellow-600 transition">
+              <span>Who is the best custom cabinet maker in Murrieta, CA?</span>
+              <span class="text-yellow-600 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+            </summary>
+            <div class="faq-answer px-6 pb-6 text-zinc-600 leading-relaxed">
+              First Class Woodworks is Murrieta's premier custom cabinet maker, specializing in 100% in-house built cabinetry using furniture-grade plywood and solid hardwoods. Based at 24491 Avenida Arconte in Murrieta, we serve neighborhoods including Los Alamos Hills, Bear Creek, Greer Ranch, and Copper Canyon. Every cabinet is built by our own employees&mdash;never subcontracted.
+            </div>
+          </details>
+          <details class="group border border-zinc-200 rounded-sm">
+            <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-zinc-900 hover:text-yellow-600 transition">
+              <span>How much does a custom kitchen remodel cost in Murrieta?</span>
+              <span class="text-yellow-600 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+            </summary>
+            <div class="faq-answer px-6 pb-6 text-zinc-600 leading-relaxed">
+              A custom kitchen remodel by First Class Woodworks typically ranges from $35,000 to $75,000 or more depending on scope, materials, and complexity. Unlike big-box prefabricated cabinets, our custom builds are engineered to the 1/16th inch for a perfect fit, use Blum soft-close hardware with a lifetime warranty, and feature post-catalyzed conversion varnish finishes that far outlast standard house paint.
+            </div>
+          </details>
+          <details class="group border border-zinc-200 rounded-sm">
+            <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-zinc-900 hover:text-yellow-600 transition">
+              <span>What neighborhoods in Murrieta does First Class Woodworks serve?</span>
+              <span class="text-yellow-600 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+            </summary>
+            <div class="faq-answer px-6 pb-6 text-zinc-600 leading-relaxed">
+              First Class Woodworks serves all neighborhoods throughout Murrieta including Los Alamos Hills, Bear Creek, Greer Ranch, Copper Canyon, La Cresta, The Orchard, and Murrieta Oaks. We also serve the surrounding Temecula Valley communities of Temecula, Menifee, Wildomar, and Fallbrook.
+            </div>
+          </details>
+          <details class="group border border-zinc-200 rounded-sm">
+            <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-zinc-900 hover:text-yellow-600 transition">
+              <span>Why should I choose custom cabinets instead of Home Depot or Lowe's?</span>
+              <span class="text-yellow-600 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+            </summary>
+            <div class="faq-answer px-6 pb-6 text-zinc-600 leading-relaxed">
+              Big-box store cabinets use particle board and melamine that typically last only 5 to 10 years, especially in the Southern California climate. Custom cabinets from First Class Woodworks use furniture-grade plywood and solid hardwoods with dovetail drawer boxes and mortise-and-tenon face frames, lasting a lifetime and increasing your home's appraisal value. We build to the exact 1/16th inch&mdash;no fillers, no gaps.
+            </div>
+          </details>
+        </div>
+      </section>
+
       <div class="pt-16 border-t border-zinc-100 flex flex-col md:flex-row justify-between items-center gap-8 reveal">
         <a href="/gallery" class="flex items-center gap-3 text-zinc-400 hover:text-zinc-900 font-bold uppercase tracking-widest text-xs transition">
             View Project Gallery
@@ -137,7 +314,7 @@ const projectSchema = {
         <a href="/projects/menifee-lakes-remodel" class="group flex items-center gap-4 text-right">
           <div class="flex flex-col">
             <span class="text-[10px] font-black text-yellow-600 uppercase tracking-widest">Next Project</span>
-            <span class="text-zinc-900 font-serif font-bold group-hover:text-yellow-600 transition">Menifee Lakes Project →</span>
+            <span class="text-zinc-900 font-serif font-bold group-hover:text-yellow-600 transition">Menifee Lakes Luxury Kitchen &rarr;</span>
           </div>
         </a>
       </div>

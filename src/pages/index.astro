@@ -8,11 +8,142 @@ import Services from '../components/Services.astro';
 import RecentProjects from '../components/RecentProjects.astro';
 import AreasServed from '../components/AreasServed.astro';
 import FAQ from '../components/FAQ.astro';
+
+// LocalBusiness + HomeAndConstructionBusiness Schema for Knowledge Graph
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["HomeAndConstructionBusiness", "LocalBusiness"],
+  "@id": "https://www.firstclasswoodworks.com/#business",
+  "name": "First Class WoodWorks",
+  "legalName": "First Class WoodWorks Inc.",
+  "description": "Master cabinet maker and custom cabinet builder in Murrieta, CA. 100% in-house luxury cabinetry, kitchen remodeling, bathroom vanities, and finish carpentry serving the Temecula Valley.",
+  "url": "https://www.firstclasswoodworks.com",
+  "telephone": "+1-951-973-1265",
+  "email": "info@firstclasswoodworks.com",
+  "image": "https://www.firstclasswoodworks.com/assets/hero-kitchen.jpg",
+  "logo": "https://www.firstclasswoodworks.com/assets/logo.png",
+  "priceRange": "$$$",
+  "currenciesAccepted": "USD",
+  "paymentAccepted": "Cash, Credit Card, Check, Financing",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "24491 Avenida Arconte",
+    "addressLocality": "Murrieta",
+    "addressRegion": "CA",
+    "postalCode": "92562",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.5539,
+    "longitude": -117.1901
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Murrieta", "sameAs": "https://en.wikipedia.org/wiki/Murrieta,_California" },
+    { "@type": "City", "name": "Temecula", "sameAs": "https://en.wikipedia.org/wiki/Temecula,_California" },
+    { "@type": "City", "name": "Menifee", "sameAs": "https://en.wikipedia.org/wiki/Menifee,_California" },
+    { "@type": "City", "name": "Wildomar", "sameAs": "https://en.wikipedia.org/wiki/Wildomar,_California" },
+    { "@type": "City", "name": "Perris" },
+    { "@type": "City", "name": "Lake Elsinore" },
+    { "@type": "City", "name": "French Valley" },
+    { "@type": "City", "name": "Winchester" },
+    { "@type": "City", "name": "Canyon Lake" },
+    { "@type": "City", "name": "Fallbrook" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Custom Cabinetry & Remodeling Services",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Custom Kitchen Cabinets",
+        "itemListElement": [{
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Kitchen Cabinets",
+            "description": "Bespoke kitchen cabinetry built to the 1/16th inch from furniture-grade plywood and solid hardwoods with Blum soft-close hardware."
+          }
+        }]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Kitchen Remodeling",
+        "itemListElement": [{
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Kitchen Remodeling",
+            "description": "Full-service luxury kitchen remodeling including custom cabinetry, countertops, and finish carpentry in Murrieta and Temecula."
+          }
+        }]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Bathroom Remodeling",
+        "itemListElement": [{
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Bathroom Vanities & Cabinets",
+            "description": "Handcrafted bathroom vanities and custom storage solutions for master suites and guest bathrooms."
+          }
+        }]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Entertainment Centers & Built-Ins",
+        "itemListElement": [{
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Entertainment Centers & Fireplace Built-Ins",
+            "description": "Hand-crafted media walls, fireplace mantels, and custom built-in cabinetry."
+          }
+        }]
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "30",
+    "reviewCount": "30"
+  },
+  "sameAs": [
+    "https://www.facebook.com/people/FirstClass-WoodWorks/61551346499466/",
+    "https://www.yelp.com/biz/first-class-woodworks-murrieta"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "07:00",
+      "closes": "17:00"
+    }
+  ],
+  "knowsAbout": [
+    "Custom Kitchen Cabinets",
+    "Cabinet Maker",
+    "Cabinet Builder",
+    "Kitchen Remodeling",
+    "Finish Carpentry",
+    "Dovetail Joinery",
+    "Blum Soft-Close Hardware",
+    "Post-Catalyzed Conversion Varnish",
+    "Furniture-Grade Plywood Construction",
+    "Bathroom Vanity Cabinets",
+    "Entertainment Center Built-Ins",
+    "Custom Closet Systems"
+  ]
+};
 ---
 
-<MainLayout 
-  title="First Class Woodworks | Custom Kitchen Cabinets Murrieta"
-  description="Premium 2025 kitchen remodeling and finish carpentry in Murrieta, Temecula, and surrounding areas. Handcrafted in-house cabinetry with no subcontractors."
+<MainLayout
+  title="Cabinet Maker Murrieta, CA | Custom Kitchen Cabinets | First Class WoodWorks"
+  description="Looking for a cabinet maker near me in Murrieta? First Class WoodWorks builds custom kitchen cabinets, bathroom vanities, and built-ins 100% in-house. 5-star rated. Serving Temecula Valley since day one."
 >
   <Hero />
 
@@ -24,11 +155,239 @@ import FAQ from '../components/FAQ.astro';
     <div class="w-64 h-[2px] bg-gradient-to-r from-transparent via-zinc-300 to-transparent opacity-50"></div>
   </div>
 
+  <!-- Cabinet Maker Identity Section — GBP Category Match -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+        <div class="reveal">
+          <h2 class="text-3xl md:text-5xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+            Your Local <span class="text-yellow-600">Cabinet Maker</span> in Murrieta
+          </h2>
+          <div class="h-1 w-20 bg-yellow-600 rounded-full mb-8"></div>
+          <p class="text-zinc-600 text-lg leading-relaxed mb-6">
+            A cabinet maker is not a general contractor. A cabinet maker is not a handyman who installs pre-fab boxes.
+            A <strong>cabinet maker</strong> is a specialized craftsman who designs, builds, and installs cabinetry
+            from raw lumber — and that's exactly what First Class WoodWorks has done for every home we've touched
+            in Murrieta, Temecula, and across Riverside County.
+          </p>
+          <p class="text-zinc-600 text-lg leading-relaxed mb-8">
+            When your Google search says "cabinet maker near me," you're looking for someone who knows the difference
+            between a dovetail joint and a butt joint, between furniture-grade plywood and particle board,
+            between a post-catalyzed conversion varnish and a can of paint from the hardware store.
+            That's us. That's all we do.
+          </p>
+          <a href="/services/cabinet-maker" class="inline-block bg-zinc-900 text-white px-8 py-3 font-bold uppercase tracking-widest text-xs hover:bg-yellow-600 transition shadow-lg">
+            What a Cabinet Maker Does
+          </a>
+        </div>
+
+        <div class="reveal delay-200 bg-zinc-50 border border-zinc-200 rounded-sm p-8 md:p-10">
+          <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-8">What Sets a True Cabinet Maker Apart</h3>
+          <ul class="space-y-5">
+            <li class="flex items-start gap-4">
+              <span class="text-yellow-600 text-lg font-bold mt-0.5">01</span>
+              <div>
+                <p class="font-bold text-zinc-900 mb-1">Builds From Raw Lumber</p>
+                <p class="text-zinc-500 text-sm">We don't assemble flat-packs. We mill, join, and finish every component in our own shop.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="text-yellow-600 text-lg font-bold mt-0.5">02</span>
+              <div>
+                <p class="font-bold text-zinc-900 mb-1">Precision to the 1/16th Inch</p>
+                <p class="text-zinc-500 text-sm">Laser-measured and custom-scribed to your walls. No filler strips, no gaps, no compromise.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="text-yellow-600 text-lg font-bold mt-0.5">03</span>
+              <div>
+                <p class="font-bold text-zinc-900 mb-1">Traditional Joinery Methods</p>
+                <p class="text-zinc-500 text-sm">Dovetail drawer boxes and mortise-and-tenon face frames — the hallmark of heirloom cabinetry.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="text-yellow-600 text-lg font-bold mt-0.5">04</span>
+              <div>
+                <p class="font-bold text-zinc-900 mb-1">Professional-Grade Finishing</p>
+                <p class="text-zinc-500 text-sm">Post-catalyzed conversion varnish applied in controlled conditions — not sprayed on-site.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <Services />
 
   <RecentProjects />
 
   <AreasServed />
+
+  <!-- Pricing Transparency & Custom vs Big Box Section -->
+  <section class="py-20 bg-white border-t border-zinc-100">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <h2 class="text-3xl md:text-5xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          How Much Do Custom Cabinets Cost <span class="text-yellow-600">Near Me?</span>
+        </h2>
+        <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-6"></div>
+        <p class="text-zinc-600 text-lg leading-relaxed">
+          Homeowners in Murrieta and Temecula often ask, "What should I budget for custom cabinets near me?"
+          Here's what to expect when you invest in heirloom-quality cabinetry built by a local
+          <a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">cabinet maker</a> — not a factory.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="reveal bg-zinc-50 border border-zinc-200 rounded-sm p-8 text-center hover:shadow-lg transition group">
+          <h3 class="text-sm font-bold uppercase tracking-[0.15em] text-zinc-500 mb-4">Custom Kitchen Cabinets</h3>
+          <p class="text-4xl md:text-5xl font-serif font-bold text-zinc-900 mb-2">$35k–$75k<span class="text-xl text-yellow-600">+</span></p>
+          <p class="text-zinc-500 text-sm">Full kitchen with furniture-grade plywood, dovetail drawer boxes, and Blum soft-close hardware.</p>
+        </div>
+
+        <div class="reveal delay-100 bg-zinc-50 border border-zinc-200 rounded-sm p-8 text-center hover:shadow-lg transition group">
+          <h3 class="text-sm font-bold uppercase tracking-[0.15em] text-zinc-500 mb-4">Bathroom Vanity Cabinets</h3>
+          <p class="text-4xl md:text-5xl font-serif font-bold text-zinc-900 mb-2">$3k–$12k<span class="text-xl text-yellow-600">+</span></p>
+          <p class="text-zinc-500 text-sm">Custom vanities and master suite storage built to the exact dimensions of your bathroom.</p>
+        </div>
+
+        <div class="reveal delay-200 bg-zinc-50 border border-zinc-200 rounded-sm p-8 text-center hover:shadow-lg transition group">
+          <h3 class="text-sm font-bold uppercase tracking-[0.15em] text-zinc-500 mb-4">Entertainment Centers</h3>
+          <p class="text-4xl md:text-5xl font-serif font-bold text-zinc-900 mb-2">$8k–$25k<span class="text-xl text-yellow-600">+</span></p>
+          <p class="text-zinc-500 text-sm">Handcrafted media walls and fireplace built-ins designed for your living space.</p>
+        </div>
+      </div>
+
+      <!-- Custom vs Big Box Comparison -->
+      <div class="max-w-5xl mx-auto reveal">
+        <h3 class="text-2xl md:text-3xl font-serif font-bold text-zinc-900 text-center mb-10">
+          Why Murrieta Homeowners Choose Custom Over Big-Box Cabinets
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-zinc-200 rounded-sm overflow-hidden">
+
+          <div class="bg-zinc-100 p-6 md:p-8 border-b md:border-b-0 md:border-r border-zinc-200">
+            <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-red-500 mb-6">Big Box / Pre-Fab (The Problem)</h4>
+            <ul class="space-y-4 text-zinc-600 text-sm">
+              <li class="flex items-start gap-3">
+                <span class="text-red-400 mt-0.5">&#10007;</span>
+                <span><strong>Particle board & melamine</strong> — peels and swells in Southern California humidity</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-400 mt-0.5">&#10007;</span>
+                <span><strong>Standard 3" size increments</strong> — wastes space with ugly filler strips</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-400 mt-0.5">&#10007;</span>
+                <span><strong>Basic plastic hardware</strong> — breaks within a few years of daily use</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-400 mt-0.5">&#10007;</span>
+                <span><strong>5–10 year lifespan</strong> — low ROI, generic look that hurts resale value</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 md:p-8">
+            <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-yellow-600 mb-6">First Class WoodWorks (The Solution)</h4>
+            <ul class="space-y-4 text-zinc-600 text-sm">
+              <li class="flex items-start gap-3">
+                <span class="text-yellow-600 mt-0.5">&#10003;</span>
+                <span><strong>Furniture-grade plywood & solid hardwoods</strong> — built to last a lifetime</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-yellow-600 mt-0.5">&#10003;</span>
+                <span><strong>Built to the 1/16th inch</strong> — perfect fit, zero wasted space</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-yellow-600 mt-0.5">&#10003;</span>
+                <span><strong>Blum soft-close hinges & slides</strong> — lifetime warranty hardware</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-yellow-600 mt-0.5">&#10003;</span>
+                <span><strong>Heirloom quality</strong> — increases home appraisal value in Riverside County</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <p class="text-center text-zinc-500 text-sm mt-8 italic">
+          When you search for "best cabinet maker near me in Murrieta," you deserve a builder who uses
+          mortise-and-tenon joinery and post-catalyzed conversion varnish — not house paint on particleboard.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Direct-Answer AI Block: Kitchen Remodeling Murrieta -->
+  <section class="py-16 bg-zinc-50 border-t border-zinc-200">
+    <div class="max-w-4xl mx-auto px-6 reveal">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-zinc-900 mb-6 leading-tight text-center">
+        Kitchen Remodeling in <span class="text-yellow-600">Murrieta, CA</span>
+      </h2>
+      <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-10"></div>
+
+      <div class="max-w-none text-zinc-600 leading-relaxed space-y-6 text-base">
+        <p>
+          <strong class="text-zinc-900">First Class WoodWorks is a kitchen remodeling company in Murrieta, California</strong>
+          that specializes in custom cabinetry and finish carpentry for homeowners across the Temecula Valley.
+          If you need kitchen remodeling in Murrieta — from full gut renovations to custom cabinet refacing — we handle every phase
+          in-house with zero subcontractors.
+        </p>
+        <p>
+          We are not a general contractor who farms out the cabinet work. We are the
+          <a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">cabinet builder</a>. Every drawer box is dovetailed in our own shop.
+          Every face frame is joined with mortise-and-tenon construction. Every surface is finished with post-catalyzed conversion varnish — the same
+          professional coating used on high-end furniture, not the house paint other shops spray on particle board.
+        </p>
+        <p>
+          Our <a href="/services/kitchen-remodeling" class="text-yellow-600 font-bold hover:underline">kitchen remodeling</a> process starts with a free in-home consultation where we take precise laser measurements
+          and discuss your vision. You'll receive full 3D renderings before a single board is cut. From design approval to professional installation,
+          the typical timeline is 8–12 weeks — and our own employees are on-site for every step.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Direct-Answer AI Block: Custom Cabinets Murrieta -->
+  <section class="py-16 bg-zinc-950 border-t border-zinc-800">
+    <div class="max-w-4xl mx-auto px-6 reveal">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6 leading-tight text-center">
+        Custom Cabinets in <span class="text-yellow-600">Murrieta</span> — Built to the 1/16th Inch
+      </h2>
+      <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-10"></div>
+
+      <div class="max-w-none text-zinc-400 leading-relaxed space-y-6 text-base">
+        <p>
+          Looking for custom cabinets in Murrieta? <strong class="text-white">First Class WoodWorks builds bespoke cabinetry</strong>
+          for kitchens, bathrooms, closets, and entertainment centers — all from furniture-grade plywood and solid hardwoods.
+          We never use particle board, melamine, or imported flat-pack boxes.
+        </p>
+        <p>
+          <strong class="text-white">Why local homeowners choose us over big-box stores:</strong> Pre-fab cabinets come in standard
+          3-inch size increments. If your wall is 32 inches, you get a 30-inch box plus a 2-inch filler strip. We build to the 1/16th of
+          an inch — perfect fit, zero wasted space, zero unsightly gaps. Every cabinet ships with Blum soft-close hinges and undermount slides
+          backed by a lifetime warranty.
+        </p>
+        <p>
+          <strong class="text-white">What to ask before hiring a cabinet maker near you:</strong> Ask if they subcontract.
+          Ask if they use solid wood or particle board. Ask to see their joinery — dovetails and mortise-and-tenon, or just staples and glue?
+          At <a href="/" class="text-yellow-600 hover:underline">First Class WoodWorks</a>, we welcome the comparison because our craftsmanship
+          speaks for itself on every project from Bear Creek to Old Town Temecula to the Santa Rosa Plateau.
+        </p>
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="/contact" class="inline-block bg-yellow-600 text-zinc-950 px-8 py-3 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition shadow-lg">
+          Schedule a Free Consultation
+        </a>
+      </div>
+    </div>
+  </section>
 
   <FAQ />
 
@@ -47,4 +406,5 @@ import FAQ from '../components/FAQ.astro';
     </div>
   </section>
 
+<script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
 </MainLayout>

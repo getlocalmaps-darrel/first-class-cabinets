@@ -61,3 +61,7 @@
 * **Voice:** High-end Local Artisan. Authoritative yet neighborly.
 * **Keywords:** Prioritize "Cabinet Maker" and "Cabinet Builder" for search intent.
 * **Mission:** Educate the client on why "Custom" is the only choice for a high-value home in Murrieta/Temecula.
+
+## 11. Developer Workflow Hooks
+- **Completion Notification:** After finishing a multi-page batch or a long `npm run build`, use a terminal bell or audio cue.
+- **Command:** `powershell -c "[Console]::Beep(800, 500)"`
