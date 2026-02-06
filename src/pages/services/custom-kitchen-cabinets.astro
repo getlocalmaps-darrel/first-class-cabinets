@@ -1,0 +1,118 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+
+// 1. IMAGE IMPORTS (Replace with your actual asset paths)
+import kitchenHero from '../../assets/kitchen-hero.jpg'; 
+
+// 2. SCHEMA FOR KNOWLEDGE GRAPH DOMINANCE
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Custom Kitchen Cabinets",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "First Class WoodWorks",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "24491 Avenida Arconte",
+      "addressLocality": "Murrieta",
+      "addressRegion": "CA",
+      "postalCode": "92562"
+    }
+  },
+  "areaServed": ["Murrieta", "Temecula", "Menifee", "Bear Creek", "Greer Ranch"],
+  "description": "Premium custom kitchen cabinets handcrafted in Murrieta. We are expert cabinet makers specializing in furniture-grade plywood and solid hardwood construction."
+};
+---
+
+<MainLayout 
+  title="Custom Kitchen Cabinets Murrieta | Master Cabinet Maker & Builder"
+  description="Elevate your home with luxury custom kitchen cabinets by First Class WoodWorks. Expert cabinet builders in Murrieta & Temecula. 100% In-house craftsmanship."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <article class="pt-32 pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <header class="max-w-4xl mb-16">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Master <span class="text-yellow-600 italic">Cabinet Maker</span> in Murrieta
+        </h1>
+        <p class="text-xl text-zinc-600 max-w-2xl">
+          Transforming Southern California homes with precision-engineered, handcrafted cabinetry that outlasts and outperforms big-box alternatives.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-8 space-y-8 text-lg text-zinc-600 leading-relaxed">
+          
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">The Custom Advantage</h2>
+            <p>
+              When searching for a <strong>cabinet builder in Murrieta</strong>, homeowners often face the choice between mass-produced units and custom builds. At <a href="/" class="text-yellow-600 font-bold hover:underline">First Class WoodWorks</a>, we believe your kitchen deserves better than particle board. Our <strong>custom kitchen cabinets</strong> are built to the 1/16th of an inch, ensuring a perfect fit in your unique space.
+            </p>
+            <p>
+              By adhering to the <a href="https://share.google/zkQ5YtBJETVEHBJvO" target="_blank" class="text-zinc-400 hover:text-yellow-600 transition">California Residential Building Code</a> standards, we ensure every installation is as safe as it is beautiful. Unlike regional contractors who use subcontractors, our team handles every cut in-house.
+            </p>
+          </section>
+
+          <section class="reveal bg-zinc-50 p-8 rounded-sm border border-zinc-100">
+            <h3 class="text-2xl font-serif font-bold text-zinc-900 mb-6 text-center">Custom vs. Big Box Retailers</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm text-left">
+                <thead class="border-b border-zinc-200">
+                  <tr>
+                    <th class="pb-4 font-bold uppercase tracking-wider">Feature</th>
+                    <th class="pb-4 font-bold uppercase tracking-wider text-zinc-400">Big Box Pre-Fab</th>
+                    <th class="pb-4 font-bold uppercase tracking-wider text-yellow-600">First Class Custom</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-zinc-200">
+                  <tr><td class="py-4 font-bold">Materials</td><td class="py-4">Particle Board</td><td class="py-4 font-bold text-zinc-900">Furniture-Grade Plywood</td></tr>
+                  <tr><td class="py-4 font-bold">Hardware</td><td class="py-4">Standard Hinges</td><td class="py-4 font-bold text-zinc-900">Blum Soft-Close (Lifetime Warranty)</td></tr>
+                  <tr><td class="py-4 font-bold">Fit</td><td class="py-4">Filler Strips Required</td><td class="py-4 font-bold text-zinc-900">Precision Scribed to Walls</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">More Than Just Kitchens</h2>
+            <p>
+              Our expertise as a <strong>cabinet maker</strong> extends throughout the home. We specialize in 
+              <a href="/services/bathroom-remodeling" class="text-yellow-600 hover:underline">bespoke bathroom cabinetry</a> and 
+              <a href="/services/built-ins" class="text-yellow-600 hover:underline">custom media walls</a> that serve as the focal point of your living room.
+            </p>
+          </section>
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8 sticky top-32">
+          <div class="bg-zinc-900 text-white p-10 rounded-sm reveal">
+            <h3 class="font-serif font-bold text-2xl mb-4 text-yellow-600">Ready to Build?</h3>
+            <p class="text-zinc-400 mb-8 text-sm leading-relaxed">
+              We serve Bear Creek, Greer Ranch, and the entire Temecula Valley. Contact your local <strong>cabinet builder</strong> today for an heirloom-quality consultation.
+            </p>
+            <a href="tel:9519731265" class="block text-center border border-yellow-600 py-4 font-bold hover:bg-yellow-600 transition">
+              (951) 973-1265
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+  .reveal.active { opacity: 1; transform: translateY(0); }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('active');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
