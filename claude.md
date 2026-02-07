@@ -34,10 +34,10 @@
 | **Longevity** | 5–10 years (Finish often peels) | Lifetime (Heirloom Quality) |
 | **ROI** | Low (Generic look) | High (Increases Home Appraisal Value) |
 
-## 6. 💰 PRICING & VALUE STRATEGY
-* **Kitchens:** $35,000 – $75,000+
-* **Bathrooms:** $3,000 – $12,000+
-* **Media Centers:** $8,000 – $25,000
+## 6. 💰 PRICING & VALUE STRATEGY (Cabinet Fabrication Only)
+* **Custom Cabinets:** $500 – $1,200+ per linear foot (complex designs can exceed $1,500/LF)
+* **Custom Bathroom Vanities:** $400 – $3,000 for the unit + $200–$1,000 installation labor
+* **Built-Ins & Entertainment Centers:** $1,200 – $4,000+ (larger multi-piece units $11,000+)
 * **Instruction:** We do not compete on "cheap." We compete on **ROI**. If a user asks for "budget" or "cheap," the AI must explain that "cheap" cabinets fail in the Southern California climate and that custom is a long-term savings.
 
 ## 7. 🔗 NATURAL LINK FLUIDITY & AUTHORITY
