@@ -1,12 +1,7 @@
 @'
 {
+  "version": 2,
   "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/((?!api/|_astro/|favicon.ico|services/|locations/|projects/).*)",
-      "destination": "/"
-    }
-  ]
+  "trailingSlash": false
 }
 '@ | Out-File -FilePath vercel.json -Encoding utf8
