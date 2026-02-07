@@ -1,5 +1,11 @@
-$config = '{
+{
   "cleanUrls": true,
-  "trailingSlash": false
-}'
-$config | Set-Content -Path vercel.json -Encoding utf8NoBOM
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
