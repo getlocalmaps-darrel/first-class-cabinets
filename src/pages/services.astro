@@ -3,143 +3,464 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import { Image } from 'astro:assets';
 
-// Import images
 import kitchenImage from '../assets/hero-kitchen.jpg';
 import bathroomImage from '../assets/bathroom-remodel.jpg';
 import builtinImage from '../assets/builtin-1.jpg';
 import fireplaceImage from '../assets/fireplace.jpg';
+import closetImage from '../assets/builtin.jpg';
 
-const pageTitle = "Custom Cabinetry Services | Kitchens, Bathrooms & Built-Ins";
-const pageDescription = "Explore our premium woodworking services in Murrieta. From custom kitchen remodels to handcrafted fireplace mantels, we build everything in-house.";
+const phone = "(951) 973-1265";
+
+const faqs = [
+  {
+    question: "What custom cabinetry services does First Class WoodWorks offer?",
+    answer: "We offer a full range of custom cabinetry and finish carpentry services including custom kitchen cabinets, kitchen remodeling, bathroom vanities, entertainment centers, fireplace surrounds, and walk-in closet built-ins. Every project is designed, built, and installed by our own team in Murrieta — never subcontracted."
+  },
+  {
+    question: "How much do custom cabinets cost in Murrieta?",
+    answer: "Custom kitchen cabinets range from $500 to $1,200+ per linear foot depending on wood species, finish, and design complexity. Bathroom vanities run $400 to $3,000, and built-in entertainment centers start at $1,200 for simple units up to $11,000+ for large multi-piece designs. Our pricing reflects furniture-grade plywood, Blum soft-close hardware, and dovetail joinery — materials that outlast big-box alternatives by decades."
+  },
+  {
+    question: "Why should I choose custom cabinets over Home Depot or IKEA?",
+    answer: "Retail cabinets use particle board that swells in Southern California's heat and typically fails within 5 to 10 years. Our custom cabinets are built from furniture-grade plywood with dovetail joinery, measured to the 1/16th of an inch for a perfect fit, and finished with post-catalyzed conversion varnish that resists heat, moisture, and daily wear for a lifetime. Custom cabinetry also increases your home's appraisal value — big-box cabinets do not."
+  },
+  {
+    question: "Do you use subcontractors for any of your work?",
+    answer: "Never. Our own licensed, bonded, and insured employees handle every cut, every joint, every finish coat, and every installation. This is how we maintain the precision and quality control that defines First Class WoodWorks. When you hire us, you are hiring the craftsmen who will physically be in your home."
+  },
+  {
+    question: "What areas do you serve for custom cabinetry?",
+    answer: "We are based in Murrieta at 24491 Avenida Arconte and serve the entire Temecula Valley including Temecula, Menifee, Wildomar, Fallbrook, Lake Elsinore, French Valley, Winchester, Canyon Lake, and Perris. Call (951) 973-1265 for a free in-home consultation anywhere in our service area."
+  },
+  {
+    question: "How long does a custom cabinet project take from start to finish?",
+    answer: "From design approval to professional installation, most projects take 8 to 12 weeks. This includes laser measurement, full 3D rendering approval, material procurement, in-shop fabrication with dovetail joinery, post-catalyzed conversion varnish curing, and careful on-site installation with HEPA dust extraction and floor protection."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HomeAndConstructionBusiness",
+      "@id": "https://firstclasswoodworks.com/#business",
+      "name": "First Class WoodWorks",
+      "url": "https://firstclasswoodworks.com",
+      "telephone": "(951) 973-1265",
+      "image": "https://firstclasswoodworks.com/assets/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "24491 Avenida Arconte",
+        "addressLocality": "Murrieta",
+        "addressRegion": "CA",
+        "postalCode": "92562",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "33.5539",
+        "longitude": "-117.2139"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Murrieta", "sameAs": "https://en.wikipedia.org/wiki/Murrieta,_California" },
+        { "@type": "City", "name": "Temecula", "sameAs": "https://en.wikipedia.org/wiki/Temecula,_California" },
+        { "@type": "City", "name": "Menifee", "sameAs": "https://en.wikipedia.org/wiki/Menifee,_California" },
+        { "@type": "City", "name": "Wildomar" },
+        { "@type": "City", "name": "Fallbrook" },
+        { "@type": "City", "name": "Lake Elsinore" },
+        { "@type": "City", "name": "French Valley" },
+        { "@type": "City", "name": "Winchester" },
+        { "@type": "City", "name": "Canyon Lake" },
+        { "@type": "City", "name": "Perris" }
+      ],
+      "priceRange": "$$$",
+      "knowsAbout": [
+        "Custom Kitchen Cabinets", "Kitchen Remodeling", "Bathroom Vanities",
+        "Entertainment Centers", "Fireplace Built-Ins", "Custom Closet Systems",
+        "Finish Carpentry", "Cabinet Making", "Dovetail Joinery",
+        "Post-Catalyzed Conversion Varnish", "Blum Soft-Close Hardware"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Custom Cabinetry & Finish Carpentry Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Kitchen Cabinets", "url": "https://firstclasswoodworks.com/services/custom-kitchen-cabinets" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kitchen Remodeling", "url": "https://firstclasswoodworks.com/services/kitchen-remodeling" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bathroom Remodeling", "url": "https://firstclasswoodworks.com/services/bathroom-remodeling" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cabinet Maker", "url": "https://firstclasswoodworks.com/services/cabinet-maker" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Entertainment Centers & Built-Ins" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fireplace Mantels & Surrounds" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Closet Built-Ins" } }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "30"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://firstclasswoodworks.com/services",
+      "name": "Our Services — Custom Cabinetry & Finish Carpentry | First Class WoodWorks",
+      "description": "Explore the full range of custom cabinetry and finish carpentry services from First Class WoodWorks in Murrieta, CA. Kitchen cabinets, bathroom vanities, entertainment centers, fireplace surrounds, and closet built-ins — all built 100% in-house.",
+      "url": "https://firstclasswoodworks.com/services",
+      "isPartOf": { "@id": "https://firstclasswoodworks.com/#website" },
+      "about": { "@id": "https://firstclasswoodworks.com/#business" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".services-intro", ".faq-answer"]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://firstclasswoodworks.com" },
+        { "@type": "ListItem", "position": 2, "name": "Our Services" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    }
+  ]
+};
 ---
 
-<MainLayout title={pageTitle} description={pageDescription}>
-  
-  <section class="bg-zinc-900 text-white py-20 md:py-32 relative overflow-hidden">
-    <div class="absolute inset-0 bg-black/50 z-0"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
-      <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">Our Craftsmanship</h1>
-      <div class="h-1 w-24 bg-yellow-600 mx-auto rounded-full mb-6"></div>
-      <p class="text-xl text-zinc-300 max-w-2xl mx-auto leading-relaxed">
-        We don't just install cabinets; we engineer them. Every project is designed, milled, and finished in our Murrieta shop.
-      </p>
-    </div>
-  </section>
+<MainLayout
+  title="Our Services | Custom Cabinets, Kitchen Remodeling & Built-Ins | Murrieta CA"
+  description="Explore First Class WoodWorks' custom cabinetry services in Murrieta, CA. Kitchen cabinets, bathroom vanities, entertainment centers, fireplace surrounds & closet built-ins — 100% in-house. Call (951) 973-1265."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        <div class="reveal">
-          <div class="relative rounded-sm overflow-hidden shadow-2xl aspect-video">
-             <Image src={kitchenImage} alt="Custom Kitchen Remodel Murrieta" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
-          </div>
+  <article class="pt-24 pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <nav class="text-xs text-zinc-400 mb-4 reveal" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-yellow-600 transition">Home</a></li>
+          <li class="text-zinc-300">/</li>
+          <li class="text-zinc-600 font-bold">Our Services</li>
+        </ol>
+      </nav>
+
+      <header class="max-w-3xl mx-auto text-center mb-10 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Our <span class="text-yellow-600 italic">Services</span>
+        </h1>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-xs font-bold uppercase tracking-[0.3em] text-zinc-400">
+          <span class="text-yellow-600">Murrieta, California</span>
+          <span class="hidden md:block text-zinc-200">&bull;</span>
+          <span>100% In-House Craftsmanship</span>
+          <span class="hidden md:block text-zinc-200">&bull;</span>
+          <span class="text-zinc-500">Licensed &amp; Bonded</span>
         </div>
-      
-        <div class="reveal delay-200">
-          <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Custom Kitchen Remodeling</h2>
-          <div class="h-1 w-20 bg-yellow-600 rounded-full mb-6"></div>
-          <p class="text-zinc-600 mb-6 leading-relaxed">
-            The kitchen is the heart of your home, and standard box-store cabinets often fail to utilize the unique dimensions of Murrieta tract homes.
-            We build <strong>true custom cabinetry</strong> that maximizes storage to the very inch.
-          </p>
-          <p class="text-zinc-600 mb-8 leading-relaxed">
-            Our process includes 3D rendering, selection of premium hardwoods, and durable finishes that stand up to daily family life.
-          </p>
-          <ul class="space-y-2 mb-8">
-            <li class="flex items-center gap-3 text-sm font-bold text-zinc-800">
-              <svg class="w-5 h-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Soft-close Blum hardware
-            </li>
-            <li class="flex items-center gap-3 text-sm font-bold text-zinc-800">
-              <svg class="w-5 h-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Custom trash pull-outs & spice racks
-            </li>
-          </ul>
-        </div>
+        <div class="h-px w-24 bg-yellow-600/30 mx-auto mt-6"></div>
+      </header>
+
+      <div class="services-intro max-w-3xl mx-auto text-center mb-10 reveal">
+        <p class="text-lg text-zinc-500 leading-relaxed italic">
+          First Class WoodWorks builds every cabinet, vanity, and built-in by hand in our Murrieta shop. No subcontractors, no particle board, no flat-packs. From custom kitchens to fireplace surrounds, each project features furniture-grade plywood, dovetail joinery, and Blum soft-close hardware backed by a lifetime warranty.
+        </p>
       </div>
-    </div>
-  </section>
 
-  <section class="py-20 bg-zinc-50 border-y border-zinc-200">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        <div class="order-2 md:order-1 reveal">
-          <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Entertainment Centers & Built-Ins</h2>
-          <div class="h-1 w-20 bg-yellow-600 rounded-full mb-6"></div>
-          <p class="text-zinc-600 mb-6 leading-relaxed">
-            Turn that empty niche in your living room into a stunning focal point.
-            We specialize in filling awkward niches with seamless cabinetry that looks original to the architecture.
-          </p>
-          <p class="text-zinc-600 mb-8 leading-relaxed">
-            Whether a wall library or a floating media console, our carpenters scribe every piece to your walls for a flawless fit.
-          </p>
-        </div>
-        <div class="order-1 md:order-2 reveal delay-200">
-          <div class="relative rounded-sm overflow-hidden shadow-2xl aspect-video">
-             <Image src={builtinImage} alt="Custom Entertainment Center Built-in" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 items-start">
+        <div class="lg:col-span-8 space-y-14">
+
+          <!-- Service 1: Custom Kitchen Cabinets -->
+          <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center reveal">
+            <div class="relative rounded-sm overflow-hidden shadow-2xl aspect-video">
+              <Image src={kitchenImage} alt="Custom kitchen cabinets built by First Class WoodWorks in Murrieta CA" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+            </div>
+            <div>
+              <h2 class="text-2xl font-serif font-bold text-zinc-900 mb-3">Custom Kitchen Cabinets</h2>
+              <div class="h-1 w-16 bg-yellow-600 rounded-full mb-4"></div>
+              <p class="text-zinc-600 leading-relaxed mb-4">
+                The kitchen is the heart of your home, and big-box cabinets in standard 3-inch increments waste space with filler strips. Our <a href="/services/cabinet-maker" class="text-yellow-600 font-bold hover:underline">cabinet maker</a> team builds to the 1/16th of an inch, maximizing every square inch of storage.
+              </p>
+              <ul class="space-y-2 text-sm text-zinc-700 mb-6">
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">&#10003;</span> Blum soft-close hardware (lifetime warranty)</li>
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">&#10003;</span> $500 – $1,200+ per linear foot</li>
+              </ul>
+              <a href="/services/custom-kitchen-cabinets" class="inline-block bg-zinc-900 text-white px-6 py-3 font-bold uppercase tracking-widest text-xs hover:bg-yellow-600 transition">
+                Learn More
+              </a>
+            </div>
+          </section>
+
+          <!-- Service 2: Kitchen Remodeling -->
+          <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center reveal">
+            <div class="order-2 md:order-1">
+              <h2 class="text-2xl font-serif font-bold text-zinc-900 mb-3">Kitchen Remodeling</h2>
+              <div class="h-1 w-16 bg-yellow-600 rounded-full mb-4"></div>
+              <p class="text-zinc-600 leading-relaxed mb-4">
+                Full gut remodels that transform outdated kitchens into high-value showpieces. We handle the cabinetry, countertop coordination, and finish carpentry while engineering the work triangle for maximum efficiency in your Murrieta or <a href="/cities/temecula" class="text-yellow-600 font-bold hover:underline">Temecula</a> home.
+              </p>
+              <ul class="space-y-2 text-sm text-zinc-700 mb-6">
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">&#10003;</span> 3D renderings before any work begins</li>
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">&#10003;</span> 8–12 week turnaround</li>
+              </ul>
+              <a href="/services/kitchen-remodeling" class="inline-block bg-zinc-900 text-white px-6 py-3 font-bold uppercase tracking-widest text-xs hover:bg-yellow-600 transition">
+                Learn More
+              </a>
+            </div>
+            <div class="order-1 md:order-2 relative rounded-sm overflow-hidden shadow-2xl aspect-video">
+              <Image src={kitchenImage} alt="Kitchen remodeling project in Murrieta by First Class WoodWorks" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+            </div>
+          </section>
+
+          <!-- Service 3: Bathroom Vanities -->
+          <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center reveal">
+            <div class="relative rounded-sm overflow-hidden shadow-2xl aspect-video">
+              <Image src={bathroomImage} alt="Custom bathroom vanity with furniture-grade plywood in Murrieta CA" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+            </div>
+            <div>
+              <h2 class="text-2xl font-serif font-bold text-zinc-900 mb-3">Bathroom Vanities & Storage</h2>
+              <div class="h-1 w-16 bg-yellow-600 rounded-full mb-4"></div>
+              <p class="text-zinc-600 leading-relaxed mb-4">
+                Custom vanities built to the exact width of your walls, eliminating the gaps where dust and moisture collect. Every vanity is sealed with post-catalyzed conversion varnish for decades of humidity resistance in master suites and guest baths alike.
+              </p>
+              <ul class="space-y-2 text-sm text-zinc-700 mb-6">
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">&#10003;</span> Moisture-resistant conversion varnish finish</li>
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">&#10003;</span> $400 – $3,000 per vanity unit</li>
+              </ul>
+              <a href="/services/bathroom-remodeling" class="inline-block bg-zinc-900 text-white px-6 py-3 font-bold uppercase tracking-widest text-xs hover:bg-yellow-600 transition">
+                Learn More
+              </a>
+            </div>
+          </section>
+
+          <!-- Service 4: Entertainment Centers & Built-Ins -->
+          <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center reveal">
+            <div class="order-2 md:order-1">
+              <h2 class="text-2xl font-serif font-bold text-zinc-900 mb-3">Entertainment Centers & Built-Ins</h2>
+              <div class="h-1 w-16 bg-yellow-600 rounded-full mb-4"></div>
+              <p class="text-zinc-600 leading-relaxed mb-4">
+                Turn empty niches and bare walls into stunning focal points. We specialize in seamless built-in cabinetry that looks original to your home's architecture — from floating media consoles to full wall libraries with integrated lighting.
+              </p>
+              <ul class="space-y-2 text-sm text-zinc-700 mb-6">
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">&#10003;</span> Concealed wiring &amp; custom TV sizing</li>
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">&#10003;</span> Starting at $1,200 — large units $11,000+</li>
+              </ul>
+            </div>
+            <div class="order-1 md:order-2 relative rounded-sm overflow-hidden shadow-2xl aspect-video">
+              <Image src={builtinImage} alt="Custom entertainment center built-in by First Class WoodWorks Murrieta" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+            </div>
+          </section>
+
+          <!-- Service 5: Fireplace Mantels & Surrounds -->
+          <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center reveal">
+            <div class="relative rounded-sm overflow-hidden shadow-2xl aspect-video">
+              <Image src={fireplaceImage} alt="Handcrafted custom fireplace mantel and surround in Murrieta CA" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+            </div>
+            <div>
+              <h2 class="text-2xl font-serif font-bold text-zinc-900 mb-3">Fireplace Mantels & Surrounds</h2>
+              <div class="h-1 w-16 bg-yellow-600 rounded-full mb-4"></div>
+              <p class="text-zinc-600 leading-relaxed mb-4">
+                A custom mantel anchors any living room. We craft solid wood mantels, shiplap surrounds, and floor-to-ceiling fireplace build-outs — matching your existing trim or creating an entirely new style, from rustic reclaimed to clean shaker lines.
+              </p>
+              <ul class="space-y-2 text-sm text-zinc-700 mb-6">
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">&#10003;</span> Matched to existing cabinetry &amp; trim</li>
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">&#10003;</span> See our <a href="/projects/bear-creek-remodel" class="text-yellow-600 font-bold hover:underline">Bear Creek project</a></li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Service 6: Custom Closet Built-Ins -->
+          <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center reveal">
+            <div class="order-2 md:order-1">
+              <h2 class="text-2xl font-serif font-bold text-zinc-900 mb-3">Custom Closet Built-Ins</h2>
+              <div class="h-1 w-16 bg-yellow-600 rounded-full mb-4"></div>
+              <p class="text-zinc-600 leading-relaxed mb-4">
+                Premium walk-in closet systems built from the same furniture-grade materials as our kitchen cabinets. No particle board, no wire shelving. Dovetail drawer boxes, adjustable shelving, and integrated lighting designed for luxury <a href="/cities/murrieta" class="text-yellow-600 font-bold hover:underline">Murrieta</a> master suites.
+              </p>
+              <ul class="space-y-2 text-sm text-zinc-700 mb-6">
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">&#10003;</span> Furniture-grade plywood &amp; solid hardwoods</li>
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">&#10003;</span> Zero particle board or wire racks</li>
+              </ul>
+            </div>
+            <div class="order-1 md:order-2 relative rounded-sm overflow-hidden shadow-2xl aspect-video">
+              <Image src={closetImage} alt="Custom closet built-in with furniture-grade plywood by First Class WoodWorks Murrieta" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+            </div>
+          </section>
+
+          <!-- Comparison Table -->
+          <section class="bg-zinc-50 p-8 rounded-sm border border-zinc-100 reveal">
+            <h2 class="text-2xl font-serif font-bold text-zinc-900 mb-6 text-center">Custom vs. Big-Box — Why It Matters</h2>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm text-left">
+                <thead class="border-b border-zinc-200">
+                  <tr>
+                    <th class="pb-4 font-bold uppercase tracking-wider text-zinc-600">Feature</th>
+                    <th class="pb-4 font-bold uppercase tracking-wider text-zinc-400">Big-Box / Pre-Fab</th>
+                    <th class="pb-4 font-bold uppercase tracking-wider text-yellow-600">First Class WoodWorks</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-zinc-200">
+                  <tr><td class="py-4 font-bold">Materials</td><td class="py-4 text-zinc-500">Particle board / Melamine</td><td class="py-4 font-bold text-zinc-900">Furniture-grade plywood & hardwoods</td></tr>
+                  <tr><td class="py-4 font-bold">Sizing</td><td class="py-4 text-zinc-500">Standard 3" increments (fillers)</td><td class="py-4 font-bold text-zinc-900">Built to the 1/16th inch</td></tr>
+                  <tr><td class="py-4 font-bold">Hardware</td><td class="py-4 text-zinc-500">Basic plastic / metal mix</td><td class="py-4 font-bold text-zinc-900">Blum soft-close (lifetime warranty)</td></tr>
+                  <tr><td class="py-4 font-bold">Joinery</td><td class="py-4 text-zinc-500">Staples & cam locks</td><td class="py-4 font-bold text-zinc-900">Dovetail & mortise-and-tenon</td></tr>
+                  <tr><td class="py-4 font-bold">Finish</td><td class="py-4 text-zinc-500">Vinyl wrap or spray paint</td><td class="py-4 font-bold text-zinc-900">Post-catalyzed conversion varnish</td></tr>
+                  <tr><td class="py-4 font-bold">Longevity</td><td class="py-4 text-zinc-500">5–10 years</td><td class="py-4 font-bold text-zinc-900">Lifetime (heirloom quality)</td></tr>
+                  <tr><td class="py-4 font-bold">ROI</td><td class="py-4 text-zinc-500">Low (generic look)</td><td class="py-4 font-bold text-zinc-900">High (increases home appraisal)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Pro Tip -->
+          <div class="bg-zinc-50 border-l-4 border-yellow-600 p-8 reveal">
+            <h4 class="text-zinc-900 font-bold mb-2">Cabinet Builder Pro-Tip:</h4>
+            <p class="italic text-zinc-600">"Cheap cabinets fail in Southern California's climate. Triple-digit Inland Empire summers cause particle board to swell, delaminate, and release formaldehyde. Furniture-grade plywood with a conversion varnish seal is the only material that performs for a lifetime in Murrieta, Temecula, and the surrounding valley."</p>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        <div class="reveal">
-          <div class="relative rounded-sm overflow-hidden shadow-2xl aspect-video">
-             <Image src={bathroomImage} alt="Luxury Bathroom Vanity" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-4 space-y-8">
+          <div class="bg-zinc-900 text-white p-10 rounded-sm reveal sticky top-32">
+            <h3 class="font-serif font-bold text-2xl mb-2 text-yellow-600">Start Your Project</h3>
+            <p class="text-zinc-500 text-xs uppercase tracking-[0.15em] font-bold mb-6">Murrieta, CA &bull; 5.0 Star Rated</p>
+            <ul class="space-y-3 text-white/80 text-sm mb-8">
+              <li class="border-b border-white/10 pb-3">Licensed, Bonded & Insured</li>
+              <li class="border-b border-white/10 pb-3">A+ BBB Accredited</li>
+              <li class="border-b border-white/10 pb-3">100% In-House — No Subcontractors</li>
+              <li class="border-b border-white/10 pb-3">Blum Lifetime-Warranty Hardware</li>
+              <li class="border-b border-white/10 pb-3">Free 3D Design Renderings</li>
+              <li class="border-b border-white/10 pb-3">HEPA Dust Extraction On-Site</li>
+              <li>8–12 Weeks Design to Install</li>
+            </ul>
+            <a href="tel:9519731265" class="block text-center border border-yellow-600 py-4 font-bold hover:bg-yellow-600 hover:text-zinc-900 transition mb-3 tracking-wider">
+              {phone}
+            </a>
+            <a href="/contact" class="block text-center bg-yellow-600 text-zinc-900 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">
+              Get a Free Quote
+            </a>
           </div>
-        </div>
-        <div class="reveal delay-200">
-          <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Bathroom Vanities & Storage</h2>
-          <div class="h-1 w-20 bg-yellow-600 rounded-full mb-6"></div>
-          <p class="text-zinc-600 mb-6 leading-relaxed">
-            Upgrade your master bath with furniture-grade vanities built to the exact width of your walls, eliminating gaps where dust collects.
-          </p>
-          <p class="text-zinc-600 mb-8 leading-relaxed">
-            We specialize in both modern floating vanities and traditional face-frame cabinets, as well as luxury linen towers.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="py-20 bg-zinc-50 border-t border-zinc-200">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        <div class="order-2 md:order-1 reveal">
-          <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Fireplace Mantels & Surrounds</h2>
-          <div class="h-1 w-20 bg-yellow-600 rounded-full mb-6"></div>
-          <p class="text-zinc-600 mb-6 leading-relaxed">
-            A custom mantel is often the centerpiece of a home. We craft solid wood mantels, shiplap surrounds, and full floor-to-ceiling fireplace build-outs.
-          </p>
-          <p class="text-zinc-600 mb-8 leading-relaxed">
-            We work with you to match existing trim work or create a completely new style, from rustic reclaimed wood to clean shaker styles.
-          </p>
-          <a href="/contact" class="inline-block bg-yellow-600 text-white px-8 py-3 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition shadow-lg">
-            Get A Design Quote
+          <div class="bg-zinc-50 border border-zinc-200 p-8 rounded-sm reveal">
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-6">Our Services</h3>
+            <ul class="space-y-2 text-sm text-zinc-600">
+              <li><a href="/services/cabinet-maker" class="hover:text-yellow-600 transition font-bold">Cabinet Maker</a></li>
+              <li><a href="/services/custom-kitchen-cabinets" class="hover:text-yellow-600 transition font-bold">Custom Kitchen Cabinets</a></li>
+              <li><a href="/services/kitchen-remodeling" class="hover:text-yellow-600 transition font-bold">Kitchen Remodeling</a></li>
+              <li><a href="/services/bathroom-remodeling" class="hover:text-yellow-600 transition font-bold">Bathroom Remodeling</a></li>
+              <li class="text-zinc-400">Entertainment Centers</li>
+              <li class="text-zinc-400">Fireplace Mantels</li>
+              <li class="text-zinc-400">Custom Closets</li>
+            </ul>
+          </div>
+
+          <div class="bg-zinc-50 border border-zinc-200 p-8 rounded-sm reveal">
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-6">Areas We Serve</h3>
+            <ul class="space-y-2 text-sm text-zinc-600">
+              <li><a href="/cities/murrieta" class="hover:text-yellow-600 transition font-bold">Murrieta (HQ)</a></li>
+              <li><a href="/cities/temecula" class="hover:text-yellow-600 transition">Temecula</a></li>
+              <li><a href="/cities/menifee" class="hover:text-yellow-600 transition">Menifee</a></li>
+              <li><a href="/cities/wildomar" class="hover:text-yellow-600 transition">Wildomar</a></li>
+              <li><a href="/cities/fallbrook" class="hover:text-yellow-600 transition">Fallbrook</a></li>
+              <li><a href="/cities/lake-elsinore" class="hover:text-yellow-600 transition">Lake Elsinore</a></li>
+              <li><a href="/cities/french-valley" class="hover:text-yellow-600 transition">French Valley</a></li>
+              <li><a href="/cities/winchester" class="hover:text-yellow-600 transition">Winchester</a></li>
+              <li><a href="/cities/canyon-lake" class="hover:text-yellow-600 transition">Canyon Lake</a></li>
+              <li><a href="/cities/perris" class="hover:text-yellow-600 transition">Perris</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="mb-20 reveal">
+        <h2 class="text-3xl md:text-5xl font-serif font-bold text-zinc-900 text-center mb-4">
+          Services <span class="text-yellow-600">FAQ</span>
+        </h2>
+        <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-4"></div>
+        <p class="text-zinc-500 italic text-center mb-12">Common questions about our custom cabinetry services, pricing, and process.</p>
+        <div class="max-w-3xl mx-auto space-y-4">
+          {faqs.map((faq, index) => (
+            <details class="group border border-zinc-200 rounded-sm" open={index === 0}>
+              <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-zinc-900 hover:text-yellow-600 transition">
+                <span>{faq.question}</span>
+                <span class="text-yellow-600 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+              </summary>
+              <div class="faq-answer px-6 pb-6 text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <!-- Recent Projects -->
+      <section class="mb-20 reveal">
+        <h2 class="text-3xl font-serif font-bold text-zinc-900 text-center mb-12">
+          Recent <span class="text-yellow-600">Projects</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <a href="/projects/bear-creek-remodel" class="group">
+            <div class="bg-zinc-50 border border-zinc-100 rounded-sm p-8 text-center hover:shadow-lg transition">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Bear Creek, Murrieta</span>
+              <h3 class="text-xl font-serif font-bold text-zinc-900 mt-2 group-hover:text-yellow-600 transition">Bear Creek Estate Remodel</h3>
+              <p class="text-sm text-zinc-500 mt-2">Kitchen cabinetry & fireplace surround</p>
+            </div>
+          </a>
+          <a href="/projects/menifee-lakes-remodel" class="group">
+            <div class="bg-zinc-50 border border-zinc-100 rounded-sm p-8 text-center hover:shadow-lg transition">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Menifee Lakes, Menifee</span>
+              <h3 class="text-xl font-serif font-bold text-zinc-900 mt-2 group-hover:text-yellow-600 transition">Menifee Lakes Remodel</h3>
+              <p class="text-sm text-zinc-500 mt-2">Full kitchen transformation</p>
+            </div>
+          </a>
+          <a href="/projects/murrieta-home-remodel" class="group">
+            <div class="bg-zinc-50 border border-zinc-100 rounded-sm p-8 text-center hover:shadow-lg transition">
+              <span class="text-[10px] font-black uppercase tracking-widest text-yellow-600">Los Alamos Hills, Murrieta</span>
+              <h3 class="text-xl font-serif font-bold text-zinc-900 mt-2 group-hover:text-yellow-600 transition">Murrieta Home Remodel</h3>
+              <p class="text-sm text-zinc-500 mt-2">Kitchen & bath cabinetry</p>
+            </div>
           </a>
         </div>
-        <div class="order-1 md:order-2 reveal delay-200">
-          <div class="relative rounded-sm overflow-hidden shadow-2xl aspect-video">
-             <Image src={fireplaceImage} alt="Custom Fireplace Mantel" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
-          </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="bg-zinc-900 text-center py-16 px-8 rounded-sm reveal">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Ready to Start Your Project?</h2>
+        <p class="text-zinc-400 mb-8 max-w-xl mx-auto">
+          We are currently booking projects for 2026 in Murrieta, Temecula, and the surrounding Temecula Valley. Schedule your free in-home consultation today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="inline-block border-2 border-white text-white px-10 py-4 font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-black transition duration-300">
+            Get a Free Quote
+          </a>
+          <a href="tel:9519731265" class="inline-block border-2 border-yellow-600 text-yellow-600 px-10 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-600 hover:text-zinc-900 transition duration-300">
+            Call {phone}
+          </a>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="py-24 bg-zinc-900 text-center">
-    <div class="max-w-3xl mx-auto px-6 reveal">
-      <h2 class="text-4xl font-serif font-bold text-white mb-6">Ready to Start Your Project?</h2>
-      <p class="text-zinc-400 mb-10 text-lg">
-        We are currently booking projects for 2025 in Murrieta, Temecula, and the surrounding valley.
-      </p>
-      <a href="/contact" class="inline-block border-2 border-white text-white px-10 py-4 font-bold uppercase tracking-widest hover:bg-white hover:text-black transition duration-300">
-        Contact Us Today
-      </a>
     </div>
-  </section>
-
+  </article>
 </MainLayout>
+
+<style>
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+  .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+  .reveal.active { opacity: 1; transform: translateY(0); }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('active');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
