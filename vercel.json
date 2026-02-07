@@ -1,7 +1,5 @@
-@'
-{
-  "version": 2,
+$config = '{
   "cleanUrls": true,
   "trailingSlash": false
-}
-'@ | Out-File -FilePath vercel.json -Encoding utf8
+}'
+$config | Set-Content -Path vercel.json -Encoding utf8NoBOM
