@@ -1,0 +1,322 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Services from '../../components/Services.astro';
+
+const phone = "(951) 973-1265";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Custom Woodworking",
+  "name": "Custom Woodworking in Murrieta, CA",
+  "description": "First Class WoodWorks is a custom woodworker in Murrieta, California. We specialize in handcrafted cabinetry, built-in entertainment centers, fireplace mantels, crown molding, wainscoting, and fine finish carpentry for luxury homes across the Temecula Valley.",
+  "provider": {
+    "@type": "HomeAndConstructionBusiness",
+    "name": "First Class WoodWorks",
+    "telephone": "+1-951-973-1265",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "24491 Avenida Arconte",
+      "addressLocality": "Murrieta",
+      "addressRegion": "CA",
+      "postalCode": "92562",
+      "addressCountry": "US"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "30"
+    }
+  },
+  "areaServed": ["Murrieta", "Temecula", "Menifee", "Wildomar", "Perris", "Lake Elsinore", "French Valley", "Winchester", "Canyon Lake", "Fallbrook"],
+  "knowsAbout": [
+    "Custom Woodworking",
+    "Finish Carpentry",
+    "Crown Molding Installation",
+    "Wainscoting",
+    "Fireplace Mantels",
+    "Built-In Bookshelves",
+    "Entertainment Centers",
+    "Custom Shelving",
+    "Hardwood Trim Work",
+    "Dovetail Joinery",
+    "Mortise-and-Tenon Construction"
+  ]
+};
+
+const faqs = [
+  {
+    question: "What is a custom woodworker?",
+    answer: "A custom woodworker is a craftsman who designs and builds one-of-a-kind wood pieces tailored to a specific space and client vision. Unlike carpenters who focus on structural framing or contractors who install mass-produced products, a custom woodworker uses traditional joinery, hand-selected hardwoods, and professional finishing techniques to create built-ins, mantels, molding, and cabinetry that fit your home perfectly. First Class WoodWorks is a custom woodworker in Murrieta specializing in finish carpentry and luxury built-ins."
+  },
+  {
+    question: "How much does custom woodworking cost in Murrieta?",
+    answer: "Custom woodworking in Murrieta ranges widely based on the project scope. Custom built-in entertainment centers and bookshelves start around $1,200 for simple designs and go to $4,000+ for large multi-piece wall units. Fireplace mantel and surround packages range from $800 to $3,000+. Crown molding and wainscoting installations depend on linear footage and profile complexity. We provide detailed written estimates after an in-home consultation so there are no surprises."
+  },
+  {
+    question: "What types of wood do you use for custom projects?",
+    answer: "We use furniture-grade plywood for structural box construction and solid hardwoods like White Oak, Maple, Alder, Walnut, and Cherry for visible face frames, doors, and trim. We never use particle board, MDF, or melamine in our custom work. Every piece is finished with post-catalyzed conversion varnish — a professional coating that chemically bonds to the wood for a harder, more durable surface than paint or spray lacquer."
+  },
+  {
+    question: "Do you build custom furniture?",
+    answer: "Our specialty is architectural woodworking — built-ins, cabinetry, mantels, and millwork that are integrated into the home. While we occasionally take on standalone furniture pieces like dining tables or desks for existing remodeling clients, our core focus is custom cabinetry and finish carpentry that becomes a permanent part of your home's architecture."
+  },
+  {
+    question: "What is the difference between a woodworker and a general contractor?",
+    answer: "A general contractor manages construction projects and typically hires subcontractors for specialized trades. A woodworker is one of those specialized trades — focused entirely on crafting wood components by hand. At First Class WoodWorks, we are the woodworkers that other contractors wish they could hire. The difference is that when you work with us directly, you get the craftsman's full attention, direct communication, and zero markup from a middleman."
+  },
+  {
+    question: "Can you match existing woodwork in my home?",
+    answer: "Yes. We frequently match existing trim profiles, stain colors, and wood species in older Murrieta and Temecula homes. We can mill custom profiles to match crown molding from any era, replicate door styles, and color-match finishes so new built-ins blend seamlessly with your existing woodwork. We bring samples to your home so you approve the match before we build."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<MainLayout
+  title="Custom Woodworking Murrieta | Woodworker & Finish Carpentry | First Class WoodWorks"
+  description="Custom woodworking and finish carpentry in Murrieta & Temecula. Built-in entertainment centers, fireplace mantels, crown molding, and luxury cabinetry. 100% in-house. Call (951) 973-1265."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <header class="max-w-4xl mb-16 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Custom Woodworker in <span class="text-yellow-600 italic">Murrieta, CA</span>
+        </h1>
+        <h2 class="text-2xl font-body font-bold text-zinc-700 mb-8">Looking for a master woodworker near Murrieta or Temecula?</h2>
+        <p class="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+          <strong>First Class WoodWorks is a custom woodworker in Murrieta, California.</strong>
+          From hand-crafted entertainment centers and fireplace mantels to crown molding and custom built-in shelving,
+          we bring finish carpentry expertise to every detail of your home.
+          Call <a href="tel:9519731265" class="text-yellow-600 font-bold hover:underline">{phone}</a> for a free consultation.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-8 space-y-8 text-lg text-zinc-600 leading-relaxed">
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">More Than Cabinets — Complete Finish Carpentry</h2>
+            <p>
+              While our reputation was built on <a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">custom kitchen cabinets</a>,
+              our woodworking skills extend to every surface in your home that deserves a craftsman's touch.
+              A <strong>custom woodworker</strong> transforms plain drywall rooms into architecturally rich spaces
+              with built-in bookshelves, coffered ceiling details, hand-profiled crown molding, and statement fireplace surrounds.
+            </p>
+            <p>
+              At <a href="/" class="text-yellow-600 font-bold hover:underline">First Class WoodWorks</a>,
+              we use the same traditional joinery and professional finishing techniques on a fireplace mantel
+              that we use on a $30,000 kitchen — dovetail joints, mortise-and-tenon construction, and
+              post-catalyzed conversion varnish on every piece. There's no "B-team" material or shortcut finishing
+              on our smaller projects.
+            </p>
+          </section>
+
+          <div class="bg-zinc-50 border-l-4 border-yellow-600 p-8 my-10 reveal">
+            <h4 class="text-zinc-900 font-bold mb-2">Master Woodworker Pro-Tip:</h4>
+            <p class="italic">"The most impactful upgrade in a living room isn't the TV — it's the built-in wall unit that frames it. A floor-to-ceiling entertainment center with integrated lighting and adjustable shelving transforms a flat wall into the architectural focal point of your home. It's the first thing guests notice and the last thing you'd ever want to remove."</p>
+          </div>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Custom Woodworking Services</h2>
+            <p>
+              Every project is designed, built, and installed by our own team — no subcontractors, no flat-pack assembly.
+              Here's what we build for homeowners across Murrieta, Temecula, and Menifee:
+            </p>
+            <ul class="space-y-3 mt-4">
+              <li class="flex items-start gap-3">
+                <span class="text-yellow-600 font-bold mt-1">&#10003;</span>
+                <span><strong>Entertainment Centers & Media Walls</strong> — Floor-to-ceiling built-in units with integrated cable management, adjustable shelving, and soft-close doors. From $1,200 to $4,000+ depending on size and complexity.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-yellow-600 font-bold mt-1">&#10003;</span>
+                <span><strong>Fireplace Mantels & Surrounds</strong> — Hand-crafted mantels in solid hardwood with custom molding profiles. We design around your firebox dimensions for a perfect, code-compliant fit.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-yellow-600 font-bold mt-1">&#10003;</span>
+                <span><strong>Crown Molding & Trim</strong> — Custom-profiled crown, baseboards, casing, and chair rail in solid wood. We mill unique profiles to match existing trim or create something entirely new.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-yellow-600 font-bold mt-1">&#10003;</span>
+                <span><strong>Wainscoting & Wall Paneling</strong> — Raised panel, shaker, and board-and-batten wainscoting that adds architectural character to dining rooms, hallways, and staircases.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-yellow-600 font-bold mt-1">&#10003;</span>
+                <span><strong>Built-In Bookshelves & Home Offices</strong> — Custom shelving and desk units built into alcoves, under stairs, or across entire walls. Finished to match your existing home woodwork.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-yellow-600 font-bold mt-1">&#10003;</span>
+                <span><strong>Custom Closet Systems</strong> — Walk-in closet built-ins from real wood with dovetailed drawers, soft-close slides, and adjustable hanging rods. No wire racks, no particle board.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="reveal bg-zinc-50 p-8 rounded-sm border border-zinc-100">
+            <h3 class="text-2xl font-serif font-bold text-zinc-900 mb-6 text-center">Custom Woodworker vs. Handyman</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm text-left">
+                <thead class="border-b border-zinc-200">
+                  <tr>
+                    <th class="pb-4 font-bold uppercase tracking-wider text-zinc-600">Feature</th>
+                    <th class="pb-4 font-bold uppercase tracking-wider text-zinc-400">Handyman / GC</th>
+                    <th class="pb-4 font-bold uppercase tracking-wider text-yellow-600">Custom Woodworker (Us)</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-zinc-200">
+                  <tr><td class="py-4 font-bold">Scope</td><td class="py-4 text-zinc-500">Jack of all trades</td><td class="py-4 font-bold text-zinc-900">Finish carpentry specialist</td></tr>
+                  <tr><td class="py-4 font-bold">Materials</td><td class="py-4 text-zinc-500">Big-box pre-made stock</td><td class="py-4 font-bold text-zinc-900">Furniture-grade plywood & hardwoods</td></tr>
+                  <tr><td class="py-4 font-bold">Joinery</td><td class="py-4 text-zinc-500">Nails, screws, brackets</td><td class="py-4 font-bold text-zinc-900">Dovetail & mortise-and-tenon</td></tr>
+                  <tr><td class="py-4 font-bold">Finish</td><td class="py-4 text-zinc-500">House paint or stain from a can</td><td class="py-4 font-bold text-zinc-900">Post-catalyzed conversion varnish</td></tr>
+                  <tr><td class="py-4 font-bold">Custom Fit</td><td class="py-4 text-zinc-500">Shimmed and caulked to fit</td><td class="py-4 font-bold text-zinc-900">Scribed to walls, precision-fit</td></tr>
+                  <tr><td class="py-4 font-bold">Design</td><td class="py-4 text-zinc-500">No renderings — "trust me"</td><td class="py-4 font-bold text-zinc-900">Full 3D renderings before build</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Our Woodworking Process</h2>
+            <div class="space-y-6 mt-6">
+              <div class="flex items-start gap-4">
+                <span class="text-yellow-600 font-serif text-2xl font-bold">1.</span>
+                <div>
+                  <p class="font-bold text-zinc-900">In-Home Design Consultation</p>
+                  <p>We visit your home in Murrieta, Temecula, or anywhere in the Temecula Valley. We measure the space, discuss your vision, and review wood species, stain samples, and hardware options.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="text-yellow-600 font-serif text-2xl font-bold">2.</span>
+                <div>
+                  <p class="font-bold text-zinc-900">3D Design & Approval</p>
+                  <p>We create detailed 3D renderings so you see the finished product before we start building. You approve every dimension, every profile, and every finish detail.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="text-yellow-600 font-serif text-2xl font-bold">3.</span>
+                <div>
+                  <p class="font-bold text-zinc-900">In-Shop Craftsmanship</p>
+                  <p>Every component is built by our own craftsmen. Dovetailed drawers, mortise-and-tenon frames, and post-catalyzed conversion varnish — applied in controlled shop conditions for a flawless cure.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="text-yellow-600 font-serif text-2xl font-bold">4.</span>
+                <div>
+                  <p class="font-bold text-zinc-900">Professional Installation</p>
+                  <p>Our team installs on-site with HEPA dust extraction and full floor protection. Built-ins are scribed to your walls for a seamless, custom-fitted result. Typical timeline: 8-12 weeks from design approval.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="reveal">
+            <h3 class="text-3xl font-serif font-bold text-zinc-900 pt-10 mb-6">Custom Woodworking FAQ</h3>
+            <div class="space-y-6">
+              {faqs.map((faq) => (
+                <details class="group bg-zinc-50 border border-zinc-200 rounded-sm hover:shadow-md transition-all">
+                  <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
+                    <h4 class="font-serif font-bold text-zinc-800 group-hover:text-yellow-600 transition-colors pr-8">
+                      {faq.question}
+                    </h4>
+                    <span class="text-yellow-600 transition-transform duration-300 group-open:rotate-180 flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div class="px-6 pb-6 text-zinc-600 leading-relaxed text-base border-t border-zinc-100 pt-4">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </section>
+
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8 sticky top-32">
+          <div class="bg-zinc-900 text-white p-10 rounded-sm reveal">
+            <h3 class="font-serif font-bold text-2xl mb-2 text-yellow-600">Hire a Master Woodworker</h3>
+            <p class="text-zinc-500 text-xs uppercase tracking-[0.15em] font-bold mb-6">Murrieta, CA &bull; 5.0 Star Rated</p>
+            <ul class="space-y-3 text-white/80 text-sm mb-8">
+              <li class="border-b border-white/10 pb-3">Entertainment Centers & Media Walls</li>
+              <li class="border-b border-white/10 pb-3">Fireplace Mantels & Surrounds</li>
+              <li class="border-b border-white/10 pb-3">Crown Molding & Custom Trim</li>
+              <li class="border-b border-white/10 pb-3">Wainscoting & Wall Paneling</li>
+              <li class="border-b border-white/10 pb-3">Built-In Bookshelves & Home Offices</li>
+              <li class="border-b border-white/10 pb-3">Custom Closet Built-Ins</li>
+              <li class="border-b border-white/10 pb-3">100% In-House — No Subcontractors</li>
+              <li>A+ BBB Accredited &bull; Licensed &amp; Bonded</li>
+            </ul>
+            <a href="tel:9519731265" class="block text-center border border-yellow-600 py-4 font-bold hover:bg-yellow-600 hover:text-zinc-900 transition mb-3">
+              {phone}
+            </a>
+            <a href="/contact" class="block text-center bg-yellow-600 text-zinc-900 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">
+              Get a Free Quote
+            </a>
+          </div>
+
+          <div class="bg-zinc-50 border border-zinc-200 p-8 rounded-sm reveal">
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-6">Related Services</h3>
+            <ul class="space-y-2 text-sm text-zinc-600">
+              <li><a href="/services/cabinet-maker" class="hover:text-yellow-600 transition font-bold">Cabinet Maker</a></li>
+              <li><a href="/services/custom-kitchen-cabinets" class="hover:text-yellow-600 transition">Custom Kitchen Cabinets</a></li>
+              <li><a href="/services/kitchen-remodeling" class="hover:text-yellow-600 transition">Kitchen Remodeling</a></li>
+              <li><a href="/services/bathroom-remodeling" class="hover:text-yellow-600 transition">Bathroom Remodeling</a></li>
+              <li><a href="/services/granite-countertops" class="hover:text-yellow-600 transition">Granite Countertops</a></li>
+            </ul>
+          </div>
+
+          <div class="bg-zinc-50 border border-zinc-200 p-8 rounded-sm reveal">
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-6">Areas We Serve</h3>
+            <ul class="space-y-2 text-sm text-zinc-600">
+              <li><a href="/cities/murrieta" class="hover:text-yellow-600 transition font-bold">Murrieta (HQ)</a></li>
+              <li><a href="/cities/temecula" class="hover:text-yellow-600 transition">Temecula</a></li>
+              <li><a href="/cities/menifee" class="hover:text-yellow-600 transition">Menifee</a></li>
+              <li><a href="/cities/wildomar" class="hover:text-yellow-600 transition">Wildomar</a></li>
+              <li><a href="/cities/fallbrook" class="hover:text-yellow-600 transition">Fallbrook</a></li>
+              <li><a href="/cities/lake-elsinore" class="hover:text-yellow-600 transition">Lake Elsinore</a></li>
+              <li><a href="/cities/french-valley" class="hover:text-yellow-600 transition">French Valley</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </article>
+
+  <section class="border-t border-zinc-100 pt-20 pb-20 max-w-6xl mx-auto px-6">
+    <Services />
+  </section>
+</MainLayout>
+
+<style>
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+  .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+  .reveal.active { opacity: 1; transform: translateY(0); }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('active');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
