@@ -46,22 +46,29 @@
 * **Rule of Two:** Max 2 internal links per paragraph.
 * **Homepage Backlink:** Contextual link for "First Class WoodWorks" → `/`.
 
-## 8. 🛠️ TECHNICAL SPECS (EXPERT KNOWLEDGE)
+## 8. 🏙️ CITY & PROJECT INTERLINKING RULES
+* **City-to-City Silo:** Every city landing page (`/cities/*`) must include a "Service Area" sidebar box linking to all other city pages. The current city is displayed as bold non-linked text.
+* **Project Contextual Links:** When a neighborhood or community is mentioned on a city page and a matching project exists in `/projects/`, link to that project page naturally within the body copy (e.g., "Menifee Lakes" → `/projects/menifee-lakes-remodel`).
+* **No Neighborhood Doorway Pages:** Do NOT create standalone pages for individual neighborhoods (e.g., no "/cities/audie-murphy-ranch"). Mention neighborhoods within their parent city page to capture long-tail keywords without thin-content penalties.
+* **City Page Sidebar Pattern:** Sidebar uses `sticky top-32` on the `<aside>` element (not on inner divs) to prevent shrinking on scroll.
+* **Link Budget:** City pages may exceed the "Rule of Two" for navigational sidebar links since those are clearly nav elements, not body copy links.
+
+## 9. 🛠️ TECHNICAL SPECS (EXPERT KNOWLEDGE)
 * **Joinery:** Dovetail drawer boxes; Mortise-and-Tenon face frames.
 * **Hardware:** Blum Undermount Slides & Soft-Close Hinges.
 * **Finishing:** Post-catalyzed conversion varnish (Superior to house paint).
 * **Cleanliness:** HEPA dust extraction used on-site; floors and surfaces protected.
 
-## 9. ❓ COMPETITIVE FAQ
+## 10. ❓ COMPETITIVE FAQ
 * **Subcontractors?** Never. Our own employees handle every cut and every screw.
 * **Design?** Full 3D renderings are provided so clients see the result before we build.
 * **Lead Time?** 8–12 weeks from design approval to professional installation.
 
-## 10. 🤖 AI AGENT OPERATING INSTRUCTIONS
+## 11. 🤖 AI AGENT OPERATING INSTRUCTIONS
 * **Voice:** High-end Local Artisan. Authoritative yet neighborly.
 * **Keywords:** Prioritize "Cabinet Maker" and "Cabinet Builder" for search intent.
 * **Mission:** Educate the client on why "Custom" is the only choice for a high-value home in Murrieta/Temecula.
 
-## 11. Developer Workflow Hooks
+## 12. Developer Workflow Hooks
 - **Completion Notification:** After finishing a multi-page batch or a long `npm run build`, use a terminal bell or audio cue.
 - **Command:** `powershell -c "[Console]::Beep(800, 500)"`
