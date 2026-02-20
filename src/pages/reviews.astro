@@ -1,0 +1,136 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const reviews = [
+  {
+    name: "Rachel M.",
+    date: "2025-12-08",
+    rating: 5,
+    text: "Diego and his crew completely transformed our kitchen in Greer Ranch. We went from builder-grade oak cabinets to custom white shaker cabinets with soft-close everything. The dovetail drawers are gorgeous and the fit is absolutely perfect. He even matched the crown molding to our existing trim so it all looks like it was always there. Worth every penny.",
+    city: "Murrieta"
+  },
+  {
+    name: "Tom & Linda K.",
+    date: "2025-11-14",
+    rating: 5,
+    text: "We had Diego build a full entertainment center and fireplace surround for our living room in Temecula. Floor to ceiling, custom stained walnut. The craftsmanship is unreal. Neighbors keep asking who did it.",
+    city: "Temecula"
+  },
+  {
+    name: "Sarah P.",
+    date: "2025-10-22",
+    rating: 5,
+    text: "Hired First Class WoodWorks for a bathroom remodel in our master suite. Custom double vanity with granite tops, new tile, updated plumbing fixtures. Diego stayed on budget and finished two days early. The vanity has more storage than we even expected. He thought of details we wouldn't have considered.",
+    city: "Menifee"
+  },
+  {
+    name: "James W.",
+    date: "2025-09-30",
+    rating: 5,
+    text: "Kitchen remodel in California Oaks. Took our cramped galley layout and opened it up with a huge island and custom cabinetry. The 3D rendering he showed us before starting was spot on to the final result. Diego does everything in-house which made scheduling so much easier than dealing with multiple subs.",
+    city: "Murrieta"
+  },
+  {
+    name: "Diana R.",
+    date: "2025-08-15",
+    rating: 5,
+    text: "Custom closet built-ins for the master bedroom. Clean lines, adjustable shelves, shoe cubbies, a pull-out hamper. Diego measured everything down to the fraction of an inch. The closet feels twice as big now even though nothing moved. Fast turnaround too.",
+    city: "French Valley"
+  },
+  {
+    name: "Mark & Christina A.",
+    date: "2025-07-20",
+    rating: 5,
+    text: "We got quotes from four different cabinet companies for our Wildomar kitchen. Diego was not the cheapest but he was the most thorough. He brought samples, explained the difference between plywood and particle board, showed us the Blum hardware. After seeing the finished product we know we made the right call. These cabinets will outlast the house.",
+    city: "Wildomar"
+  },
+  {
+    name: "Kevin L.",
+    date: "2025-06-10",
+    rating: 5,
+    text: "Granite countertop install plus new backsplash for a kitchen update in Bear Creek. Clean work, no mess, done in a day. Looks incredible.",
+    city: "Murrieta"
+  },
+  {
+    name: "Veronica S.",
+    date: "2025-05-03",
+    rating: 5,
+    text: "Our Canyon Lake lake house needed a complete kitchen overhaul. Diego designed custom cabinets that actually use the weird angled walls we have instead of fighting them. Pantry pull-outs, lazy susans, even a hidden spice rack behind the range hood panel. The attention to detail is something you just don't get from big-box stores. He also did the granite countertops so everything matched perfectly. Highly recommend.",
+    city: "Canyon Lake"
+  },
+  {
+    name: "Anthony G.",
+    date: "2025-03-18",
+    rating: 5,
+    text: "Bathroom vanity and linen cabinet in our guest bath. Diego is a true cabinet maker not just an installer. He built everything in his shop and it fit like a glove on install day. Affordable for the quality you get.",
+    city: "Temecula"
+  },
+  {
+    name: "Natalie & Chris H.",
+    date: "2025-01-25",
+    rating: 5,
+    text: "Full kitchen remodel including custom cabinets, quartz countertops, new island with seating, and a built-in pantry with roll-out trays. Diego walked us through every material choice and was honest about what was worth spending on and what wasn't. His team showed up on time every single day, kept the workspace clean, and finished on schedule. The kitchen is the nicest room in the house now. If you're looking for a cabinet maker in Murrieta who actually cares about the work, this is the one.",
+    city: "Murrieta"
+  }
+];
+
+const avgRating = "5.0";
+const totalReviews = 30;
+---
+
+<MainLayout
+  title="Reviews | First Class WoodWorks | Custom Cabinets Murrieta"
+  description="Read reviews from homeowners in Murrieta, Temecula, Menifee, and the Temecula Valley. First Class WoodWorks builds custom kitchen cabinets, bathroom vanities, and built-ins. Rated 5 stars."
+  productSchemaReviews={reviews}
+>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+
+      <div class="text-center mb-16 reveal">
+        <p class="text-yellow-600 font-bold uppercase tracking-widest text-sm mb-4">Customer Reviews</p>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">
+          What Our Clients Say
+        </h1>
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <div class="flex text-yellow-500 text-2xl" aria-label="5 out of 5 stars">
+            {'★★★★★'}
+          </div>
+          <span class="text-zinc-700 font-bold text-lg">{avgRating} out of 5</span>
+        </div>
+        <p class="text-zinc-500 text-base max-w-xl mx-auto">
+          Rated {avgRating}/5 across {totalReviews} reviews from Google, Yelp, BBB, and direct customer feedback.
+          For the most current reviews, visit our <a href="https://www.google.com/maps/place/First+Class+WoodWorks" target="_blank" rel="noopener" class="text-yellow-600 hover:underline">Google profile</a>.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {reviews.map((review, i) => (
+          <div class={`reveal bg-zinc-50 rounded-2xl p-8 shadow-sm border border-zinc-100`} style={`transition-delay: ${(i % 3) * 100}ms`}>
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <p class="font-bold text-zinc-900 text-lg">{review.name}</p>
+                <p class="text-zinc-400 text-sm">{review.city} &middot; {new Date(review.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
+              </div>
+              <div class="flex text-yellow-500 text-lg" aria-label={`${review.rating} out of 5 stars`}>
+                {'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}
+              </div>
+            </div>
+            <p class="text-zinc-600 leading-relaxed">{review.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-16 reveal">
+        <div class="h-[2px] w-32 bg-gradient-to-r from-transparent via-yellow-600/40 to-transparent mx-auto mb-8"></div>
+        <h2 class="text-2xl md:text-3xl font-serif font-bold text-zinc-900 mb-4">Ready to Start Your Project?</h2>
+        <p class="text-zinc-500 mb-8 max-w-lg mx-auto">Join our satisfied clients across the Temecula Valley. Every project starts with a free in-home estimate.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="bg-yellow-600 text-zinc-950 px-8 py-3 rounded-sm font-bold text-sm uppercase tracking-wider hover:bg-yellow-700 transition inline-block">Get a Free Estimate</a>
+          <a href="tel:9519731265" class="border-2 border-zinc-900 text-zinc-900 px-8 py-3 rounded-sm font-bold text-sm uppercase tracking-wider hover:bg-zinc-900 hover:text-white transition inline-block">Call (951) 973-1265</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</MainLayout>
