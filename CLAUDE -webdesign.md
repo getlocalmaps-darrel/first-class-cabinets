@@ -72,11 +72,3 @@
 ## 12. Developer Workflow Hooks
 - **Completion Notification:** After finishing a multi-page batch or a long `npm run build`, use a terminal bell or audio cue.
 - **Command:** `powershell -c "[Console]::Beep(800, 500)"`
-
-## 13. Report → Fix List Workflow
-To extract findings from a report and generate a prioritized fix list for this site:
-```powershell
-cd "D:\html websites\Agency_Master"
-.\_REPORT_FACTORY\extract_report_brief.ps1 -Report "[path to report HTML]" -SiteDir "D:\html websites\first-class-cabinets"
-```
-Then read the generated `report-brief.md` and update this CLAUDE.md with the fix list.

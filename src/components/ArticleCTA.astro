@@ -1,0 +1,15 @@
+---
+const { service = 'Custom Cabinets' } = Astro.props;
+---
+
+<div class="bg-zinc-900 rounded-sm p-8 mt-12 text-center">
+  <h3 class="font-serif text-2xl font-bold text-white mb-3">Ready to Start Your {service} Project?</h3>
+  <p class="text-zinc-400 text-sm leading-relaxed mb-6 max-w-xl mx-auto">
+    First Class WoodWorks builds 100% in-house custom cabinetry for Murrieta, Temecula, and the entire Inland Empire.
+    Licensed, bonded, insured &mdash; and backed by a perfect 5-star rating.
+  </p>
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+    <a href="/contact" class="bg-yellow-600 text-zinc-950 px-8 py-3 rounded-sm font-bold text-sm uppercase tracking-wider hover:bg-yellow-700 transition">Get a Free Quote</a>
+    <a href="tel:9519731265" class="text-white font-bold hover:text-yellow-500 transition text-lg">(951) 973-1265</a>
+  </div>
+</div>

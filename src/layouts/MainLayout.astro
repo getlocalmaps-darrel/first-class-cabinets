@@ -7,7 +7,8 @@ import Footer from '../components/Footer.astro';
 import ProductSchema from '../components/ProductSchema.astro';
 
 const { title, description, productSchemaReviews } = Astro.props;
-const isHome = Astro.url.pathname === "/"; 
+const isHome = Astro.url.pathname === "/";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -20,14 +21,14 @@ const isHome = Astro.url.pathname === "/";
   <meta property="og:title" content="First Class Woodworks | Custom Cabinets Murrieta" />
   <meta property="og:description" content="Handcrafted cabinetry and kitchen remodeling in the Temecula Valley. A+ Rated BBB Professional." />
   <meta property="og:image" content="/assets/hero-kitchen.jpg" />
-  <meta property="og:url" content="https://www.firstclasswoodworks.com" />
+  <meta property="og:url" content={canonicalURL} />
   <meta property="og:type" content="website" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="canonical" href="https://www.firstclasswoodworks.com" />
+  <link rel="canonical" href={canonicalURL} />
     
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

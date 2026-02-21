@@ -1,0 +1,20 @@
+---
+const { items = [] } = Astro.props;
+---
+
+{items.length > 0 && (
+  <div class="border-l-4 border-yellow-600 bg-yellow-600/5 p-6 rounded-r-sm mb-8">
+    <h2 class="font-serif text-lg font-bold text-zinc-900 mb-3 flex items-center gap-2">
+      <svg class="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"/></svg>
+      Key Takeaways
+    </h2>
+    <ul class="space-y-2">
+      {items.map((item: string) => (
+        <li class="flex items-start gap-2 text-sm text-zinc-700 leading-relaxed">
+          <span class="text-yellow-600 font-bold mt-0.5">&#10003;</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}

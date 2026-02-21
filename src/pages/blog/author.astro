@@ -1,0 +1,120 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft && data.author === 'Diego Macias'))
+  .sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Diego Macias",
+  "jobTitle": "Owner & Master Cabinet Maker",
+  "worksFor": {
+    "@type": "LocalBusiness",
+    "@id": "https://www.firstclasswoodworks.com/#business",
+    "name": "First Class WoodWorks"
+  },
+  "url": "https://www.firstclasswoodworks.com/blog/author/",
+  "sameAs": [
+    "https://www.facebook.com/people/FirstClass-WoodWorks/61551346499466/",
+    "https://www.instagram.com/first.classwoodworks/"
+  ],
+  "knowsAbout": [
+    "Custom Cabinet Making",
+    "Kitchen Remodeling",
+    "Custom Woodworking",
+    "Bathroom Remodeling",
+    "Granite Countertops"
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.firstclasswoodworks.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.firstclasswoodworks.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Diego Macias", "item": "https://www.firstclasswoodworks.com/blog/author/" }
+  ]
+};
+---
+
+<MainLayout title="Diego Macias — Custom Cabinet Maker | First Class WoodWorks Blog" description="Articles by Diego Macias, owner of First Class WoodWorks in Murrieta, CA. Expert insights on custom cabinetry, kitchen remodeling, and woodworking.">
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <!-- Breadcrumb -->
+  <nav class="max-w-4xl mx-auto px-6 mb-8">
+    <ol class="flex items-center gap-2 text-xs text-zinc-400">
+      <li><a href="/" class="hover:text-yellow-600 transition">Home</a></li>
+      <li>/</li>
+      <li><a href="/blog/" class="hover:text-yellow-600 transition">Blog</a></li>
+      <li>/</li>
+      <li class="text-zinc-600">Diego Macias</li>
+    </ol>
+  </nav>
+
+  <!-- Author Profile -->
+  <section class="max-w-4xl mx-auto px-6 mb-16 reveal">
+    <div class="bg-zinc-50 border border-zinc-200 rounded-sm p-8 md:p-12">
+      <div class="flex flex-col md:flex-row items-start gap-8">
+        <img src="/assets/author-diego.svg" alt="Diego Macias" class="w-28 h-28 rounded-full object-cover border-4 border-yellow-600 flex-shrink-0" loading="eager" />
+        <div>
+          <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-yellow-600 mb-2">About the Author</p>
+          <h1 class="font-serif text-3xl md:text-4xl font-bold text-zinc-900 mb-2">Diego Macias</h1>
+          <p class="text-zinc-500 text-sm mb-4">Owner & Master Cabinet Maker &bull; CA License #1103734</p>
+          <p class="text-zinc-600 leading-relaxed mb-6">
+            Diego Macias founded First Class WoodWorks with a simple belief: every home deserves furniture-grade craftsmanship.
+            With over 10 years of experience in custom cabinetry and woodworking, Diego and his team build 100% in-house &mdash;
+            no subcontractors, no shortcuts. Based in Murrieta, CA, his work serves homeowners across the Temecula Valley
+            and the Inland Empire with precision-built cabinets, kitchen remodels, and custom woodworking.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500 bg-white border border-zinc-200 px-3 py-1.5 rounded-sm">CA License #1103734</span>
+            <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500 bg-white border border-zinc-200 px-3 py-1.5 rounded-sm">BuildZoom Score 92</span>
+            <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500 bg-white border border-zinc-200 px-3 py-1.5 rounded-sm">A+ BBB Rated</span>
+            <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500 bg-white border border-zinc-200 px-3 py-1.5 rounded-sm">5.0 Star Rating</span>
+            <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500 bg-white border border-zinc-200 px-3 py-1.5 rounded-sm">10+ Years Experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles by Author -->
+  <section class="max-w-6xl mx-auto px-6 pb-16">
+    <h2 class="font-serif text-2xl font-bold text-zinc-900 mb-8">Articles by Diego</h2>
+    {posts.length > 0 ? (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map(post => (
+          <div class="reveal">
+            <BlogCard
+              title={post.data.title}
+              description={post.data.description}
+              publishDate={post.data.publishDate}
+              category={post.data.category}
+              readingTime={post.data.readingTime}
+              slug={post.id.replace(/\.mdx?$/, '')}
+            />
+          </div>
+        ))}
+      </div>
+    ) : (
+      <p class="text-zinc-400 text-center py-12">Articles coming soon.</p>
+    )}
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-zinc-900 py-16">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-serif text-2xl md:text-3xl font-bold text-white mb-4">Work with Diego & the First Class Team</h2>
+      <p class="text-zinc-400 mb-8 max-w-xl mx-auto">Get a free consultation for your custom cabinetry or kitchen remodeling project.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="/contact" class="bg-yellow-600 text-zinc-950 px-8 py-3 rounded-sm font-bold text-sm uppercase tracking-wider hover:bg-yellow-700 transition">Get a Free Quote</a>
+        <a href="tel:9519731265" class="text-white font-bold hover:text-yellow-500 transition text-lg">(951) 973-1265</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
