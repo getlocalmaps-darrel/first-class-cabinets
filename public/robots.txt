@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Direct search engines to your sitemap once generated
-Sitemap: https://firstclasswoodworks.com/sitemap-index.xml
+Sitemap: https://www.firstclasswoodworks.com/sitemap-index.xml
