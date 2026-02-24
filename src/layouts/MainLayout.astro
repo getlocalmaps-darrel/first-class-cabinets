@@ -43,6 +43,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 <body class={`bg-white text-neutral-800 font-body antialiased pb-14 md:pb-0 ${isHome ? 'home' : 'sub-page'}`}>
     
     <nav id="navbar" class="absolute top-0 w-full z-50 transition-all duration-300">
+        <div id="review-bar" class="w-full bg-zinc-950 py-1.5 border-b border-yellow-600/20 flex items-center justify-center gap-2 transition-opacity duration-300">
+          <span class="text-yellow-500 text-sm leading-none" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="text-white text-xs font-bold tracking-wide">4.9 rating &middot;
+            <a href="/reviews" class="underline underline-offset-2 hover:no-underline text-white">30 homeowner reviews</a>
+          </span>
+        </div>
         <div id="top-proof-bar" class="bg-black/40 py-2 border-b border-white/10 hidden md:block transition-opacity duration-300">
           <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-[9px] uppercase tracking-[0.2em] font-bold text-white/70">
             <span>A+ Rated BBB Accredited Professional</span>
@@ -115,6 +121,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
     const navContainer = document.getElementById('nav-container');
     const navGradient = document.getElementById('nav-gradient');
     const proofBar = document.getElementById('top-proof-bar');
+    const reviewBar = document.getElementById('review-bar');
     const imageLogo = document.getElementById('nav-image-logo');
     const textLogo = document.getElementById('nav-text-logo');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -140,8 +147,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
             navContainer.classList.add('py-2');
             navGradient.classList.add('hidden'); 
             if(proofBar) proofBar.classList.add('hidden');
-            imageLogo.classList.add('hidden'); 
-            textLogo.classList.remove('hidden'); 
+            if(reviewBar) reviewBar.classList.add('hidden');
+            imageLogo.classList.add('hidden');
+            textLogo.classList.remove('hidden');
             if(mobileActionBar) {
               mobileActionBar.classList.remove('opacity-0', 'pointer-events-none');
               mobileActionBar.classList.add('opacity-100', 'pointer-events-auto');
@@ -151,8 +159,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
             navContainer.classList.remove('py-2');
             navGradient.classList.remove('hidden'); 
             if(proofBar) proofBar.classList.remove('hidden');
-            imageLogo.classList.remove('hidden'); 
-            textLogo.classList.add('hidden'); 
+            if(reviewBar) reviewBar.classList.remove('hidden');
+            imageLogo.classList.remove('hidden');
+            textLogo.classList.add('hidden');
             if(mobileActionBar) {
               mobileActionBar.classList.add('opacity-0', 'pointer-events-none');
               mobileActionBar.classList.remove('opacity-100', 'pointer-events-auto');
