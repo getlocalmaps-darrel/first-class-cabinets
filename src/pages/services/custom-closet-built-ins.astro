@@ -1,0 +1,350 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+
+import builtinImage from '../../assets/builtin.jpg';
+import builtinImage2 from '../../assets/builtin-1.jpg';
+
+const phone = "(951) 973-1265";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Custom Closet Built-Ins",
+  "name": "Custom Closet Built-Ins in Murrieta, CA",
+  "description": "Premium walk-in closet systems handcrafted in Murrieta by First Class WoodWorks. Furniture-grade plywood, dovetail drawer boxes, Blum soft-close hardware — 100% in-house, zero particle board.",
+  "provider": {
+    "@type": "HomeAndConstructionBusiness",
+    "name": "First Class WoodWorks",
+    "telephone": "+1-951-973-1265",
+    "url": "https://www.firstclasswoodworks.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "24491 Avenida Arconte",
+      "addressLocality": "Murrieta",
+      "addressRegion": "CA",
+      "postalCode": "92562",
+      "addressCountry": "US"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "30"
+    }
+  },
+  "areaServed": ["Murrieta", "Temecula", "Wildomar", "Menifee", "Perris", "Lake Elsinore", "French Valley", "Winchester", "Canyon Lake", "Fallbrook"],
+  "knowsAbout": [
+    "Custom Closet Built-Ins",
+    "Walk-In Closet Systems",
+    "Furniture-Grade Plywood Construction",
+    "Dovetail Drawer Boxes",
+    "Blum Soft-Close Hardware",
+    "Closet Organization Systems",
+    "Master Suite Storage Solutions",
+    "Post-Catalyzed Conversion Varnish"
+  ],
+  "relatedService": [
+    { "@type": "Service", "name": "Custom Kitchen Cabinets", "url": "https://www.firstclasswoodworks.com/services/custom-kitchen-cabinets" },
+    { "@type": "Service", "name": "Bathroom Remodeling", "url": "https://www.firstclasswoodworks.com/services/bathroom-remodeling" },
+    { "@type": "Service", "name": "Cabinet Maker", "url": "https://www.firstclasswoodworks.com/services/cabinet-maker" }
+  ]
+};
+
+const faqs = [
+  {
+    question: "How much do custom closet built-ins cost in Murrieta?",
+    answer: "Custom closet built-ins in Murrieta range from $1,500 for a standard 6-foot reach-in closet to $12,000+ for a premium walk-in with solid hardwood, dovetail drawers, and integrated LED lighting. Most homeowners invest $3,500 to $6,500 for furniture-grade plywood systems with Blum soft-close hardware that outlast wire shelving by decades."
+  },
+  {
+    question: "What materials do you use for custom closet built-ins?",
+    answer: "We build exclusively with furniture-grade plywood and solid hardwoods — never particle board, MDF, or wire shelving. Cabinet boxes use 3/4-inch plywood for structural integrity, with solid Maple, White Oak, or Alder for face frames and doors. Every piece is sealed with post-catalyzed conversion varnish for humidity and heat resistance in Murrieta's climate."
+  },
+  {
+    question: "Do custom closet built-ins increase home value?",
+    answer: "Yes. Custom closet built-ins are classified as permanent improvements by Riverside County assessors, adding 5-10% to your home's market value. Homes with professional built-in storage sell 15-20 days faster than comparable properties with builder-grade closets. Unlike wire shelving or portable organizers, custom built-ins transfer with the home and trigger higher appraisals."
+  },
+  {
+    question: "How long does it take to install custom closet built-ins?",
+    answer: "Standard reach-in closets take 1 full day. Walk-in closets with drawer systems, specialty hardware, and integrated lighting typically need 2-3 days. Complex projects with center islands, motorized features, or specialty finishes can extend to 4-5 days. We schedule around your routine and clean thoroughly each evening."
+  },
+  {
+    question: "Why are custom built-ins better than wire shelving systems?",
+    answer: "Wire shelving flexes under weight, pulls away from drywall within 3-5 years, and wastes 30-40% of usable vertical space. Our custom built-ins are anchored to studs with commercial-grade hardware, incorporate adjustable shelving, pull-out drawers, shoe cubbies, and valet rods — maximizing every square inch. Custom built-ins also add appraisal value while wire systems do not."
+  },
+  {
+    question: "Do you serve areas beyond Murrieta for closet built-ins?",
+    answer: "Yes. We serve the entire Temecula Valley including Temecula, Wildomar, Menifee, Fallbrook, Lake Elsinore, French Valley, Winchester, Canyon Lake, and Perris. Our Murrieta shop is centrally located for fast project turnaround across Riverside County. Call (951) 973-1265 for a free in-home consultation."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.firstclasswoodworks.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.firstclasswoodworks.com/services" },
+    { "@type": "ListItem", "position": 3, "name": "Custom Closet Built-Ins" }
+  ]
+};
+---
+
+<MainLayout
+  title="Custom Closet Built-Ins Murrieta CA | Walk-In Closet Systems"
+  description="Premium custom closet built-ins in Murrieta, CA by First Class WoodWorks. Furniture-grade plywood, dovetail drawers, Blum soft-close hardware. No particle board. Call (951) 973-1265."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <article class="pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <nav class="text-xs text-zinc-400 mb-4 reveal" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-yellow-600 transition">Home</a></li>
+          <li class="text-zinc-300">/</li>
+          <li><a href="/services" class="hover:text-yellow-600 transition">Services</a></li>
+          <li class="text-zinc-300">/</li>
+          <li class="text-zinc-600 font-bold">Custom Closet Built-Ins</li>
+        </ol>
+      </nav>
+
+      <header class="max-w-4xl mb-16 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Custom Closet <span class="text-yellow-600 italic">Built-Ins</span> in Murrieta
+        </h1>
+        <p class="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+          Premium walk-in closet systems built from furniture-grade plywood and solid hardwoods — no particle board, no wire shelving, no compromises.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-8 space-y-8 text-lg text-zinc-600 leading-relaxed">
+
+          <section class="reveal" id="what-is-custom-closet-built-ins">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">What Are Custom Closet Built-Ins?</h2>
+            <p class="speakable-intro">
+              Custom closet built-ins are permanent, precision-fitted storage systems designed and built to the exact dimensions of your closet space. Unlike wire shelving from Home Depot or modular kits from The Container Store, custom built-ins are anchored to studs, use furniture-grade materials, and become a permanent improvement that increases your home's appraisal value.
+            </p>
+            <p>
+              At <a href="/" class="text-yellow-600 font-bold hover:underline">First Class WoodWorks</a>, we build every closet system in our Murrieta shop using the same dovetail joinery and Blum soft-close hardware found in our <a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">custom kitchen cabinets</a>. Each piece is sealed with post-catalyzed conversion varnish for decades of performance in Southern California's heat and humidity cycles.
+            </p>
+          </section>
+
+          <div class="relative rounded-sm overflow-hidden shadow-2xl reveal">
+            <Image src={builtinImage} alt="Custom closet built-in system with dovetail drawers installed by First Class WoodWorks in Murrieta CA" width={800} height={600} class="w-full h-auto object-cover" loading="lazy" decoding="async" />
+          </div>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Why Murrieta Homeowners Choose Custom Over Wire Shelving</h2>
+            <p>
+              Standard wire shelving flexes under weight, pulls away from drywall within 3-5 years, and wastes 30-40% of usable vertical space. Our custom built-ins use every square inch of your closet, from floor to ceiling, with adjustable shelving, pull-out drawers, shoe cubbies, valet rods, and felt-lined jewelry compartments.
+            </p>
+            <p>
+              The difference shows at resale. Riverside County assessors classify custom built-ins as permanent improvements that add to property value — wire shelving and freestanding organizers are classified as personal property that leaves with the seller. Homes in Murrieta's Bear Creek, Greer Ranch, and Copper Canyon neighborhoods with professional closet systems sell 15-20 days faster than comparable properties with builder-grade closets.
+            </p>
+          </section>
+
+          <section class="reveal bg-zinc-50 p-8 rounded-sm border border-zinc-100">
+            <h3 class="text-2xl font-serif font-bold text-zinc-900 mb-6 text-center">Custom Built-Ins vs. Alternatives</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm text-left">
+                <thead class="border-b border-zinc-200">
+                  <tr>
+                    <th class="pb-4 font-bold uppercase tracking-wider">Feature</th>
+                    <th class="pb-4 font-bold uppercase tracking-wider text-zinc-400">Wire / Modular Kits</th>
+                    <th class="pb-4 font-bold uppercase tracking-wider text-yellow-600">First Class Custom</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-zinc-200">
+                  <tr><td class="py-4 font-bold">Materials</td><td class="py-4">Coated wire or melamine</td><td class="py-4 font-bold text-zinc-900">Furniture-grade plywood & hardwoods</td></tr>
+                  <tr><td class="py-4 font-bold">Fit</td><td class="py-4">Standard sizes with gaps</td><td class="py-4 font-bold text-zinc-900">Built to 1/16th-inch precision</td></tr>
+                  <tr><td class="py-4 font-bold">Hardware</td><td class="py-4">Plastic brackets, basic rods</td><td class="py-4 font-bold text-zinc-900">Blum soft-close (lifetime warranty)</td></tr>
+                  <tr><td class="py-4 font-bold">Joinery</td><td class="py-4">Friction-fit or screws</td><td class="py-4 font-bold text-zinc-900">Dovetail drawer boxes</td></tr>
+                  <tr><td class="py-4 font-bold">Lifespan</td><td class="py-4">3-5 years before sagging</td><td class="py-4 font-bold text-zinc-900">Lifetime (heirloom quality)</td></tr>
+                  <tr><td class="py-4 font-bold">Home Value</td><td class="py-4">No appraisal impact</td><td class="py-4 font-bold text-zinc-900">5-10% value increase</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">What Goes Into a First Class Closet System</h2>
+            <p>
+              Every closet project starts with an in-home consultation where we take laser measurements and discuss how you actually use your closet — not how a catalog thinks you should. We then produce full 3D renderings so you approve the design before we cut the first board.
+            </p>
+            <ul class="space-y-3 my-6">
+              <li class="flex items-start gap-3"><span class="text-yellow-600 font-bold mt-1">&#10003;</span> <span><strong>Double-hang sections</strong> — two rods at 40" and 80" for shirts, pants, and jackets</span></li>
+              <li class="flex items-start gap-3"><span class="text-yellow-600 font-bold mt-1">&#10003;</span> <span><strong>Full-height sections</strong> — for dresses, coats, and long garments</span></li>
+              <li class="flex items-start gap-3"><span class="text-yellow-600 font-bold mt-1">&#10003;</span> <span><strong>Dovetail drawer banks</strong> — Blum soft-close undermount slides for folded items</span></li>
+              <li class="flex items-start gap-3"><span class="text-yellow-600 font-bold mt-1">&#10003;</span> <span><strong>Slant-front shoe shelves</strong> — display instead of stack, visible at a glance</span></li>
+              <li class="flex items-start gap-3"><span class="text-yellow-600 font-bold mt-1">&#10003;</span> <span><strong>Pull-out valet rods</strong> — outfit planning and next-day staging</span></li>
+              <li class="flex items-start gap-3"><span class="text-yellow-600 font-bold mt-1">&#10003;</span> <span><strong>Integrated LED lighting</strong> — Hafele Loox strips concealed in crown molding</span></li>
+              <li class="flex items-start gap-3"><span class="text-yellow-600 font-bold mt-1">&#10003;</span> <span><strong>Felt-lined jewelry drawers</strong> — Blum soft-close with divided compartments</span></li>
+            </ul>
+          </section>
+
+          <div class="relative rounded-sm overflow-hidden shadow-2xl reveal">
+            <Image src={builtinImage2} alt="Walk-in closet built-in with adjustable shelving and LED lighting by First Class WoodWorks Murrieta" width={800} height={600} class="w-full h-auto object-cover" loading="lazy" decoding="async" />
+          </div>
+
+          <div class="bg-zinc-50 border-l-4 border-yellow-600 p-8 my-10 reveal">
+            <h4 class="text-zinc-900 font-bold mb-2">Cabinet Builder Pro-Tip:</h4>
+            <p class="italic">"Wire shelving flexes under load and leaves grid marks on folded clothing. Our furniture-grade plywood shelves are solid, smooth, and adjustable on Hafele standards — reposition them without tools as your wardrobe changes. That adaptability is why our closet systems last decades while wire racks get ripped out within five years."</p>
+          </div>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Custom Closet Built-Ins Near You</h2>
+            <p>
+              We build custom closet systems for homeowners throughout the Temecula Valley. Whether you're in Bear Creek, Greer Ranch, or Copper Canyon in Murrieta, or nearby cities, our shop is centrally located for fast turnaround and responsive service.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+              <a href="/custom-closet-built-ins-wildomar" class="bg-zinc-50 border border-zinc-200 p-6 rounded-sm hover:shadow-lg hover:border-yellow-600/30 transition group">
+                <h3 class="text-lg font-serif font-bold text-zinc-900 group-hover:text-yellow-600 transition">Custom Closet Built-Ins Wildomar</h3>
+                <p class="text-sm text-zinc-500 mt-2">Serving Sedona, Windmill Ranch & Bundy Canyon</p>
+              </a>
+              <a href="/custom-closet-built-ins-temecula" class="bg-zinc-50 border border-zinc-200 p-6 rounded-sm hover:shadow-lg hover:border-yellow-600/30 transition group">
+                <h3 class="text-lg font-serif font-bold text-zinc-900 group-hover:text-yellow-600 transition">Custom Closet Built-Ins Temecula</h3>
+                <p class="text-sm text-zinc-500 mt-2">Serving Wine Country, De Luz & Old Town</p>
+              </a>
+            </div>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Related Services</h2>
+            <p>
+              Our closet built-ins use the same materials and craftsmanship as our <a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">custom kitchen cabinets</a> and <a href="/services/bathroom-remodeling" class="text-yellow-600 font-bold hover:underline">bathroom vanities</a>. Many homeowners match their closet system to existing cabinetry throughout the home — same door style, same finish, same hardware — for a cohesive whole-home aesthetic. See our full range of services at <a href="/services" class="text-yellow-600 font-bold hover:underline">First Class WoodWorks Services</a>.
+            </p>
+          </section>
+
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8 sticky top-32">
+          <div class="bg-zinc-900 text-white p-10 rounded-sm reveal">
+            <h3 class="font-serif font-bold text-2xl mb-2 text-yellow-600">Start Your Closet Project</h3>
+            <p class="text-zinc-500 text-xs uppercase tracking-[0.15em] font-bold mb-6">Murrieta, CA &bull; 5.0 Star Rated</p>
+            <ul class="space-y-3 text-white/80 text-sm mb-8">
+              <li class="border-b border-white/10 pb-3">Zero Particle Board or Wire</li>
+              <li class="border-b border-white/10 pb-3">Blum Lifetime-Warranty Hardware</li>
+              <li class="border-b border-white/10 pb-3">Free 3D Design Renderings</li>
+              <li class="border-b border-white/10 pb-3">100% In-House — No Subcontractors</li>
+              <li class="border-b border-white/10 pb-3">Licensed, Bonded & Insured</li>
+              <li>1-3 Day Installation</li>
+            </ul>
+            <a href="tel:9519731265" class="block text-center border border-yellow-600 py-4 font-bold hover:bg-yellow-600 hover:text-zinc-900 transition mb-3 tracking-wider">
+              {phone}
+            </a>
+            <a href="/contact" class="block text-center bg-yellow-600 text-zinc-900 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">
+              Get a Free Quote
+            </a>
+          </div>
+
+          <div class="bg-zinc-50 border border-zinc-200 p-8 rounded-sm reveal">
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-6">Our Services</h3>
+            <ul class="space-y-2 text-sm text-zinc-600">
+              <li><a href="/services/cabinet-maker" class="hover:text-yellow-600 transition font-bold">Cabinet Maker</a></li>
+              <li><a href="/services/custom-kitchen-cabinets" class="hover:text-yellow-600 transition font-bold">Custom Kitchen Cabinets</a></li>
+              <li><a href="/services/kitchen-remodeling" class="hover:text-yellow-600 transition font-bold">Kitchen Remodeling</a></li>
+              <li><a href="/services/bathroom-remodeling" class="hover:text-yellow-600 transition font-bold">Bathroom Remodeling</a></li>
+              <li class="text-zinc-900 font-bold">Custom Closet Built-Ins</li>
+              <li class="text-zinc-400">Entertainment Centers</li>
+              <li class="text-zinc-400">Fireplace Mantels</li>
+            </ul>
+          </div>
+
+          <div class="bg-zinc-50 border border-zinc-200 p-8 rounded-sm reveal">
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-6">Closet Built-Ins By City</h3>
+            <ul class="space-y-2 text-sm text-zinc-600">
+              <li class="text-zinc-900 font-bold">Murrieta (HQ)</li>
+              <li><a href="/custom-closet-built-ins-temecula" class="hover:text-yellow-600 transition">Temecula</a></li>
+              <li><a href="/custom-closet-built-ins-wildomar" class="hover:text-yellow-600 transition">Wildomar</a></li>
+            </ul>
+          </div>
+
+          <div class="bg-zinc-50 border border-zinc-200 p-8 rounded-sm reveal">
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-6">Areas We Serve</h3>
+            <ul class="space-y-2 text-sm text-zinc-600">
+              <li><a href="/cities/murrieta" class="hover:text-yellow-600 transition font-bold">Murrieta (HQ)</a></li>
+              <li><a href="/cities/temecula" class="hover:text-yellow-600 transition">Temecula</a></li>
+              <li><a href="/cities/menifee" class="hover:text-yellow-600 transition">Menifee</a></li>
+              <li><a href="/cities/wildomar" class="hover:text-yellow-600 transition">Wildomar</a></li>
+              <li><a href="/cities/fallbrook" class="hover:text-yellow-600 transition">Fallbrook</a></li>
+              <li><a href="/cities/lake-elsinore" class="hover:text-yellow-600 transition">Lake Elsinore</a></li>
+              <li><a href="/cities/french-valley" class="hover:text-yellow-600 transition">French Valley</a></li>
+              <li><a href="/cities/winchester" class="hover:text-yellow-600 transition">Winchester</a></li>
+              <li><a href="/cities/canyon-lake" class="hover:text-yellow-600 transition">Canyon Lake</a></li>
+              <li><a href="/cities/perris" class="hover:text-yellow-600 transition">Perris</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="py-16 border-t border-zinc-200">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16 reveal">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">
+              Closet Built-In <span class="text-yellow-600">FAQs</span>
+            </h2>
+            <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-6"></div>
+            <p class="text-zinc-500 italic">Common questions about custom closet built-ins, pricing, and installation in Murrieta.</p>
+          </div>
+          <div class="space-y-4">
+            {faqs.map((faq, index) => (
+              <details class="group bg-white border border-zinc-200 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 reveal" style={`transition-delay: ${index * 80}ms`}>
+                <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
+                  <h3 class="text-lg md:text-xl font-serif font-bold text-zinc-800 group-hover:text-yellow-600 transition-colors pr-8">
+                    {faq.question}
+                  </h3>
+                  <span class="text-yellow-600 transition-transform duration-300 group-open:rotate-180 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-6 text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="bg-zinc-900 text-center py-16 px-8 rounded-sm reveal">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Transform Your Closet Into a Showpiece</h2>
+        <p class="text-zinc-400 mb-8 max-w-xl mx-auto">
+          We are currently booking closet projects for 2026 in Murrieta, Temecula, Wildomar, and the surrounding Temecula Valley. Schedule your free in-home consultation today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="inline-block border-2 border-white text-white px-10 py-4 font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-black transition duration-300">
+            Get a Free Quote
+          </a>
+          <a href="tel:9519731265" class="inline-block border-2 border-yellow-600 text-yellow-600 px-10 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-600 hover:text-zinc-900 transition duration-300">
+            Call {phone}
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+</style>

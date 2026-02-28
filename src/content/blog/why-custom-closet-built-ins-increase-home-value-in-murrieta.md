@@ -37,7 +37,7 @@ Here's the disconnect: homeowners invest $500 in Container Store systems thinkin
 
 The real surprise? The specific neighborhood matters more than you'd think. Murrieta's newer developments like Spencer's Crossing already have decent builder-grade closets, so upgrades need to be substantial to move the needle. Older homes near the Historic District often have tiny, outdated closets—that's where a complete custom system delivers the biggest value jump. We've seen 12-15% increases in those properties because the upgrade solves a genuine problem buyers notice immediately.
 
-Standard wire shelving flexes under weight, pulls away from drywall, and screams "temporary fix" to anyone who opens the door. Our cabinet maker in Murrieta builds systems anchored to studs with commercial-grade hardware that'll outlast the mortgage. That permanence and quality changes how buyers perceive the entire home.
+Standard wire shelving flexes under weight, pulls away from drywall, and screams "temporary fix" to anyone who opens the door. Our cabinet maker in Murrieta builds systems anchored to studs with commercial-grade hardware that'll outlast the mortgage. That permanence and quality changes how buyers perceive the entire home. Learn more about our [custom closet built-ins in Murrieta](/services/custom-closet-built-ins) to see exactly what goes into a First Class closet system.
 
 ## How Much Do Custom Closet Built-Ins Cost in Murrieta?
 
@@ -54,7 +54,7 @@ We break down pricing by material quality because the difference affects both yo
 
 We install mostly plywood and solid hardwood systems because they handle Murrieta's temperature swings better than MDF. Last summer we had three weeks over 100 degrees, and MDF systems in non-climate-controlled spaces can swell at the edges. Plywood with a quality veneer holds up beautifully, and when we use Blum Tandem Plus drawer systems (the same hardware commercial kitchens use), homeowners get 25-year warranties on the moving parts.
 
-The National Association of Realtors' 2023 Remodeling Impact Report shows custom storage features return 56% on average nationally, but we're seeing 70-80% in Murrieta's competitive market. Buyers here expect finished garages and organized closets—it's part of the Southern California lifestyle. For reference, our [custom cabinetry services](https://www.firstclasswoodworks.com/services/) cover everything from closets to complete room buildouts.
+The National Association of Realtors' 2023 Remodeling Impact Report shows custom storage features return 56% on average nationally, but we're seeing 70-80% in Murrieta's competitive market. Buyers here expect finished garages and organized closets—it's part of the Southern California lifestyle. For reference, our [custom closet built-in services](/services/custom-closet-built-ins) cover everything from reach-in closets to luxury walk-in dressing rooms, and our full [custom cabinetry services](https://www.firstclasswoodworks.com/services/) extend to kitchens, bathrooms, and complete room buildouts.
 
 ## How Do Custom Closet Built-Ins Compare to Other Storage Solutions?
 

@@ -1,0 +1,293 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+
+import builtinImage from '../assets/builtin-1.jpg';
+
+const city = "Temecula";
+const phone = "(951) 973-1265";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "First Class WoodWorks — Custom Closet Built-Ins " + city,
+  "telephone": "+19519731265",
+  "url": "https://www.firstclasswoodworks.com/custom-closet-built-ins-temecula",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "24491 Avenida Arconte",
+    "addressLocality": "Murrieta",
+    "addressRegion": "CA",
+    "postalCode": "92562",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.4936,
+    "longitude": -117.1484
+  },
+  "areaServed": ["Temecula", "Wine Country", "De Luz", "Old Town Temecula", "Redhawk", "Harveston"],
+  "knowsAbout": [
+    "Custom Closet Built-Ins", "Walk-In Closet Systems", "Furniture-Grade Plywood Construction",
+    "Dovetail Drawer Boxes", "Blum Soft-Close Hardware", "Luxury Closet Design",
+    "Wine Country Estate Storage", "Master Suite Dressing Rooms"
+  ],
+  "priceRange": "$$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "30"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Custom Closet Built-In Services in " + city,
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Closet Built-Ins", "url": "https://www.firstclasswoodworks.com/services/custom-closet-built-ins" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Kitchen Cabinets", "url": "https://www.firstclasswoodworks.com/services/custom-kitchen-cabinets" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bathroom Remodeling", "url": "https://www.firstclasswoodworks.com/services/bathroom-remodeling" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cabinet Maker", "url": "https://www.firstclasswoodworks.com/services/cabinet-maker" } }
+    ]
+  }
+};
+
+const faqs = [
+  {
+    question: "How much do custom closet built-ins cost in Temecula?",
+    answer: "Custom closet built-ins in Temecula range from $1,500 for a standard reach-in closet to $12,000+ for luxury walk-in systems with solid hardwood, dovetail drawers, and integrated LED lighting. Wine Country estates and De Luz properties often invest in premium materials that match the home's elevated finishes. Call (951) 973-1265 for a free in-home estimate."
+  },
+  {
+    question: "Who is the best closet builder near Temecula, CA?",
+    answer: "First Class WoodWorks is the highest-rated cabinet maker serving Temecula with an A+ BBB rating and 5.0-star reviews. Based in nearby Murrieta, we design, build, and install every closet system in-house using furniture-grade plywood and Blum soft-close hardware — never subcontracted, never particle board."
+  },
+  {
+    question: "Do custom closet built-ins add value to Temecula homes?",
+    answer: "Yes. Custom closet built-ins are classified as permanent improvements by Riverside County assessors and can add 5-10% to your home's value. In Temecula's competitive market — especially Wine Country and Redhawk — upgraded closets are expected in homes at higher price points. Buyers pay premiums for finished storage systems."
+  },
+  {
+    question: "What Temecula neighborhoods do you serve?",
+    answer: "We serve all of Temecula including Wine Country, De Luz, Old Town Temecula, Redhawk, Harveston, Paseo Del Sol, Roripaugh Ranch, and every home in the 92591, 92592, and 92590 zip codes. Our Murrieta shop is minutes away for responsive project management."
+  },
+  {
+    question: "How long does it take to install closet built-ins in Temecula?",
+    answer: "Standard reach-in closets take 1 full day. Walk-in closets with drawer systems, specialty hardware, and integrated lighting need 2-3 days. Luxury estate projects with center islands and motorized features can extend to 4-5 days. We schedule around your routine and clean thoroughly each evening."
+  },
+  {
+    question: "Can you match closet built-ins to existing cabinetry in my Temecula home?",
+    answer: "Absolutely. We match your closet system to existing kitchen cabinets, bathroom vanities, and other built-ins throughout the home — same door style, same finish, same Blum hardware. This cohesive look makes your home feel professionally designed and increases buyer appeal at resale."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.firstclasswoodworks.com" },
+    { "@type": "ListItem", "position": 2, "name": "Custom Closet Built-Ins", "item": "https://www.firstclasswoodworks.com/services/custom-closet-built-ins" },
+    { "@type": "ListItem", "position": 3, "name": "Temecula" }
+  ]
+};
+---
+
+<MainLayout
+  title="Custom Closet Built-Ins Temecula CA | Walk-In Closet Systems"
+  description="Custom closet built-ins in Temecula, CA by First Class WoodWorks. Furniture-grade plywood, Blum soft-close hardware, dovetail drawers. No wire shelving. Call (951) 973-1265."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <article class="pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <nav class="text-xs text-zinc-400 mb-4 reveal" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-yellow-600 transition">Home</a></li>
+          <li class="text-zinc-300">/</li>
+          <li><a href="/services/custom-closet-built-ins" class="hover:text-yellow-600 transition">Custom Closet Built-Ins</a></li>
+          <li class="text-zinc-300">/</li>
+          <li class="text-zinc-600 font-bold">Temecula</li>
+        </ol>
+      </nav>
+
+      <header class="max-w-4xl mb-16 reveal">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-zinc-900 mb-6 leading-tight">
+          Custom Closet <span class="text-yellow-600 italic">Built-Ins</span> Temecula
+        </h1>
+        <h2 class="text-2xl font-body font-bold text-zinc-700 mb-8">Premium walk-in closet systems for Temecula Wine Country and beyond</h2>
+        <p class="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+          Temecula estates deserve closet systems crafted with the same attention to detail as the custom cabinetry in your kitchen — furniture-grade materials, dovetail joinery, and hardware that lasts a lifetime.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-8 space-y-8 text-lg text-zinc-600 leading-relaxed">
+
+          <section class="reveal" id="what-is-closet-built-ins-temecula">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Temecula's Custom Closet Specialist</h2>
+            <p>
+              From the vineyards of <strong>Wine Country</strong> to the family neighborhoods of <strong>Redhawk</strong> and <strong>Harveston</strong>, Temecula homeowners are replacing builder-grade wire shelving with permanent, furniture-quality closet systems. <a href="/" class="text-yellow-600 font-bold hover:underline">First Class WoodWorks</a> builds every <a href="/services/custom-closet-built-ins" class="text-yellow-600 font-bold hover:underline">custom closet built-in</a> in our Murrieta shop using furniture-grade plywood and solid hardwoods — never particle board, never outsourced.
+            </p>
+            <p>
+              Temecula's luxury market demands elevated finishes throughout the home. Our closet systems deliver that standard — solid Maple or White Oak face frames, dovetail drawer boxes, Blum Tandem Plus undermount slides, and a post-catalyzed conversion varnish finish that handles Southern California's heat and humidity cycles for decades.
+            </p>
+          </section>
+
+          <div class="relative rounded-sm overflow-hidden shadow-2xl reveal">
+            <Image src={builtinImage} alt="Custom closet built-in with solid hardwood and LED lighting installed in Temecula CA home" width={800} height={600} class="w-full h-auto object-cover" loading="lazy" decoding="async" />
+          </div>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Why Temecula Buyers Pay More for Custom Closets</h2>
+            <p>
+              In Temecula's competitive real estate market, especially in Wine Country and De Luz where homes list at $800K to $2M+, buyers expect finished storage systems in every bedroom. Custom closet built-ins signal that a homeowner invested in quality throughout — not just in the visible rooms.
+            </p>
+            <p>
+              Riverside County assessors classify custom built-ins as permanent improvements that add to property value. Wire shelving and freestanding organizers are classified as personal property that leaves with the seller. Homes with professional closet systems sell faster and for higher prices than comparable properties with builder-grade closets.
+            </p>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Walk-In Closet Features for Temecula Estates</h2>
+            <ul class="space-y-3 my-6">
+              <li class="flex items-start gap-3"><span class="text-yellow-600 font-bold mt-1">&#10003;</span> <span><strong>Center islands</strong> with drawer banks and jewelry compartments</span></li>
+              <li class="flex items-start gap-3"><span class="text-yellow-600 font-bold mt-1">&#10003;</span> <span><strong>Floor-to-ceiling cabinetry</strong> with crown molding details</span></li>
+              <li class="flex items-start gap-3"><span class="text-yellow-600 font-bold mt-1">&#10003;</span> <span><strong>Integrated LED lighting</strong> — Hafele Loox strips concealed in molding</span></li>
+              <li class="flex items-start gap-3"><span class="text-yellow-600 font-bold mt-1">&#10003;</span> <span><strong>Felt-lined jewelry drawers</strong> with Blum soft-close undermounts</span></li>
+              <li class="flex items-start gap-3"><span class="text-yellow-600 font-bold mt-1">&#10003;</span> <span><strong>Slant-front shoe displays</strong> — visible and accessible, no stacking</span></li>
+              <li class="flex items-start gap-3"><span class="text-yellow-600 font-bold mt-1">&#10003;</span> <span><strong>Pull-out valet rods & belt racks</strong> — outfit planning and accessories</span></li>
+            </ul>
+          </section>
+
+          <div class="bg-zinc-50 border-l-4 border-yellow-600 p-8 my-10 reveal">
+            <h4 class="text-zinc-900 font-bold mb-2">Cabinet Builder Pro-Tip:</h4>
+            <p class="italic">"Temecula Wine Country estates often have oversized primary suites with walk-in closets the size of a bedroom. Don't fill that space with wire shelving — it'll look empty and cheap. We design closet systems with center islands, seating areas, and full-length mirrors that transform the space into a personal dressing room. That transformation is what buyers remember during showings."</p>
+          </div>
+
+          <section class="reveal">
+            <h2 class="text-3xl font-serif font-bold text-zinc-900 mb-4">Complete Custom Cabinetry in Temecula</h2>
+            <p>
+              Beyond closets, Temecula homeowners choose us for <a href="/services/custom-kitchen-cabinets" class="text-yellow-600 font-bold hover:underline">custom kitchen cabinets</a>, <a href="/services/bathroom-remodeling" class="text-yellow-600 hover:underline">bathroom vanities</a>, and <a href="/services/kitchen-remodeling" class="text-yellow-600 hover:underline">full kitchen remodels</a>. We match your closet system to existing cabinetry — same door style, same finish, same hardware — for design continuity that makes your home feel professionally finished throughout.
+            </p>
+            <p>
+              See our work in nearby <a href="/custom-closet-built-ins-wildomar" class="text-yellow-600 hover:underline">Wildomar</a>, or visit our <a href="/cities/temecula" class="text-yellow-600 hover:underline">Temecula custom cabinets</a> page. Call <strong>{phone}</strong> to schedule your free consultation.
+            </p>
+          </section>
+
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8 sticky top-32">
+          <div class="bg-zinc-900 text-white p-10 rounded-sm reveal">
+            <h3 class="font-serif font-bold text-2xl mb-2 text-yellow-600">Build Your Dream Closet</h3>
+            <p class="text-zinc-500 text-xs uppercase tracking-[0.15em] font-bold mb-6">Serving Temecula &bull; 5.0 Star Rated</p>
+            <ul class="space-y-3 text-white/80 text-sm mb-8">
+              <li class="border-b border-white/10 pb-3">Zero Particle Board or Wire</li>
+              <li class="border-b border-white/10 pb-3">Blum Lifetime-Warranty Hardware</li>
+              <li class="border-b border-white/10 pb-3">Free 3D Design Renderings</li>
+              <li class="border-b border-white/10 pb-3">100% In-House — No Subcontractors</li>
+              <li class="border-b border-white/10 pb-3">Licensed, Bonded & Insured</li>
+              <li>1-3 Day Installation</li>
+            </ul>
+            <a href="tel:9519731265" class="block text-center border border-yellow-600 py-4 font-bold hover:bg-yellow-600 hover:text-zinc-900 transition mb-3 tracking-wider">
+              {phone}
+            </a>
+            <a href="/contact" class="block text-center bg-yellow-600 text-zinc-900 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-700 transition">
+              Get a Free Quote
+            </a>
+          </div>
+
+          <div class="bg-zinc-50 border border-zinc-200 p-8 rounded-sm reveal">
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-6">Closet Built-Ins By City</h3>
+            <ul class="space-y-2 text-sm text-zinc-600">
+              <li><a href="/services/custom-closet-built-ins" class="hover:text-yellow-600 transition font-bold">Murrieta (HQ)</a></li>
+              <li class="text-zinc-900 font-bold">Temecula</li>
+              <li><a href="/custom-closet-built-ins-wildomar" class="hover:text-yellow-600 transition">Wildomar</a></li>
+            </ul>
+          </div>
+
+          <div class="bg-zinc-50 border border-zinc-200 p-6 rounded-sm reveal">
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-6">Our Service Area</h3>
+            <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+              <li><a href="/cities/murrieta" class="text-yellow-600 hover:underline">Murrieta</a></li>
+              <li><span class="text-zinc-900 font-bold">Temecula</span></li>
+              <li><a href="/cities/menifee" class="text-yellow-600 hover:underline">Menifee</a></li>
+              <li><a href="/cities/winchester" class="text-yellow-600 hover:underline">Winchester</a></li>
+              <li><a href="/cities/french-valley" class="text-yellow-600 hover:underline">French Valley</a></li>
+              <li><a href="/cities/wildomar" class="text-yellow-600 hover:underline">Wildomar</a></li>
+              <li><a href="/cities/canyon-lake" class="text-yellow-600 hover:underline">Canyon Lake</a></li>
+              <li><a href="/cities/lake-elsinore" class="text-yellow-600 hover:underline">Lake Elsinore</a></li>
+              <li><a href="/cities/perris" class="text-yellow-600 hover:underline">Perris</a></li>
+              <li><a href="/cities/fallbrook" class="text-yellow-600 hover:underline">Fallbrook</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="py-16 border-t border-zinc-200">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16 reveal">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-zinc-900 mb-6">
+              Closet Built-In <span class="text-yellow-600">FAQs</span> — Temecula
+            </h2>
+            <div class="h-1 w-20 bg-yellow-600 mx-auto rounded-full mb-6"></div>
+            <p class="text-zinc-500 italic">Common questions about custom closet built-ins for Temecula homeowners.</p>
+          </div>
+          <div class="space-y-4">
+            {faqs.map((faq, index) => (
+              <details class="group bg-white border border-zinc-200 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 reveal" style={`transition-delay: ${index * 80}ms`}>
+                <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
+                  <h3 class="text-lg md:text-xl font-serif font-bold text-zinc-800 group-hover:text-yellow-600 transition-colors pr-8">
+                    {faq.question}
+                  </h3>
+                  <span class="text-yellow-600 transition-transform duration-300 group-open:rotate-180 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-6 text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="bg-zinc-900 text-center py-16 px-8 rounded-sm reveal">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Ready for a Custom Closet in Temecula?</h2>
+        <p class="text-zinc-400 mb-8 max-w-xl mx-auto">
+          We are currently booking closet projects for Temecula, Murrieta, and the surrounding Temecula Valley. Schedule your free in-home consultation today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="inline-block border-2 border-white text-white px-10 py-4 font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-black transition duration-300">
+            Get a Free Quote
+          </a>
+          <a href="tel:9519731265" class="inline-block border-2 border-yellow-600 text-yellow-600 px-10 py-4 font-bold uppercase tracking-widest text-xs hover:bg-yellow-600 hover:text-zinc-900 transition duration-300">
+            Call {phone}
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+</style>
