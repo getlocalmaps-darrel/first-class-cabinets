@@ -1,8 +1,8 @@
 ---
 title: "Custom Cabinets vs Big Box: What Murrieta Homeowners Need to Know"
 description: "Comparing custom cabinets from a local Murrieta cabinet maker to big box store options. Learn about quality, cost, timeline, and long-term value before your kitchen remodel."
-publishDate: 2026-02-15
-lastUpdated: 2026-02-15
+publishDate: 2026-02-01
+lastUpdated: 2026-02-01
 author: "Diego Macias"
 authorTitle: "Owner & Master Cabinet Maker, CA License #1103734"
 category: "Buying Guide"

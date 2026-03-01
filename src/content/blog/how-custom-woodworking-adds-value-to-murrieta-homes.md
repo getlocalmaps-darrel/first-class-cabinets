@@ -1,8 +1,8 @@
 ---
 title: "Boost Your Murrieta Home's Value with Custom Woodworking"
 description: "Discover how custom woodworking enhances the value and appeal of homes in Murrieta. Explore unique designs and craftsmanship."
-publishDate: 2026-02-15
-lastUpdated: 2026-02-15
+publishDate: 2026-02-24
+lastUpdated: 2026-02-24
 author: "Diego Macias"
 authorTitle: "Owner & Master Cabinet Maker, CA License #1103734"
 category: "Expert Guide"

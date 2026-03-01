@@ -1,8 +1,8 @@
 ---
 title: "Kitchen Remodeling Cost Guide for Murrieta, CA"
 description: "Discover the key factors influencing kitchen remodeling costs in Murrieta, CA, and how to budget effectively for your renovation project."
-publishDate: 2026-02-15
-lastUpdated: 2026-02-15
+publishDate: 2026-02-05
+lastUpdated: 2026-02-05
 author: "Diego Macias"
 authorTitle: "Owner & Master Cabinet Maker, CA License #1103734"
 category: "Cost Guide"

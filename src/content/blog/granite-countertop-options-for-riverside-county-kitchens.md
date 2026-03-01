@@ -1,8 +1,8 @@
 ---
 title: "Granite Countertop Options for Riverside County Kitchens"
 description: "Explore stunning granite countertop options for your Riverside County kitchen. Discover styles, colors, and tips from First Class WoodWorks."
-publishDate: 2026-02-15
-lastUpdated: 2026-02-15
+publishDate: 2026-02-19
+lastUpdated: 2026-02-19
 author: "Diego Macias"
 authorTitle: "Owner & Master Cabinet Maker, CA License #1103734"
 category: "Expert Guide"

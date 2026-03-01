@@ -1,8 +1,8 @@
 ---
 title: "Choosing the Perfect Custom Vanity for Your Bathroom"
 description: "Explore expert tips for selecting the ideal custom vanity for your bathroom remodel in Murrieta, CA."
-publishDate: 2026-02-15
-lastUpdated: 2026-02-15
+publishDate: 2026-02-10
+lastUpdated: 2026-02-10
 author: "Diego Macias"
 authorTitle: "Owner & Master Cabinet Maker, CA License #1103734"
 category: "Expert Guide"
