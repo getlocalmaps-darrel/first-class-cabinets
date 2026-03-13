@@ -114,7 +114,7 @@ The design possibilities extend beyond basic decking. We craft built-in bench se
 
 Property values in Murrieta neighborhoods like Bear Creek and Greer Ranch directly correlate with outdoor living amenities. According to the California Association of Realtors, homes with well-designed outdoor entertainment spaces sell 20-30 days faster than similar properties lacking these features.
 
-We've also completed exceptional projects in nearby communities—check out our [custom cabinets Temecula CA](https://www.firstclasswoodworks.com/cities/temecula/) and [custom cabinets Menifee CA](https://www.firstclasswoodworks.com/cities/menifee/) work to see how outdoor woodworking adapts to different property styles.
+We've also completed exceptional projects in nearby communities—check out our work in [Temecula](https://www.firstclasswoodworks.com/cities/temecula/) and [Menifee](https://www.firstclasswoodworks.com/cities/menifee/) to see how outdoor woodworking adapts to different property styles.
 
 > **Pro Tip:** Design custom cabinetry with dual-purpose functionality from the start. A kitchen island with built-in wine storage, cookbook shelving, and charging stations serves multiple needs while occupying the same footprint as basic islands. This approach maximizes return on investment while improving daily convenience.
 
@@ -142,10 +142,10 @@ Absolutely—visit our [Murrieta home remodel project](https://www.firstclasswoo
 
 ### Do you serve areas beyond Murrieta?
 
-Yes, we regularly complete projects throughout Riverside County, including [custom cabinets Wildomar](https://www.firstclasswoodworks.com/cities/wildomar/), [custom cabinets Lake Elsinore CA](https://www.firstclasswoodworks.com/cities/lake-elsinore/), [custom cabinets Canyon Lake CA](https://www.firstclasswoodworks.com/cities/canyon-lake/), [custom cabinets Fallbrook CA](https://www.firstclasswoodworks.com/cities/fallbrook/), [custom cabinets French Valley CA](https://www.firstclasswoodworks.com/cities/french-valley/), [custom cabinets Winchester CA](https://www.firstclasswoodworks.com/cities/winchester/), and [custom cabinets Perris CA](https://www.firstclasswoodworks.com/cities/perris/). Distance isn't an issue when quality matters.
+Yes, we regularly complete projects throughout Riverside County, including [Wildomar](https://www.firstclasswoodworks.com/cities/wildomar/), [Lake Elsinore](https://www.firstclasswoodworks.com/cities/lake-elsinore/), [Canyon Lake](https://www.firstclasswoodworks.com/cities/canyon-lake/), [Fallbrook](https://www.firstclasswoodworks.com/cities/fallbrook/), [French Valley](https://www.firstclasswoodworks.com/cities/french-valley/), [Winchester](https://www.firstclasswoodworks.com/cities/winchester/), and [Perris](https://www.firstclasswoodworks.com/cities/perris/). We treat every project with the same attention to detail regardless of location.
 
 ## Conclusion
 
 Custom woodworking delivers measurable returns through increased property values, improved functionality, and distinctive character that sets Murrieta homes apart in competitive markets. Whether you're planning to sell within five years or building your forever home, investing in quality craftsmanship pays dividends in both daily satisfaction and financial returns.
 
-Ready to transform your space with heirloom-quality woodwork? First Class WoodWorks brings three decades of master craftsmanship to every project, from [custom cabinets Murrieta CA](https://www.firstclasswoodworks.com/cities/murrieta/) kitchens to comprehensive whole-home millwork. Call us at (951) 973-1265 to discuss your vision, or visit [Inland Empire cabinet builder](https://www
+Ready to transform your space with heirloom-quality woodwork? First Class WoodWorks brings master craftsmanship to every project, from kitchen cabinetry to comprehensive whole-home millwork. Call us at [(951) 973-1265](tel:9519731265) to discuss your vision, or visit our [contact page](https://www.firstclasswoodworks.com/contact/) to schedule a free consultation with 3D renderings.
