@@ -105,4 +105,4 @@ The gap between custom and big box cabinets isn't just about price. It's about m
 
 If you're considering a kitchen remodel in Murrieta, Temecula, Menifee, or anywhere in the Inland Empire, First Class WoodWorks offers free consultations with 3D renderings so you can see exactly what your custom cabinets will look like before we begin.
 
-**Call Diego and the team at [(951) 973-1265](tel:9519731265) or [request a free quote](/contact/) to get started.**
+**Call Diego and the team at [(951) 973-1265](tel:9519731265) or request a free quote to get started.**

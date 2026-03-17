@@ -148,4 +148,4 @@ Yes, we regularly complete projects throughout Riverside County, including [Wild
 
 Custom woodworking delivers measurable returns through increased property values, improved functionality, and distinctive character that sets Murrieta homes apart in competitive markets. Whether you're planning to sell within five years or building your forever home, investing in quality craftsmanship pays dividends in both daily satisfaction and financial returns.
 
-Ready to transform your space with heirloom-quality woodwork? First Class WoodWorks brings master craftsmanship to every project, from kitchen cabinetry to comprehensive whole-home millwork. Call us at [(951) 973-1265](tel:9519731265) to discuss your vision, or visit our [contact page](https://www.firstclasswoodworks.com/contact/) to schedule a free consultation with 3D renderings.
+Ready to transform your space with heirloom-quality woodwork? First Class WoodWorks brings master craftsmanship to every project, from kitchen cabinetry to comprehensive whole-home millwork. Call us at [(951) 973-1265](tel:9519731265) to discuss your vision, or visit our contact page to schedule a free consultation with 3D renderings.

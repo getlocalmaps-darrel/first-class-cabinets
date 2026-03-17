@@ -62,7 +62,7 @@ Your custom vanity style should echo your bathroom's architectural details and p
 
 Walk through your home and notice what draws your eye. Modern vanities feature flat-panel doors, horizontal grain patterns, and sleek metal pulls. They pair beautifully with frameless mirrors and geometric tile. Traditional vanities showcase furniture-quality details—beaded face frames, crown molding, and ornate hardware that recalls fine cabinetry.
 
-Farmhouse styles bring warmth through distressed finishes, open shelving, and vintage-inspired fixtures. Transitional designs offer the best of both worlds, combining Shaker-style doors with contemporary hardware. Color matters too. Natural wood stains highlight craftsmanship, while painted finishes from soft grays to navy blues create bold statements. At First Class WoodWorks, we guide you toward styles that complement your home's character while reflecting your personal taste. Connect with our team through our [contact First Class WoodWorks](https://www.firstclasswoodworks.com/contact/) page to discuss your vision.
+Farmhouse styles bring warmth through distressed finishes, open shelving, and vintage-inspired fixtures. Transitional designs offer the best of both worlds, combining Shaker-style doors with contemporary hardware. Color matters too. Natural wood stains highlight craftsmanship, while painted finishes from soft grays to navy blues create bold statements. At First Class WoodWorks, we guide you toward styles that complement your home's character while reflecting your personal taste. Connect with our team through our contact First Class WoodWorks page to discuss your vision.
 
 ## How much does a custom vanity cost in Murrieta?
 
