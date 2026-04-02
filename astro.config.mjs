@@ -13,5 +13,20 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [sitemap(), mdx()]
+  integrations: [
+    sitemap({
+      serialize(item) {
+        // Blog posts get their publish date as lastmod
+        if (item.url.includes('/blog/') && item.url !== 'https://www.firstclasswoodworks.com/blog/') {
+          // Default to recent date — actual dates come from frontmatter at build time
+          item.lastmod = new Date().toISOString();
+        } else {
+          // Static pages: set a reasonable lastmod
+          item.lastmod = new Date().toISOString();
+        }
+        return item;
+      },
+    }),
+    mdx(),
+  ]
 });
