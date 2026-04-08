@@ -40,7 +40,7 @@ Size drives the foundation of your budget. That compact 10x10 galley kitchen nee
 
 Material grades separate good investments from great ones. Stock cabinets cost $60 to $200 per linear foot, while our [custom kitchen cabinets](https://www.firstclasswoodworks.com/services/custom-kitchen-cabinets/) range from $500 to $1,200 per linear foot—delivering heirloom quality that transforms daily living. Countertops follow similar patterns: laminate runs $25 per square foot versus natural stone at $75 to $150.
 
-At First Class WoodWorks, we build kitchens that honor both your vision and your investment. Our [kitchen remodeling](https://www.firstclasswoodworks.com/services/kitchen-remodeling/) approach balances craftsmanship with transparent pricing, so you know exactly where every dollar lands.
+At [First Class WoodWorks](https://www.firstclasswoodworks.com/), we build kitchens that honor both your vision and your investment. Our [kitchen remodeling](https://www.firstclasswoodworks.com/services/kitchen-remodeling/) approach balances craftsmanship with transparent pricing, so you know exactly where every dollar lands.
 
 ## What factors influence kitchen remodeling costs?
 
