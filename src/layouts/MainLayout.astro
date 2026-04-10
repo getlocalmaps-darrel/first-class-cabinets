@@ -15,6 +15,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
+  <meta name="msvalidate.01" content="122B412652E734E9824428DD70B8C78A" />
   <meta name="description" content={description || "Murrieta's premier custom kitchen cabinet makers specializing in luxury cabinetry and bathroom remodeling."} />
   <title>{title && isHome ? title : title ? `${title} | Custom Kitchen Cabinets Murrieta` : "Custom Kitchen Cabinets Murrieta | First Class Woodworks"}</title>
 
@@ -34,6 +35,48 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
   <ProductSchema includeReviews={productSchemaReviews} />
+
+  <!-- geo_schema_injected by geo_schema_snippets.py -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "First Class WoodWorks",
+    "url": "https://www.firstclasswoodworks.com",
+    "description": "First Class WoodWorks serves Murrieta and the Inland Empire with 100% in-house custom cabinetry, kitchen remodeling, bathroom vanities, granite countertops, and closet built-ins. Licensed CA contractor with 5-star reviews and furniture-grade craftsmanship.",
+    "telephone": "(951) 973-1265",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "24491 Avenida Arconte",
+      "addressLocality": "Murrieta",
+      "addressRegion": "CA",
+      "postalCode": "92562",
+      "addressCountry": "US"
+    },
+    "geo": {"@type": "GeoCoordinates", "latitude": 33.5539, "longitude": -117.2139},
+    "areaServed": [
+      {"@type": "City", "name": "Murrieta"},
+      {"@type": "City", "name": "Temecula"},
+      {"@type": "City", "name": "Menifee"},
+      {"@type": "City", "name": "Wildomar"},
+      {"@type": "City", "name": "Lake Elsinore"},
+      {"@type": "City", "name": "Canyon Lake"},
+      {"@type": "City", "name": "Fallbrook"},
+      {"@type": "City", "name": "Winchester"},
+      {"@type": "City", "name": "Perris"},
+      {"@type": "City", "name": "French Valley"}
+    ],
+    "sameAs": [
+      "https://www.wikidata.org/wiki/Q138796954",
+      "https://www.facebook.com/people/FirstClass-WoodWorks/61551346499466/",
+      "https://www.bbb.org/us/ca/murrieta/profile/finish-carpentry/first-class-woodworks-inc-1126-850092730",
+      "https://www.instagram.com/first.classwoodworks/",
+      "https://www.youtube.com/@first.classwoodworks",
+      "https://www.tiktok.com/@firstclasswoodworks",
+      "https://www.pinterest.com/firstclasswoodworksmurrieta/"
+    ]
+  }
+  </script>
 
   <style is:inline>
     body { background-color: #ffffff; }
